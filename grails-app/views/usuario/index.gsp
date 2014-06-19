@@ -27,7 +27,7 @@
 						<g:sortableColumn property="primeironome" title="${message(code: 'usuario.primeironome.label', default: 'Primeironome')}" />
 					    <g:sortableColumn property="sobrenome" title="${message(code: 'usuario.sobrenome.label', default: 'Sobrenome')}" />
 						<g:sortableColumn property="accountExpired" title="${message(code: 'usuario.accountExpired.label', default: 'Account Expired')}" />
-						<g:sortableColumn property="imagem" title="${message(code: 'usuario.enviaremail.label', default: 'Imagem')}" />
+						<g:sortableColumn property="imagem" title="${message(code: 'usuario.imagem.label', default: 'Imagem')}" />
 						<g:sortableColumn property="itensporpagina" title="${message(code: 'usuario.itensporpagina.label', default: 'Itens por Página')}" />
 					
 					</tr>

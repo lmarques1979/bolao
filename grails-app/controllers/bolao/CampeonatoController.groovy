@@ -7,9 +7,11 @@ import grails.transaction.Transactional
 @Secured(["authentication.name=='admin'"])
 class CampeonatoController extends BaseController{
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
+    static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
+	static final String pathcampeonato = "grails-app/assets/images/campeonatos/";
+	
     def index(Integer max) {
+		def configuracoes = configuracaoParams
         respond Campeonato.list(paginacaoParams), model:[campeonatoInstanceCount: Campeonato.count()]
     }
 
@@ -19,7 +21,7 @@ class CampeonatoController extends BaseController{
 
     def create() {
         respond new Campeonato(params)
-    }
+    } 
 
     @Transactional
     def save(Campeonato campeonatoInstance) {
@@ -28,13 +30,33 @@ class CampeonatoController extends BaseController{
             return
         }
 
-        if (campeonatoInstance.hasErrors()) {
-            respond campeonatoInstance.errors, view:'create'
-            return
-        }
-
+		def imagem
+		def f = request.getFile('arquivo')
+		def descricao = params.descricao
+		def diretorio = pathcampeonato + descricao
+		def nomearquivo = f.getOriginalFilename()
+		
+		if (nomearquivo!=null && nomearquivo!=""){
+		   imagem = diretorio  + '/' + nomearquivo
+		}
+		
+		campeonatoInstance.imagem = nomearquivo
+		
+		boolean deletou = new File(diretorio).deleteDir()
+		def caminhoarquivo = new File(diretorio)
+		caminhoarquivo.mkdirs()
+		
+		if(nomearquivo!=null && nomearquivo!=""){
+			f.transferTo(new File(imagem))
+		}
+		
         campeonatoInstance.save flush:true
-
+		
+		if (campeonatoInstance.hasErrors()) {
+			respond campeonatoInstance.errors, view:'create'
+			return
+		}
+		
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'campeonato.label', default: 'Campeonato'), campeonatoInstance.id])
@@ -55,13 +77,33 @@ class CampeonatoController extends BaseController{
             return
         }
 
-        if (campeonatoInstance.hasErrors()) {
-            respond campeonatoInstance.errors, view:'edit'
-            return
-        }
-
+		def imagem
+		def f = request.getFile('arquivo')
+		def descricao = params.descricao
+		def diretorio = pathcampeonato + descricao
+		def nomearquivo = f.getOriginalFilename()
+		
+		if (nomearquivo!=null && nomearquivo!=""){
+		   imagem = diretorio  + '/' + nomearquivo
+		}
+		
+		campeonatoInstance.imagem = nomearquivo
+		
+		boolean deletou = new File(diretorio).deleteDir()
+		def caminhoarquivo = new File(diretorio)
+		caminhoarquivo.mkdirs()
+		
+		if(nomearquivo!=null && nomearquivo!=""){
+			f.transferTo(new File(imagem))
+		}
+		
         campeonatoInstance.save flush:true
-
+		
+		if (campeonatoInstance.hasErrors()) {
+			respond campeonatoInstance.errors, view:'edit'
+			return
+		}
+		
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Campeonato.label', default: 'Campeonato'), campeonatoInstance.id])
@@ -78,8 +120,14 @@ class CampeonatoController extends BaseController{
             notFound()
             return
         }
-
-        campeonatoInstance.delete flush:true
+		
+		def diretorio = pathcampeonato + campeonatoInstance.descricao
+		boolean deletou = new File(diretorio).deleteDir()
+		
+		if (deletou){
+				campeonatoInstance.delete flush:true
+		}
+		
 
         request.withFormat {
             form multipartForm {

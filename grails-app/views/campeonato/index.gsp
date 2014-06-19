@@ -36,7 +36,10 @@
 					
 						<td><g:link action="show" id="${campeonatoInstance.id}">${fieldValue(bean: campeonatoInstance, field: "descricao")}</g:link></td>
 					
-						<td>${fieldValue(bean: campeonatoInstance, field: "imagem")}</td>
+						<td><g:if test="${campeonatoInstance.imagem}">
+								<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="campeonatos/${campeonatoInstance.descricao}/${campeonatoInstance.imagem}" title="${campeonatoInstance.descricao}"/>
+							</g:if>	
+						</td>
 					
 						
 					

@@ -25,7 +25,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:campeonatoInstance, action:'update']" method="PUT" >
+			<g:uploadForm url="[resource:campeonatoInstance, action:'update']" method="PUT" >
 				<g:hiddenField name="version" value="${campeonatoInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>
@@ -33,7 +33,7 @@
 				<fieldset class="buttons">
 					<g:actionSubmit class="save" action="update" value="${message(code: 'button.update.label', default: 'Update')}" />
 				</fieldset>
-			</g:form>
+			</g:uploadForm>
 		</div>
 	</body>
 </html>

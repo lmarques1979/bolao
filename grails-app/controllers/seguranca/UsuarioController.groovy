@@ -8,7 +8,7 @@ import grails.plugin.springsecurity.annotation.Secured
 @Transactional(readOnly = true)
 class UsuarioController extends BaseController {
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
 	static final String pathusuario = "grails-app/assets/images/usuarios/";
 	
 	@Secured('permitAll')
@@ -96,18 +96,26 @@ class UsuarioController extends BaseController {
             return
         }
 		
+		def imagem
 		def f = request.getFile('arquivo')
 		def usuario = params.username
 		def diretorio = pathusuario + usuario 
-		def imagem = pathusuario + usuario  + '/' + f.getOriginalFilename()
-		usuarioInstance.imagem = f.getOriginalFilename()
+		def nomearquivo = f.getOriginalFilename()
 		
-		def caminhoarquivo = new File(diretorio)
-		if( !caminhoarquivo.exists() ){
-			caminhoarquivo.mkdirs()
+		if (nomearquivo!=null && nomearquivo!=""){
+		   imagem = diretorio  + '/' + nomearquivo
 		}
-		f.transferTo(new File(imagem))
-
+		
+		usuarioInstance.imagem = nomearquivo
+		
+		boolean deletou = new File(diretorio).deleteDir()  
+		def caminhoarquivo = new File(diretorio)
+		caminhoarquivo.mkdirs()
+		
+		if(nomearquivo!=null && nomearquivo!=""){
+			f.transferTo(new File(imagem))
+		}
+		
 		usuarioInstance.save flush:true
 		
 		if (usuarioInstance.hasErrors()) {
@@ -137,6 +145,26 @@ class UsuarioController extends BaseController {
             return
         }
 
+		def imagem
+		def f = request.getFile('arquivo')
+		def usuario = params.username
+		def diretorio = pathusuario + usuario
+		def nomearquivo = f.getOriginalFilename()
+		
+		if (nomearquivo!=null && nomearquivo!=""){
+		   imagem = diretorio  + '/' + nomearquivo
+		}
+		
+		usuarioInstance.imagem = nomearquivo
+		
+		boolean deletou = new File(diretorio).deleteDir()
+		def caminhoarquivo = new File(diretorio)
+		caminhoarquivo.mkdirs()
+		
+		if(nomearquivo!=null && nomearquivo!=""){
+			f.transferTo(new File(imagem))
+		}
+		
         usuarioInstance.save flush:true
 		
 		if (usuarioInstance.hasErrors()) {
@@ -162,16 +190,12 @@ class UsuarioController extends BaseController {
             return
         }
 
-		def imagem = pathusuario + usuarioInstance.username  + '/' + usuarioInstance.imagem
-		boolean existe =  new File(imagem).exists()
 		
-		if (existe){
-			boolean deletou = new File(imagem).delete()
-			if (deletou){
+		def diretorio = pathusuario + usuarioInstance.username  
+		boolean deletou = new File(diretorio).deleteDir()
+		
+		if (deletou){
 				usuarioInstance.delete flush:true
-			}
-		}else {
-			usuarioInstance.delete flush:true
 		}
 		
         request.withFormat {

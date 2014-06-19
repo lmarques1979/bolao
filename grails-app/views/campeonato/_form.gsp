@@ -16,7 +16,7 @@
 		<g:message code="campeonato.imagem.label" default="Imagem" />
 		
 	</label>
-	<g:textField name="imagem" maxlength="50" value="${campeonatoInstance?.imagem}"/>
+	<input type="file" name="arquivo" value="${campeonatoInstance?.imagem}"/>
 
 </div>
 
