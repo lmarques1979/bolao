@@ -6,6 +6,7 @@ class Configuracao {
 	int alturaimagens
 	int larguraimagens
 	int tamanhoiconetimes
+	int itensporpagina
 	Date dateCreated
 	Date lastUpdated
 	
@@ -13,6 +14,7 @@ class Configuracao {
 		alturaimagens(nullable: false, blank: false)
 		larguraimagens(nullable: false, blank: false)
 		tamanhoiconetimes(nullable: false, blank: false)
+		itensporpagina(nullable: true, blank: true)
 	}
 	
 	static mapping = {

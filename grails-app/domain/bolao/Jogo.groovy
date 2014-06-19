@@ -22,7 +22,7 @@ class Jogo {
 	}
 	
 	static mapping = {
-		sort datajogo: "desc" // or "asc"
+		sort datajogo: "asc" // or "asc"
 		autoTimestamp true
 		
 	}

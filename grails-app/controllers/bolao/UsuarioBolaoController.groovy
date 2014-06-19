@@ -8,7 +8,8 @@ class UsuarioBolaoController extends BaseController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        respond UsuarioBolao.list(paginacaoParams), model:[usuarioBolaoInstanceCount: UsuarioBolao.count()]
+		def configuracoes = configuracaoParams
+        respond UsuarioBolao.list(configuracoes), model:[usuarioBolaoInstanceCount: UsuarioBolao.count()]
     }
 
     def show(UsuarioBolao usuarioBolaoInstance) {

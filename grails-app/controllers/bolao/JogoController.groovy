@@ -12,7 +12,8 @@ class JogoController extends BaseController{
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        respond Jogo.list(paginacaoParams), model:[jogoInstanceCount: Jogo.count()]
+		def configuracoes = configuracaoParams
+        respond Jogo.list(configuracoes), model:[jogoInstanceCount: Jogo.count()]
     }
 
     def show(Jogo jogoInstance) {
@@ -31,8 +32,8 @@ class JogoController extends BaseController{
         }
 		
 		def datahora        = params.datajogo + ' ' + params.horajogo
-		
-		jogoInstance.datajogo = new Date().parse("dd/MM/yyyy HH:mm", datahora)		
+		jogoInstance.datajogo = new Date().parse("dd/MM/yyyy HH:mm", datahora)	
+		jogoInstance.clearErrors()
         jogoInstance.save flush:true
 
 		if (jogoInstance.hasErrors()) {

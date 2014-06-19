@@ -39,15 +39,33 @@
 				<g:each in="${jogoInstanceList}" status="i" var="jogoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${jogoInstance.id}">${fieldValue(bean: jogoInstance, field: "datajogo")}</g:link></td>
+						<td>
+							<g:link action="show" id="${jogoInstance.id}">
+								<g:formatDate format="dd/MM/yyyy HH:mm" date="${jogoInstance?.datajogo}"/>
+							</g:link>
+						</td>
 					
 						<td>${fieldValue(bean: jogoInstance, field: "local")}</td>
 						
-						<td>${fieldValue(bean: jogoInstance, field: "time1")}</td>
+						<td><g:if test="${jogoInstance?.time1?.imagem}">
+								<asset:image src="bandeiras/${params.tamanhoiconetimes}/${jogoInstance?.time1?.imagem}" title="${jogoInstance?.time1?.descricao}"/>
+							</g:if><br>
+							
+							${jogoInstance?.time1?.descricao}
+						</td>
 					
-						<td>${fieldValue(bean: jogoInstance, field: "time2")}</td>
+						<td>	
+							<g:if test="${jogoInstance?.time2?.imagem}">
+								<asset:image src="bandeiras/${params.tamanhoiconetimes}/${jogoInstance?.time2?.imagem}" title="${jogoInstance?.time2?.descricao}"/>
+							</g:if><br>
+							
+							${jogoInstance?.time2?.descricao}</td>
 					
-						<td>${fieldValue(bean: jogoInstance, field: "campeonato")}</td>
+						<td>
+							<g:if test="${jogoInstance?.campeonato?.imagem}">
+								<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="campeonatos/${jogoInstance?.campeonato?.descricao}/${jogoInstance?.campeonato?.imagem}" title="${jogoInstance?.campeonato?.descricao}"/>
+							</g:if><br>
+							${jogoInstance?.campeonato?.descricao}</td>
 					
 					
 					</tr>

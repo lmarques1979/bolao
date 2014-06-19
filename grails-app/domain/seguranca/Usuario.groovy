@@ -19,7 +19,6 @@ class Usuario {
 	boolean passwordExpired
 	boolean enviaremail=true
 	boolean enviarsms=false
-	int		itensporpagina
 	
 	static hasMany = [usuarioboloes: UsuarioBolao, usuarioregras: UsuarioRegra]
 	
@@ -31,12 +30,12 @@ class Usuario {
 		email(email:true,blank:false,nullable:false)
 		primeironome(blank: false , nullable:false)
 		sobrenome(blank: true , nullable:true)
-	    itensporpagina(blank: true , nullable:true)
 		imagem(blank: true , nullable:true)
 	}
 	
 	static mapping = {
 		usuarioregras cascade: 'all-delete-orphan'
+		usuarioboloes cascade: 'all-delete-orphan'
 		password column: '`password`'
 	}
 

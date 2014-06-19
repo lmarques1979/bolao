@@ -28,8 +28,7 @@
 					    <g:sortableColumn property="sobrenome" title="${message(code: 'usuario.sobrenome.label', default: 'Sobrenome')}" />
 						<g:sortableColumn property="accountExpired" title="${message(code: 'usuario.accountExpired.label', default: 'Account Expired')}" />
 						<g:sortableColumn property="imagem" title="${message(code: 'usuario.imagem.label', default: 'Imagem')}" />
-						<g:sortableColumn property="itensporpagina" title="${message(code: 'usuario.itensporpagina.label', default: 'Itens por Página')}" />
-					
+						
 					</tr>
 				</thead>
 				<tbody>
@@ -50,7 +49,7 @@
 								<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="usuarios/${usuarioInstance.username}/${usuarioInstance.imagem}" title="${usuarioInstance.username}"/>
 							</g:if>		
 						</td>			
-						<td>${fieldValue(bean: usuarioInstance, field: "itensporpagina")}</td>
+					
 					
 					</tr>
 				</g:each>

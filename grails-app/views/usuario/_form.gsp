@@ -89,11 +89,3 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'itensporpagina', 'error')} required">
-	<label for="itensporpagina">
-		<g:message code="configuracao.itensporpagina.label" default="Itens por Página" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="itensporpagina" type="number" value="${usuarioInstance.itensporpagina}" required=""/>
-
-</div>

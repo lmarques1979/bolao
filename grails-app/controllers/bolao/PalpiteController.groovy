@@ -11,7 +11,8 @@ class PalpiteController extends BaseController{
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        respond Palpite.list(paginacaoParams), model:[palpiteInstanceCount: Palpite.count()]
+		def configuracoes = configuracaoParams
+        respond Palpite.list(configuracoes), model:[palpiteInstanceCount: Palpite.count()]
     }
 
     def show(Palpite palpiteInstance) {

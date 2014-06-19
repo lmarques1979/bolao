@@ -107,14 +107,6 @@
 				</li>
 				</g:if>
 				
-				<g:if test="${usuarioInstance?.itensporpagina}">
-				<li class="fieldcontain">
-					<span id="itensporpagina-label" class="property-label"><g:message code="usuario.itensporpagina.label" default="Itens por Página" /></span>
-					
-						<span class="property-value" aria-labelledby="itensporpagina-label"><g:fieldValue bean="${usuarioInstance}" field="itensporpagina"/></span>
-					
-				</li>
-				</g:if>
 				
 			
 			</ol>

@@ -13,7 +13,8 @@ class UsuarioRegraController extends BaseController{
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        respond UsuarioRegra.list(paginacaoParams), model:[usuarioRegraInstanceCount: UsuarioRegra.count()]
+		def configuracoes = configuracaoParams
+        respond UsuarioRegra.list(configuracoes), model:[usuarioRegraInstanceCount: UsuarioRegra.count()]
     }
 
     def show(UsuarioRegra usuarioRegraInstance) {

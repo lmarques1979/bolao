@@ -11,7 +11,7 @@ class TimeController extends BaseController{
 
     def index(Integer max) {
 		def configuracoes = configuracaoParams
-        respond Time.list(paginacaoParams), model:[timeInstanceCount: Time.count()]
+        respond Time.list(configuracoes), model:[timeInstanceCount: Time.count()]
     }
 
     def show(Time timeInstance) {

@@ -11,7 +11,8 @@ class BolaoController extends BaseController{
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        respond Bolao.list(paginacaoParams), model:[bolaoInstanceCount: Bolao.count()]
+		def configuracoes = configuracaoParams
+        respond Bolao.list(configuracoes), model:[bolaoInstanceCount: Bolao.count()]
     }
 
     def show(Bolao bolaoInstance) {

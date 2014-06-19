@@ -10,7 +10,8 @@ class ConfiguracaoController extends BaseController{
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        respond Configuracao.list(paginacaoParams), model:[configuracaoInstanceCount: Configuracao.count()]
+		def configuracoes = configuracaoParams
+        respond Configuracao.list(configuracoes), model:[configuracaoInstanceCount: Configuracao.count()]
     }
 
     def show(Configuracao configuracaoInstance) {

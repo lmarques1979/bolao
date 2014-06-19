@@ -12,7 +12,8 @@ class RegraController extends BaseController{
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        respond Regra.list(paginacaoParams), model:[regraInstanceCount: Regra.count()]
+		def configuracoes = configuracaoParams
+        respond Regra.list(configuracoes), model:[regraInstanceCount: Regra.count()]
     }
 
     def show(Regra regraInstance) {

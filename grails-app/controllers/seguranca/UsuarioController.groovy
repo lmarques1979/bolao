@@ -75,7 +75,7 @@ class UsuarioController extends BaseController {
 	@Secured(["authentication.name == 'admin'"])
     def index(Integer max) {
 		def configuracoes = configuracaoParams
-        respond Usuario.list(paginacaoParams), model:[usuarioInstanceCount: Usuario.count()]
+        respond Usuario.list(configuracoes), model:[usuarioInstanceCount: Usuario.count()]
     }
 
 	@Secured('permitAll') 

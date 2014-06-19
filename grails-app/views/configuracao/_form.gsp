@@ -27,3 +27,11 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: configuracaoInstance, field: 'itensporpagina', 'error')} required">
+	<label for="tamanhoiconetimes">
+		<g:message code="configuracao.itensporpagina.label" default="Itens por Página" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="itensporpagina" required="" value="${configuracaoInstance?.itensporpagina}"/>
+
+</div>

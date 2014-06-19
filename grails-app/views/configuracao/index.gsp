@@ -32,7 +32,7 @@
 					
 						<g:sortableColumn property="tamanhoiconetimes" title="${message(code: 'configuracao.tamanhoiconetimes.label', default: 'Tamanho Icone Times')}" />
 					
-						
+						<g:sortableColumn property="itensporpagina" title="${message(code: 'configuracao.itensporpagina.label', default: 'Itens por Página')}" />
 					</tr>
 				</thead>
 				<tbody>
@@ -44,6 +44,8 @@
 						<td>${fieldValue(bean: configuracaoInstance, field: "larguraimagens")}</td>
 					
 						<td>${fieldValue(bean: configuracaoInstance, field: "tamanhoiconetimes")}</td>
+						
+						<td>${fieldValue(bean: configuracaoInstance, field: "itensporpagina")}</td>
 					
 											
 					</tr>

@@ -12,7 +12,7 @@ class CampeonatoController extends BaseController{
 	
     def index(Integer max) {
 		def configuracoes = configuracaoParams
-        respond Campeonato.list(paginacaoParams), model:[campeonatoInstanceCount: Campeonato.count()]
+        respond Campeonato.list(configuracoes), model:[campeonatoInstanceCount: Campeonato.count()]
     }
 
     def show(Campeonato campeonatoInstance) {
