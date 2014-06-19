@@ -2,6 +2,7 @@ package bolao
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
+import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.Date;
 
@@ -17,6 +18,7 @@ class JogoController extends BaseController{
     }
 
     def show(Jogo jogoInstance) {
+		def configuracoes = configuracaoParams
         respond jogoInstance
     }
 
@@ -51,7 +53,12 @@ class JogoController extends BaseController{
     }
 
     def edit(Jogo jogoInstance) {
-        respond jogoInstance
+		
+		def df       	= new SimpleDateFormat("dd/MM/yyyy")
+		def hf       	= new SimpleDateFormat("HH:mm")
+		params.datajogo = df.format(jogoInstance.datajogo);
+		params.horajogo = hf.format(jogoInstance.datajogo);
+		respond jogoInstance
     }
 
     @Transactional
@@ -61,12 +68,16 @@ class JogoController extends BaseController{
             return
         }
 
-        if (jogoInstance.hasErrors()) {
-            respond jogoInstance.errors, view:'edit'
-            return
-        }
-
+		def datahora        	= params.datajogo + ' ' + params.horajogo
+		jogoInstance.datajogo 	= new Date().parse("dd/MM/yyyy HH:mm", datahora)
+		jogoInstance.clearErrors()
+		
         jogoInstance.save flush:true
+		
+		if (jogoInstance.hasErrors()) {
+			respond jogoInstance.errors, view:'edit'
+			return
+		}
 
         request.withFormat {
             form multipartForm {

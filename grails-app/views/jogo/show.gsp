@@ -25,7 +25,7 @@
 				<li class="fieldcontain">
 					<span id="datajogo-label" class="property-label"><g:message code="jogo.datajogo.label" default="Datajogo" /></span>
 					
-						<span class="property-value" aria-labelledby="datajogo-label"><g:formatDate date="${jogoInstance?.datajogo}" /></span>
+						<span class="property-value" aria-labelledby="datajogo-label"><g:formatDate format="dd/MM/yyyy HH:mm" date="${jogoInstance?.datajogo}" /></span>
 					
 				</li>
 				</g:if>
@@ -34,7 +34,25 @@
 				<li class="fieldcontain">
 					<span id="time1-label" class="property-label"><g:message code="jogo.time1.label" default="Time1" /></span>
 					
-						<span class="property-value" aria-labelledby="time1-label"><g:link controller="time" action="show" id="${jogoInstance?.time1?.id}">${jogoInstance?.time1?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="time1-label"><g:link controller="time" action="show" id="${jogoInstance?.time1?.id}">${jogoInstance?.time1?.descricao}</g:link></span>
+					
+				</li>
+				</g:if>
+				
+				<g:if test="${jogoInstance?.scoretime1}">
+				<li class="fieldcontain">
+					<span id="scoretime1-label" class="property-label"><g:message code="jogo.scoretime1.label" default="Scoretime1" /></span>
+					
+						<span class="property-value" aria-labelledby="scoretime1-label"><g:fieldValue bean="${jogoInstance}" field="scoretime1"/></span>
+					
+				</li>
+				</g:if>
+				
+				<g:if test="${jogoInstance?.scoretime2}">
+				<li class="fieldcontain">
+					<span id="scoretime2-label" class="property-label"><g:message code="jogo.scoretime2.label" default="Scoretime2" /></span>
+					
+						<span class="property-value" aria-labelledby="scoretime2-label"><g:fieldValue bean="${jogoInstance}" field="scoretime2"/></span>
 					
 				</li>
 				</g:if>
@@ -43,8 +61,9 @@
 				<li class="fieldcontain">
 					<span id="time2-label" class="property-label"><g:message code="jogo.time2.label" default="Time2" /></span>
 					
-						<span class="property-value" aria-labelledby="time2-label"><g:link controller="time" action="show" id="${jogoInstance?.time2?.id}">${jogoInstance?.time2?.encodeAsHTML()}</g:link></span>
-					
+						<span class="property-value" aria-labelledby="time2-label"><g:link controller="time" action="show" id="${jogoInstance?.time2?.id}">${jogoInstance?.time2?.descricao}</g:link></span>
+						
+						
 				</li>
 				</g:if>
 			
@@ -52,7 +71,7 @@
 				<li class="fieldcontain">
 					<span id="campeonato-label" class="property-label"><g:message code="jogo.campeonato.label" default="Campeonato" /></span>
 					
-						<span class="property-value" aria-labelledby="campeonato-label"><g:link controller="campeonato" action="show" id="${jogoInstance?.campeonato?.id}">${jogoInstance?.campeonato?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="campeonato-label"><g:link controller="campeonato" action="show" id="${jogoInstance?.campeonato?.id}">${jogoInstance?.campeonato?.descricao}</g:link></span>
 					
 				</li>
 				</g:if>

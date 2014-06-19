@@ -27,6 +27,10 @@
 						<th><g:message code="jogo.local.label" default="Local" /></th>
 						
 						<th><g:message code="jogo.time1.label" default="Time1" /></th>
+						
+						<th><g:message code="jogo.scroretime1.label" default="Score Time1" /></th>
+						
+						<th><g:message code="jogo.scroretime2.label" default="Score Time2" /></th>
 					
 						<th><g:message code="jogo.time2.label" default="Time2" /></th>
 					
@@ -52,6 +56,14 @@
 							</g:if><br>
 							
 							${jogoInstance?.time1?.descricao}
+						</td>
+						
+						<td>
+							${jogoInstance?.scoretime1}
+						</td>
+						
+						<td>
+							${jogoInstance?.scoretime2}
 						</td>
 					
 						<td>	
