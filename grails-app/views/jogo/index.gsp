@@ -24,6 +24,8 @@
 					
 						<g:sortableColumn property="datajogo" title="${message(code: 'jogo.datajogo.label', default: 'Datajogo')}" />
 					
+						<th><g:message code="jogo.local.label" default="Local" /></th>
+						
 						<th><g:message code="jogo.time1.label" default="Time1" /></th>
 					
 						<th><g:message code="jogo.time2.label" default="Time2" /></th>
@@ -39,6 +41,8 @@
 					
 						<td><g:link action="show" id="${jogoInstance.id}">${fieldValue(bean: jogoInstance, field: "datajogo")}</g:link></td>
 					
+						<td>${fieldValue(bean: jogoInstance, field: "local")}</td>
+						
 						<td>${fieldValue(bean: jogoInstance, field: "time1")}</td>
 					
 						<td>${fieldValue(bean: jogoInstance, field: "time2")}</td>

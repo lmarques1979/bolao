@@ -2,6 +2,8 @@ package bolao
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
+import java.text.SimpleDateFormat
+import java.util.Date;
 
 @Transactional(readOnly = true)
 @Secured(["authentication.name=='admin'"])
@@ -27,14 +29,17 @@ class JogoController extends BaseController{
             notFound()
             return
         }
-
-        if (jogoInstance.hasErrors()) {
-            respond jogoInstance.errors, view:'create'
-            return
-        }
-
+		
+		def datahora        = params.datajogo + ' ' + params.horajogo
+		
+		jogoInstance.datajogo = new Date().parse("dd/MM/yyyy HH:mm", datahora)		
         jogoInstance.save flush:true
 
+		if (jogoInstance.hasErrors()) {
+			respond jogoInstance.errors, view:'create'
+			return
+		}
+		
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'jogo.label', default: 'Jogo'), jogoInstance.id])

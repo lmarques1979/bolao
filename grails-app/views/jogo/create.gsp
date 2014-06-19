@@ -3,6 +3,8 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'jogo.label', default: 'Jogo')}" />
+		<asset:stylesheet src="datepicker.css"/>
+		<asset:stylesheet src="jquery.timepicker.css"/>
 		<title><g:message code="jogo.create.label" /></title>
 	</head>
 	<body>
@@ -31,3 +33,6 @@
 		</div>
 	</body>
 </html>
+<asset:javascript src="datepicker.js"/>
+<asset:javascript src="jquery.timepicker.js"/>
+<asset:javascript src="timepickerinit.js"/>
