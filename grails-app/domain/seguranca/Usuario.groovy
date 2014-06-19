@@ -1,6 +1,7 @@
 package seguranca
 
 import bolao.UsuarioBolao
+import bolao.Palpite
 
 class Usuario {
 

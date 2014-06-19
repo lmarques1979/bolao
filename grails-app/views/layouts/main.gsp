@@ -34,6 +34,7 @@
 					</g:if>
 					<!-- Usuarios logados -->
 					<g:if test="${sec.loggedInUserInfo(field: 'username') != 'admin'}">
+					     <li><g:link class="create" controller="Palpite" action="index" ><g:message code="palpite.label"/></g:link></li>
 						 <li><g:link class="usuario" controller="Usuario" action="show" id="${sec.loggedInUserInfo(field:"id")}"><g:message code="dadosusuario.label"/></g:link></li>
 					</g:if>
 					
