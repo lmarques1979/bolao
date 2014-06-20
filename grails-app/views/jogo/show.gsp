@@ -29,6 +29,24 @@
 					
 				</li>
 				</g:if>
+				
+				<g:if test="${jogoInstance?.fase}">
+				<li class="fieldcontain">
+					<span id="fase-label" class="property-label"><g:message code="jogo.fase.label" default="Fase" /></span>
+					
+						<span class="property-value" aria-labelledby="datajogo-label"><g:fieldValue bean="${jogoInstance}" field="fase"/></span>
+					
+				</li>
+				</g:if>
+				
+				<g:if test="${jogoInstance?.descricaofase}">
+				<li class="fieldcontain">
+					<span id="descricaofase-label" class="property-label"><g:message code="jogo.descricaofase.label" default="Descrição Fase" /></span>
+					
+						<span class="property-value" aria-labelledby="datajogo-label"><g:fieldValue bean="${jogoInstance}" field="descricaofase"/></span>
+					
+				</li>
+				</g:if>
 			
 				<g:if test="${jogoInstance?.time1}">
 				<li class="fieldcontain">

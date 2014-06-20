@@ -47,28 +47,41 @@
 			</g:form> 
 			</table>
 			<table>
-			<thead>
-					<tr>
-					
-						<g:sortableColumn property="datajogo" title="${message(code: 'jogo.datajogo.label', default: 'Datajogo')}" />
-					
-						<th><g:message code="jogo.local.label" default="Local" /></th>
-						
-						<th><g:message code="jogo.time1.label" default="Time1" /></th>
-						
-						<th><g:message code="jogo.scoretime1.label" default="Score Time1" /></th>
-						
-						<th><g:message code="jogo.scoretime2.label" default="Score Time2" /></th>
-					
-						<th><g:message code="jogo.time2.label" default="Time2" /></th>
-					
-						<th><g:message code="jogo.campeonato.label" default="Campeonato" /></th>
-					
-						
-					</tr>
-				</thead>
+			
 				<tbody>
+				
+				<g:set var="rodadaanterior" value="-1" />
 				<g:each in="${jogoInstanceList}" status="i" var="jogoInstance">
+				
+					<g:set var="rodadaatual" value="${jogoInstance?.descricaofase}" />
+					
+					<g:if test="${rodadaanterior!=rodadaatual}">
+						<thead>
+							<tr>
+								<th colspan="7">${jogoInstance?.descricaofase}</th>
+							</tr>
+							
+							<tr>
+					
+								<g:sortableColumn property="datajogo" title="${message(code: 'jogo.datajogo.label', default: 'Datajogo')}" />
+							
+								<th><g:message code="jogo.local.label" default="Local" /></th>
+								
+								<th><g:message code="jogo.time1.label" default="Time1" /></th>
+								
+								<th><g:message code="jogo.scoretime1.label" default="Score Time1" /></th>
+								
+								<th><g:message code="jogo.scoretime2.label" default="Score Time2" /></th>
+							
+								<th><g:message code="jogo.time2.label" default="Time2" /></th>
+							
+								<th><g:message code="jogo.campeonato.label" default="Campeonato" /></th>
+						
+							</tr>
+						</thead>	
+						
+					</g:if>
+					
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td>
@@ -109,6 +122,9 @@
 					
 					
 					</tr>
+					
+					<g:set var="rodadaanterior" value="${rodadaatual}" />
+
 				</g:each>
 				</tbody>
 			</table>

@@ -7,6 +7,8 @@ class Jogo {
 	Time time1
 	Time time2
 	Date datajogo
+	int  fase
+	String descricaofase
 	int	scoretime1=0
 	int scoretime2=0
 	String local
@@ -21,12 +23,14 @@ class Jogo {
 		time1(nullable: false, blank: false)
 		time2(nullable: false , blank: false)
 		local(nullable: true , blank: true)
+		fase(nullable: false , blank: false)
+		descricaofase(nullable: false , blank: false)
 		scoretime1(nullable: true , blank: true , size: 1..3, matches:"[0-9]{1}[0-9]{1}[0-9]{1}")
 		scoretime2(nullable: true , blank: true , size: 1..3, matches:"[0-9]{1}[0-9]{1}[0-9]{1}")
 	}
 	
 	static mapping = {
-		sort datajogo: "asc" // or "asc"
+		sort fase:"asc",datajogo:"asc"
 		autoTimestamp true
 		
 	}

@@ -3,8 +3,10 @@
 <table>
 			<thead>
 					<tr>
-						<th>Data do Jogo</th>
-						<th>Hora do Jogo</th>
+						<th>Data</th>
+						<th>Hora</th>
+						<th>Fase</th>
+						<th>Desc. Fase</th>
 						<th>Local do Jogo</th>
 						<th>Time 1</th>
 						<th>Score Time 1</th>
@@ -26,7 +28,17 @@
 						</td>
 						
 						<td>
-							<g:textField name="local" size="20" value="${jogoInstance?.local}"/>
+							<g:textField name="fase" size="1" value="${jogoInstance?.fase}"/>
+							
+						</td>
+						
+						<td>
+							<g:textField name="descricaofase" size="8" value="${jogoInstance?.descricaofase}"/>
+							
+						</td>
+						
+						<td>
+							<g:textField name="local" size="15" value="${jogoInstance?.local}"/>
 							
 						</td>
 						<td>
@@ -35,11 +47,11 @@
 						</td>
 						
 						<td>
-							<g:textField name="scoretime1" maxlength="3" size="1" value="${jogoInstance?.scoretime1}"/>
+							<g:textField name="scoretime1" maxlength="1" size="1" value="${jogoInstance?.scoretime1}"/>
 						</td>
 						
 						<td>
-							<g:textField name="scoretime2" maxlength="3" size="1" value="${jogoInstance?.scoretime2}"/>
+							<g:textField name="scoretime2" maxlength="1" size="1" value="${jogoInstance?.scoretime2}"/>
 						</td>
 						
 						<td>
