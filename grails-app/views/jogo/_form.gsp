@@ -20,7 +20,7 @@
 			<tbody>
 					<tr>
 						<td>
-							<g:textField name="datajogo" class="w8em format-d-m-y" size="8" value="${params.datajogo}"  />
+							<g:textField name="datajogo" class="w8em format-d-m-y" size="9" value="${params.datajogo}"  />
 							
 						</td>
 						<td>

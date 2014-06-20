@@ -332,6 +332,7 @@ fieldset,
 	color: #666666;
 	text-align: right;
 	width: 25%;
+	font-size:13px;
 }
 
 .fieldcontain .property-label {
@@ -341,6 +342,7 @@ fieldset,
 .fieldcontain .property-value {
 	display: block;
 	margin-left: 27%;
+	font-size:13px;
 }
 
 label {
@@ -523,10 +525,11 @@ tr>td:last-child, tr>th:last-child {
 
 td, th {
 	line-height: 1.5em;
-	padding: 5px;
+	padding: 2px;
 	text-align: center;
 	vertical-align: top;
 	border:1px solid #DFDFDF;
+	font-size:13px;
 }
 
 
@@ -554,6 +557,7 @@ th {
 	font-weight: bold;
 	line-height: 1.7em;
 	padding: 0.2em 0.6em;
+	font-size:13px;
 }
 
 hr {

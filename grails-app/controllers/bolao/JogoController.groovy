@@ -33,8 +33,8 @@ class JogoController extends BaseController{
 	
 	def filtro() {
 		
-		def configuracoes = configuracaoParams
 		def filtro = params.filtrodatas
+		def configuracoes = configuracaoParams
 		
 		def resultadofiltro = Jogo.createCriteria().list (configuracoes) {
 			if(filtro=='2'){
@@ -44,7 +44,7 @@ class JogoController extends BaseController{
 				eq("encerrado" , true )
 			}
 		}
-		respond resultadofiltro, model:[JogoInstanceCount: resultadofiltro.totalCount]
+		respond resultadofiltro, model:[jogoInstanceCount: resultadofiltro.totalCount]
 	}
 	
 

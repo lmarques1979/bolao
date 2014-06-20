@@ -7,6 +7,7 @@
 		<title><g:message code="jogo.list.label"/></title>
 	</head>
 	<body>
+
 		<a href="#list-jogo" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
