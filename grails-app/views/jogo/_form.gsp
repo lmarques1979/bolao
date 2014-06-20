@@ -35,11 +35,11 @@
 						</td>
 						
 						<td>
-							<g:textField name="scoretime1" size="1" value="${jogoInstance?.scoretime1}"/>
+							<g:textField name="scoretime1" maxlength="3" size="1" value="${jogoInstance?.scoretime1}"/>
 						</td>
 						
 						<td>
-							<g:textField name="scoretime2" size="1" value="${jogoInstance?.scoretime2}"/>
+							<g:textField name="scoretime2" maxlength="3" size="1" value="${jogoInstance?.scoretime2}"/>
 						</td>
 						
 						<td>

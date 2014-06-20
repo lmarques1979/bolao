@@ -4,7 +4,8 @@ import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import java.text.DateFormat
 import java.text.SimpleDateFormat
-import java.util.Date;
+import java.util.Date
+import java.util.concurrent.TimeUnit
 
 @Transactional(readOnly = true)
 @Secured(["authentication.name=='admin'"])
@@ -13,14 +14,42 @@ class JogoController extends BaseController{
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
+		
 		def configuracoes = configuracaoParams
-        respond Jogo.list(configuracoes), model:[jogoInstanceCount: Jogo.count()]
+		Date datahoje = new Date(); // oldDate == current time
+        Date datafiltro = new Date(datahoje.getTime() - TimeUnit.HOURS.toMillis(2)); // menos 2 horas 
+		
+		def resultado = Jogo.createCriteria().list (configuracoes) {
+			ge("datajogo" , datafiltro)
+			
+		}
+        respond resultado, model:[jogoInstanceCount: resultado.totalCount]
     }
 
     def show(Jogo jogoInstance) {
 		def configuracoes = configuracaoParams
         respond jogoInstance
     }
+	
+	def filtro() {
+		
+		def configuracoes = configuracaoParams
+		def filtro = params.filtrodatas
+		Date datahoje = new Date(); // oldDate == current time
+        Date datafiltromenos = new Date(datahoje.getTime() - TimeUnit.HOURS.toMillis(2)); // menos 2 horas 
+		Date datafiltromais = new Date(datahoje.getTime() + TimeUnit.HOURS.toMillis(2)); // mais 2 horas
+		
+		def resultadofiltro = Jogo.createCriteria().list (configuracoes) {
+			if(filtro=='2'){
+				ge("datajogo" , datafiltromais)
+			}
+			if(filtro=='3'){
+				lt("datajogo" , datafiltromenos )
+			}
+		}
+		respond resultadofiltro, model:[JogoInstanceCount: resultadofiltro.totalCount]
+	}
+	
 
     def create() {
         respond new Jogo(params)
