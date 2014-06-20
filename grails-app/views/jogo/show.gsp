@@ -93,6 +93,15 @@
 					
 				</li>
 				</g:if>
+				
+				<g:if test="${jogoInstance?.encerrado}">
+				<li class="fieldcontain">
+					<span id="encerrado-label" class="property-label"><g:message code="jogo.encerrado.label" default="Campeonato" /></span>
+					
+						<span class="property-value" aria-labelledby="encerrado-label"><g:formatBoolean boolean="${jogoInstance?.encerrado}" /></span>
+					
+				</li>
+				</g:if>
 			
 							
 			</ol>

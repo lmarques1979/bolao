@@ -31284,3 +31284,1059 @@ Cannot resolve which method to invoke for [null] due to overlapping prototypes b
 	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
 	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
 	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:33,534 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@4846144f] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at groovy.lang.MetaClassImpl.chooseMostSpecificParams(MetaClassImpl.java:3031)
+	at groovy.lang.MetaClassImpl.chooseMethodInternal(MetaClassImpl.java:2983)
+	at groovy.lang.MetaClassImpl.chooseMethod(MetaClassImpl.java:2926)
+	at groovy.lang.MetaClassImpl.getMethodWithCachingInternal(MetaClassImpl.java:1203)
+	at groovy.lang.MetaClassImpl.createPogoCallSite(MetaClassImpl.java:3160)
+	at groovy.lang.ExpandoMetaClass.createPogoCallSite(ExpandoMetaClass.java:1299)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createPogoSite(CallSiteArray.java:147)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createCallSite(CallSiteArray.java:161)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.grails.plugins.DomainClassGrailsPlugin$_closure3.doCall(DomainClassGrailsPlugin.groovy:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1276)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1085)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.invokeOnChangeListener(DefaultGrailsPlugin.java:767)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:716)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:731)
+	at org.codehaus.groovy.grails.plugins.AbstractGrailsPluginManager.informOfClassChange(AbstractGrailsPluginManager.java:408)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher$2.run(GrailsProjectWatcher.java:246)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher.firePendingClassChangeEvents(GrailsProjectWatcher.java:107)
+	at org.codehaus.groovy.grails.cli.agent.GrailsPluginManagerReloadPlugin.reloadEvent(GrailsPluginManagerReloadPlugin.java:42)
+	at org.springsource.loaded.TypeRegistry.fireReloadEvent(TypeRegistry.java:1767)
+	at org.springsource.loaded.ReloadableType.loadNewVersion(ReloadableType.java:405)
+	at org.springsource.loaded.TypeRegistry.loadNewVersion(TypeRegistry.java:845)
+	at org.springsource.loaded.agent.ReloadableFileChangeListener.fileChanged(ReloadableFileChangeListener.java:51)
+	at org.springsource.loaded.agent.Watcher.determineChangesSince(FileSystemWatcher.java:235)
+	at org.springsource.loaded.agent.Watcher.run(FileSystemWatcher.java:219)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:33,539 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@4846144f] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:33,540 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@4846144f] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:33,541 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@4846144f] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:34,052 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@435dfb5f] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at groovy.lang.MetaClassImpl.chooseMostSpecificParams(MetaClassImpl.java:3031)
+	at groovy.lang.MetaClassImpl.chooseMethodInternal(MetaClassImpl.java:2983)
+	at groovy.lang.MetaClassImpl.chooseMethod(MetaClassImpl.java:2926)
+	at groovy.lang.MetaClassImpl.getMethodWithCachingInternal(MetaClassImpl.java:1203)
+	at groovy.lang.MetaClassImpl.createPogoCallSite(MetaClassImpl.java:3160)
+	at groovy.lang.ExpandoMetaClass.createPogoCallSite(ExpandoMetaClass.java:1299)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createPogoSite(CallSiteArray.java:147)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createCallSite(CallSiteArray.java:161)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.grails.plugins.DomainClassGrailsPlugin$_closure3.doCall(DomainClassGrailsPlugin.groovy:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1276)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1085)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.invokeOnChangeListener(DefaultGrailsPlugin.java:767)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:716)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:731)
+	at org.codehaus.groovy.grails.plugins.AbstractGrailsPluginManager.informOfClassChange(AbstractGrailsPluginManager.java:408)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher$2.run(GrailsProjectWatcher.java:246)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher.firePendingClassChangeEvents(GrailsProjectWatcher.java:107)
+	at org.codehaus.groovy.grails.cli.agent.GrailsPluginManagerReloadPlugin.reloadEvent(GrailsPluginManagerReloadPlugin.java:42)
+	at org.springsource.loaded.TypeRegistry.fireReloadEvent(TypeRegistry.java:1767)
+	at org.springsource.loaded.ReloadableType.loadNewVersion(ReloadableType.java:405)
+	at org.springsource.loaded.TypeRegistry.loadNewVersion(TypeRegistry.java:845)
+	at org.springsource.loaded.agent.ReloadableFileChangeListener.fileChanged(ReloadableFileChangeListener.java:51)
+	at org.springsource.loaded.agent.Watcher.determineChangesSince(FileSystemWatcher.java:235)
+	at org.springsource.loaded.agent.Watcher.run(FileSystemWatcher.java:219)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:34,056 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@435dfb5f] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:34,057 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@435dfb5f] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:34,057 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@435dfb5f] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:35,071 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@694c3f17] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at groovy.lang.MetaClassImpl.chooseMostSpecificParams(MetaClassImpl.java:3031)
+	at groovy.lang.MetaClassImpl.chooseMethodInternal(MetaClassImpl.java:2983)
+	at groovy.lang.MetaClassImpl.chooseMethod(MetaClassImpl.java:2926)
+	at groovy.lang.MetaClassImpl.getMethodWithCachingInternal(MetaClassImpl.java:1203)
+	at groovy.lang.MetaClassImpl.createPogoCallSite(MetaClassImpl.java:3160)
+	at groovy.lang.ExpandoMetaClass.createPogoCallSite(ExpandoMetaClass.java:1299)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createPogoSite(CallSiteArray.java:147)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createCallSite(CallSiteArray.java:161)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.grails.plugins.DomainClassGrailsPlugin$_closure3.doCall(DomainClassGrailsPlugin.groovy:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1276)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1085)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.invokeOnChangeListener(DefaultGrailsPlugin.java:767)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:716)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:731)
+	at org.codehaus.groovy.grails.plugins.AbstractGrailsPluginManager.informOfClassChange(AbstractGrailsPluginManager.java:408)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher$2.run(GrailsProjectWatcher.java:246)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher.firePendingClassChangeEvents(GrailsProjectWatcher.java:107)
+	at org.codehaus.groovy.grails.cli.agent.GrailsPluginManagerReloadPlugin.reloadEvent(GrailsPluginManagerReloadPlugin.java:42)
+	at org.springsource.loaded.TypeRegistry.fireReloadEvent(TypeRegistry.java:1767)
+	at org.springsource.loaded.ReloadableType.loadNewVersion(ReloadableType.java:405)
+	at org.springsource.loaded.TypeRegistry.loadNewVersion(TypeRegistry.java:845)
+	at org.springsource.loaded.agent.ReloadableFileChangeListener.fileChanged(ReloadableFileChangeListener.java:51)
+	at org.springsource.loaded.agent.Watcher.determineChangesSince(FileSystemWatcher.java:235)
+	at org.springsource.loaded.agent.Watcher.run(FileSystemWatcher.java:219)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:35,075 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@694c3f17] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:35,076 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@694c3f17] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:35,076 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@694c3f17] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:38,784 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@31bac1d8] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at groovy.lang.MetaClassImpl.chooseMostSpecificParams(MetaClassImpl.java:3031)
+	at groovy.lang.MetaClassImpl.chooseMethodInternal(MetaClassImpl.java:2983)
+	at groovy.lang.MetaClassImpl.chooseMethod(MetaClassImpl.java:2926)
+	at groovy.lang.MetaClassImpl.getMethodWithCachingInternal(MetaClassImpl.java:1203)
+	at groovy.lang.MetaClassImpl.createPogoCallSite(MetaClassImpl.java:3160)
+	at groovy.lang.ExpandoMetaClass.createPogoCallSite(ExpandoMetaClass.java:1299)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createPogoSite(CallSiteArray.java:147)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createCallSite(CallSiteArray.java:161)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.grails.plugins.DomainClassGrailsPlugin$_closure3.doCall(DomainClassGrailsPlugin.groovy:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1276)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1085)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.invokeOnChangeListener(DefaultGrailsPlugin.java:767)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:716)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:731)
+	at org.codehaus.groovy.grails.plugins.AbstractGrailsPluginManager.informOfClassChange(AbstractGrailsPluginManager.java:408)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher$2.run(GrailsProjectWatcher.java:246)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher.firePendingClassChangeEvents(GrailsProjectWatcher.java:107)
+	at org.codehaus.groovy.grails.cli.agent.GrailsPluginManagerReloadPlugin.reloadEvent(GrailsPluginManagerReloadPlugin.java:42)
+	at org.springsource.loaded.TypeRegistry.fireReloadEvent(TypeRegistry.java:1767)
+	at org.springsource.loaded.ReloadableType.loadNewVersion(ReloadableType.java:405)
+	at org.springsource.loaded.TypeRegistry.loadNewVersion(TypeRegistry.java:845)
+	at org.springsource.loaded.agent.ReloadableFileChangeListener.fileChanged(ReloadableFileChangeListener.java:51)
+	at org.springsource.loaded.agent.Watcher.determineChangesSince(FileSystemWatcher.java:235)
+	at org.springsource.loaded.agent.Watcher.run(FileSystemWatcher.java:219)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:38,785 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@31bac1d8] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:38,785 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@31bac1d8] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:31:38,785 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@31bac1d8] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,322 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@68bf7345] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at groovy.lang.MetaClassImpl.chooseMostSpecificParams(MetaClassImpl.java:3031)
+	at groovy.lang.MetaClassImpl.chooseMethodInternal(MetaClassImpl.java:2983)
+	at groovy.lang.MetaClassImpl.chooseMethod(MetaClassImpl.java:2926)
+	at groovy.lang.MetaClassImpl.getMethodWithCachingInternal(MetaClassImpl.java:1203)
+	at groovy.lang.MetaClassImpl.createPogoCallSite(MetaClassImpl.java:3160)
+	at groovy.lang.ExpandoMetaClass.createPogoCallSite(ExpandoMetaClass.java:1299)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createPogoSite(CallSiteArray.java:147)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createCallSite(CallSiteArray.java:161)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.grails.plugins.DomainClassGrailsPlugin$_closure3.doCall(DomainClassGrailsPlugin.groovy:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1276)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1085)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.invokeOnChangeListener(DefaultGrailsPlugin.java:767)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:716)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:731)
+	at org.codehaus.groovy.grails.plugins.AbstractGrailsPluginManager.informOfClassChange(AbstractGrailsPluginManager.java:408)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher$2.run(GrailsProjectWatcher.java:246)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher.firePendingClassChangeEvents(GrailsProjectWatcher.java:107)
+	at org.codehaus.groovy.grails.cli.agent.GrailsPluginManagerReloadPlugin.reloadEvent(GrailsPluginManagerReloadPlugin.java:42)
+	at org.springsource.loaded.TypeRegistry.fireReloadEvent(TypeRegistry.java:1767)
+	at org.springsource.loaded.ReloadableType.loadNewVersion(ReloadableType.java:405)
+	at org.springsource.loaded.TypeRegistry.loadNewVersion(TypeRegistry.java:845)
+	at org.springsource.loaded.agent.ReloadableFileChangeListener.fileChanged(ReloadableFileChangeListener.java:51)
+	at org.springsource.loaded.agent.Watcher.determineChangesSince(FileSystemWatcher.java:235)
+	at org.springsource.loaded.agent.Watcher.run(FileSystemWatcher.java:219)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,324 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@68bf7345] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,324 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@68bf7345] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,326 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@68bf7345] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,432 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@18dac40d] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at groovy.lang.MetaClassImpl.chooseMostSpecificParams(MetaClassImpl.java:3031)
+	at groovy.lang.MetaClassImpl.chooseMethodInternal(MetaClassImpl.java:2983)
+	at groovy.lang.MetaClassImpl.chooseMethod(MetaClassImpl.java:2926)
+	at groovy.lang.MetaClassImpl.getMethodWithCachingInternal(MetaClassImpl.java:1203)
+	at groovy.lang.MetaClassImpl.createPogoCallSite(MetaClassImpl.java:3160)
+	at groovy.lang.ExpandoMetaClass.createPogoCallSite(ExpandoMetaClass.java:1299)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createPogoSite(CallSiteArray.java:147)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createCallSite(CallSiteArray.java:161)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.grails.plugins.DomainClassGrailsPlugin$_closure3.doCall(DomainClassGrailsPlugin.groovy:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1276)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1085)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.invokeOnChangeListener(DefaultGrailsPlugin.java:767)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:716)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:731)
+	at org.codehaus.groovy.grails.plugins.AbstractGrailsPluginManager.informOfClassChange(AbstractGrailsPluginManager.java:408)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher$2.run(GrailsProjectWatcher.java:246)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher.firePendingClassChangeEvents(GrailsProjectWatcher.java:107)
+	at org.codehaus.groovy.grails.cli.agent.GrailsPluginManagerReloadPlugin.reloadEvent(GrailsPluginManagerReloadPlugin.java:42)
+	at org.springsource.loaded.TypeRegistry.fireReloadEvent(TypeRegistry.java:1767)
+	at org.springsource.loaded.ReloadableType.loadNewVersion(ReloadableType.java:405)
+	at org.springsource.loaded.TypeRegistry.loadNewVersion(TypeRegistry.java:845)
+	at org.springsource.loaded.agent.ReloadableFileChangeListener.fileChanged(ReloadableFileChangeListener.java:51)
+	at org.springsource.loaded.agent.Watcher.determineChangesSince(FileSystemWatcher.java:235)
+	at org.springsource.loaded.agent.Watcher.run(FileSystemWatcher.java:219)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,433 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@18dac40d] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,433 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@18dac40d] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,433 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@18dac40d] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,648 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@3278e69d] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at groovy.lang.MetaClassImpl.chooseMostSpecificParams(MetaClassImpl.java:3031)
+	at groovy.lang.MetaClassImpl.chooseMethodInternal(MetaClassImpl.java:2983)
+	at groovy.lang.MetaClassImpl.chooseMethod(MetaClassImpl.java:2926)
+	at groovy.lang.MetaClassImpl.getMethodWithCachingInternal(MetaClassImpl.java:1203)
+	at groovy.lang.MetaClassImpl.createPogoCallSite(MetaClassImpl.java:3160)
+	at groovy.lang.ExpandoMetaClass.createPogoCallSite(ExpandoMetaClass.java:1299)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createPogoSite(CallSiteArray.java:147)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createCallSite(CallSiteArray.java:161)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.grails.plugins.DomainClassGrailsPlugin$_closure3.doCall(DomainClassGrailsPlugin.groovy:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1276)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1085)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.invokeOnChangeListener(DefaultGrailsPlugin.java:767)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:716)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:731)
+	at org.codehaus.groovy.grails.plugins.AbstractGrailsPluginManager.informOfClassChange(AbstractGrailsPluginManager.java:408)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher$2.run(GrailsProjectWatcher.java:246)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher.firePendingClassChangeEvents(GrailsProjectWatcher.java:107)
+	at org.codehaus.groovy.grails.cli.agent.GrailsPluginManagerReloadPlugin.reloadEvent(GrailsPluginManagerReloadPlugin.java:42)
+	at org.springsource.loaded.TypeRegistry.fireReloadEvent(TypeRegistry.java:1767)
+	at org.springsource.loaded.ReloadableType.loadNewVersion(ReloadableType.java:405)
+	at org.springsource.loaded.TypeRegistry.loadNewVersion(TypeRegistry.java:845)
+	at org.springsource.loaded.agent.ReloadableFileChangeListener.fileChanged(ReloadableFileChangeListener.java:51)
+	at org.springsource.loaded.agent.Watcher.determineChangesSince(FileSystemWatcher.java:235)
+	at org.springsource.loaded.agent.Watcher.run(FileSystemWatcher.java:219)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,711 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@3278e69d] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,712 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@3278e69d] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,712 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@3278e69d] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,896 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@694c3f17] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at groovy.lang.MetaClassImpl.chooseMostSpecificParams(MetaClassImpl.java:3031)
+	at groovy.lang.MetaClassImpl.chooseMethodInternal(MetaClassImpl.java:2983)
+	at groovy.lang.MetaClassImpl.chooseMethod(MetaClassImpl.java:2926)
+	at groovy.lang.MetaClassImpl.getMethodWithCachingInternal(MetaClassImpl.java:1203)
+	at groovy.lang.MetaClassImpl.createPogoCallSite(MetaClassImpl.java:3160)
+	at groovy.lang.ExpandoMetaClass.createPogoCallSite(ExpandoMetaClass.java:1299)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createPogoSite(CallSiteArray.java:147)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createCallSite(CallSiteArray.java:161)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.grails.plugins.DomainClassGrailsPlugin$_closure3.doCall(DomainClassGrailsPlugin.groovy:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1276)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1085)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.invokeOnChangeListener(DefaultGrailsPlugin.java:767)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:716)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:731)
+	at org.codehaus.groovy.grails.plugins.AbstractGrailsPluginManager.informOfClassChange(AbstractGrailsPluginManager.java:408)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher$2.run(GrailsProjectWatcher.java:246)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher.firePendingClassChangeEvents(GrailsProjectWatcher.java:107)
+	at org.codehaus.groovy.grails.cli.agent.GrailsPluginManagerReloadPlugin.reloadEvent(GrailsPluginManagerReloadPlugin.java:42)
+	at org.springsource.loaded.TypeRegistry.fireReloadEvent(TypeRegistry.java:1767)
+	at org.springsource.loaded.ReloadableType.loadNewVersion(ReloadableType.java:405)
+	at org.springsource.loaded.TypeRegistry.loadNewVersion(TypeRegistry.java:845)
+	at org.springsource.loaded.agent.ReloadableFileChangeListener.fileChanged(ReloadableFileChangeListener.java:51)
+	at org.springsource.loaded.agent.Watcher.determineChangesSince(FileSystemWatcher.java:235)
+	at org.springsource.loaded.agent.Watcher.run(FileSystemWatcher.java:219)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,898 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@694c3f17] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,898 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@694c3f17] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:03,898 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@694c3f17] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:04,080 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@435dfb5f] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at groovy.lang.MetaClassImpl.chooseMostSpecificParams(MetaClassImpl.java:3031)
+	at groovy.lang.MetaClassImpl.chooseMethodInternal(MetaClassImpl.java:2983)
+	at groovy.lang.MetaClassImpl.chooseMethod(MetaClassImpl.java:2926)
+	at groovy.lang.MetaClassImpl.getMethodWithCachingInternal(MetaClassImpl.java:1203)
+	at groovy.lang.MetaClassImpl.createPogoCallSite(MetaClassImpl.java:3160)
+	at groovy.lang.ExpandoMetaClass.createPogoCallSite(ExpandoMetaClass.java:1299)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createPogoSite(CallSiteArray.java:147)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createCallSite(CallSiteArray.java:161)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.grails.plugins.DomainClassGrailsPlugin$_closure3.doCall(DomainClassGrailsPlugin.groovy:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1276)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1085)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.invokeOnChangeListener(DefaultGrailsPlugin.java:767)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:716)
+	at org.codehaus.groovy.grails.plugins.DefaultGrailsPlugin.notifyOfEvent(DefaultGrailsPlugin.java:731)
+	at org.codehaus.groovy.grails.plugins.AbstractGrailsPluginManager.informOfClassChange(AbstractGrailsPluginManager.java:408)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher$2.run(GrailsProjectWatcher.java:246)
+	at org.codehaus.groovy.grails.project.compiler.GrailsProjectWatcher.firePendingClassChangeEvents(GrailsProjectWatcher.java:107)
+	at org.codehaus.groovy.grails.cli.agent.GrailsPluginManagerReloadPlugin.reloadEvent(GrailsPluginManagerReloadPlugin.java:42)
+	at org.springsource.loaded.TypeRegistry.fireReloadEvent(TypeRegistry.java:1767)
+	at org.springsource.loaded.ReloadableType.loadNewVersion(ReloadableType.java:405)
+	at org.springsource.loaded.TypeRegistry.loadNewVersion(TypeRegistry.java:845)
+	at org.springsource.loaded.agent.ReloadableFileChangeListener.fileChanged(ReloadableFileChangeListener.java:51)
+	at org.springsource.loaded.agent.Watcher.determineChangesSince(FileSystemWatcher.java:235)
+	at org.springsource.loaded.agent.Watcher.run(FileSystemWatcher.java:219)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:04,080 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@435dfb5f] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:04,080 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@435dfb5f] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:34:04,080 [FileSystemWatcher: files=#8 cl=groovy.lang.GroovyClassLoader@435dfb5f] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method grails.spring.BeanBuilder#registerBeans.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[interface org.codehaus.groovy.grails.commons.spring.RuntimeSpringConfiguration]
+	[interface org.springframework.beans.factory.support.BeanDefinitionRegistry]
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:45:20,957 [http-bio-8080-exec-12] ERROR StackTrace  - Full Stack Trace:
+java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.Boolean
+	at org.hibernate.type.descriptor.java.BooleanTypeDescriptor.unwrap(BooleanTypeDescriptor.java:36)
+	at org.hibernate.type.descriptor.sql.BooleanTypeDescriptor$1.doBind(BooleanTypeDescriptor.java:62)
+	at org.hibernate.type.descriptor.sql.BasicBinder.bind(BasicBinder.java:90)
+	at org.hibernate.type.AbstractStandardBasicType.nullSafeSet(AbstractStandardBasicType.java:286)
+	at org.hibernate.type.AbstractStandardBasicType.nullSafeSet(AbstractStandardBasicType.java:281)
+	at org.hibernate.loader.Loader.bindPositionalParameters(Loader.java:1994)
+	at org.hibernate.loader.Loader.bindParameterValues(Loader.java:1965)
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1900)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1861)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1838)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:909)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:354)
+	at org.hibernate.loader.Loader.doList(Loader.java:2553)
+	at org.hibernate.loader.Loader.doList(Loader.java:2539)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2369)
+	at org.hibernate.loader.Loader.list(Loader.java:2364)
+	at org.hibernate.loader.criteria.CriteriaLoader.list(CriteriaLoader.java:126)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1682)
+	at org.hibernate.internal.CriteriaImpl.list(CriteriaImpl.java:380)
+	at grails.orm.PagedResultList.<init>(PagedResultList.java:54)
+	at grails.orm.HibernateCriteriaBuilder.createPagedResultList(HibernateCriteriaBuilder.java:161)
+	at org.codehaus.groovy.grails.orm.hibernate.query.AbstractHibernateCriteriaBuilder.invokeMethod(AbstractHibernateCriteriaBuilder.java:1608)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:45)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:120)
+	at bolao.JogoController$$EOhkyWnQ.$tt__index(JogoController.groovy:22)
+	at bolao.JogoController$$DOhkyWnQ.$tt__index(Unknown Source)
+	at bolao.JogoController.$tt__index(JogoController.groovy)
+	at bolao.JogoController$_index_closure1$$EOhkyWnQ.doCall(JogoController.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReloadedTypeInvoker$2.invoke(ReloadedTypeInvoker.java:122)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1299)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1085)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at bolao.JogoController$_index_closure1.call(JogoController.groovy)
+	at groovy.lang.Closure.call(Closure.java:439)
+	at bolao.JogoController$_index_closure1.call(JogoController.groovy)
+	at org.codehaus.groovy.grails.orm.support.GrailsTransactionTemplate$2.doInTransaction(GrailsTransactionTemplate.groovy:88)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at org.codehaus.groovy.grails.orm.support.GrailsTransactionTemplate.execute(GrailsTransactionTemplate.groovy:85)
+	at bolao.JogoController$$EOhkyWnQ.index(JogoController.groovy)
+	at bolao.JogoController$$DOhkyWnQ.index(Unknown Source)
+	at bolao.JogoController.index(JogoController.groovy)
+	at bolao.JogoController$$EOhkyWnQ.index(JogoController.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReloadedTypeInvoker$2.invoke(ReloadedTypeInvoker.java:122)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1299)
+	at org.codehaus.groovy.grails.web.servlet.mvc.MixedGrailsControllerHelper.invoke(MixedGrailsControllerHelper.java:154)
+	at org.codehaus.groovy.grails.web.servlet.mvc.AbstractGrailsControllerHelper.handleAction(AbstractGrailsControllerHelper.java:375)
+	at org.codehaus.groovy.grails.web.servlet.mvc.AbstractGrailsControllerHelper.executeAction(AbstractGrailsControllerHelper.java:252)
+	at org.codehaus.groovy.grails.web.servlet.mvc.AbstractGrailsControllerHelper.handleURI(AbstractGrailsControllerHelper.java:205)
+	at org.codehaus.groovy.grails.web.servlet.mvc.AbstractGrailsControllerHelper.handleURI(AbstractGrailsControllerHelper.java:126)
+	at org.codehaus.groovy.grails.web.servlet.mvc.SimpleGrailsController.handleRequest(SimpleGrailsController.java:72)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:50)
+	at org.codehaus.groovy.grails.web.servlet.GrailsDispatcherServlet.doDispatch(GrailsDispatcherServlet.java:347)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:870)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:852)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:620)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:837)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:748)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:486)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:411)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:338)
+	at org.codehaus.groovy.grails.web.mapping.UrlMappingUtils.forwardRequestForUrlMappingInfo(UrlMappingUtils.java:178)
+	at org.codehaus.groovy.grails.web.mapping.UrlMappingUtils.forwardRequestForUrlMappingInfo(UrlMappingUtils.java:144)
+	at org.codehaus.groovy.grails.web.mapping.UrlMappingUtils.forwardRequestForUrlMappingInfo(UrlMappingUtils.java:135)
+	at org.codehaus.groovy.grails.web.mapping.filter.UrlMappingsFilter.doFilterInternal(UrlMappingsFilter.java:216)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:146)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilter(BasicAuthenticationFilter.java:201)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.codehaus.groovy.grails.web.servlet.mvc.GrailsWebRequestFilter.doFilterInternal(GrailsWebRequestFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.codehaus.groovy.grails.web.filters.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:67)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:315)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:45:20,959 [http-bio-8080-exec-12] ERROR StackTrace  - Full Stack Trace:
+java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.Boolean
+	at grails.orm.PagedResultList.<init>(PagedResultList.java:54)
+	at grails.orm.HibernateCriteriaBuilder.createPagedResultList(HibernateCriteriaBuilder.java:161)
+	at bolao.JogoController$$EOhkyWnQ.$tt__index(JogoController.groovy:22)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:45:20,968 [http-bio-8080-exec-12] ERROR StackTrace  - Full Stack Trace:
+java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.Boolean
+	at grails.orm.PagedResultList.<init>(PagedResultList.java:54)
+	at grails.orm.HibernateCriteriaBuilder.createPagedResultList(HibernateCriteriaBuilder.java:161)
+	at bolao.JogoController$$EOhkyWnQ.$tt__index(JogoController.groovy:22)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:45:20,969 [http-bio-8080-exec-12] ERROR StackTrace  - Full Stack Trace:
+java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.Boolean
+	at grails.orm.PagedResultList.<init>(PagedResultList.java:54)
+	at grails.orm.HibernateCriteriaBuilder.createPagedResultList(HibernateCriteriaBuilder.java:161)
+	at bolao.JogoController$$EOhkyWnQ.$tt__index(JogoController.groovy:22)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:45:20,969 [http-bio-8080-exec-12] ERROR StackTrace  - Full Stack Trace:
+java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.Boolean
+	at grails.orm.PagedResultList.<init>(PagedResultList.java:54)
+	at grails.orm.HibernateCriteriaBuilder.createPagedResultList(HibernateCriteriaBuilder.java:161)
+	at bolao.JogoController$$EOhkyWnQ.$tt__index(JogoController.groovy:22)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:45:20,969 [http-bio-8080-exec-12] ERROR StackTrace  - Full Stack Trace:
+java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.Boolean
+	at grails.orm.PagedResultList.<init>(PagedResultList.java:54)
+	at grails.orm.HibernateCriteriaBuilder.createPagedResultList(HibernateCriteriaBuilder.java:161)
+	at bolao.JogoController$$EOhkyWnQ.$tt__index(JogoController.groovy:22)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:46:03,410 [http-bio-8080-exec-13] ERROR StackTrace  - Full Stack Trace:
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at org.hibernate.validator.internal.util.ExecutableHelper.instanceMethodParametersResolveToSameTypes(ExecutableHelper.java:131)
+	at org.hibernate.validator.internal.util.ExecutableHelper.overrides(ExecutableHelper.java:94)
+	at org.hibernate.validator.internal.util.ExecutableHelper.overrides(ExecutableHelper.java:58)
+	at org.hibernate.validator.internal.metadata.aggregated.ExecutableMetaData$Builder.accepts(ExecutableMetaData.java:321)
+	at org.hibernate.validator.internal.metadata.aggregated.BeanMetaDataImpl$BuilderDelegate.add(BeanMetaDataImpl.java:574)
+	at org.hibernate.validator.internal.metadata.aggregated.BeanMetaDataImpl$BeanMetaDataBuilder.addMetaDataToBuilder(BeanMetaDataImpl.java:488)
+	at org.hibernate.validator.internal.metadata.aggregated.BeanMetaDataImpl$BeanMetaDataBuilder.add(BeanMetaDataImpl.java:482)
+	at org.hibernate.validator.internal.metadata.BeanMetaDataManager.createBeanMetaData(BeanMetaDataManager.java:188)
+	at org.hibernate.validator.internal.metadata.BeanMetaDataManager.getBeanMetaData(BeanMetaDataManager.java:152)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:152)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:137)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreUpdate(BeanValidationEventListener.java:103)
+	at org.hibernate.action.internal.EntityUpdateAction.preUpdate(EntityUpdateAction.java:257)
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:134)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:463)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:349)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:350)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:56)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1222)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.SavePersistentMethod.flushSession(SavePersistentMethod.java:87)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.SavePersistentMethod$1.doInHibernate(SavePersistentMethod.java:60)
+	at org.codehaus.groovy.grails.orm.hibernate.GrailsHibernateTemplate.doExecute(GrailsHibernateTemplate.java:173)
+	at org.codehaus.groovy.grails.orm.hibernate.GrailsHibernateTemplate.execute(GrailsHibernateTemplate.java:117)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.SavePersistentMethod.performSave(SavePersistentMethod.java:56)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractSavePersistentMethod.doInvokeInternal(AbstractSavePersistentMethod.java:215)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractDynamicPersistentMethod.invoke(AbstractDynamicPersistentMethod.java:68)
+	at org.codehaus.groovy.grails.orm.hibernate.HibernateGormInstanceApi.save(HibernateGormInstanceApi.groovy:195)
+	at bolao.Jogo$$EOhkvkq8.save(Jogo.groovy)
+	at bolao.Jogo$$DOhkvkq8.save(Unknown Source)
+	at bolao.Jogo.save(Jogo.groovy)
+	at bolao.Jogo$save$2.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at bolao.JogoController$$EOhkyhyy.$tt__update(JogoController.groovy:101)
+	at bolao.JogoController$$DOhkyhyy.$tt__update(Unknown Source)
+	at bolao.JogoController.$tt__update(JogoController.groovy)
+	at bolao.JogoController$_update_closure7$$EOhkyhyy.doCall(JogoController.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReloadedTypeInvoker$2.invoke(ReloadedTypeInvoker.java:122)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1299)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1085)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:909)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at bolao.JogoController$_update_closure7.call(JogoController.groovy)
+	at groovy.lang.Closure.call(Closure.java:439)
+	at bolao.JogoController$_update_closure7.call(JogoController.groovy)
+	at org.codehaus.groovy.grails.orm.support.GrailsTransactionTemplate$2.doInTransaction(GrailsTransactionTemplate.groovy:88)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at org.codehaus.groovy.grails.orm.support.GrailsTransactionTemplate.execute(GrailsTransactionTemplate.groovy:85)
+	at bolao.JogoController$$EOhkyhyy.update(JogoController.groovy)
+	at bolao.JogoController$$DOhkyhyy.update(Unknown Source)
+	at bolao.JogoController.update(JogoController.groovy)
+	at bolao.JogoController$$EOhkyhyy.update(JogoController.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReloadedTypeInvoker$2.invoke(ReloadedTypeInvoker.java:122)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1299)
+	at org.codehaus.groovy.grails.web.servlet.mvc.MixedGrailsControllerHelper.invoke(MixedGrailsControllerHelper.java:154)
+	at org.codehaus.groovy.grails.web.servlet.mvc.AbstractGrailsControllerHelper.handleAction(AbstractGrailsControllerHelper.java:375)
+	at org.codehaus.groovy.grails.web.servlet.mvc.AbstractGrailsControllerHelper.executeAction(AbstractGrailsControllerHelper.java:252)
+	at org.codehaus.groovy.grails.web.servlet.mvc.AbstractGrailsControllerHelper.handleURI(AbstractGrailsControllerHelper.java:205)
+	at org.codehaus.groovy.grails.web.servlet.mvc.AbstractGrailsControllerHelper.handleURI(AbstractGrailsControllerHelper.java:126)
+	at org.codehaus.groovy.grails.web.servlet.mvc.SimpleGrailsController.handleRequest(SimpleGrailsController.java:72)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:50)
+	at org.codehaus.groovy.grails.web.servlet.GrailsDispatcherServlet.doDispatch(GrailsDispatcherServlet.java:347)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:870)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:874)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:837)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:748)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:486)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:411)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:338)
+	at org.codehaus.groovy.grails.web.mapping.UrlMappingUtils.forwardRequestForUrlMappingInfo(UrlMappingUtils.java:178)
+	at org.codehaus.groovy.grails.web.mapping.UrlMappingUtils.forwardRequestForUrlMappingInfo(UrlMappingUtils.java:144)
+	at org.codehaus.groovy.grails.web.mapping.UrlMappingUtils.forwardRequestForUrlMappingInfo(UrlMappingUtils.java:135)
+	at org.codehaus.groovy.grails.web.mapping.filter.UrlMappingsFilter.doFilterInternal(UrlMappingsFilter.java:216)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:146)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilter(BasicAuthenticationFilter.java:201)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.codehaus.groovy.grails.web.servlet.mvc.GrailsWebRequestFilter.doFilterInternal(GrailsWebRequestFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.codehaus.groovy.grails.web.filters.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:315)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:46:03,411 [http-bio-8080-exec-13] ERROR StackTrace  - Full Stack Trace:
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at bolao.JogoController$$EOhkyhyy.$tt__update(JogoController.groovy:101)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:46:03,413 [http-bio-8080-exec-13] ERROR StackTrace  - Full Stack Trace:
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at bolao.JogoController$$EOhkyhyy.$tt__update(JogoController.groovy:101)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:46:03,413 [http-bio-8080-exec-13] ERROR StackTrace  - Full Stack Trace:
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at bolao.JogoController$$EOhkyhyy.$tt__update(JogoController.groovy:101)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:46:03,413 [http-bio-8080-exec-13] ERROR StackTrace  - Full Stack Trace:
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at bolao.JogoController$$EOhkyhyy.$tt__update(JogoController.groovy:101)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:46:03,413 [http-bio-8080-exec-13] ERROR StackTrace  - Full Stack Trace:
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at bolao.JogoController$$EOhkyhyy.$tt__update(JogoController.groovy:101)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:50:14,412 [http-bio-8080-exec-8] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at org.codehaus.groovy.grails.commons.DefaultGrailsControllerClass.mapsToURI(DefaultGrailsControllerClass.java:192)
+	at org.codehaus.groovy.grails.commons.ControllerArtefactHandler.getArtefactForFeature(ControllerArtefactHandler.java:111)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsApplication.getArtefactForFeature(DefaultGrailsApplication.java:461)
+	at grails.plugin.springsecurity.web.access.intercept.AnnotationFilterInvocationDefinition.isController(AnnotationFilterInvocationDefinition.java:171)
+	at grails.plugin.springsecurity.web.access.intercept.AnnotationFilterInvocationDefinition.findGrailsUrl(AnnotationFilterInvocationDefinition.java:160)
+	at grails.plugin.springsecurity.web.access.intercept.AnnotationFilterInvocationDefinition.determineUrl(AnnotationFilterInvocationDefinition.java:115)
+	at grails.plugin.springsecurity.web.access.intercept.AbstractFilterInvocationDefinition.getAttributes(AbstractFilterInvocationDefinition.java:86)
+	at org.springframework.security.access.intercept.AbstractSecurityInterceptor.beforeInvocation(AbstractSecurityInterceptor.java:174)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:146)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilter(BasicAuthenticationFilter.java:201)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.codehaus.groovy.grails.web.servlet.mvc.GrailsWebRequestFilter.doFilterInternal(GrailsWebRequestFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.codehaus.groovy.grails.web.filters.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:67)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:315)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:50:14,416 [http-bio-8080-exec-8] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at grails.plugin.springsecurity.web.access.intercept.AnnotationFilterInvocationDefinition.isController(AnnotationFilterInvocationDefinition.java:171)
+	at grails.plugin.springsecurity.web.access.intercept.AnnotationFilterInvocationDefinition.findGrailsUrl(AnnotationFilterInvocationDefinition.java:160)
+	at grails.plugin.springsecurity.web.access.intercept.AnnotationFilterInvocationDefinition.determineUrl(AnnotationFilterInvocationDefinition.java:115)
+	at grails.plugin.springsecurity.web.access.intercept.AbstractFilterInvocationDefinition.getAttributes(AbstractFilterInvocationDefinition.java:86)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:50:14,474 [http-bio-8080-exec-8] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at grails.plugin.springsecurity.web.access.intercept.AnnotationFilterInvocationDefinition.isController(AnnotationFilterInvocationDefinition.java:171)
+	at grails.plugin.springsecurity.web.access.intercept.AnnotationFilterInvocationDefinition.findGrailsUrl(AnnotationFilterInvocationDefinition.java:160)
+	at grails.plugin.springsecurity.web.access.intercept.AnnotationFilterInvocationDefinition.determineUrl(AnnotationFilterInvocationDefinition.java:115)
+	at grails.plugin.springsecurity.web.access.intercept.AbstractFilterInvocationDefinition.getAttributes(AbstractFilterInvocationDefinition.java:86)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-20 16:50:14,474 [http-bio-8080-exec-8] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at grails.plugin.springsecurity.web.access.intercept.AnnotationFilterInvocationDefinition.isController(AnnotationFilterInvocationDefinition.java:171)
+	at grails.plugin.springsecurity.web.access.intercept.AnnotationFilterInvocationDefinition.findGrailsUrl(AnnotationFilterInvocationDefinition.java:160)
+	at grails.plugin.springsecurity.web.access.intercept.AnnotationFilterInvocationDefinition.determineUrl(AnnotationFilterInvocationDefinition.java:115)
+	at grails.plugin.springsecurity.web.access.intercept.AbstractFilterInvocationDefinition.getAttributes(AbstractFilterInvocationDefinition.java:86)
+	at grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter.doFilter(GrailsAnonymousAuthenticationFilter.java:53)
+	at grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter.doFilter(RequestHolderAuthenticationFilter.java:49)
+	at grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter.doFilter(MutableLogoutFilter.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)

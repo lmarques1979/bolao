@@ -20,7 +20,7 @@ class JogoController extends BaseController{
         Date datafiltro = new Date(datahoje.getTime() - TimeUnit.HOURS.toMillis(2)); // menos 2 horas 
 		
 		def resultado = Jogo.createCriteria().list (configuracoes) {
-			ge("datajogo" , datafiltro)
+			eq("encerrado" , false)
 			
 		}
         respond resultado, model:[jogoInstanceCount: resultado.totalCount]
@@ -35,16 +35,13 @@ class JogoController extends BaseController{
 		
 		def configuracoes = configuracaoParams
 		def filtro = params.filtrodatas
-		Date datahoje = new Date(); // oldDate == current time
-        Date datafiltromenos = new Date(datahoje.getTime() - TimeUnit.HOURS.toMillis(2)); // menos 2 horas 
-		Date datafiltromais = new Date(datahoje.getTime() + TimeUnit.HOURS.toMillis(2)); // mais 2 horas
 		
 		def resultadofiltro = Jogo.createCriteria().list (configuracoes) {
 			if(filtro=='2'){
-				ge("datajogo" , datafiltromais)
+				eq("encerrado" , false)
 			}
 			if(filtro=='3'){
-				lt("datajogo" , datafiltromenos )
+				eq("encerrado" , true )
 			}
 		}
 		respond resultadofiltro, model:[JogoInstanceCount: resultadofiltro.totalCount]

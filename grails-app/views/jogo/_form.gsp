@@ -13,6 +13,7 @@
 						<th>Score Time 2</th>
 						<th>Time 2</th>
 						<th>Campeonato</th>
+						<th>Encerrado</th>
 						
 					</tr>
 			</thead>
@@ -63,6 +64,8 @@
 							<g:select id="campeonato" name="campeonato.id" from="${bolao.Campeonato.list()}" optionValue="descricao" optionKey="id" required="" value="${jogoInstance?.campeonato?.id}" class="many-to-one"/>
 							
 						</td>
-					
+						<td>
+							<g:checkBox name="encerrado" value="${bolao?.encerrado}" />
+						</td>
 					</tr>
 </table>

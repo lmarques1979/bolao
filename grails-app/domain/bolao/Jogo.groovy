@@ -12,6 +12,7 @@ class Jogo {
 	int	scoretime1=0
 	int scoretime2=0
 	String local
+	boolean encerrado=false
 	Date dateCreated
 	Date lastUpdated
 	
@@ -23,6 +24,7 @@ class Jogo {
 		time1(nullable: false, blank: false)
 		time2(nullable: false , blank: false)
 		local(nullable: true , blank: true)
+		encerrado(nullable: true , blank: true)
 		fase(nullable: false , blank: false)
 		descricaofase(nullable: false , blank: false)
 		scoretime1(nullable: true , blank: true , size: 1..3, matches:"[0-9]{1}[0-9]{1}[0-9]{1}")
