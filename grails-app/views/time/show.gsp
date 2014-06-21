@@ -38,7 +38,14 @@
 					
 				</li>
 				</g:if>
-			
+				<g:if test="${timeInstance?.campeonato?.descricao}">
+				<li class="fieldcontain">
+					<span id="imagem-label" class="property-label"><g:message code="time.campeonato.label" default="Campeonato" /></span>
+					
+						<span class="property-value" aria-labelledby="imagem-label"><g:fieldValue bean="${timeInstance?.campeonato}" field="descricao"/></span>
+					
+				</li>
+				</g:if>
 				
 			
 			</ol>

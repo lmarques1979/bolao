@@ -20,3 +20,11 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: timeInstance, field: 'campeonato', 'error')} required">
+	<label for="regra">
+		<g:message code="time.campeonato.label"/>
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="campeonato" name="campeonato.id" from="${bolao.Campeonato.list()}" optionKey="id" optionValue="descricao" required="" value="${timeInstance?.campeonato?.id}" class="many-to-one"/>
+
+</div>

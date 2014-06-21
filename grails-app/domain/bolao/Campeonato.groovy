@@ -9,7 +9,7 @@ class Campeonato {
 	Date dateCreated
 	Date lastUpdated
 	
-	static hasMany=[jogos: Jogo]
+	static hasMany=[jogos: Jogo, times: Time]
 	
 	static constraints = {
 		descricao(nullable: false, blank: false , size: 0..50)
@@ -17,6 +17,8 @@ class Campeonato {
 	}
 	
 	static mapping = {
+		jogos cascade: 'all-delete-orphan'
+		times cascade: 'all-delete-orphan'
 		sort descricao: "asc" // or "asc"
 		autoTimestamp true
 	}

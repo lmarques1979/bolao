@@ -17,9 +17,7 @@ class Usuario {
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
-	boolean enviaremail=true
-	boolean enviarsms=false
-	
+
 	static hasMany = [usuarioboloes: UsuarioBolao, usuarioregras: UsuarioRegra]
 	
 	static transients = ['springSecurityService']

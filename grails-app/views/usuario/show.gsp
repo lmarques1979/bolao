@@ -89,23 +89,6 @@
 				</li>
 				</g:if>
 				
-				<g:if test="${usuarioInstance?.enviaremail}">
-				<li class="fieldcontain">
-					<span id="enviaremail-label" class="property-label"><g:message code="usuario.enviaremail.label" default="Enviar E-mail" /></span>
-					
-						<span class="property-value" aria-labelledby="enviaremail-label"><g:formatBoolean boolean="${usuarioInstance?.enviaremail}" /></span>
-					
-				</li>
-				</g:if>
-				
-				<g:if test="${usuarioInstance?.enviarsms}">
-				<li class="fieldcontain">
-					<span id="enviarsms-label" class="property-label"><g:message code="usuario.enviarsms.label" default="Enviar SMS" /></span>
-					
-						<span class="property-value" aria-labelledby="enviarsms-label"><g:formatBoolean boolean="${usuarioInstance?.enviarsms}" /></span>
-					
-				</li>
-				</g:if>
 				
 				
 			

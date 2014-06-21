@@ -27,6 +27,7 @@
 					
 						<g:sortableColumn property="imagem" title="${message(code: 'time.imagem.label', default: 'Imagem')}" />
 					
+					    <g:sortableColumn property="campeonato" title="${message(code: 'time.campeonato.label', default: 'Campeonato')}" />
 					
 					</tr>
 				</thead>
@@ -37,7 +38,8 @@
 						<td><g:link action="show" id="${timeInstance.id}">${fieldValue(bean: timeInstance, field: "descricao")}</g:link></td>
 					
 						<td><asset:image src="bandeiras/${params.tamanhoiconetimes}/${fieldValue(bean: timeInstance, field: "imagem")}" title="${fieldValue(bean: timeInstance, field: "descricao")}"/></td>
-					
+						
+						<td>${timeInstance?.campeonato?.descricao}</td>
 					</tr>
 				</g:each>
 				</tbody>

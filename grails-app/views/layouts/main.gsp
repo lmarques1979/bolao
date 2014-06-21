@@ -25,9 +25,9 @@
 				<sec:ifLoggedIn>
 					<g:if test="${sec.loggedInUserInfo(field: 'username') == 'admin'}">
 						<li><g:link class="create" controller="Configuracao" action="index" ><g:message code="configuracao.label"/></g:link></li>
-						 <li><g:link class="create" controller="Jogo" action="index" ><g:message code="jogo.label"/></g:link></li>
-						 <li><g:link class="create" controller="Time" action="index" ><g:message code="time.label"/></g:link></li>
 						 <li><g:link class="create" controller="Campeonato" action="index" ><g:message code="campeonato.label"/></g:link></li>
+						 <li><g:link class="create" controller="Time" action="index" ><g:message code="time.label"/></g:link></li>
+						 <li><g:link class="create" controller="Jogo" action="index" ><g:message code="jogo.label"/></g:link></li>
 						 <li><g:link class="list" controller="Usuario" action="index"><g:message code="usuarios.label"/></g:link></li>
 						 <li><g:link class="create" controller="Regra" action="index"><g:message code="regra.label"/></g:link></li>
 					     <li><g:link class="create" controller="UsuarioRegra" action="index" ><g:message code="usuarioregra.label"/></g:link></li>
