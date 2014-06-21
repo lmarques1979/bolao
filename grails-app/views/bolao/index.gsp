@@ -22,36 +22,36 @@
 			<table>
 			<thead>
 					<tr>
-					
-						<th><g:message code="campeonato.label" default="Campeonato" /></th>
+						<g:sortableColumn property="descricao" title="${message(code: 'bolao.descricao.label', default: 'Descricao')}" />
 					
 						<th><g:message code="bolao.admin.label" default="Admin" /></th>
 					
-						<g:sortableColumn property="descricao" title="${message(code: 'bolao.descricao.label', default: 'Descricao')}" />
+						<th><g:message code="campeonato.label" default="Campeonato" /></th>
 					
 						<g:sortableColumn property="imagem" title="${message(code: 'bolao.imagem.label', default: 'Imagem')}" />
 					
-						<g:sortableColumn property="dateCreated" title="${message(code: 'dateCreated.label', default: 'Date Created')}" />
-					
-						<g:sortableColumn property="lastUpdated" title="${message(code: 'lastUpdated.label', default: 'Last Updated')}" />
-					
+						
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${bolaoInstanceList}" status="i" var="bolaoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${bolaoInstance.id}">${fieldValue(bean: bolaoInstance, field: "campeonato")}</g:link></td>
+						
+						<td><g:link action="show" id="${bolaoInstance.id}">${fieldValue(bean: bolaoInstance, field: "descricao")}</g:link></td>
 					
-						<td>${fieldValue(bean: bolaoInstance, field: "admin")}</td>
+						<td>${bolaoInstance?.admin?.primeironome}
+						     <g:if test="${bolaoInstance?.admin?.sobrenome}">
+								${" "+ bolaoInstance?.admin?.sobrenome}
+							 </g:if>	
+						</td>
 					
-						<td>${fieldValue(bean: bolaoInstance, field: "descricao")}</td>
+						<td>${bolaoInstance?.campeonato?.descricao}</td>
 					
-						<td>${fieldValue(bean: bolaoInstance, field: "imagem")}</td>
-					
-						<td><g:formatDate date="${bolaoInstance.dateCreated}" /></td>
-					
-						<td><g:formatDate date="${bolaoInstance.lastUpdated}" /></td>
+					    <td><g:if test="${bolaoInstance.imagem}">
+								<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="bolao/${bolaoInstance.descricao}/${bolaoInstance.imagem}" title="${bolaoInstance.descricao}"/>
+							</g:if>		
+						</td>	
 					
 					</tr>
 				</g:each>

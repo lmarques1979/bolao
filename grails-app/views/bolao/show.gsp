@@ -26,7 +26,7 @@
 				<li class="fieldcontain">
 					<span id="campeonato-label" class="property-label"><g:message code="bolao.campeonato.label" default="Campeonato" /></span>
 					
-						<span class="property-value" aria-labelledby="campeonato-label"><g:link controller="campeonato" action="show" id="${bolaoInstance?.campeonato?.id}">${bolaoInstance?.campeonato?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="campeonato-label"><g:link controller="campeonato" action="show" id="${bolaoInstance?.campeonato?.id}">${bolaoInstance?.campeonato?.descricao}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -35,7 +35,7 @@
 				<li class="fieldcontain">
 					<span id="admin-label" class="property-label"><g:message code="bolao.admin.label" default="Admin" /></span>
 					
-						<span class="property-value" aria-labelledby="admin-label"><g:link controller="usuario" action="show" id="${bolaoInstance?.admin?.id}">${bolaoInstance?.admin?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="admin-label"><g:link controller="usuario" action="show" id="${bolaoInstance?.admin?.id}">${bolaoInstance?.admin?.username}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -58,23 +58,7 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${bolaoInstance?.dateCreated}">
-				<li class="fieldcontain">
-					<span id="dateCreated-label" class="property-label"><g:message code="dateCreated.label" default="Date Created" /></span>
-					
-						<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${bolaoInstance?.dateCreated}" /></span>
-					
-				</li>
-				</g:if>
 			
-				<g:if test="${bolaoInstance?.lastUpdated}">
-				<li class="fieldcontain">
-					<span id="lastUpdated-label" class="property-label"><g:message code="lastUpdated.label" default="Last Updated" /></span>
-					
-						<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate date="${bolaoInstance?.lastUpdated}" /></span>
-					
-				</li>
-				</g:if>
 			
 			</ol>
 			<g:form url="[resource:bolaoInstance, action:'delete']" method="DELETE">

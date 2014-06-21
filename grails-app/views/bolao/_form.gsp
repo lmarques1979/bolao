@@ -5,7 +5,7 @@
 		<g:message code="campeonato.label"/>
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="campeonato" name="campeonato.id" from="${bolao.Campeonato.list()}" optionKey="id" required="" value="${bolaoInstance?.campeonato?.id}" class="many-to-one"/>
+	<g:select id="campeonato" name="campeonato.id" from="${bolao.Campeonato.list()}" optionValue="descricao" optionKey="id" required="" value="${bolaoInstance?.campeonato?.id}" class="many-to-one"/>
 
 </div>
 
@@ -23,7 +23,7 @@
 		<g:message code="bolao.imagem.label"/>
 		
 	</label>
-	<g:textField name="imagem" maxlength="50" value="${bolaoInstance?.imagem}"/>
-
+	<input type="file" name="arquivo" value="${bolaoInstance?.imagem}"/>
+	
 </div>
 

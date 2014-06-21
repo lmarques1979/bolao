@@ -8,8 +8,9 @@ import grails.transaction.Transactional
 @Secured("isFullyAuthenticated()")
 class BolaoController extends BaseController{
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
+    static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
+	static final String pathbolao = "grails-app/assets/images/bolao/";
+	
     def index(Integer max) {
 		def configuracoes = configuracaoParams
         respond Bolao.list(configuracoes), model:[bolaoInstanceCount: Bolao.count()]
@@ -30,13 +31,34 @@ class BolaoController extends BaseController{
             return
         }
 
-        if (bolaoInstance.hasErrors()) {
-            respond bolaoInstance.errors, view:'create'
-            return
-        }
-
+		def imagem
+		def f = request.getFile('arquivo')
+		def bolao = params.descricao
+		def diretorio = pathbolao + bolao
+		def nomearquivo = f.getOriginalFilename()
+		
+		if (nomearquivo!=null && nomearquivo!=""){
+		   imagem = diretorio  + '/' + nomearquivo
+		}
+		
+		bolaoInstance.imagem = nomearquivo
+		bolaoInstance.admin = usuarioLogado
+		
+		boolean deletou = new File(diretorio).deleteDir()
+		def caminhoarquivo = new File(diretorio)
+		caminhoarquivo.mkdirs()
+		
+		if(nomearquivo!=null && nomearquivo!=""){
+			f.transferTo(new File(imagem))
+		}
+		
         bolaoInstance.save flush:true
-
+		
+		if (bolaoInstance.hasErrors()) {
+			respond bolaoInstance.errors, view:'create'
+			return
+		}
+		
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'bolao.label', default: 'Bolao'), bolaoInstance.id])
@@ -57,13 +79,33 @@ class BolaoController extends BaseController{
             return
         }
 
-        if (bolaoInstance.hasErrors()) {
-            respond bolaoInstance.errors, view:'edit'
-            return
-        }
-
+		def imagem
+		def f = request.getFile('arquivo')
+		def bolao = params.descricao
+		def diretorio = pathbolao + bolao
+		def nomearquivo = f.getOriginalFilename()
+		
+		if (nomearquivo!=null && nomearquivo!=""){
+		   imagem = diretorio  + '/' + nomearquivo
+		}
+		
+		bolaoInstance.imagem = nomearquivo
+		
+		boolean deletou = new File(diretorio).deleteDir()
+		def caminhoarquivo = new File(diretorio)
+		caminhoarquivo.mkdirs()
+		
+		if(nomearquivo!=null && nomearquivo!=""){
+			f.transferTo(new File(imagem))
+		}
+		
         bolaoInstance.save flush:true
-
+		
+		if (bolaoInstance.hasErrors()) {
+			respond bolaoInstance.errors, view:'edit'
+			return
+		}
+		
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Bolao.label', default: 'Bolao'), bolaoInstance.id])
@@ -81,8 +123,13 @@ class BolaoController extends BaseController{
             return
         }
 
-        bolaoInstance.delete flush:true
-
+		def diretorio = pathbolao + bolaoInstance.descricao
+		boolean deletou = new File(diretorio).deleteDir()
+		
+		if (deletou){
+				bolaoInstance.delete flush:true
+		}
+		
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Bolao.label', default: 'Bolao'), bolaoInstance.id])

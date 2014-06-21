@@ -34,7 +34,8 @@
 					</g:if>
 					<!-- Usuarios logados -->
 					<g:if test="${sec.loggedInUserInfo(field: 'username') != 'admin'}">
-					     <li><g:link class="create" controller="Palpite" action="index" ><g:message code="palpite.label"/></g:link></li>
+						 <li><g:link class="create" controller="Bolao" action="index"><g:message code="bolao.label"/></g:link></li>
+						 <li><g:link class="create" controller="Palpite" action="index" ><g:message code="palpite.label"/></g:link></li>
 						 <li><g:link class="usuario" controller="Usuario" action="show" id="${sec.loggedInUserInfo(field:"id")}"><g:message code="dadosusuario.label"/></g:link></li>
 					</g:if>
 					
@@ -50,7 +51,7 @@
 				</sec:ifLoggedIn>
 				
 				<sec:ifNotLoggedIn>
-					<li><g:link class="create" controller="Usuario" action="create"><g:message code="criar.usuario.label"/></g:link></li>
+					<li><g:link class="create" controller="Usuario" action="create"><g:message code="usuario.create.label"/></g:link></li>
 					<li><g:link class="login" controller="login" action="auth"><g:message code="login.label"/></g:link></li>
 				</sec:ifNotLoggedIn>
 				
