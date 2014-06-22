@@ -39,7 +39,7 @@
 						</td>
 						
 						<td>
-							<g:textField name="local" size="15" value="${jogoInstance?.local}"/>
+							<g:select id="estadio" name="estadio.id" from="${bolao.Estadio.list()}" optionValue="descricao" optionKey="id" required="" value="${jogoInstance?.estadio?.id}" class="many-to-one"/>
 							
 						</td>
 						<td>

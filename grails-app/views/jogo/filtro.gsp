@@ -67,7 +67,7 @@
 					
 								<g:sortableColumn property="datajogo" title="${message(code: 'jogo.datajogo.label', default: 'Datajogo')}" />
 							
-								<th><g:message code="jogo.local.label" default="Local" /></th>
+								<th><g:message code="jogo.estadio.label" default="Local" /></th>
 								
 								<th><g:message code="jogo.time1.label" default="Time1" /></th>
 								
@@ -93,7 +93,7 @@
 							</g:link>
 						</td>
 					
-						<td>${fieldValue(bean: jogoInstance, field: "local")}</td>
+						<td>${jogoInstance?.estadio?.descricao}</td>
 						
 						<td><g:if test="${jogoInstance?.time1?.imagem}">
 								<asset:image src="bandeiras/${params.tamanhoiconetimes}/${jogoInstance?.time1?.imagem}" title="${jogoInstance?.time1?.descricao}"/>

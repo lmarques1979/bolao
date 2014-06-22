@@ -12,6 +12,7 @@ class Time {
 	static belongsTo = [campeonato:Campeonato]
 	
 	static constraints = {
+		descricao(unique: ['campeonato'])
 		descricao(nullable: false, blank: false , size: 0..50)
 		imagem(nullable: true , blank: true , size: 0..50)
 	}

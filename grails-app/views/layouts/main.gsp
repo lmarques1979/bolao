@@ -24,7 +24,9 @@
 				<!-- Usuario admin -->
 				<sec:ifLoggedIn>
 					<g:if test="${sec.loggedInUserInfo(field: 'username') == 'admin'}">
-						<li><g:link class="create" controller="Configuracao" action="index" ><g:message code="configuracao.label"/></g:link></li>
+						 <li><g:link class="create" controller="Configuracao" action="index" ><g:message code="configuracao.label"/></g:link></li>
+						 <li><g:link class="create" controller="Pais" action="index" ><g:message code="pais.label"/></g:link></li>
+						 <li><g:link class="create" controller="Estadio" action="index" ><g:message code="estadio.label"/></g:link></li>
 						 <li><g:link class="create" controller="Campeonato" action="index" ><g:message code="campeonato.label"/></g:link></li>
 						 <li><g:link class="create" controller="Time" action="index" ><g:message code="time.label"/></g:link></li>
 						 <li><g:link class="create" controller="Jogo" action="index" ><g:message code="jogo.label"/></g:link></li>

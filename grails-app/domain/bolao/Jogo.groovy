@@ -11,7 +11,7 @@ class Jogo {
 	String descricaofase
 	int	scoretime1=0
 	int scoretime2=0
-	String local
+	Estadio estadio
 	boolean encerrado=false
 	Date dateCreated
 	Date lastUpdated
@@ -23,7 +23,7 @@ class Jogo {
 		datajogo(nullable: false, blank: false)
 		time1(nullable: false, blank: false)
 		time2(nullable: false , blank: false)
-		local(nullable: true , blank: true)
+		estadio(nullable: true , blank: true)
 		encerrado(nullable: true , blank: true)
 		fase(nullable: false , blank: false)
 		descricaofase(nullable: false , blank: false)

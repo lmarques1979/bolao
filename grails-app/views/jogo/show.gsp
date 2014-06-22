@@ -30,6 +30,15 @@
 				</li>
 				</g:if>
 				
+				<g:if test="${jogoInstance?.estadio}">
+				<li class="fieldcontain">
+					<span id="estadio-label" class="property-label"><g:message code="jogo.estadio.label" default="Fase" /></span>
+					
+						<span class="property-value" aria-labelledby="estadio-label">${jogoInstance?.estadio?.descricao}</span>
+					
+				</li>
+				</g:if>
+				
 				<g:if test="${jogoInstance?.fase}">
 				<li class="fieldcontain">
 					<span id="fase-label" class="property-label"><g:message code="jogo.fase.label" default="Fase" /></span>
