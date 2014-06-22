@@ -24,6 +24,7 @@
 			<thead>
 					<tr>
 						<th>Datas Jogos</th>
+						<th>Campeonato</th>
 						
 					</tr>
 					
@@ -31,17 +32,23 @@
 				<tbody>
 					<tr>
 						<td>
-							<g:if test="${params.filtrodatas}"> 
-								<g:set var="filtro" value="${params.filtrodatas}" />
+							<g:if test="${params.filtrodata}"> 
+								<g:set var="filtrodata" value="${params.filtrodata}" />
 							</g:if>
 							<g:else>
-							     <g:set var="filtro" value="2" />
+							     <g:set var="filtrodata" value="2" />
 							</g:else>
 							
-							<g:select onchange="this.form.submit()" value="${filtro}" name="filtrodatas" from="${['Todos', 'Pendentes', 'Finalizados']}" keys="${['1','2','3']}"/>
+							<g:select onchange="this.form.submit()" value="${filtrodata}" name="filtrodata" from="${['Todos', 'Pendentes', 'Finalizados']}" keys="${['1','2','3']}"/>
 							
 						</td>
+						
+						<td>
+							<g:select onchange="this.form.submit()" id="campeonato" name="filtrocampeonato" noSelection="${['-1':'Selecionar Campeonato...']}" from="${bolao.Campeonato.list()}" optionValue="descricao" optionKey="id" required="" value="${params.filtrocampeonato}" class="many-to-one"/>
+						</td>
+						
 					</tr>
+					
 					
 				</tbody>
 				<g:submitButton class="invisivel" name="create" value="Filtrar" />
