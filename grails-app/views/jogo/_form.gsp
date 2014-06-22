@@ -1,23 +1,19 @@
 <%@ page import="bolao.Jogo" %>
 
 <table>
-			<thead>
-					<tr>
-						<th>Data</th>
-						<th>Hora</th>
-						<th>Fase</th>
-						<th>Desc. Fase</th>
-						<th>Local do Jogo</th>
-						<th>Time 1</th>
-						<th>Score Time 1</th>
-						<th>Score Time 2</th>
-						<th>Time 2</th>
-						<th>Campeonato</th>
-						<th>Encerrado</th>
-						
-					</tr>
-			</thead>
+			
+					
+			
 			<tbody>
+					<thead>
+						<tr>
+							<th>Data</th>
+							<th>Hora</th>
+							<th>Fase</th>
+							<th>Desc. Fase</th>
+							<th>Local do Jogo</th>
+						</tr>
+					</thead>
 					<tr>
 						<td>
 							<g:textField name="datajogo" class="w8em format-d-m-y" size="9" value="${params.datajogo}"  />
@@ -39,9 +35,22 @@
 						</td>
 						
 						<td>
-							<g:select id="estadio" name="estadio.id" from="${bolao.Estadio.list()}" optionValue="descricao" optionKey="id" required="" value="${jogoInstance?.estadio?.id}" class="many-to-one"/>
+							
+							<g:select id="estadio" name="estadio.id" from="${bolao.Estadio.list()}" optionValue="estadioCidadeEstado" optionKey="id" required="" value="${jogoInstance?.estadio?.id}" class="many-to-one"/>
 							
 						</td>
+					</tr>
+					<thead>
+						<tr>
+							<th>Time 1</th>
+							<th>Score Time 1</th>
+							<th>Score Time 2</th>
+							<th>Time 2</th>
+							<th>Campeonato</th>
+							<th>Encerrado</th>
+						</tr>
+					</thead>
+					<tr>
 						<td>
 							<g:select id="time1" name="time1.id" from="${bolao.Time.list()}" optionValue="descricao" optionKey="id" required="" value="${jogoInstance?.time1?.id}" class="many-to-one"/>
 							

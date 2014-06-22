@@ -11,6 +11,7 @@ class Estadio {
 	Date lastUpdated
 	
 	static belongsTo = [pais:Pais]
+	static transients = ['estadioCidadeEstado']
 	
 	static constraints = { 
 		descricao(unique: true, nullable: false, blank: false , size: 0..50)
@@ -22,4 +23,12 @@ class Estadio {
 		sort descricao: "asc" // or "asc"
 		autoTimestamp true
 	}
+	
+	public String getestadioCidadeEstado() {
+		
+		def descricaolocal = descricao + '-' + cidade + '(' + estado + ')'
+		
+		return descricaolocal
+	}
+	
 }
