@@ -74,7 +74,7 @@
 							
 						</td>
 						<td>
-							<g:checkBox name="encerrado" value="${bolao?.encerrado}" />
+							<g:checkBox name="encerrado" value="${jogoInstance?.encerrado}" />
 						</td>
 					</tr>
 </table>
