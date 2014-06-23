@@ -24,6 +24,8 @@
 					<tr>
 						<g:sortableColumn property="descricao" title="${message(code: 'bolao.descricao.label', default: 'Descricao')}" />
 					
+						<th><g:message code="bolao.url.label" default="URL inscrição Bolão" /></th>
+						
 						<th><g:message code="bolao.admin.label" default="Admin" /></th>
 					
 						<th><g:message code="campeonato.label" default="Campeonato" /></th>
@@ -40,6 +42,10 @@
 						
 						<td><g:link action="show" id="${bolaoInstance.id}">${fieldValue(bean: bolaoInstance, field: "descricao")}</g:link></td>
 					
+						<td>
+							<g:link class="create" controller="Usuario" action="create?bolao=${bolaoInstance.id}">URL Cadastro Bolão</g:link>
+						</td>
+						
 						<td>${bolaoInstance?.admin?.primeironome}
 						     <g:if test="${bolaoInstance?.admin?.sobrenome}">
 								${" "+ bolaoInstance?.admin?.sobrenome}
@@ -48,6 +54,8 @@
 					
 						<td>${bolaoInstance?.campeonato?.descricao}</td>
 					
+						
+						
 					    <td><g:if test="${bolaoInstance.imagem}">
 								<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="bolao/${bolaoInstance.descricao}/${bolaoInstance.imagem}" title="${bolaoInstance.descricao}"/>
 							</g:if>		

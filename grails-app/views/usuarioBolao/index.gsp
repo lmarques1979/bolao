@@ -9,11 +9,7 @@
 	</head>
 	<body>
 		<a href="#list-usuarioBolao" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><g:link class="create" action="create"><g:message code="usuarioBolao.create.label"/></g:link></li>
-			</ul>
-		</div>
+		
 		<div id="list-usuarioBolao" class="content scaffold-list" role="main">
 			<h1><g:message code="usuarioBolao.list.label"/></h1>
 			<g:if test="${flash.message}">
@@ -23,8 +19,6 @@
 			<thead>
 					<tr>
 					
-						<th><g:message code="usuarioBolao.usuario.label" default="Usuario" /></th>
-					
 						<th><g:message code="usuarioBolao.bolao.label" default="Bolao" /></th>
 					
 					</tr>
@@ -33,10 +27,14 @@
 				<g:each in="${usuarioBolaoInstanceList}" status="i" var="usuarioBolaoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${usuarioBolaoInstance.id}">${fieldValue(bean: usuarioBolaoInstance, field: "usuario")}</g:link></td>
-					
-						<td>${fieldValue(bean: usuarioBolaoInstance, field: "bolao")}</td>
-					
+						<g:if test="${sec.loggedInUserInfo(field: 'username') == usuarioBolaoInstance?.bolao?.admin?.username}">
+							<td class="esquerda"><g:link action="show" id="${usuarioBolaoInstance.id}">${fieldValue(bean: usuarioBolaoInstance?.bolao, field: "descricao")}</g:link></td>
+						</g:if>
+						
+						<g:else>
+     						<td class="esquerda">${fieldValue(bean: usuarioBolaoInstance?.bolao, field: "descricao")}</td>
+						</g:else>
+										
 					</tr>
 				</g:each>
 				</tbody>

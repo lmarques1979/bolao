@@ -37,6 +37,7 @@
 					<!-- Usuarios logados -->
 					<g:if test="${sec.loggedInUserInfo(field: 'username') != 'admin'}">
 						 <li><g:link class="create" controller="Bolao" action="index"><g:message code="bolao.label"/></g:link></li>
+						 <li><g:link class="create" controller="UsuarioBolao" action="index"><g:message code="usuariobolao.label"/></g:link></li>
 						 <li><g:link class="create" controller="Palpite" action="index" ><g:message code="palpite.label"/></g:link></li>
 						 <li><g:link class="usuario" controller="Usuario" action="show" id="${sec.loggedInUserInfo(field:"id")}"><g:message code="dadosusuario.label"/></g:link></li>
 					</g:if>

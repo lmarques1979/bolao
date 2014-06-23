@@ -23,7 +23,7 @@ class UsuarioBolao implements Serializable {
 	int hashCode() {
 		def builder = new HashCodeBuilder()
 		if (usuario) builder.append(usuario.id)
-		if (regra) builder.append(regra.id)
+		if (bolao) builder.append(bolao.id)
 		builder.toHashCode()
 	}
 

@@ -12,7 +12,10 @@ class Bolao {
 	Date lastUpdated
 	Campeonato campeonato
 	
+	static hasMany = [usuarioboloes: UsuarioBolao]
+	
 	static constraints = {
+		
 		campeonato(nullable: false, blank: false)
 		admin(nullable: false, blank: false)
 		descricao(nullable: false, blank: false , size: 0..50)
@@ -20,6 +23,7 @@ class Bolao {
 	}
 	
 	static mapping = {
+		usuarioboloes cascade: 'all-delete-orphan'
 		sort descricao: "asc" // or "asc"
 		autoTimestamp true
 	}

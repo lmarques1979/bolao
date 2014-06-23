@@ -3,6 +3,7 @@ package bolao
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
+import org.codehaus.groovy.grails.web.mapping.LinkGenerator
 
 @Transactional(readOnly = true)
 @Secured("isFullyAuthenticated()")
@@ -10,6 +11,7 @@ class BolaoController extends BaseController{
 
     static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
 	static final String pathbolao = "grails-app/assets/images/bolao/";
+	LinkGenerator grailsLinkGenerator
 	
     def index(Integer max) {
 		def configuracoes = configuracaoParams
@@ -30,7 +32,8 @@ class BolaoController extends BaseController{
             notFound()
             return
         }
-
+		
+		
 		def imagem
 		def f = request.getFile('arquivo')
 		def bolao = params.descricao
@@ -57,8 +60,20 @@ class BolaoController extends BaseController{
 		if (bolaoInstance.hasErrors()) {
 			respond bolaoInstance.errors, view:'create'
 			return
-		}
+		}else{
 		
+			def usuarioBolaoInstance = new UsuarioBolao()
+			usuarioBolaoInstance.usuario = usuarioLogado
+			usuarioBolaoInstance.bolao = bolaoInstance
+			
+			usuarioBolaoInstance.save flush:true
+			
+			if (usuarioBolaoInstance.hasErrors()) {
+				respond usuarioBolaoInstance.errors, view:'create'
+				return
+			}
+			
+		}
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'bolao.label', default: 'Bolao'), bolaoInstance.id])
@@ -127,7 +142,9 @@ class BolaoController extends BaseController{
 		boolean deletou = new File(diretorio).deleteDir()
 		
 		if (deletou){
+			
 				bolaoInstance.delete flush:true
+				
 		}
 		
         request.withFormat {

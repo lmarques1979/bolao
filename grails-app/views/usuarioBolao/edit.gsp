@@ -8,12 +8,7 @@
 	</head>
 	<body>
 		<a href="#edit-usuarioBolao" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><g:link class="list" action="index"><g:message code="usuarioBolao.list.label"/></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="usuarioBolao.create.label"/></g:link></li>
-			</ul>
-		</div>
+		
 		<div id="edit-usuarioBolao" class="content scaffold-edit" role="main">
 			<h1><g:message code="usuarioBolao.edit.label"/></h1>
 			<g:if test="${flash.message}">
