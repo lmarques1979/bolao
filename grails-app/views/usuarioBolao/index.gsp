@@ -27,14 +27,15 @@
 				<g:each in="${usuarioBolaoInstanceList}" status="i" var="usuarioBolaoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<g:if test="${sec.loggedInUserInfo(field: 'username') == usuarioBolaoInstance?.bolao?.admin?.username}">
-							<td class="esquerda"><g:link action="show" id="${usuarioBolaoInstance.id}">${fieldValue(bean: usuarioBolaoInstance?.bolao, field: "descricao")}</g:link></td>
-						</g:if>
+					
+						<td class="esquerda">
+							<g:if test="${usuarioBolaoInstance?.bolao?.imagem}">
+									<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="bolao/${usuarioBolaoInstance?.bolao?.descricao}/${usuarioBolaoInstance?.bolao?.imagem}" title="${usuarioBolaoInstance?.bolao?.descricao}"/>
+							</g:if>	
+							<g:link action="show" id="${usuarioBolaoInstance.id}">${fieldValue(bean: usuarioBolaoInstance?.bolao, field: "descricao")}</g:link>
+								
+						</td>
 						
-						<g:else>
-     						<td class="esquerda">${fieldValue(bean: usuarioBolaoInstance?.bolao, field: "descricao")}</td>
-						</g:else>
-										
 					</tr>
 				</g:each>
 				</tbody>

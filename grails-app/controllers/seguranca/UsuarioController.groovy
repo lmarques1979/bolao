@@ -2,6 +2,8 @@ package seguranca
 
 import static org.springframework.http.HttpStatus.*
 import bolao.BaseController;
+import bolao.UsuarioBolao
+import bolao.Bolao
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
 
@@ -80,6 +82,7 @@ class UsuarioController extends BaseController {
 
 	@Secured('permitAll') 
     def show(Usuario usuarioInstance) {
+		def configuracoes = configuracaoParams
         respond usuarioInstance
     }
 
@@ -96,6 +99,7 @@ class UsuarioController extends BaseController {
             return
         }
 		
+		def bolao = params.bolao
 		def imagem
 		def f = request.getFile('arquivo')
 		def usuario = params.username
@@ -123,6 +127,32 @@ class UsuarioController extends BaseController {
 			return
 		}		
        
+		if(bolao!=null && bolao!=""){
+			
+			
+			def resultado = UsuarioBolao.createCriteria().list() {
+				eq("usuario.id" , usuarioInstance.id)
+				eq("bolao.id" , Long.valueOf(bolao).longValue() )
+				
+			}
+			
+			//Não existe ainda, insiro
+			if(resultado.size()==0){
+				def usuarioBolaoInstance = new UsuarioBolao()
+				usuarioBolaoInstance.usuario = usuarioInstance
+				def bolaoObj = Bolao.get(Long.valueOf(bolao).longValue())
+				usuarioBolaoInstance.bolao = bolaoObj
+				
+				usuarioBolaoInstance.save flush:true
+				
+				if (usuarioBolaoInstance.hasErrors()) {
+					respond usuarioBolaoInstance.errors, view:'create'
+					return
+				}
+			}
+			
+		}
+		
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuarioInstance.id])

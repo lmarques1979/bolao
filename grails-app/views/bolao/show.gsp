@@ -48,6 +48,15 @@
 					
 				</li>
 				</g:if>
+				
+				<g:if test="${bolaoInstance?.informacao}">
+				<li class="fieldcontain">
+					<span id="descricao-label" class="property-label"><g:message code="bolao.descricao.label" default="Descricao" /></span>
+					
+						<span class="property-value" aria-labelledby="descricao-label"><g:fieldValue bean="${bolaoInstance}" field="descricao"/></span>
+					
+				</li>
+				</g:if>
 			
 				<g:if test="${bolaoInstance?.imagem}">
 				<li class="fieldcontain">

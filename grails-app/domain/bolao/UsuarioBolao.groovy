@@ -10,6 +10,7 @@ class UsuarioBolao implements Serializable {
 	Long id
 	Usuario usuario
 	Bolao bolao
+	int pontuacao
 
 	boolean equals(other) {
 		if (!(other instanceof UsuarioBolao)) {
@@ -62,6 +63,7 @@ class UsuarioBolao implements Serializable {
 
 	static constraints = {
 		usuario(unique: ['bolao'])
+		pontuacao(nullable: true , blank: true)
 	}
 	
 	static mapping = {

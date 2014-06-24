@@ -54,6 +54,7 @@
 
 </div>
 
+<!-- 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'accountExpired', 'error')} ">
 	<label for="accountExpired">
 		<g:message code="usuario.accountExpired.label" default="Account Expired" />
@@ -88,4 +89,5 @@
 	<g:checkBox name="passwordExpired" value="${usuarioInstance?.passwordExpired}" />
 
 </div>
-
+ -->
+<input type='hidden' name='bolao' value="${params.bolao}"/>

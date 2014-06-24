@@ -18,6 +18,14 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: bolaoInstance, field: 'informacao', 'error')}">
+	<label for="descricao">
+		<g:message code="bolao.informacao.label"/>
+	</label>
+	<g:textArea name="informacao" maxlength="1000" required="" value="${bolaoInstance?.informacao}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: bolaoInstance, field: 'imagem', 'error')} ">
 	<label for="imagem">
 		<g:message code="bolao.imagem.label"/>

@@ -24,21 +24,21 @@
 				<!-- Usuario admin -->
 				<sec:ifLoggedIn>
 					<g:if test="${sec.loggedInUserInfo(field: 'username') == 'admin'}">
-						 <li><g:link class="create" controller="Configuracao" action="index" ><g:message code="configuracao.label"/></g:link></li>
-						 <li><g:link class="create" controller="Pais" action="index" ><g:message code="pais.label"/></g:link></li>
-						 <li><g:link class="create" controller="Estadio" action="index" ><g:message code="estadio.label"/></g:link></li>
-						 <li><g:link class="create" controller="Campeonato" action="index" ><g:message code="campeonato.label"/></g:link></li>
-						 <li><g:link class="create" controller="Time" action="index" ><g:message code="time.label"/></g:link></li>
-						 <li><g:link class="create" controller="Jogo" action="index" ><g:message code="jogo.label"/></g:link></li>
-						 <li><g:link class="list" controller="Usuario" action="index"><g:message code="usuarios.label"/></g:link></li>
-						 <li><g:link class="create" controller="Regra" action="index"><g:message code="regra.label"/></g:link></li>
-					     <li><g:link class="create" controller="UsuarioRegra" action="index" ><g:message code="usuarioregra.label"/></g:link></li>
+						 <li><g:link class="configuracao" controller="Configuracao" action="index" ><g:message code="configuracao.label"/></g:link></li>
+						 <li><g:link class="paises" controller="Pais" action="index" ><g:message code="pais.label"/></g:link></li>
+						 <li><g:link class="estadio" controller="Estadio" action="index" ><g:message code="estadio.label"/></g:link></li>
+						 <li><g:link class="campeonato" controller="Campeonato" action="index" ><g:message code="campeonato.label"/></g:link></li>
+						 <li><g:link class="times" controller="Time" action="index" ><g:message code="time.label"/></g:link></li>
+						 <li><g:link class="jogos" controller="Jogo" action="index" ><g:message code="jogo.label"/></g:link></li>
+						 <li><g:link class="usuarios" controller="Usuario" action="index"><g:message code="usuarios.label"/></g:link></li>
+						 <li><g:link class="regras" controller="Regra" action="index"><g:message code="regra.label"/></g:link></li>
+					     <li><g:link class="usuarioregra" controller="UsuarioRegra" action="index" ><g:message code="usuarioregra.label"/></g:link></li>
 					</g:if>
 					<!-- Usuarios logados -->
 					<g:if test="${sec.loggedInUserInfo(field: 'username') != 'admin'}">
-						 <li><g:link class="create" controller="Bolao" action="index"><g:message code="bolao.label"/></g:link></li>
-						 <li><g:link class="create" controller="UsuarioBolao" action="index"><g:message code="usuariobolao.label"/></g:link></li>
-						 <li><g:link class="create" controller="Palpite" action="index" ><g:message code="palpite.label"/></g:link></li>
+						 <li><g:link class="bolao" controller="Bolao" action="index"><g:message code="bolao.label"/></g:link></li>
+						 <li><g:link class="meusboloes" controller="UsuarioBolao" action="index"><g:message code="usuariobolao.label"/></g:link></li>
+						 <li><g:link class="palpites" controller="Palpite" action="index" ><g:message code="palpite.label"/></g:link></li>
 						 <li><g:link class="usuario" controller="Usuario" action="show" id="${sec.loggedInUserInfo(field:"id")}"><g:message code="dadosusuario.label"/></g:link></li>
 					</g:if>
 					
@@ -54,7 +54,7 @@
 				</sec:ifLoggedIn>
 				
 				<sec:ifNotLoggedIn>
-					<li><g:link class="create" controller="Usuario" action="create"><g:message code="usuario.create.label"/></g:link></li>
+					<li><g:link class="cadastrousuario" controller="Usuario" action="create"><g:message code="usuario.create.label"/></g:link></li>
 					<li><g:link class="login" controller="login" action="auth"><g:message code="login.label"/></g:link></li>
 				</sec:ifNotLoggedIn>
 				

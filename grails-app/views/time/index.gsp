@@ -37,8 +37,12 @@
 					
 						<td><g:link action="show" id="${timeInstance.id}">${fieldValue(bean: timeInstance, field: "descricao")}</g:link></td>
 					
-						<td><asset:image src="bandeiras/${params.tamanhoiconetimes}/${fieldValue(bean: timeInstance, field: "imagem")}" title="${fieldValue(bean: timeInstance, field: "descricao")}"/></td>
+						<td>
+							<g:if test="${timeInstance.imagem}">
+								<asset:image src="bandeiras/${params.tamanhoiconetimes}/${fieldValue(bean: timeInstance, field: "imagem")}" title="${fieldValue(bean: timeInstance, field: "descricao")}"/>
 						
+							</g:if>	
+						</td>
 						<td>${timeInstance?.campeonato?.descricao}</td>
 					</tr>
 				</g:each>

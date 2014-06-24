@@ -18,6 +18,22 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: configuracaoInstance, field: 'alturaimagensthumbs', 'error')}">
+	<label for="alturaimagensthumbs">
+		<g:message code="configuracao.alturaimagensthumbs.label" default="Altura Imagens Thumb" />
+	</label>
+	<g:textField name="alturaimagensthumbs" required="" value="${configuracaoInstance?.alturaimagensthumbs}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: configuracaoInstance, field: 'larguraimagensthumbs', 'error')}">
+	<label for="larguraimagensthumbs">
+		<g:message code="configuracao.larguraimagensthumbs.label" default="Largura Imagens Thumb" />
+	</label>
+	<g:textField name="larguraimagensthumbs" required="" value="${configuracaoInstance?.larguraimagensthumbs}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: configuracaoInstance, field: 'tamanhoiconetimes', 'error')} required">
 	<label for="tamanhoiconetimes">
 		<g:message code="configuracao.tamanhoiconetimes.label" default="Tamanho Icone Times" />

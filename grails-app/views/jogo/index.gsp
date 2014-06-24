@@ -71,8 +71,8 @@
 							
 							<tr>
 					
-								<g:sortableColumn property="datajogo" title="${message(code: 'jogo.datajogo.label', default: 'Datajogo')}" />
-							
+								<th><g:message code="jogo.datajogo.label" default="Local" /></th>
+								
 								<th><g:message code="jogo.estadio.label" default="Local" /></th>
 								
 								<th><g:message code="jogo.time1.label" default="Time1" /></th>

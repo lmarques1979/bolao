@@ -16,13 +16,17 @@ class BaseController{
 			def resultado = Configuracao.findAll()
 			resultado.each() {
 				params.alturaimagens 		= it.alturaimagens ? it.alturaimagens : "120"
-				params.larguraimagens 		= it.larguraimagens ? it.larguraimagens : "120"
+				params.larguraimagens 		= it.larguraimagens ? it.larguraimagens : "125"
+				params.alturaimagensthumbs 	= it.alturaimagensthumbs ? it.alturaimagensthumbs : "20"
+				params.larguraimagensthumbs	= it.larguraimagensthumbs ? it.larguraimagensthumbs : "25"
 				params.tamanhoiconetimes 	= it.tamanhoiconetimes ? it.tamanhoiconetimes : "32"
 				params.max = Math.min(it.itensporpagina ? it.itensporpagina : 20, 100)
 			}
 			if (resultado.size() == 0){
 				params.alturaimagens 		= "120"
-				params.larguraimagens 		= "120"
+				params.larguraimagens 		= "125"
+				params.alturaimagensthumbs 	= "20"
+				params.larguraimagensthumbs	= "25"
 				params.tamanhoiconetimes 	= "32"
 				params.max = Math.min(20, 100)
 			}

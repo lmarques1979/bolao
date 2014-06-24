@@ -1,4 +1,3 @@
-
 <%@ page import="bolao.Bolao" %>
 <!DOCTYPE html>
 <html>
@@ -26,6 +25,8 @@
 					
 						<th><g:message code="bolao.url.label" default="URL inscrição Bolão" /></th>
 						
+						<th><g:message code="bolao.informacao.label" default="Informação" /></th>
+						
 						<th><g:message code="bolao.admin.label" default="Admin" /></th>
 					
 						<th><g:message code="campeonato.label" default="Campeonato" /></th>
@@ -42,8 +43,10 @@
 						
 						<td><g:link action="show" id="${bolaoInstance.id}">${fieldValue(bean: bolaoInstance, field: "descricao")}</g:link></td>
 					
+						<td class="esquerda">${bolaoInstance?.informacao}</td>
+						
 						<td>
-							<g:link class="create" controller="Usuario" action="create?bolao=${bolaoInstance.id}">URL Cadastro Bolão</g:link>
+							<g:link  target="_blank"  class="create" controller="Bolao" action="verifica" params="[bolao: bolaoInstance?.id]">URL Cadastro Bolão</g:link>
 						</td>
 						
 						<td>${bolaoInstance?.admin?.primeironome}
@@ -54,8 +57,6 @@
 					
 						<td>${bolaoInstance?.campeonato?.descricao}</td>
 					
-						
-						
 					    <td><g:if test="${bolaoInstance.imagem}">
 								<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="bolao/${bolaoInstance.descricao}/${bolaoInstance.imagem}" title="${bolaoInstance.descricao}"/>
 							</g:if>		

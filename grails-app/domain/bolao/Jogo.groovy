@@ -32,7 +32,7 @@ class Jogo {
 	}
 	
 	static mapping = {
-		sort fase:"asc",datajogo:"asc"
+		sort fase:"asc" , campeonato: "asc", datajogo:"asc"
 		autoTimestamp true
 		
 	}

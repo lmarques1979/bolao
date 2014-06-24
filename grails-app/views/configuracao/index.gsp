@@ -29,6 +29,10 @@
 						<g:sortableColumn property="alturaimagens" title="${message(code: 'configuracao.alturaimagens.label', default: 'Altura Imagens')}" />
 					
 						<g:sortableColumn property="larguraimagens" title="${message(code: 'configuracao.larguraimagens.label', default: 'Largura Imagens')}" />
+						
+						<g:sortableColumn property="alturaimagensthumbs" title="${message(code: 'configuracao.alturaimagensthumbs.label', default: 'Altura Imagens Thumbnail')}" />
+					
+						<g:sortableColumn property="larguraimagensthumbs" title="${message(code: 'configuracao.larguraimagensthumbs.label', default: 'Largura Imagens Thumbnail')}" />
 					
 						<g:sortableColumn property="tamanhoiconetimes" title="${message(code: 'configuracao.tamanhoiconetimes.label', default: 'Tamanho Icone Times')}" />
 					
@@ -42,6 +46,10 @@
 						<td><g:link action="show" id="${configuracaoInstance.id}">${fieldValue(bean: configuracaoInstance, field: "alturaimagens")}</g:link></td>
 					
 						<td>${fieldValue(bean: configuracaoInstance, field: "larguraimagens")}</td>
+					
+						<td>${fieldValue(bean: configuracaoInstance, field: "alturaimagensthumbs")}</td>
+										
+						<td>${fieldValue(bean: configuracaoInstance, field: "larguraimagensthumbs")}</td>
 					
 						<td>${fieldValue(bean: configuracaoInstance, field: "tamanhoiconetimes")}</td>
 						

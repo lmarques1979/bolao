@@ -16,11 +16,27 @@
 			</g:if>
 			<ol class="property-list usuario">
 			
+							
+				<g:if test="${usuarioInstance?.imagem}">
+				<li class="fieldcontain">
+					<span id="imagem-label" class="property-label"><g:message code="usuario.imagem.label" default="Imagem" /></span>
+					
+						<span class="property-value" aria-labelledby="imagem-label">
+								<g:if test="${usuarioInstance.imagem}">
+									<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="usuarios/${usuarioInstance.username}/${usuarioInstance.imagem}" title="${usuarioInstance.username}"/>
+								</g:if>
+						</span>
+					
+				</li>
+				</g:if>
+							
 				<g:if test="${usuarioInstance?.username}">
 				<li class="fieldcontain">
 					<span id="username-label" class="property-label"><g:message code="usuario.username.label" default="Username" /></span>
 					
-						<span class="property-value" aria-labelledby="username-label"><g:fieldValue bean="${usuarioInstance}" field="username"/></span>
+						<span class="property-value" aria-labelledby="username-label"><g:fieldValue bean="${usuarioInstance}" field="username"/>
+										
+						</span>
 					
 				</li>
 				</g:if>
@@ -52,6 +68,7 @@
 				</li>
 				</g:if>
 			
+				<!-- 
 				<g:if test="${usuarioInstance?.accountExpired}">
 				<li class="fieldcontain">
 					<span id="accountExpired-label" class="property-label"><g:message code="usuario.accountExpired.label" default="Account Expired" /></span>
@@ -89,6 +106,7 @@
 				</li>
 				</g:if>
 				
+				-->
 				
 				
 			

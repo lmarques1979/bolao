@@ -9,11 +9,23 @@ class UsuarioBolaoController extends BaseController {
 
     def index(Integer max) {
 		def configuracoes = configuracaoParams
-        respond UsuarioBolao.list(configuracoes), model:[usuarioBolaoInstanceCount: UsuarioBolao.count()]
+		
+		def resultado = UsuarioBolao.createCriteria().list (configuracoes) {
+			eq("usuario.id" , usuarioLogado.id)
+			
+		}
+		
+        respond resultado, model:[usuarioBolaoInstanceCount: resultado.totalCount]
     }
 
     def show(UsuarioBolao usuarioBolaoInstance) {
-        respond usuarioBolaoInstance
+		session["bolao"] = usuarioBolaoInstance.bolao
+		def configuracoes = configuracaoParams
+		def total = UsuarioBolao.createCriteria().list (configuracoes) {
+			eq("bolao.id" , usuarioBolaoInstance.bolao.id)
+		}
+		
+        respond usuarioBolaoInstance , model:[usuarioBolaoInstanceCount: total.totalCount]
     }
 
     def create() {

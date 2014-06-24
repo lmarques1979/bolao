@@ -34,6 +34,24 @@
 					
 				</li>
 				</g:if>
+				
+				<g:if test="${configuracaoInstance?.alturaimagensthumbs}">
+				<li class="fieldcontain">
+					<span id="alturaimagensthumbs-label" class="property-label"><g:message code="configuracao.alturaimagensthumbs.label" default="Altura Imagens Thumnail" /></span>
+					
+						<span class="property-value" aria-labelledby="alturaimagens-label"><g:fieldValue bean="${configuracaoInstance}" field="alturaimagensthumbs"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${configuracaoInstance?.larguraimagensthumbs}">
+				<li class="fieldcontain">
+					<span id="larguraimagensthumbs-label" class="property-label"><g:message code="configuracao.larguraimagensthumbs.label" default="Largura Imagens Thumbnail" /></span>
+					
+						<span class="property-value" aria-labelledby="larguraimagensthumbs-label"><g:fieldValue bean="${configuracaoInstance}" field="larguraimagensthumbs"/></span>
+					
+				</li>
+				</g:if>
 			
 				<g:if test="${configuracaoInstance?.tamanhoiconetimes}">
 				<li class="fieldcontain">

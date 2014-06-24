@@ -8,6 +8,11 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.1;
 }
 
+.cadastrologin{
+	text-align:center;
+	margin: 0 auto;
+}
+
 /* BASE LAYOUT */
 
 html {
@@ -24,8 +29,97 @@ html {
 	box-sizing: border-box;
 }
 
+.clearer {
+    clear: both;
+    height: 1px;
+    margin-top: -1px;
+    overflow: hidden;
+}
+
+div.bolao {
+    width: 790px;
+    height: 20px;
+    outline: 0px solid #000;
+    position: relative;
+    left: 50%;
+    margin-left: -395px;
+    margin-top: 20px;
+    padding:0;
+}
+
+div.bolao span{
+   font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  	font-size: 18px;
+  	text-align:center;
+  	margin: 0 auto;
+  	font-weight: bold;
+  	color:#1E5A2E;
+}
+
+div.principal {
+    width: 800px;
+    height: 200px;
+    outline: 0px solid #000;
+    position: relative;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: 20px;
+}
+
+div.avatar {
+   float:left;
+   margin:5px;
+   width: 490px;
+   height:180px;
+   outline: 0px solid #000;
+}
+
+div.avatar img{
+   margin-top:0;
+   border: 1px solid #d7d7d7;
+}
+
+div.avatarimagem {
+   float:left;
+   margin: 5px;
+   width: 130px;
+   height:150px;
+   outline: 0px solid #d7d7d7;
+}
+
+div.informacao {
+   float:right;
+   margin: 5px;
+   width: 340px;
+   height:150px;
+   outline: 1px solid #d7d7d7; 
+}
+
+div.informacao span {
+  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-size: 12px;
+}
+
+div.sobrebolao {
+   float:right;
+   margin: 5px;
+   width: 290px;
+   height:180px;
+   outline: 0px solid #000;
+   
+}
+
+div.sobrebolao span {
+  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-size: 10px;
+}
+
+div.sobrebolao img {
+  margin:4px 10px;
+}
+
 h3.titulo {
-	color:#12569a;
+	color:#1E5A2E;
 	font-weight: bold;
 	text-shadow: 1px 1px 0 #cbcbcb;
 	text-align:center;
@@ -36,7 +130,7 @@ h3.titulo {
 ul.home { 
 	margin:30px 0 0 250px;
 	list-style-type:square;
-	color:#12569a;
+	color:#1E5A2E;
 	font-weight: bold;
 	text-shadow: 1px 1px 0 #cbcbcb;
 	text-align:left;
@@ -48,7 +142,7 @@ li.home {
 }
 
 li.home a{
-	color: #12569a;
+	color: #1E5A2E;
 	display: block;
 	padding: 0.25em 0.7em;
 	text-decoration: none;
@@ -102,13 +196,14 @@ body {
 	margin: 5px auto;
 	max-width: 1320px;
 	overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
-	-moz-box-shadow: 0 0 0.3em #12569a;
-	-webkit-box-shadow: 0 0 0.3em #12569a;
-	box-shadow: 0 0 0.3em #12569a;
+	-moz-box-shadow: 0 0 0.3em #1E5A2E;
+	-webkit-box-shadow: 0 0 0.3em #1E5A2E;
+	box-shadow: 0 0 0.3em #1E5A2E;
 }
 
 #grailsLogo {
-	background-color: #fff;
+	background-color:#fcf9eb;
+	height: 100px;
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
@@ -124,8 +219,39 @@ body {
 	height: 100%;
 }
 
-a:link{
-	color: #12569a;
+#1E5A2E{
+	color: #1E5A2E;
+}
+
+a.nounderline:link {
+color:#1E5A2E;
+text-decoration:none;
+}
+
+#cadastro{
+	text-align:center;
+	margin: 0 auto;
+	display: inline-block;
+}
+
+a.cadastrado:link {
+	text-align:center;
+	color:#1E5A2E;
+	text-decoration:none;
+}
+
+a.cadastrese:link {
+	color: #1E5A2E;
+	text-decoration:none;
+}
+
+img.jogocampeonato {
+line-height: 1.5em;
+padding: 0;
+text-align: center;
+vertical-align: top;
+border: 0;
+margin-top:-4px;
 }
 
 a:hover {
@@ -133,7 +259,7 @@ a:hover {
 }
 
 a:visited {
-	color: #12569a;
+	color: #1E5A2E;
 }
 
 a:hover, a:active {
@@ -141,7 +267,7 @@ a:hover, a:active {
 }
 
 h1 {
-	color: #12569a;
+	color:#1E5A2E;
 	font-weight: bold;
 	font-size:18px;
 	margin: 0.8em 0 0.3em 0;
@@ -177,7 +303,7 @@ ul {
 	padding:0;
 }
 .footer {
-	background:#12569a;
+	background:#1E5A2E;
 	color: #000;
 	clear: both;
 	font-size: 0.8em;
@@ -204,7 +330,7 @@ ul {
 /* NAVIGATION MENU */
 
 .nav {
-	background-color:#12569a;
+	background-color:#1E5A2E;
 	padding: 0.5em 0.75em;
 	-moz-box-shadow: 0 0 3px 1px #aaaaaa;
 	-webkit-box-shadow: 0 0 3px 1px #aaaaaa;
@@ -238,8 +364,8 @@ ul {
 }
 
 .nav a:active, .nav a:visited {
-	background-color:#12569a;
-	color: #12569a;
+	background-color:#1E5A2E;
+	color: #1E5A2E;
 }
 
 .nav a:focus, .nav a:hover {
@@ -253,7 +379,10 @@ ul {
 	text-decoration: underline;
 }
 
-.nav a.home, .nav a.list, .nav a.create ,.nav a.login , .nav a.logout, .nav a.usuario {
+.nav a.home, .nav a.list, .nav a.create ,.nav a.login , .nav a.logout, .nav a.usuario, 
+.nav a.configuracao , .nav a.paises ,  .nav a.estadio, .nav a.campeonato, .nav a.times,  .nav a.jogos,
+.nav a.usuarios , .nav a.regras , .nav a.usuarioregra , .nav a.cadastrousuario , .nav a.bolao,
+.nav a.meusboloes, .nav a.palpites{
 	background-position: 0.7em center;
 	background-repeat: no-repeat;
 	text-indent: 25px;
@@ -284,6 +413,58 @@ ul {
 
 .nav a.usuario {
 	background-image: url(../images/skin/usuario.png); 
+}
+
+.nav a.configuracao {
+	background-image: url(../images/skin/configuracao.png); 
+}
+
+.nav a.paises {
+	background-image: url(../images/skin/paises.png); 
+}
+
+.nav a.estadio {
+	background-image: url(../images/skin/estadio.png); 
+}
+
+.nav a.campeonato {
+	background-image: url(../images/skin/campeonato.png); 
+}
+
+.nav a.times {
+	background-image: url(../images/skin/times.png); 
+}
+
+.nav a.jogos {
+	background-image: url(../images/skin/jogos.png); 
+}
+
+.nav a.usuarios {
+	background-image: url(../images/skin/usuarios.png); 
+}
+
+.nav a.regras {
+	background-image: url(../images/skin/regras.png); 
+}
+
+.nav a.usuarioregra {
+	background-image: url(../images/skin/usuarioregra.png); 
+}
+
+.nav a.cadastrousuario {
+	background-image: url(../images/skin/cadastrousuario.png); 
+}
+
+.nav a.bolao {
+	background-image: url(../images/skin/bolao.png); 
+}
+
+.nav a.meusboloes {
+	background-image: url(../images/skin/meusboloes.png); 
+}
+
+.nav a.palpites {
+	background-image: url(../images/skin/palpites.png); 
 }
 
 .nav a.logout {
@@ -367,7 +548,7 @@ select[multiple] {
 }
 
 textarea {
-	width: 250px;
+	width: 450px;
 	height: 150px;
 	overflow: auto; /* IE always renders vertical scrollbar without this */
 	vertical-align: top;
@@ -532,6 +713,15 @@ td, th {
 	font-size:13px;
 }
 
+.esquerda {
+	text-align: left;
+	vertical-align: top;
+}
+
+.esquerda a{
+	text-decoration:none;
+}
+
 img {
 	line-height: 1.5em;
 	padding:0;
@@ -547,7 +737,7 @@ th {
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffffff), color-stop(1, #eaeaea));
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#ffffff', EndColorStr = '#eaeaea');
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
-	color:#12569a;
+	color:#1E5A2E;
 	font-weight: bold;
 	line-height: 1.7em;
 	padding: 0.2em 0.6em;
@@ -571,7 +761,7 @@ th a {
 }
 
 th a:link, th a:visited {
-	color:#12569a;
+	color:#1E5A2E;
 }
 
 th a:hover, th a:focus {
@@ -594,16 +784,16 @@ th.desc a {
 
 .odd {
 	background: #FFF;
-	color:#12569a;
+	color:#1E5A2E;
 }
 
 .even {
 	background: #FFF;
-	color:#12569a;
+	color:#1E5A2E;
 }
 
 th:hover, tr:hover {
-	background: #12569a;
+	background:#1E5A2E;
 	color:#fff;
 }
 
@@ -638,7 +828,7 @@ tr:hover a{
 
 .pagination a:hover, .pagination a:focus,
 .pagination .currentStep {
-	background-color: #12569A;
+	background-color: #1E5A2E;
 	color: #ffffff;
 	outline: none;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
@@ -735,12 +925,12 @@ a.skip {
 }
 
 #login a {
-	color:#12569A;
+	color:#1E5A2E;
 	margin: 0 20px ;
 	padding: 0px;
 	text-decoration: none;
 	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: bold;
 }
 
@@ -759,10 +949,10 @@ a.skip {
 
 #login .inner .fheader {
 	padding: 18px 26px 14px 26px;
-	background-color: #12569A;
+	background-color:#1E5A2E;
 	margin: 0px 0 14px 0;
 	color: #fff;
-	font-size: 17px;
+	font-size: 15px;
 	font-weight: bold;
 }
 
@@ -780,12 +970,14 @@ a.skip {
 }
 
 #login .inner .cssform label {
+	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 	float: left;
 	text-align: right;
 	margin-left: -105px;
 	width: 110px;
 	padding-top: 3px;
 	padding-right: 10px;
+	font-size: 15px;
 }
 
 #login #remember_me_holder {
@@ -793,7 +985,7 @@ a.skip {
 }
 
 #login #submit {
-	background: none repeat scroll 0 0 #05C000;
+	background: none repeat scroll 0 0 #1E5A2E;
     border: 0 solid;
     color: #FFFFFF;
     float: right;

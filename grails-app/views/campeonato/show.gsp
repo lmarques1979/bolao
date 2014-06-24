@@ -11,7 +11,7 @@
 		<a href="#show-campeonato" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="create" action="create"><g:message code="campeonato.create.label"/></g:link></li>
 			</ul>
 		</div>
 		<div id="show-campeonato" class="content scaffold-show" role="main">
@@ -34,7 +34,11 @@
 				<li class="fieldcontain">
 					<span id="imagem-label" class="property-label"><g:message code="campeonato.imagem.label" default="Imagem" /></span>
 					
-						<span class="property-value" aria-labelledby="imagem-label"><g:fieldValue bean="${campeonatoInstance}" field="imagem"/></span>
+						<span class="property-value" aria-labelledby="imagem-label">
+								<g:if test="${campeonatoInstance.imagem}">
+									<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="campeonatos/${campeonatoInstance.descricao}/${campeonatoInstance.imagem}" title="${campeonatoInstance.descricao}"/>
+								</g:if>
+						</span>
 					
 				</li>
 				</g:if>
@@ -45,7 +49,12 @@
 					<span id="jogos-label" class="property-label"><g:message code="campeonato.jogos.label" default="Jogos" /></span>
 					
 						<g:each in="${campeonatoInstance.jogos}" var="j">
-						<span class="property-value" aria-labelledby="jogos-label"><g:link controller="jogo" action="show" id="${j.id}">${j?.encodeAsHTML()}</g:link></span>
+							<span class="property-value" aria-labelledby="jogos-label"><g:link class="nounderline" controller="jogo" action="show" id="${j.id}"><g:formatDate format="dd/MM/yyyy HH:mm" date="${j?.datajogo}" /> - <g:if test="${j?.time1?.imagem}">
+								<asset:image class="jogocampeonato" src="bandeiras/24/${j?.time1?.imagem}" title="${j?.time1?.descricao}"/>
+								</g:if> ${j?.time1.descricao} ${j?.scoretime1} x ${j?.scoretime2} ${j?.time2.descricao} 
+								<g:if test="${j?.time2?.imagem}">
+								<asset:image class="jogocampeonato" src="bandeiras/24/${j?.time2?.imagem}" title="${j?.time2?.descricao}"/>
+							</g:if></g:link></span>
 						</g:each>
 					
 				</li>

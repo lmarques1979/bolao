@@ -26,7 +26,6 @@
 						<g:sortableColumn property="email" title="${message(code: 'usuario.email.label', default: 'Email')}" />
 						<g:sortableColumn property="primeironome" title="${message(code: 'usuario.primeironome.label', default: 'Primeironome')}" />
 					    <g:sortableColumn property="sobrenome" title="${message(code: 'usuario.sobrenome.label', default: 'Sobrenome')}" />
-						<g:sortableColumn property="accountExpired" title="${message(code: 'usuario.accountExpired.label', default: 'Account Expired')}" />
 						<g:sortableColumn property="imagem" title="${message(code: 'usuario.imagem.label', default: 'Imagem')}" />
 						
 					</tr>
@@ -43,10 +42,8 @@
 					
 						<td>${fieldValue(bean: usuarioInstance, field: "sobrenome")}</td>
 					
-						<td><g:formatBoolean boolean="${usuarioInstance.accountExpired}" /></td>
-						
 						<td><g:if test="${usuarioInstance.imagem}">
-								<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="usuarios/${usuarioInstance.username}/${usuarioInstance.imagem}" title="${usuarioInstance.username}"/>
+								<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="usuarios/${usuarioInstance.username}/${usuarioInstance.imagem}" title="${usuarioInstance.username}"/>
 							</g:if>		
 						</td>			
 					

@@ -20,7 +20,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:uploadForm  url="[resource:usuarioInstance, action:'save']">
+			<g:uploadForm url="[resource:usuarioInstance, action:'save']">
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>

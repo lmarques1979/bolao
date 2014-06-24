@@ -16,6 +16,7 @@ class CampeonatoController extends BaseController{
     }
 
     def show(Campeonato campeonatoInstance) {
+		def configuracoes = configuracaoParams
         respond campeonatoInstance
     }
 

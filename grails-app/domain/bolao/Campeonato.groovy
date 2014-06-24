@@ -19,7 +19,8 @@ class Campeonato {
 	static mapping = {
 		jogos cascade: 'all-delete-orphan'
 		times cascade: 'all-delete-orphan'
-		sort descricao: "asc" // or "asc"
+		sort descricao: "asc"
+		jogos sort: 'datajogo', order: 'asc'
 		autoTimestamp true
 	}
 }

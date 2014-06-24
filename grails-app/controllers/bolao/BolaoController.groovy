@@ -14,10 +14,22 @@ class BolaoController extends BaseController{
 	LinkGenerator grailsLinkGenerator
 	
     def index(Integer max) {
+		
 		def configuracoes = configuracaoParams
-        respond Bolao.list(configuracoes), model:[bolaoInstanceCount: Bolao.count()]
+		def resultado = Bolao.createCriteria().list (configuracoes) {
+			eq("admin" , usuarioLogado)
+			
+		}
+		
+		
+        respond resultado, model:[bolaoInstanceCount: resultado.totalCount]
     }
-
+	
+	@Secured('permitAll')
+	def verifica() {
+		
+	}
+	
     def show(Bolao bolaoInstance) {
         respond bolaoInstance
     }
