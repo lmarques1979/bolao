@@ -29,19 +29,33 @@ class PalpiteController extends BaseController {
     }
 
     @Transactional
-    def save(Palpite palpiteInstance) {
-        if (palpiteInstance == null) {
-            notFound()
-            return
-        }
+    def save() {
 
-        if (palpiteInstance.hasErrors()) {
-            respond palpiteInstance.errors, view:'create'
-            return
-        }
-
-        palpiteInstance.save flush:true
-
+		def	usuariobolao= UsuarioBolao.get(Long.valueOf(parametros.usuariobolao).longValue())
+		def total 		= Long.valueOf(params.totaljogos).longValue() 
+		def i
+		
+		for(i=0 ; i < total; i++){
+			
+			/*if(params.scoretime1[i]!=null && params.scoretime2[i]!=null && params.scoretime1[i]!="" && params.scoretime2[i]){
+				
+				def jogo 	   		= Jogo.get(Long.valueOf(params.jogo[i]).longValue())
+				def palpiteInstance = new Palpite()
+				
+				palpiteInstance.scoretime1 	= scoretime1
+				palpiteInstance.scoretime2 	= scoretime2
+				palpiteInstance.jogo 		= jogo
+				palpiteInstance.usuariobolao= usuariobolao
+				
+				palpiteInstance.save flush:true
+				
+				if (palpiteInstance.hasErrors()) {
+					respond palpiteInstance.errors, view:'create'
+					return
+				}
+			}*/
+		}	
+		
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'palpite.label', default: 'Palpite'), palpiteInstance.id])

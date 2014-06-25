@@ -35,7 +35,6 @@
 					<g:if test="${sec.loggedInUserInfo(field: 'username') != 'admin'}">
 						 <li><g:link class="bolao" controller="Bolao" action="index"><g:message code="bolao.label"/></g:link></li>
 						 <li><g:link class="meusboloes" controller="UsuarioBolao" action="index"><g:message code="usuariobolao.label"/></g:link></li>
-						 <li><g:link class="palpites" controller="Palpite" action="index" ><g:message code="palpite.label"/></g:link></li>
 						 <li><g:link class="usuario" controller="Usuario" action="show" id="${sec.loggedInUserInfo(field:"id")}"><g:message code="dadosusuario.label"/></g:link></li>
 					</g:if>
 					
@@ -48,7 +47,7 @@
 							    <g:set var="usuario" value="${usuario + ' ' + sec.loggedInUserInfo(field: 'sobrenome')}" />
 						</g:if>
 						<g:if test="${session["usuariobolao"]}">
-							<span class="logout">Usuário: ${usuario} - Bolão: ${session["usuariobolao"].bolao.descricao}</span>
+							<span class="logout">Usuário: ${usuario} - Bolão:<g:link controller="UsuarioBolao" action="show" id="${session["usuariobolao"].id}">${session["usuariobolao"].bolao.descricao}</g:link></span>
 						</g:if>
 						<g:else>
 							<span class="logout">Usuário: ${usuario}</span>

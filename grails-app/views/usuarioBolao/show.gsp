@@ -10,6 +10,10 @@
 	<body>
 	
 		<a href="#show-usuarioBolao" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		
+		<div class="palpites">
+			<g:link class="palpites" controller="Palpite" action="index" ><g:message code="palpite.label"/></g:link>
+		</div>
 		<div class="bolao">
 				<span>${usuarioBolaoInstance?.bolao?.descricao}</span>
 		</div>

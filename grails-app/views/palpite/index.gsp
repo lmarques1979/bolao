@@ -15,16 +15,23 @@
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
+			<g:form url="[action:'save',controller:'palpite']" method="POST" >
+			
 			<table>
 			
 				<tbody>
 				<g:set var="rodadaanterior" value="-1" />
-				<g:each in="${resultado.palpites}" status="i" var="palpite">
+				
+				<g:each in="${resultado}" status="i" var="usuarioBolao">
+						<g:hiddenField name="usuariobolao" value="${usuarioBolao.id}" />
+						
 						<g:each in="${resultado.bolao.campeonato.jogos}" status="j" var="jogo">
 							<g:each in="${jogo}" status="k" var="detalhejogo">
 								<tr class="${(k % 2) == 0 ? 'even' : 'odd'}">
 									
 									<g:set var="rodadaatual" value="${detalhejogo?.descricaofase}" />	
+									<g:hiddenField name="jogo[${k}]" value="${detalhejogo.id}" />
+									
 									
 									<g:if test="${rodadaanterior!=rodadaatual}">
 										<thead>
@@ -34,7 +41,6 @@
 											
 											<tr>
 									
-												
 												<th><g:message code="jogo.datajogo.label" default="Local" /></th>
 												
 												<th><g:message code="jogo.estadio.label" default="Local" /></th>
@@ -67,11 +73,11 @@
 									</td>
 									
 									<td>
-										<g:textField name="palpitescoretime1[${j}]" maxlength="1" size="1" value=""/>
+										<g:textField name="scoretime1[${k}]" maxlength="1" size="1" value=""/>
 									</td>
 									
 									<td>
-										<g:textField name="palpitescoretime2[${j}]" maxlength="1" size="1" value=""/>
+										<g:textField name="scoretime2[${k}]" maxlength="1" size="1" value=""/>
 									</td>
 								
 									<td>	
@@ -90,11 +96,22 @@
 									
 								</tr>
 								<g:set var="rodadaanterior" value="${rodadaatual}" />
+								<g:set var="total" value="${k}" />
 							</g:each>
 						</g:each>
 				</g:each>
-				</tbody>
+				<g:hiddenField name="totaljogos" value="${total}" />
+				<thead>
+					<tr>
+						<th colspan="7">
+							<fieldset class="buttons">
+								<g:actionSubmit class="direita save" action="save" value="${message(code: 'button.create.label', default: 'Update')}" />
+							</fieldset>
+						</th>
+					</tr>
+				<thead>
 			</table>
+			</g:form>
 			<div class="pagination">
 				<g:paginate total="${usuarioBolaoInstanceCount ?: 0}" />
 			</div>

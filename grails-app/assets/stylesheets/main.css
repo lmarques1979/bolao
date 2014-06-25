@@ -67,6 +67,33 @@ div.detalhesbolao {
     overflow:auto;
 }
 
+div.palpites {
+    width: 700px;
+    height: 20px;
+    outline:0px solid #000;
+    position: relative;
+    left: 50%;
+    margin-left: -395px;
+    margin-top: 20px;
+    padding:0;
+}
+
+div.palpites a{
+	float:left;
+	font-size: 18px;
+  	font-weight: bold;
+	color: #fff;
+	display: inline-block;
+	margin:0;
+	padding:5px;
+	text-decoration: none;
+	-moz-border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
+	border-radius: 0.3em;
+	background-color: #1E5A2E;
+}
+
+
 div.bolao {
     width: 790px;
     height: 20px;
@@ -436,6 +463,15 @@ ul {
 	background-position:0;
 	background-repeat: no-repeat;
 	text-indent: 25px;
+}
+
+.nav span.logout a {
+	display: inline-block;
+	color: #fff;
+	text-indent: 25px;
+	font-size: 13px;
+	font-weight: bold;
+	margin-left:-30px;
 }
 
 .nav span.logout {
@@ -878,9 +914,9 @@ tr:hover a{
 	background-color: #efefef;
 	overflow: hidden;
 	padding: 0.3em;
-	   -moz-box-shadow: 0 0 3px 1px #aaaaaa;
+	-moz-box-shadow: 0 0 3px 1px #aaaaaa;
 	-webkit-box-shadow: 0 0 3px 1px #aaaaaa;
-	        box-shadow: 0 0 3px 1px #aaaaaa;
+	box-shadow: 0 0 3px 1px #aaaaaa;
 	margin: 0.1em 0 0 0;
 	border: none;
 }
@@ -924,6 +960,17 @@ tr:hover a{
 	background-position: 0.7em center;
 	background-repeat: no-repeat;
 	text-indent: 25px;
+}
+
+.buttons .direita .delete, .buttons .edit, .buttons .save {
+	float:right;
+	background-position: 0.7em center;
+	background-repeat: no-repeat;
+	text-indent: 25px;
+}
+
+.buttons .save {
+background-image: url('skin/database_save.png');
 }
 
 .ie6 .buttons input.delete, .ie6 .buttons input.edit, .ie6 .buttons input.save,
