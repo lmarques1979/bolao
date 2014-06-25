@@ -1,18 +1,23 @@
 package bolao
 
-import grails.plugin.springsecurity.annotation.Secured
 import static org.springframework.http.HttpStatus.*
+import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 @Secured("isFullyAuthenticated()")
-class PalpiteController extends BaseController{
+class PalpiteController extends BaseController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-		def configuracoes = configuracaoParams
-        respond Palpite.list(configuracoes), model:[palpiteInstanceCount: Palpite.count()]
+        def configuracoes = configuracaoParams
+		def resultado = UsuarioBolao.createCriteria().list (configuracoes) {
+			eq("bolao.id" , session["usuariobolao"].bolao.id)
+			eq("usuario.id" , session["usuariobolao"].usuario.id)
+			
+		}
+		[resultado:resultado , usuarioBolaoInstanceCount: resultado.totalCount]
     }
 
     def show(Palpite palpiteInstance) {

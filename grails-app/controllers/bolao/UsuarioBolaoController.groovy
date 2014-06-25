@@ -19,7 +19,7 @@ class UsuarioBolaoController extends BaseController {
     }
 
     def show(UsuarioBolao usuarioBolaoInstance) {
-		session["bolao"] = usuarioBolaoInstance.bolao
+		session["usuariobolao"] = usuarioBolaoInstance
 		def configuracoes = configuracaoParams
 		def total = UsuarioBolao.createCriteria().list (configuracoes) {
 			eq("bolao.id" , usuarioBolaoInstance.bolao.id)

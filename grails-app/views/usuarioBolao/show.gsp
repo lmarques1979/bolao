@@ -10,7 +10,6 @@
 	<body>
 	
 		<a href="#show-usuarioBolao" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-
 		<div class="bolao">
 				<span>${usuarioBolaoInstance?.bolao?.descricao}</span>
 		</div>
@@ -32,10 +31,19 @@
 				
 			</div>
 			
+			
 			<div class="sobrebolao">
 				<asset:image src="skin/bolao_criacao.png" title="Data de Criação"/><span>Data de Criação: <g:formatDate format="dd/MM/yyyy HH:mm" date="${usuarioBolaoInstance?.bolao?.dateCreated}"/></span><div class="clearer"></div>
 				<asset:image src="skin/administrador.png" title="Administrador"/><span>Administrador: ${usuarioBolaoInstance?.bolao?.admin?.username}</span><div class="clearer"></div>
 				<asset:image src="skin/membros.png" title="Quantidade de Membros"/><span>Membros: ${usuarioBolaoInstanceCount}</span><div class="clearer"></div>
+			</div>
+		
+		</div>
+		
+		<div class=principaldetalhes>
+			<span>Detalhes do ${usuarioBolaoInstance?.bolao?.descricao}</span>
+			<div class="detalhesbolao">
+			
 			</div>
 		
 		</div>

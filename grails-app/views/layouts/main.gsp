@@ -15,9 +15,6 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-
-
-		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><asset:image src="logo/logo.png" alt="Bolao"/></a></div>
 		<div class="nav" role="navigation">
 			<ul>
 			    <li><!--<a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>-->
@@ -50,7 +47,13 @@
 						<g:if test="${sec.loggedInUserInfo(field: 'sobrenome')}">
 							    <g:set var="usuario" value="${usuario + ' ' + sec.loggedInUserInfo(field: 'sobrenome')}" />
 						</g:if>
-					<span class="logout">[${usuario}]</span></li>
+						<g:if test="${session["usuariobolao"]}">
+							<span class="logout">Usuário: ${usuario} - Bolão: ${session["usuariobolao"].bolao.descricao}</span>
+						</g:if>
+						<g:else>
+							<span class="logout">Usuário: ${usuario}</span>
+						</g:else>
+					</li>
 				</sec:ifLoggedIn>
 				
 				<sec:ifNotLoggedIn>
@@ -61,6 +64,8 @@
 				
 			</ul>
 		</div>
+		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><asset:image src="logo/logo.png" alt="Bolao"/></a></div>
+		
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>

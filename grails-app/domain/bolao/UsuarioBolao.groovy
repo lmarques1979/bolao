@@ -11,7 +11,9 @@ class UsuarioBolao implements Serializable {
 	Usuario usuario
 	Bolao bolao
 	int pontuacao
-
+	
+	static hasMany=[palpites: Palpite]
+	
 	boolean equals(other) {
 		if (!(other instanceof UsuarioBolao)) {
 			return false
