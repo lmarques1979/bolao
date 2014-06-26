@@ -30,36 +30,59 @@ class PalpiteController extends BaseController {
 
     @Transactional
     def save() {
-
-		def	usuariobolao= UsuarioBolao.get(Long.valueOf(parametros.usuariobolao).longValue())
-		def total 		= Long.valueOf(params.totaljogos).longValue() 
-		def i
 		
-		for(i=0 ; i < total; i++){
+		def usuariobolao = UsuarioBolao.get(Long.valueOf(params.usuariobolao).longValue()) 
+		def jogo , scoretime1 , scoretime2 , i
+		
+		params.each() { key, value -> 
+			println key + "=>" + value
+			if(key=="jogo"){
+				jogo = value
+			}
+			if(key=="scoretime1"){
+				scoretime1 = value
+			}
+			if(key=="scoretime2"){
+				scoretime2 = value
+			}
+		}
+		
+		for(i=0 ; i < jogo.size() ; i++){
+		
+				def resultado = Palpite.createCriteria().list () {
+						eq("usuariobolao.id" , usuariobolao.id)
+						eq("jogo.id" , Long.valueOf(jogo[i]).longValue())
 			
-			/*if(params.scoretime1[i]!=null && params.scoretime2[i]!=null && params.scoretime1[i]!="" && params.scoretime2[i]){
-				
-				def jogo 	   		= Jogo.get(Long.valueOf(params.jogo[i]).longValue())
-				def palpiteInstance = new Palpite()
-				
-				palpiteInstance.scoretime1 	= scoretime1
-				palpiteInstance.scoretime2 	= scoretime2
-				palpiteInstance.jogo 		= jogo
-				palpiteInstance.usuariobolao= usuariobolao
-				
-				palpiteInstance.save flush:true
-				
-				if (palpiteInstance.hasErrors()) {
-					respond palpiteInstance.errors, view:'create'
-					return
 				}
-			}*/
-		}	
-		
+				
+				if(resultado.size()){
+					
+					def valor1 = scoretime1[i]
+					def valor2 = scoretime2[i]
+					
+					if( valor1 && valor2 ){
+						
+							def palpiteInstance 		= new Palpite()
+							palpiteInstance.jogo 		= Jogo.get(Long.valueOf(jogo[i]).longValue())
+							palpiteInstance.scoretime1 	= Long.valueOf(scoretime1[i]).longValue()
+							palpiteInstance.scoretime2 	= Long.valueOf(scoretime2[i]).longValue()
+							palpiteInstance.usuariobolao= usuariobolao
+							
+							palpiteInstance.save flush:true
+							
+							if (palpiteInstance.hasErrors()) {
+								respond palpiteInstance.errors, view:'edit'
+								return
+							}
+					}
+				}
+				
+		}
+				
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'palpite.label', default: 'Palpite'), palpiteInstance.id])
-                redirect palpiteInstance
+                redirect action:"index", method:"GET"
             }
             '*' { respond palpiteInstance, [status: CREATED] }
         }
@@ -76,12 +99,12 @@ class PalpiteController extends BaseController {
             return
         }
 
-        if (palpiteInstance.hasErrors()) {
-            respond palpiteInstance.errors, view:'edit'
-            return
-        }
-
         palpiteInstance.save flush:true
+		
+		if (palpiteInstance.hasErrors()) {
+			respond palpiteInstance.errors, view:'edit'
+			return
+		}
 
         request.withFormat {
             form multipartForm {

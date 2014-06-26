@@ -30,7 +30,7 @@
 								<tr class="${(k % 2) == 0 ? 'even' : 'odd'}">
 									
 									<g:set var="rodadaatual" value="${detalhejogo?.descricaofase}" />	
-									<g:hiddenField name="jogo[${k}]" value="${detalhejogo.id}" />
+									<g:hiddenField name="jogo" value="${detalhejogo.id}" />
 									
 									
 									<g:if test="${rodadaanterior!=rodadaatual}">
@@ -73,11 +73,11 @@
 									</td>
 									
 									<td>
-										<g:textField name="scoretime1[${k}]" maxlength="1" size="1" value=""/>
+										<g:textField name="scoretime1" maxlength="1" size="1"/>
 									</td>
 									
 									<td>
-										<g:textField name="scoretime2[${k}]" maxlength="1" size="1" value=""/>
+										<g:textField name="scoretime2" maxlength="1" size="1"/>
 									</td>
 								
 									<td>	
@@ -96,7 +96,7 @@
 									
 								</tr>
 								<g:set var="rodadaanterior" value="${rodadaatual}" />
-								<g:set var="total" value="${k}" />
+								<g:set var="total" value="${k}"/>
 							</g:each>
 						</g:each>
 				</g:each>
