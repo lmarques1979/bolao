@@ -600,10 +600,20 @@ label {
 }
 
 input, select, textarea {
+	text-align:left;
 	background-color: #fcfcfc;
 	border: 1px solid #cccccc;
 	font-size: 1em;
 	padding: 0.2em 0.4em;
+}
+
+ input.centro, select.centro, textarea.centro  {
+	text-align:center;
+	background-color: #fcfcfc;
+	border: 1px solid #cccccc;
+	font-size: 1em;
+	padding: 0.2em 0.4em;
+	margin-top:10px;
 }
 
 select {
@@ -797,6 +807,12 @@ img {
 	border:0;
 }
 
+tbody tr.resultado td{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	background-color:#fafee3;
+	color:#2E2E2E;
+	font-size: 15px;
+}
 
 th {
 	background-color: #efefef;
@@ -957,13 +973,6 @@ tr:hover a{
 }
 
 .buttons .delete, .buttons .edit, .buttons .save {
-	background-position: 0.7em center;
-	background-repeat: no-repeat;
-	text-indent: 25px;
-}
-
-.buttons .direita .delete, .buttons .edit, .buttons .save {
-	float:right;
 	background-position: 0.7em center;
 	background-repeat: no-repeat;
 	text-indent: 25px;

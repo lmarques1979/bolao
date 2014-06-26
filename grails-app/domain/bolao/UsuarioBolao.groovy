@@ -10,9 +10,19 @@ class UsuarioBolao implements Serializable {
 	Long id
 	Usuario usuario
 	Bolao bolao
-	int pontuacao
 	
 	static hasMany=[palpites: Palpite]
+	
+	Palpite buscarPalpiteJogo(Jogo jogo) {
+		
+		for(Palpite palpite:palpites) {
+			if(palpite.jogo == jogo) {
+				return palpite
+			}
+		}
+		
+		return new Palpite (jogo:jogo)
+	}
 	
 	boolean equals(other) {
 		if (!(other instanceof UsuarioBolao)) {
@@ -65,7 +75,6 @@ class UsuarioBolao implements Serializable {
 
 	static constraints = {
 		usuario(unique: ['bolao'])
-		pontuacao(nullable: true , blank: true)
 	}
 	
 	static mapping = {

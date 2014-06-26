@@ -9,6 +9,7 @@ class Configuracao {
 	int larguraimagensthumbs	
 	int tamanhoiconetimes
 	int itensporpagina
+	int	minutosparapalpite
 	Date dateCreated
 	Date lastUpdated
 	
@@ -19,6 +20,7 @@ class Configuracao {
 		larguraimagensthumbs(nullable: true, blank: true)
 		tamanhoiconetimes(nullable: false, blank: false)
 		itensporpagina(nullable: true, blank: true)
+		minutosparapalpite(nullable: false, blank: false)
 	}
 	
 	static mapping = {

@@ -51,3 +51,12 @@
 	<g:textField name="itensporpagina" required="" value="${configuracaoInstance?.itensporpagina}"/>
 
 </div>
+
+<div class="fieldcontain ${hasErrors(bean: configuracaoInstance, field: 'minutosparapalpite', 'error')} required">
+	<label for="tamanhoiconetimes">
+		<g:message code="configuracao.minutosparapalpite.label" default="Minutos para Palpite" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="minutosparapalpite" required="" value="${configuracaoInstance?.minutosparapalpite}"/>
+
+</div>

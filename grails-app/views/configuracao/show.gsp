@@ -70,6 +70,15 @@
 					
 				</li>
 				</g:if>
+				
+				<g:if test="${configuracaoInstance?.minutosparapalpite}">
+				<li class="fieldcontain">
+					<span id="minutosparapalpite-label" class="property-label"><g:message code="configuracao.minutosparapalpite.label" default="Minutos para Palpite" /></span>
+					
+						<span class="property-value" aria-labelledby="minutosparapalpite-label"><g:fieldValue bean="${configuracaoInstance}" field="minutosparapalpite"/></span>
+					
+				</li>
+				</g:if>
 			
 							
 			</ol>
