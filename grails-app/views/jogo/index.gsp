@@ -32,8 +32,8 @@
 				<tbody>
 					<tr>
 						<td>
-							<g:if test="${params.filtrodata}"> 
-								<g:set var="filtrodata" value="${params.filtrodata}" />
+							<g:if test="${session["filtrodata"]}"> 
+								<g:set var="filtrodata" value="${session["filtrodata"]}" />
 							</g:if>
 							<g:else>
 							     <g:set var="filtrodata" value="2" />
@@ -44,7 +44,14 @@
 						</td>
 						
 						<td>
-							<g:select onchange="this.form.submit()" id="campeonato" name="filtrocampeonato" noSelection="${['-1':'Selecionar Campeonato...']}" from="${bolao.Campeonato.list()}" optionValue="descricao" optionKey="id" required="" value="${params.filtrocampeonato}" class="many-to-one"/>
+							<g:if test="${session["filtrocampeonato"]}"> 
+								<g:set var="filtrocampeonato" value="${session["filtrocampeonato"]}" />
+							</g:if>
+							<g:else>
+							     <g:set var="filtrocampeonato" value="-1" />
+							</g:else>
+							
+							<g:select onchange="this.form.submit()" id="campeonato" name="filtrocampeonato" noSelection="${['-1':'Selecionar Campeonato...']}" from="${bolao.Campeonato.list()}" optionValue="descricao" optionKey="id" required="" value="${filtrocampeonato}" class="many-to-one"/>
 						</td>
 						
 					</tr>

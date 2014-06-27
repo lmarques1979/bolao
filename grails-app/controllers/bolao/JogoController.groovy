@@ -15,15 +15,29 @@ class JogoController extends BaseController{
 
     def index(Integer max) {
 		
-		/*def configuracoes = configuracaoParams
-		Date datahoje = new Date(); // oldDate == current time
-        Date datafiltro = new Date(datahoje.getTime() - TimeUnit.HOURS.toMillis(2)); // menos 2 horas 
-		
-		def resultado = Jogo.createCriteria().list (configuracoes) {
-			eq("encerrado" , false)
-			
+		def filtrodata = session["filtrodata"]
+		if(filtrodata==null){
+			filtrodata = "2"
 		}
-        respond resultado, model:[jogoInstanceCount: resultado.totalCount]*/
+		def filtrocampeonato=session["filtrocampeonato"]
+		if(filtrocampeonato==null || filtrocampeonato=="-1"){
+			return
+		}
+		
+		def configuracoes = configuracaoParams
+		
+		def resultadofiltro = Jogo.createCriteria().list (configuracoes) {
+			if(filtrodata=='2'){
+				eq("encerrado" , false)
+			}
+			if(filtrodata=='3'){
+				eq("encerrado" , true )
+			}
+			if(filtrocampeonato!='-1'){
+				eq("campeonato.id" , Long.valueOf(filtrocampeonato).longValue() )
+			}
+		}
+		respond resultadofiltro, model:[jogoInstanceCount: resultadofiltro.totalCount]
     }
 
     def show(Jogo jogoInstance) {
@@ -34,7 +48,16 @@ class JogoController extends BaseController{
 	def filtro() {
 		
 		def filtrodata = params.filtrodata
+		session["filtrodata"] = filtrodata
+		if(filtrodata==null){
+			filtrodata = "2"
+		}
 		def filtrocampeonato = params.filtrocampeonato
+		session["filtrocampeonato"] = filtrocampeonato
+		if(filtrocampeonato==null || filtrocampeonato=="-1"){
+			return
+		}
+		
 		def configuracoes = configuracaoParams
 		
 		def resultadofiltro = Jogo.createCriteria().list (configuracoes) {
