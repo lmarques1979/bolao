@@ -2,6 +2,7 @@ package bolao
 
 import seguranca.Usuario
 import org.apache.commons.lang.builder.HashCodeBuilder
+import funcoesdata.*
 
 class UsuarioBolao implements Serializable {
 
@@ -13,15 +14,19 @@ class UsuarioBolao implements Serializable {
 	
 	static hasMany=[palpites: Palpite]
 	
-	Palpite buscarPalpiteJogo(Jogo jogo) {
+	Palpite buscarPalpiteJogo(Jogo jogo , minutos) {
+
+		def funcoesData = new FuncoesData()
+		def finalizado = funcoesData.diferencaMinutos(jogo.datajogo , minutos)
 		
 		for(Palpite palpite:palpites) {
 			if(palpite.jogo == jogo) {
+				palpite.finalizado=finalizado
 				return palpite
 			}
 		}
 		
-		return new Palpite (jogo:jogo)
+		return new Palpite (jogo:jogo , finalizado:finalizado)
 	}
 	
 	boolean equals(other) {

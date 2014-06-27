@@ -28,8 +28,8 @@
 						 <li><g:link class="times" controller="Time" action="index" ><g:message code="time.label"/></g:link></li>
 						 <li><g:link class="jogos" controller="Jogo" action="index" ><g:message code="jogo.label"/></g:link></li>
 						 <li><g:link class="usuarios" controller="Usuario" action="index"><g:message code="usuarios.label"/></g:link></li>
-						 <li><g:link class="regras" controller="Regra" action="index"><g:message code="regra.label"/></g:link></li>
-					     <li><g:link class="usuarioregra" controller="UsuarioRegra" action="index" ><g:message code="usuarioregra.label"/></g:link></li>
+						 <li><g:link class="atualizapontos" controller="Palpite" action="atualizapontos"><g:message code="atualizapontos.label"/></g:link></li>
+						
 					</g:if>
 					<!-- Usuarios logados -->
 					<g:if test="${sec.loggedInUserInfo(field: 'username') != 'admin'}">

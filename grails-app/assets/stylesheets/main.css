@@ -440,7 +440,7 @@ ul {
 .nav a.home, .nav a.list, .nav a.create ,.nav a.login , .nav a.logout, .nav a.usuario, 
 .nav a.configuracao , .nav a.paises ,  .nav a.estadio, .nav a.campeonato, .nav a.times,  .nav a.jogos,
 .nav a.usuarios , .nav a.regras , .nav a.usuarioregra , .nav a.cadastrousuario , .nav a.bolao,
-.nav a.meusboloes, .nav a.palpites{
+.nav a.meusboloes, .nav a.palpites , .nav a.atualizapontos{
 	background-position: 0.7em center;
 	background-repeat: no-repeat;
 	text-indent: 25px;
@@ -534,6 +534,10 @@ ul {
 	background-image: url(../images/skin/palpites.png); 
 }
 
+.nav a.atualizapontos {
+	background-image: url(../images/skin/atualizapontos.png); 
+}
+
 .nav a.logout {
 	background-image: url(../images/skin/logout.png); 
 }
@@ -610,6 +614,15 @@ input, select, textarea {
  input.centro, select.centro, textarea.centro  {
 	text-align:center;
 	background-color: #fcfcfc;
+	border: 1px solid #cccccc;
+	font-size: 1em;
+	padding: 0.2em 0.4em;
+	margin-top:10px;
+}
+
+input.readonly, select.readonly, textarea.readonly  {
+	text-align:center;
+	background-color: #E2E2E2;
 	border: 1px solid #cccccc;
 	font-size: 1em;
 	padding: 0.2em 0.4em;

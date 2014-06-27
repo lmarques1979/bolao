@@ -15,6 +15,13 @@
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
+			<g:if test="${flash.erros}">
+			<ul class="errors" role="alert">
+				<g:each in="${flash.erros}" status="i" var="erro">
+					<li>${erro}</li>
+				</g:each>
+			</ul>
+			</g:if>
 			<g:form url="[action:'save',controller:'palpite']" method="POST" >
 							
 			<table>
@@ -35,6 +42,7 @@
 							<g:set var="rodadaatual" value="${palpite?.jogo?.descricaofase}" />	
 							<g:hiddenField name="jogo" value="${palpite?.jogo?.id}" />
 							<g:hiddenField name="id" value="${palpite?.id ? palpite?.id : "-1"}" />
+							<g:hiddenField name="palpitefinalizado" value="${palpite?.finalizado}" />
 														
 							<g:if test="${rodadaanterior!=rodadaatual}">
 								<thead>
@@ -76,11 +84,21 @@
 							</td>
 							
 							<td>
-								<g:textField class="centro" name="scoretime1" maxlength="1" size="1" value="${palpite?.scoretime1}"/>
+								<g:if test="${palpite.finalizado}">
+									<g:textField readonly class="readonly" name="scoretime1" maxlength="1" size="1" value="${palpite?.scoretime1}"/>
+								</g:if>
+								<g:else>
+									<g:textField class="centro" name="scoretime1" maxlength="1" size="1" value="${palpite?.scoretime1}"/>
+								</g:else>
 							</td>
 							
 							<td>
-								<g:textField class="centro" name="scoretime2" maxlength="1" size="1" value="${palpite?.scoretime2}"/>
+								<g:if test="${palpite.finalizado}">
+									<g:textField readonly class="readonly" name="scoretime2" maxlength="1" size="1" value="${palpite?.scoretime2}"/>
+								</g:if>
+								<g:else>
+									<g:textField class="centro" name="scoretime2" maxlength="1" size="1" value="${palpite?.scoretime2}"/>
+								</g:else>
 							</td>
 						
 							<td>	

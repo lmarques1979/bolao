@@ -39,6 +39,15 @@
 				</li>
 				</g:if>
 				
+				<g:if test="${jogoInstance?.peso}">
+				<li class="fieldcontain">
+					<span id="peso-label" class="property-label"><g:message code="jogo.peso.label" default="Peso" /></span>
+					
+						<span class="property-value" aria-labelledby="peso-label"><g:fieldValue bean="${jogoInstance}" field="peso"/></span>
+					
+				</li>
+				</g:if>
+				
 				<g:if test="${jogoInstance?.fase}">
 				<li class="fieldcontain">
 					<span id="fase-label" class="property-label"><g:message code="jogo.fase.label" default="Fase" /></span>

@@ -9,6 +9,7 @@
 						<tr>
 							<th>Data</th>
 							<th>Hora</th>
+							<th>Peso Bolão</th>
 							<th>Fase</th>
 							<th>Desc. Fase</th>
 							<th>Local do Jogo</th>
@@ -21,6 +22,11 @@
 						</td>
 						<td>
 							<g:textField name="horajogo" size="3" id="hora" class="time" value="${params.horajogo}" />
+							
+						</td>
+						
+						<td>
+							<g:textField name="peso" size="2" value="${jogoInstance?.peso}"/>
 							
 						</td>
 						

@@ -1,8 +1,10 @@
 package bolao
 
 import static org.springframework.http.HttpStatus.*
+import funcoesdata.FuncoesData
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
+
 
 @Transactional(readOnly = true)
 @Secured("isFullyAuthenticated()")
@@ -20,11 +22,10 @@ class PalpiteController extends BaseController {
 			usuarioBolao = usuariobolao
 		}
 		def jogos = usuarioBolao.bolao.campeonato.jogos
-		def palpites = jogos.collect{usuarioBolao.buscarPalpiteJogo(it)}
+		def palpites = jogos.collect{usuarioBolao.buscarPalpiteJogo(it , configuracaoParams.minutosparapalpite)}
 		
 		respond palpites, model:[palpitesList: palpites, palpiteInstanceCount: palpites.size()]
-		
-    }
+	}
 
     def show(Palpite palpiteInstance) {
         respond palpiteInstance
@@ -33,7 +34,23 @@ class PalpiteController extends BaseController {
     def create() {
         respond new Palpite(params)
     }
+	
+	@Transactional
+	def atualizapontos(){
 
+		def resultado = Palpite.createCriteria().list () {
+			eq("jogo.encerrado" , true)
+			
+		}
+		
+		//Faço os cálculos dos pontos por cada palpite de cada usuário
+		resultado.each(){
+			
+		}
+		
+		respond resultadofiltro, model:[jogoInstanceCount: resultadofiltro.totalCount]
+	}
+	
     @Transactional
     def save() {
 		
@@ -43,20 +60,33 @@ class PalpiteController extends BaseController {
 			usuarioBolao = usuariobolao
 		}
 		
+		def finalizados		= params.list('palpitefinalizado')
 		def idPalpites 		= params.list('id')
 		def jogos 			= params.list('jogo')
 		def scoretime1 		= params.list('scoretime1')
 		def scoretime2 		= params.list('scoretime2')
-		
+		def configuracoes 	= configuracaoParams
+		def erros = []
+		def i = 0
 		idPalpites.eachWithIndex{ it, index ->
 			
 			def idPalpite 	= it
 			def jogo 		= Jogo.get(Long.valueOf(jogos[index]).longValue())
 			def score1 		= scoretime1[index]
 			def score2 		= scoretime2[index]
+			def	finalizado  = finalizados[index].toBoolean()
+			
+			
+			def funcoesData 	= new FuncoesData()
+			def finalizadoAtual = funcoesData.diferencaMinutos(jogo.datajogo , configuracoes.minutosparapalpite)
+			
+			if(finalizado != finalizadoAtual){
+				erros[i] = 'Palpite do jogo ' + jogo.time1.descricao + ' x ' + jogo.time2.descricao + ' já foi finalizado.'
+				i++
+			}
 			
 			//Incluo ou atualizo palpite
-			def palpiteInstance = PalpiteService.salvarPalpite(idPalpite ,jogo , score1 , score2 , false , usuarioBolao)
+			def palpiteInstance = PalpiteService.salvarPalpite(idPalpite ,jogo , score1 , score2 , finalizado , usuarioBolao)
 			
 			if(palpiteInstance!=null){
 				if (palpiteInstance.hasErrors()) {
@@ -66,10 +96,14 @@ class PalpiteController extends BaseController {
 			}
 			
 		}
-		flash.message = message(code: 'palpite.updated.message')
-        redirect action:"index", method:"GET"
-        
-    }
+		if(i==0){
+			flash.message = message(code: 'palpite.updated.message')
+		}else{
+			flash.erros = erros
+		}
+		
+		redirect action:"index" 
+	}
 
     def edit(Palpite palpiteInstance) {
         respond palpiteInstance

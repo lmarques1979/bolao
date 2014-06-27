@@ -8,6 +8,7 @@ class Jogo {
 	Time time2
 	Date datajogo
 	int  fase
+	int  peso=1
 	String descricaofase
 	int	scoretime1=0
 	int scoretime2=0
@@ -26,6 +27,7 @@ class Jogo {
 		estadio(nullable: true , blank: true)
 		encerrado(nullable: true , blank: true)
 		fase(nullable: false , blank: false)
+		peso(nullable: false , blank: false)
 		descricaofase(nullable: false , blank: false)
 		scoretime1(nullable: true , blank: true , size: 1..3, matches:"[0-9]{1}[0-9]{1}[0-9]{1}")
 		scoretime2(nullable: true , blank: true , size: 1..3, matches:"[0-9]{1}[0-9]{1}[0-9]{1}")
