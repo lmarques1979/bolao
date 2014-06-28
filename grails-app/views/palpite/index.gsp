@@ -27,7 +27,7 @@
 			<table>
 				<thead>
 					<tr>
-						<th colspan="7">
+						<th colspan="6">
 							<fieldset class="buttons">
 								<g:actionSubmit class="save" action="save" value="${message(code: 'button.create.label', default: 'Update')}" />
 							</fieldset>
@@ -36,46 +36,39 @@
 				<thead>
 				<tbody>
 				<g:set var="rodadaanterior" value="-1" />
+				<g:set var="datajogoanterior" value="-1" />
 				<g:each in="${palpitesList}" status="i" var="palpite">
 						<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 							
 							<g:set var="rodadaatual" value="${palpite?.jogo?.descricaofase}" />	
+							<g:set var="datajogoatual" value="${palpite?.jogo?.datajogo?.format('dd/MM/yyyy')}" />
+							
 							<g:hiddenField name="jogo" value="${palpite?.jogo?.id}" />
 							<g:hiddenField name="id" value="${palpite?.id ? palpite?.id : "-1"}" />
 							<g:hiddenField name="palpitefinalizado" value="${palpite?.finalizado}" />
-														
+							
 							<g:if test="${rodadaanterior!=rodadaatual}">
 								<thead>
-									<tr>
-										<th colspan="7">${palpite?.jogo?.descricaofase}</th>
-									</tr>
-									
-									<tr>
-							
-										<th><g:message code="jogo.datajogo.label" default="Local" /></th>
-										
-										<th><g:message code="jogo.estadio.label" default="Local" /></th>
-										
-										<th><g:message code="jogo.time1.label" default="Time1" /></th>
-										
-										<th><g:message code="jogo.scoretime1.label" default="Score Time1" /></th>
-										
-										<th><g:message code="jogo.scoretime2.label" default="Score Time2" /></th>
-									
-										<th><g:message code="jogo.time2.label" default="Time2" /></th>
-									
-										<th><g:message code="jogo.campeonato.label" default="Campeonato" /></th>
-								
+									<tr class="fase">
+										<th colspan="6">${palpite?.jogo?.descricaofase}</th>
 									</tr>
 								</thead>	
 						
 							</g:if>
+							
+							<g:if test="${datajogoanterior!=datajogoatual}">
+								<tbody>
+									<tr class="datajogo">
+										<td>Data do Jogo: ${datajogoatual}</td>
+										<td colspan="4"></td>
+										<td>Peso: ${palpite?.jogo?.peso}</td>
+									</tr>
+								</tbody>	
+							</g:if>
 							<td>
-								<g:formatDate format="dd/MM/yyyy HH:mm" date="${palpite?.jogo?.datajogo}"/>
+								<g:formatDate format="HH:mm" date="${palpite?.jogo?.datajogo}"/> | ${palpite?.jogo?.estadio?.descricao}
 							</td>
 						
-							<td>${palpite?.jogo?.estadio?.descricao}</td>
-							
 							<td><g:if test="${palpite?.jogo?.time1?.imagem}">
 									<asset:image src="bandeiras/${params.tamanhoiconetimes}/${palpite?.jogo?.time1?.imagem}" title="${palpite?.jogo?.time1?.descricao}"/>
 								</g:if><br>
@@ -118,18 +111,20 @@
 						</tr>
 						<tbody>
 							<tr class="resultado">
-								<td colspan="3">Resultado Final</td>
+								<td colspan="2">Resultado Final</td>
 								<td>${palpite?.jogo?.scoretime1}</td>
 								<td>${palpite?.jogo?.scoretime2}</td>
-								<td colspan="2">Pontos</td>
+								<td>Pontos</td>
+								<td>${palpite?.pontuacao}</td>
 							</tr>
 						</tbody>
 						<g:set var="rodadaanterior" value="${rodadaatual}" />
+						<g:set var="datajogoanterior" value="${datajogoatual}" />
 				</g:each>
 						
 				<thead>
 					<tr>
-						<th colspan="7">
+						<th colspan="6">
 							<fieldset class="buttons">
 								<g:actionSubmit class="save" action="save" value="${message(code: 'button.create.label', default: 'Update')}" />
 							</fieldset>

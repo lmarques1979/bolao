@@ -63,47 +63,38 @@
 				<tbody>
 				
 				<g:set var="rodadaanterior" value="-1" />
+				<g:set var="datajogoanterior" value="-1" />
 				<g:each in="${jogoInstanceList}" status="i" var="jogoInstance">
 				
 					<g:set var="rodadaatual" value="${jogoInstance?.descricaofase}" />
+					<g:set var="datajogoatual" value="${jogoInstance?.datajogo?.format('dd/MM/yyyy')}" />
 					
 					<g:if test="${rodadaanterior!=rodadaatual}">
 						<thead>
-							<tr>
-								<th colspan="7">${jogoInstance?.descricaofase}</th>
-							</tr>
-							
-							<tr>
-					
-								
-								<th><g:message code="jogo.datajogo.label" default="Local" /></th>
-								
-								<th><g:message code="jogo.estadio.label" default="Local" /></th>
-								
-								<th><g:message code="jogo.time1.label" default="Time1" /></th>
-								
-								<th><g:message code="jogo.scoretime1.label" default="Score Time1" /></th>
-								
-								<th><g:message code="jogo.scoretime2.label" default="Score Time2" /></th>
-							
-								<th><g:message code="jogo.time2.label" default="Time2" /></th>
-							
-								<th><g:message code="jogo.campeonato.label" default="Campeonato" /></th>
-						
+							<tr class="fase">
+								<th colspan="6">${jogoInstance?.descricaofase}</th>
 							</tr>
 						</thead>	
 						
 					</g:if>
 					
+					<g:if test="${datajogoanterior!=datajogoatual}">
+								<tbody>
+									<tr class="datajogo">
+										<td>Data do Jogo: ${datajogoatual}</td>
+										<td colspan="4"></td>
+										<td>Peso: ${jogoInstance?.peso}</td>
+									</tr>
+								</tbody>	
+					</g:if>
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td>
 							<g:link action="show" id="${jogoInstance.id}">
-								<g:formatDate format="dd/MM/yyyy HH:mm" date="${jogoInstance?.datajogo}"/>
+								<g:formatDate format="dd/MM/yyyy HH:mm" date="${jogoInstance?.datajogo}"/> | ${jogoInstance?.estadio?.descricao}
 							</g:link>
 						</td>
 					
-						<td>${jogoInstance?.estadio?.descricao}</td>
 						
 						<td><g:if test="${jogoInstance?.time1?.imagem}">
 								<asset:image src="bandeiras/${params.tamanhoiconetimes}/${jogoInstance?.time1?.imagem}" title="${jogoInstance?.time1?.descricao}"/>
@@ -137,7 +128,7 @@
 					</tr>
 					
 					<g:set var="rodadaanterior" value="${rodadaatual}" />
-
+					<g:set var="datajogoanterior" value="${datajogoatual}" />
 				</g:each>
 				</tbody>
 			</table>

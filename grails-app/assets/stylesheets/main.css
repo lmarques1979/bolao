@@ -827,6 +827,28 @@ tbody tr.resultado td{
 	font-size: 15px;
 }
 
+thead tr.fase th {
+text-align:center;
+padding: 5px 10px;
+background:#1E5A2E;
+background-color:#1E5A2E;
+color:#fff;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+font-size: 14px;
+font-weight: bold;
+}
+
+tbody tr.datajogo td {
+text-align:left;
+padding: 5px 10px;
+background-color: #e6e6e6;
+color:#424242;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+font-size: 14px;
+font-weight: bold;
+}
+
+
 th {
 	background-color: #efefef;
 	background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);

@@ -4,7 +4,7 @@ import static org.springframework.http.HttpStatus.*
 import funcoesdata.FuncoesData
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
-
+import pontuacao.*
 
 @Transactional(readOnly = true)
 @Secured("isFullyAuthenticated()")
@@ -37,18 +37,42 @@ class PalpiteController extends BaseController {
 	
 	@Transactional
 	def atualizapontos(){
-
-		def resultado = Palpite.createCriteria().list () {
-			eq("jogo.encerrado" , true)
-			
-		}
+		
+		def erros = []
+		def i = 0
+		
+		def palpites = Palpite.findAll() 
 		
 		//Faço os cálculos dos pontos por cada palpite de cada usuário
-		resultado.each(){
-			
+		palpites.each(){ palpiteInstance->
+						def palpitetime1 = palpiteInstance.scoretime1
+						def palpitetime2 = palpiteInstance.scoretime2
+						def jogos = palpiteInstance.jogo
+						jogos.each(){ jogo->
+							
+							if(jogo.encerrado==true){
+									
+									def pontuacao = new Pontuacao()
+									def scoretime1 	= jogo.scoretime1
+									def scoretime2 	= jogo.scoretime2
+									def peso 		= jogo.peso
+									def pontos = pontuacao.contaPontos(scoretime1 , scoretime2 , palpitetime1 , palpitetime2, peso)
+									palpiteInstance.pontuacao = pontos
+									palpiteInstance.save flush:true
+									
+									if (palpiteInstance.hasErrors()) {
+										erros[i] = palpiteInstance.errors
+										i++
+									}
+								
+							}
+					}
 		}
-		
-		respond resultadofiltro, model:[jogoInstanceCount: resultadofiltro.totalCount]
+		if(i==0){
+			flash.message = message(code: 'pontuacao.updated.message')
+		}else{
+			flash.erros = erros
+		}
 	}
 	
     @Transactional
