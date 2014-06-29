@@ -58,9 +58,9 @@
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'timecoracao', 'error')} ">
 	<label for="sobrenome">
 		<g:message code="usuario.timecoracao.label" default="Time de Coração" />
+		
 	</label>
-	<g:select id="timecoracao" name="timecoracao.id" noSelection="${['':'Selecionar Time de Coração...']}" from="${Time.list()}" optionValue="descricao" optionKey="id" required="" value="${jogoInstance?.timecoracao}" class="many-to-one"/>
-	
+	<g:select id="timecoracao" name="timecoracao.id" noSelection="${['':'Selecionar Time de Coração...']}" from="${Time.list()}" optionValue="descricao" optionKey="id" value="${jogoInstance?.timecoracao}" class="many-to-one"/>
 </div>
 
 <!-- 

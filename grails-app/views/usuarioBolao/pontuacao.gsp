@@ -58,9 +58,9 @@
 						<tr>
 						
 							<th>#</th>
-							<th>Time de Coração</th>
 							<th>Avatar</th>
 							<th>Participante</th>
+							<th>Time Usuário</th>
 							<th>Pontos</th>
 						
 						</tr>
@@ -69,11 +69,7 @@
 						<g:each in="${usuariosBolao}" status="i" var="usuariobolao">
 							<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 									<td>${i+1}</td>
-									<td>
-										<g:if test="${usuariobolao[0].timecoracao.imagem}">
-											<asset:image src="bandeiras/24/${usuariobolao[0].timecoracao.imagem}" title="${usuariobolao[0].timecoracao.descricao}"/>
-										</g:if>
-									</td>
+									
 									<td>
 										<g:if test="${usuariobolao[0].imagem}">
 											<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="usuarios/${usuariobolao[0].username}/${usuariobolao[0].imagem}" title="${usuariobolao[0].username}"/>
@@ -90,6 +86,11 @@
 											    <g:set var="usuario" value="${usuario + ' ' + usuariobolao[0]?.sobrenome}" />
 										</g:if>
 										${usuario}</td>
+									<td>
+										<g:if test="${usuariobolao[0].timecoracao.imagem}">
+											<asset:image src="bandeiras/24/${usuariobolao[0].timecoracao.imagem}" title="${usuariobolao[0].timecoracao.descricao}"/>
+										</g:if>
+									</td>
 									<td>${usuariobolao[1] ? usuariobolao[1] : 0}</td>
 							</tr>
 							
