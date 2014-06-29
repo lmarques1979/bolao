@@ -1,6 +1,7 @@
 package bolao
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import org.hibernate.criterion.CriteriaSpecification
 
 @Transactional(readOnly = true)
 class UsuarioBolaoController extends BaseController {
@@ -22,9 +23,9 @@ class UsuarioBolaoController extends BaseController {
 		session["usuariobolao"] = usuarioBolaoInstance
 		def configuracoes = configuracaoParams
 		
-		def resultado = UsuarioBolao.createCriteria().list (configuracoes) {
+		def resultado = UsuarioBolao.createCriteria().list(configuracoes) {
 				eq('bolao.id', usuarioBolaoInstance.bolao.id)
-				createAlias("palpites", "palpite")
+				createAlias("palpites", "palpite", CriteriaSpecification.LEFT_JOIN)
 				projections {
 					groupProperty("usuario")
 					sum "palpite.pontuacao", "pontos" 

@@ -75,7 +75,7 @@
 											    <g:set var="usuario" value="${usuario + ' ' + usuariobolao[0]?.sobrenome}" />
 										</g:if>
 										${usuario}</td>
-									<td>${usuariobolao[1]}</td>
+									<td>${usuariobolao[1] ? usuariobolao[1] : 0}</td>
 							</tr>
 							
 						</g:each>
