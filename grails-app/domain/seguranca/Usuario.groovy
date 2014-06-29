@@ -1,5 +1,6 @@
 package seguranca
 
+import bolao.Time
 import bolao.UsuarioBolao
 import bolao.Palpite
 
@@ -13,6 +14,7 @@ class Usuario {
 	String primeironome
 	String sobrenome
 	String  imagem
+	Time    timecoracao=null
 	boolean enabled = true
 	boolean accountExpired
 	boolean accountLocked
@@ -28,6 +30,7 @@ class Usuario {
 		email(email:true,blank:false,nullable:false)
 		primeironome(blank: false , nullable:false)
 		sobrenome(blank: true , nullable:true)
+		timecoracao(blank: true , nullable:true)
 		imagem(blank: true , nullable:true)
 	}
 	

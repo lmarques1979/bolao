@@ -27,7 +27,7 @@ class UsuarioDetalheService implements GrailsUserDetailsService {
 			if (!user) throw new UsernameNotFoundException( 'Usuário não encontrado', username)
 				def authorities = user.authorities.collect { new GrantedAuthorityImpl(it.authority) }
 	
-				return new DetalheUsuario(user.username, user.password, user.enabled, !user.accountExpired, !user.passwordExpired, !user.accountLocked, authorities ?: NO_ROLES, user.id, user.primeironome, user.sobrenome , user.imagem, user.email) 
+				return new DetalheUsuario(user.username, user.password, user.enabled, !user.accountExpired, !user.passwordExpired, !user.accountLocked, authorities ?: NO_ROLES, user.id, user.primeironome, user.sobrenome , user.imagem, user.email , user.timecoracao) 
 				} 
 		} 
 }

@@ -1,4 +1,5 @@
 <%@ page import="seguranca.Usuario" %>
+<%@ page import="bolao.Time" %>
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'username', 'error')} required">
 	<label for="username">
@@ -52,6 +53,14 @@
 	</label>
 	<input type="file" name="arquivo" value="${usuarioInstance?.imagem}"/>
 
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'timecoracao', 'error')} ">
+	<label for="sobrenome">
+		<g:message code="usuario.timecoracao.label" default="Time de Coração" />
+	</label>
+	<g:select id="timecoracao" name="timecoracao.id" from="${Time.list()}" optionValue="descricao" optionKey="id" required="" value="${jogoInstance?.timecoracao}" class="many-to-one"/>
+	
 </div>
 
 <!-- 

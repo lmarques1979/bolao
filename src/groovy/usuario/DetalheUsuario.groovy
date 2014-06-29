@@ -1,5 +1,6 @@
 package usuario
 
+import bolao.Time
 import grails.plugin.springsecurity.userdetails.GrailsUser
 import org.springframework.security.core.GrantedAuthority 
 import org.springframework.security.core.userdetails.User
@@ -7,6 +8,7 @@ import org.springframework.security.core.userdetails.User
 class DetalheUsuario extends GrailsUser {
 
 	final String primeironome, sobrenome , email, imagem
+	Time  timecoracao
 
 	DetalheUsuario(	String username, 
 					String password, 
@@ -19,7 +21,8 @@ class DetalheUsuario extends GrailsUser {
 					String primeironome,
 					String sobrenome,
 					String imagem,
-					String email) { 
+					String email,
+					Time   timecoracao) { 
 					
 						super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities, id)
 
@@ -27,6 +30,7 @@ class DetalheUsuario extends GrailsUser {
 						this.sobrenome 		= sobrenome
 						this.imagem			= imagem
 						this.email 			= email
-						 
+						this.timecoracao    = timecoracao
+												 
 					} 
 }

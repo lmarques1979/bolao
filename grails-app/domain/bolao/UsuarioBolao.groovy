@@ -21,12 +21,12 @@ class UsuarioBolao implements Serializable {
 		
 		for(Palpite palpite:palpites) {
 			if(palpite.jogo == jogo) {
-				palpite.finalizado=finalizado
+				palpite.finalizado=false
 				return palpite
 			}
 		}
 		
-		return new Palpite (jogo:jogo , finalizado:finalizado)
+		return new Palpite (jogo:jogo , finalizado:false)
 	}
 	
 	boolean equals(other) {

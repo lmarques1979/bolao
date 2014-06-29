@@ -89,15 +89,15 @@ class PalpiteController extends BaseController {
 			def jogo 				= Jogo.get(Long.valueOf(jogos[index]).longValue())
 			def score1 				= scoretime1[index]
 			def score2 				= scoretime2[index]
-			def	finalizado  		= finalizados[index].toBoolean()
+			def	finalizado  		= false//finalizados[index].toBoolean()
 			
 			def funcoesData 	= new FuncoesData()
 			def finalizadoAtual = funcoesData.diferencaMinutos(jogo.datajogo , configuracoes.minutosparapalpite)
 			
-			if(finalizado != finalizadoAtual){
+			/*if(finalizado != finalizadoAtual){
 				erros[i] = 'Palpite do jogo ' + jogo.time1.descricao + ' x ' + jogo.time2.descricao + ' já foi finalizado.'
 				i++
-			}
+			}*/
 			
 			//Incluo ou atualizo palpite
 			def palpiteInstance = PalpiteService.salvarPalpite(idPalpite ,jogo , score1 , score2 , finalizado , usuarioBolaoInstance)

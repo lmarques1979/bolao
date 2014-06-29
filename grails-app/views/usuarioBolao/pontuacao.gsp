@@ -52,12 +52,13 @@
 					<thead>
 						<tr>
 						
-							<th colspan="3" class="esquerda"><g:message code="palpite.pontuacaousuarios.label" default="Bolao" /></th>
+							<th colspan="4" class="esquerda"><g:message code="palpite.pontuacaousuarios.label" default="Bolao" /></th>
 						
 						</tr>
 						<tr>
 						
 							<th>#</th>
+							<th>Time de Coração</th>
 							<th>Participante</th>
 							<th>Pontos</th>
 						
@@ -67,6 +68,11 @@
 						<g:each in="${usuariosBolao}" status="i" var="usuariobolao">
 							<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 									<td>${i+1}</td>
+									<td>
+										<g:if test="${usuariobolao[0].timecoracao.imagem}">
+											<asset:image src="bandeiras/24/${usuariobolao[0].timecoracao.imagem}" title="${usuariobolao[0].timecoracao.descricao}"/>
+										</g:if>
+									</td>
 									<td class="esquerda">
 										<g:if test="${usuariobolao[0]?.primeironome}">
 											    <g:set var="usuario" value="${usuariobolao[0]?.primeironome}" />

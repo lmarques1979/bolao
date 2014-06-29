@@ -27,6 +27,7 @@
 						<g:sortableColumn property="primeironome" title="${message(code: 'usuario.primeironome.label', default: 'Primeironome')}" />
 					    <g:sortableColumn property="sobrenome" title="${message(code: 'usuario.sobrenome.label', default: 'Sobrenome')}" />
 						<g:sortableColumn property="imagem" title="${message(code: 'usuario.imagem.label', default: 'Imagem')}" />
+						<g:sortableColumn property="timecoracao" title="${message(code: 'usuario.timecoracao.label', default: 'Time de Coração')}" />
 						
 					</tr>
 				</thead>
@@ -45,9 +46,13 @@
 						<td><g:if test="${usuarioInstance.imagem}">
 								<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="usuarios/${usuarioInstance.username}/${usuarioInstance.imagem}" title="${usuarioInstance.username}"/>
 							</g:if>		
-						</td>			
-					
-					
+						</td>
+						
+						<td><g:if test="${usuarioInstance.timecoracao}">
+								<asset:image src="bandeiras/24/${usuarioInstance.timecoracao.imagem}" title="${usuarioInstance.timecoracao.descricao}"/>
+							</g:if>		
+						</td>
+											
 					</tr>
 				</g:each>
 				</tbody>

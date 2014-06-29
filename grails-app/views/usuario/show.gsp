@@ -29,6 +29,19 @@
 					
 				</li>
 				</g:if>
+				
+				<g:if test="${usuarioInstance?.timecoracao}">
+				<li class="fieldcontain">
+					<span id="timecoracao-label" class="property-label"><g:message code="usuario.timecoracao.label" default="Time de Coração" /></span>
+					
+						<span class="property-value" aria-labelledby="imagem-label">
+								<g:if test="${usuarioInstance.timecoracao.imagem}">
+									<asset:image src="bandeiras/32/${usuarioInstance.timecoracao.imagem}" title="${usuarioInstance.timecoracao.descricao}"/>
+								</g:if>
+						</span>
+					
+				</li>
+				</g:if>
 							
 				<g:if test="${usuarioInstance?.username}">
 				<li class="fieldcontain">
