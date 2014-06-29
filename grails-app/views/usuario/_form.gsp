@@ -59,7 +59,7 @@
 	<label for="sobrenome">
 		<g:message code="usuario.timecoracao.label" default="Time de Coração" />
 	</label>
-	<g:select id="timecoracao" name="timecoracao.id" from="${Time.list()}" optionValue="descricao" optionKey="id" required="" value="${jogoInstance?.timecoracao}" class="many-to-one"/>
+	<g:select id="timecoracao" name="timecoracao.id" noSelection="${['':'Selecionar Time de Coração...']}" from="${Time.list()}" optionValue="descricao" optionKey="id" required="" value="${jogoInstance?.timecoracao}" class="many-to-one"/>
 	
 </div>
 

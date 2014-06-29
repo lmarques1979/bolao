@@ -52,13 +52,14 @@
 					<thead>
 						<tr>
 						
-							<th colspan="4" class="esquerda"><g:message code="palpite.pontuacaousuarios.label" default="Bolao" /></th>
+							<th colspan="5" class="esquerda"><g:message code="palpite.pontuacaousuarios.label" default="Bolao" /></th>
 						
 						</tr>
 						<tr>
 						
 							<th>#</th>
 							<th>Time de Coração</th>
+							<th>Avatar</th>
 							<th>Participante</th>
 							<th>Pontos</th>
 						
@@ -71,6 +72,11 @@
 									<td>
 										<g:if test="${usuariobolao[0].timecoracao.imagem}">
 											<asset:image src="bandeiras/24/${usuariobolao[0].timecoracao.imagem}" title="${usuariobolao[0].timecoracao.descricao}"/>
+										</g:if>
+									</td>
+									<td>
+										<g:if test="${usuariobolao[0].imagem}">
+											<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="usuarios/${usuariobolao[0].username}/${usuariobolao[0].imagem}" title="${usuariobolao[0].username}"/>
 										</g:if>
 									</td>
 									<td class="esquerda">
