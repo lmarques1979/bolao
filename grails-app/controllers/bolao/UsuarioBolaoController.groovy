@@ -17,15 +17,26 @@ class UsuarioBolaoController extends BaseController {
 		
         respond resultado, model:[usuarioBolaoInstanceCount: resultado.totalCount]
     }
-
-    def show(UsuarioBolao usuarioBolaoInstance) {
+	
+	def pontuacao(UsuarioBolao usuarioBolaoInstance){
 		session["usuariobolao"] = usuarioBolaoInstance
 		def configuracoes = configuracaoParams
-		def total = UsuarioBolao.createCriteria().list (configuracoes) {
-			eq("bolao.id" , usuarioBolaoInstance.bolao.id)
+		
+		def resultado = UsuarioBolao.createCriteria().list (configuracoes) {
+				eq('bolao.id', usuarioBolaoInstance.bolao.id)
+				createAlias("palpites", "palpite")
+				projections {
+					groupProperty("usuario")
+					sum "palpite.pontuacao", "pontos" 
+				}
+				order("pontos", "desc")
 		}
 		
-        respond usuarioBolaoInstance , model:[usuarioBolaoInstanceCount: total.totalCount]
+		respond usuarioBolaoInstance , model:[usuariosBolao:resultado, usuarioBolaoInstanceCount: usuarioBolaoInstance.count()]
+	}
+	
+    def show(UsuarioBolao usuarioBolaoInstance) {
+		
     }
 
     def create() {

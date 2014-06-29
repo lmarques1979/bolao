@@ -47,7 +47,7 @@
 							    <g:set var="usuario" value="${usuario + ' ' + sec.loggedInUserInfo(field: 'sobrenome')}" />
 						</g:if>
 						<g:if test="${session["usuariobolao"]}">
-							<span class="logout">Usuário: ${usuario} - Bolão:<g:link controller="UsuarioBolao" action="show" id="${session["usuariobolao"].id}">${session["usuariobolao"].bolao.descricao}</g:link></span>
+							<span class="logout">Usuário: ${usuario} - Bolão:<g:link controller="UsuarioBolao" action="pontuacao" id="${session["usuariobolao"].id}">${session["usuariobolao"].bolao.descricao}</g:link></span>
 						</g:if>
 						<g:else>
 							<span class="logout">Usuário: ${usuario}</span>

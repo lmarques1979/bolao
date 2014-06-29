@@ -22,8 +22,8 @@
 				</g:each>
 			</ul>
 			</g:if>
-			<g:form url="[action:'save',controller:'palpite']" method="POST" >
-							
+			<g:form url="[action:'save',controller:'palpite']" method="POST">
+			<g:hiddenField name="usuariobolao" value="${usuarioBolaoInstance.id}" />				
 			<table>
 				<thead>
 					<tr>
@@ -39,14 +39,14 @@
 				<g:set var="datajogoanterior" value="-1" />
 				<g:each in="${palpitesList}" status="i" var="palpite">
 						<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-							
+	
 							<g:set var="rodadaatual" value="${palpite?.jogo?.descricaofase}" />	
 							<g:set var="datajogoatual" value="${palpite?.jogo?.datajogo?.format('dd/MM/yyyy')}" />
 							
 							<g:hiddenField name="jogo" value="${palpite?.jogo?.id}" />
 							<g:hiddenField name="id" value="${palpite?.id ? palpite?.id : "-1"}" />
 							<g:hiddenField name="palpitefinalizado" value="${palpite?.finalizado}" />
-							
+														
 							<g:if test="${rodadaanterior!=rodadaatual}">
 								<thead>
 									<tr class="fase">
@@ -134,7 +134,7 @@
 			</table>
 			</g:form>
 			<div class="pagination">
-				<g:paginate total="${usuarioBolaoInstanceCount ?: 0}" />
+				<g:paginate total="${palpitesList ?: 0}" />
 			</div>
 		</div>
 	</body>

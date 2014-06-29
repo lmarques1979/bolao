@@ -13,21 +13,17 @@ class PalpiteController extends BaseController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 	def PalpiteService
 	
-    def index(Integer max) {
-		
-		def usuarioBolao
+    def index() {
+		def usuarioBolaoInstance=UsuarioBolao.get(Long.valueOf(params.id).longValue())
 		def configuracoes = configuracaoParams
-		def usuarioBolaoList = UsuarioBolao.findAll("from UsuarioBolao as ub where ub.bolao.id=? and ub.usuario.id=?", [session["usuariobolao"].bolao.id , session["usuariobolao"].usuario.id])
-		usuarioBolaoList.each(){ usuariobolao -> 
-			usuarioBolao = usuariobolao
-		}
-		def jogos = usuarioBolao.bolao.campeonato.jogos
-		def palpites = jogos.collect{usuarioBolao.buscarPalpiteJogo(it , configuracaoParams.minutosparapalpite)}
+		def usuarioBolaoList = UsuarioBolao.findAll("from UsuarioBolao as ub where ub.bolao.id=? and ub.usuario.id=?", [ usuarioBolaoInstance.bolao.id , usuarioBolaoInstance.usuario.id])
+		def jogos = usuarioBolaoInstance.bolao.campeonato.jogos
+		def palpites = jogos.collect{usuarioBolaoInstance.buscarPalpiteJogo(it , configuracaoParams.minutosparapalpite)}
 		
-		respond palpites, model:[palpitesList: palpites, palpiteInstanceCount: palpites.size()]
+		respond palpites, model:[usuarioBolaoInstance:usuarioBolaoInstance, palpitesList: palpites, palpiteInstanceCount: palpites.size()]
 	}
 
-    def show(Palpite palpiteInstance) {
+	def show(Palpite palpiteInstance) {
         respond palpiteInstance
     }
 
@@ -78,12 +74,7 @@ class PalpiteController extends BaseController {
     @Transactional
     def save() {
 		
-		def usuarioBolao
-		def usuarioBolaoList = UsuarioBolao.findAll("from UsuarioBolao as ub where ub.bolao.id=? and ub.usuario.id=?", [session["usuariobolao"].bolao.id , session["usuariobolao"].usuario.id])
-		usuarioBolaoList.each(){ usuariobolao ->
-			usuarioBolao = usuariobolao
-		}
-		
+		def usuarioBolaoInstance= UsuarioBolao.get(Long.valueOf(params.usuariobolao).longValue())
 		def finalizados		= params.list('palpitefinalizado')
 		def idPalpites 		= params.list('id')
 		def jogos 			= params.list('jogo')
@@ -94,12 +85,11 @@ class PalpiteController extends BaseController {
 		def i = 0
 		idPalpites.eachWithIndex{ it, index ->
 			
-			def idPalpite 	= it
-			def jogo 		= Jogo.get(Long.valueOf(jogos[index]).longValue())
-			def score1 		= scoretime1[index]
-			def score2 		= scoretime2[index]
-			def	finalizado  = finalizados[index].toBoolean()
-			
+			def idPalpite 			= it
+			def jogo 				= Jogo.get(Long.valueOf(jogos[index]).longValue())
+			def score1 				= scoretime1[index]
+			def score2 				= scoretime2[index]
+			def	finalizado  		= finalizados[index].toBoolean()
 			
 			def funcoesData 	= new FuncoesData()
 			def finalizadoAtual = funcoesData.diferencaMinutos(jogo.datajogo , configuracoes.minutosparapalpite)
@@ -110,7 +100,7 @@ class PalpiteController extends BaseController {
 			}
 			
 			//Incluo ou atualizo palpite
-			def palpiteInstance = PalpiteService.salvarPalpite(idPalpite ,jogo , score1 , score2 , finalizado , usuarioBolao)
+			def palpiteInstance = PalpiteService.salvarPalpite(idPalpite ,jogo , score1 , score2 , finalizado , usuarioBolaoInstance)
 			
 			if(palpiteInstance!=null){
 				if (palpiteInstance.hasErrors()) {
@@ -126,7 +116,7 @@ class PalpiteController extends BaseController {
 			flash.erros = erros
 		}
 		
-		redirect action:"index" 
+		redirect action:"index" , params:[id:usuarioBolaoInstance.id]
 	}
 
     def edit(Palpite palpiteInstance) {
