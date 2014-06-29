@@ -45,7 +45,10 @@
 					
 						<td><g:if test="${usuarioInstance.imagem}">
 								<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="usuarios/${usuarioInstance.username}/${usuarioInstance.imagem}" title="${usuarioInstance.username}"/>
-							</g:if>		
+							</g:if>	
+							<g:else>
+								<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="usuarios/noimage.jpg" title="${usuarioInstance.username}"/>
+							</g:else>	
 						</td>
 						
 						<td><g:if test="${usuarioInstance.timecoracao}">

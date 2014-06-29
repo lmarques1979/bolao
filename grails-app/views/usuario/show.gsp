@@ -25,6 +25,9 @@
 								<g:if test="${usuarioInstance.imagem}">
 									<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="usuarios/${usuarioInstance.username}/${usuarioInstance.imagem}" title="${usuarioInstance.username}"/>
 								</g:if>
+								<g:else>
+									<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="usuarios/noimage.jpg" title="${usuarioInstance.username}"/>
+								</g:else>
 						</span>
 					
 				</li>

@@ -78,6 +78,9 @@
 										<g:if test="${usuariobolao[0].imagem}">
 											<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="usuarios/${usuariobolao[0].username}/${usuariobolao[0].imagem}" title="${usuariobolao[0].username}"/>
 										</g:if>
+										<g:else>
+											<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="usuarios/noimage.jpg" title="${usuariobolao[0].username}"/>
+										</g:else>
 									</td>
 									<td class="esquerda">
 										<g:if test="${usuariobolao[0]?.primeironome}">
