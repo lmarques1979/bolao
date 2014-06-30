@@ -11,37 +11,53 @@
 		<a href="#list-usuarioBolao" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		
 		<div id="list-usuarioBolao" class="content scaffold-list" role="main">
-			<h1><g:message code="usuarioBolao.list.label"/></h1>
-			<g:if test="${flash.message}">
-				<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<table>
-			<thead>
-					<tr>
-					
-						<th><g:message code="usuarioBolao.bolao.label" default="Bolao" /></th>
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${usuarioBolaoInstanceList}" status="i" var="usuarioBolaoInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-					
-						<td class="esquerda">
-							<g:if test="${usuarioBolaoInstance?.bolao?.imagem}">
-									<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="bolao/${usuarioBolaoInstance?.bolao?.descricao}/${usuarioBolaoInstance?.bolao?.imagem}" title="${usuarioBolaoInstance?.bolao?.descricao}"/>
-							</g:if>	
-							<g:link controller="UsuarioBolao" action="pontuacao" id="${usuarioBolaoInstance.id}">${fieldValue(bean: usuarioBolaoInstance?.bolao, field: "descricao")}</g:link>
+			
+			<div class="usuario">
+				<div class="avatarimagem">
+					<g:if test="${usuarioBolaoInstanceList[0].usuario.imagem}">
+							<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="usuarios/${usuarioBolaoInstanceList[0].usuario.username}/${usuarioBolaoInstanceList[0].usuario.imagem}" title="${usuarioBolaoInstanceList[0].usuario.username}"/>
+					</g:if>
+					<g:else>
+						<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="usuarios/noimage.jpg" title="${usuarioBolaoInstanceList[0].usuario.username}"/>
+					</g:else>
+				
+				</div>
+				<div class="nomeusuario">
+					<span>${usuarioBolaoInstanceList[0].usuario.buscaNome(usuarioBolaoInstanceList[0].usuario)}</span>
+				</div>
+				
+				<div class="dadosusuario">
+					<asset:image src="skin/email.png" title="E-mail"/><span>E-mail: ${usuarioBolaoInstanceList[0].usuario.email}</span><div class="clearer"></div>
+				</div>
+			</div>
+			<div class="boloesativos">
+					<g:if test="${flash.message}">
+						<div class="message" role="status">${flash.message}</div>
+					</g:if>
+					<table>
+						<thead>
+							<tr>
+								<th class="esquerda"><g:message code="usuarioBolao.list.label" default="Bolao" /></th>
+							</tr>
+						</thead>
+						<tbody>
+						<g:each in="${usuarioBolaoInstanceList}" status="i" var="usuarioBolaoInstance">
+							<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+							
+							
+								<td class="esquerda">
+									<g:if test="${usuarioBolaoInstance?.bolao?.imagem}">
+											<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="bolao/${usuarioBolaoInstance?.bolao?.descricao}/${usuarioBolaoInstance?.bolao?.imagem}" title="${usuarioBolaoInstance?.bolao?.descricao}"/>
+									</g:if>	
+									<g:link controller="UsuarioBolao" action="pontuacao" id="${usuarioBolaoInstance.id}">${fieldValue(bean: usuarioBolaoInstance?.bolao, field: "descricao")}</g:link>
+										
+								</td> 
 								
-						</td> 
-						
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
-			<div class="pagination">
-				<g:paginate total="${usuarioBolaoInstanceCount ?: 0}" />
+							</tr>
+						</g:each>
+						</tbody>
+					</table>
+					
 			</div>
 		</div>
 	</body>

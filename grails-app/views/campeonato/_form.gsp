@@ -20,21 +20,31 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: campeonatoInstance, field: 'enabled', 'error')} ">
+	<label for="enabled">
+		<g:message code="campeonato.enabled.label" default="Enabled" />
+		
+	</label>
+	<g:checkBox name="enabled" value="${campeonatoInstance?.enabled}" />
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: campeonatoInstance, field: 'jogos', 'error')} ">
 	<label for="jogos">
 		<g:message code="campeonato.jogos.label" default="Jogos" />
-		
 	</label>
 	
-<ul class="one-to-many">
-<g:each in="${campeonatoInstance?.jogos?}" var="j">
-    <li><g:link controller="jogo" action="show" id="${j.id}">${j?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="jogo" action="create" params="['campeonato.id': campeonatoInstance?.id]">${message(code: 'add.label', args: [message(code: 'jogo.label', default: 'Jogo')])}</g:link>
-</li>
-</ul>
-
-
+	<g:each in="${campeonatoInstance.jogos}" var="j">
+		<span class="property-value" aria-labelledby="jogos-label"><g:link class="nounderline" controller="jogo" action="show" id="${j.id}"><g:formatDate format="dd/MM/yyyy HH:mm" date="${j?.datajogo}" /> - <g:if test="${j?.time1?.imagem}">
+			<asset:image class="jogocampeonato" src="bandeiras/24/${j?.time1?.imagem}" title="${j?.time1?.descricao}"/>
+			</g:if> ${j?.time1.descricao} ${j?.scoretime1} x ${j?.scoretime2} ${j?.time2.descricao} 
+			<g:if test="${j?.time2?.imagem}">
+				<asset:image class="jogocampeonato" src="bandeiras/24/${j?.time2?.imagem}" title="${j?.time2?.descricao}"/>
+			</g:if></g:link>
+		</span>
+	</g:each>
+	
 </div>
+
+	
 

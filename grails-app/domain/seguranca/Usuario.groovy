@@ -40,6 +40,15 @@ class Usuario {
 		password column: '`password`'
 	}
 
+	def buscaNome(Usuario usuario){
+		
+		def nomecompleto=usuario.primeironome
+		if(usuario.sobrenome!=null){
+			nomecompleto = nomecompleto + ' ' + usuario.sobrenome
+		}
+		return nomecompleto
+	}
+	
 	Set<Regra> getAuthorities() {
 		UsuarioRegra.findAllByUsuario(this).collect { it.regra } as Set
 	}

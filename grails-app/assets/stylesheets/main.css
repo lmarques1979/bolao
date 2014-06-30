@@ -80,18 +80,6 @@ div.principaldetalhes span{
   	color:#1E5A2E;
 }
 
-div.detalhesbolao {
-    width: 720px;
-    height:785px;
-    outline:1px solid #d7d7d7;
-    position: relative;
-    left: 50%;
-    margin-left: -360px;
-    margin-top:5px;
-    padding:0;
-    overflow:auto;
-}
-
 div.palpites {
     width: 700px;
     height: 20px;
@@ -100,6 +88,12 @@ div.palpites {
     left: 50%;
     margin-left: -395px;
     margin-top: 20px;
+    padding:0;
+}
+
+div.palpites img {
+    margin-left:120px;
+    margin-top:-40px;
     padding:0;
 }
 
@@ -139,6 +133,16 @@ div.bolao span{
   	color:#1E5A2E;
 }
 
+div.boloesativos {
+    width: 720px;
+    height:800px;
+    outline:0px solid #d7d7d7;
+    position: relative;
+    left: 50%;
+    margin-left: -390px;
+    padding:0;
+}
+
 div.principal {
     width: 800px;
     height: 200px;
@@ -147,6 +151,51 @@ div.principal {
     left: 50%;
     margin-left: -400px;
     margin-top: 20px;
+}
+
+div.usuario {
+    width: 800px;
+    height: 130px;
+    outline: 0px solid #000;
+    position: relative;
+    left: 50%;
+    margin-left: -400px;
+    margin-top:-40px;
+}
+
+div.nomeusuario {
+   float:left;
+   width: 650px;
+   height: 30px;
+   outline: 0px solid #000;
+   position: relative;
+   left: 50%;
+   margin-left: -400px;
+   margin-top:5px;
+}
+
+div.nomeusuario span {
+  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-size: 25px;
+  color:#fff;
+}
+
+div.dadosusuario {
+   float:left;
+   width: 650px;
+   height: 150px;
+   outline: 0px solid #000;
+   position: relative;
+   margin-top:5px;
+}
+
+div.dadosusuario span {
+  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-size: 10px;
+}
+
+div.dadosusuario img {
+  margin:2px 5px 4px 5px;
 }
 
 div.avatar {
@@ -159,15 +208,19 @@ div.avatar {
 
 div.avatar img{
    margin-top:0;
-   border: 1px solid #d7d7d7;
+   border: 0px solid #d7d7d7;
+   
+   
 }
 
 div.avatarimagem {
    float:left;
    margin: 5px;
-   width: 130px;
-   height:150px;
    outline: 0px solid #d7d7d7;
+   overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
+	-moz-box-shadow: 0 0 0.3em #1E5A2E;
+	-webkit-box-shadow: 0 0 0.3em #1E5A2E;
+	box-shadow: 0 0 0.3em #d7d7d7;
 }
 
 div.informacao {
@@ -285,8 +338,23 @@ body {
 }
 
 #grailsLogo {
-	background-color:#fcf9eb;
-	height: 100px;
+	background-color:#1E5A2E;
+	height: 170px;
+	margin:0 auto;
+	text-align:center;
+}
+
+#grailsLogo img{
+	text-align:center;
+	margin: 0 auto;
+	line-height: 1.5em;
+	padding: 0;
+	vertical-align: top;
+	border: 0;
+	overflow-x: hidden;
+	-moz-box-shadow: 0 0 0 #1E5A2E;
+	-webkit-box-shadow: 0 0 0 #1E5A2E;
+	box-shadow: 0 0 0 #d7d7d7;
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
@@ -443,7 +511,8 @@ ul {
 	-moz-border-radius: 0.3em;
 	-webkit-border-radius: 0.3em;
 	border-radius: 0.3em;
-	font-size:12px;
+	font-size: 12px;
+	font-weight: bold;
 }
 
 .nav a:active, .nav a:visited {
@@ -487,7 +556,8 @@ ul {
 .nav span.logout {
 	background-position:0;
 	background-repeat: no-repeat;
-	text-indent: 25px;
+	text-indent: 20px;
+	margin-top: -1px;
 }
 
 .nav span.logout a {
@@ -843,6 +913,10 @@ img {
 	text-align:center;
 	vertical-align:top;
 	border:0;
+	 overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
+	-moz-box-shadow: 0 0 0.3em #1E5A2E;
+	-webkit-box-shadow: 0 0 0.3em #1E5A2E;
+	box-shadow: 0 0 0.3em #d7d7d7;
 }
 
 tbody tr.resultado td{

@@ -6,6 +6,7 @@ class Campeonato {
 
 	String descricao
 	String imagem
+	boolean enabled=true
 	Date dateCreated
 	Date lastUpdated
 	
@@ -14,6 +15,7 @@ class Campeonato {
 	static constraints = {
 		descricao(nullable: false, blank: false , size: 0..50)
 		imagem(nullable: true , blank: true , size: 0..50)
+		enabled(nullable: true , blank: true)
 	}
 	
 	static mapping = {

@@ -36,7 +36,7 @@
 						 <li><g:link class="bolao" controller="Bolao" action="index"><g:message code="bolao.label"/></g:link></li>
 						 <li><g:link class="meusboloes" controller="UsuarioBolao" action="index"><g:message code="usuariobolao.label"/></g:link></li>
 						 <li><g:link class="usuario" controller="Usuario" action="show" id="${sec.loggedInUserInfo(field:"id")}"><g:message code="dadosusuario.label"/></g:link></li>
-					</g:if>
+					</g:if> 
 					
 					<li><g:link class="logout" controller="logout" action="index"><g:message code="logout.label"/></g:link></li>
 					<li>
@@ -62,7 +62,7 @@
 				
 				
 			</ul>
-		</div>
+		</div><div class="clearer"></div>
 		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><asset:image src="logo/logo.png" alt="Bolao"/></a></div>
 		
 		<g:layoutBody/>

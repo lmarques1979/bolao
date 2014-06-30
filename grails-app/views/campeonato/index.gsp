@@ -27,6 +27,8 @@
 					
 						<g:sortableColumn property="imagem" title="${message(code: 'campeonato.imagem.label', default: 'Imagem')}" />
 					
+						<g:sortableColumn property="enabled" title="${message(code: 'campeonato.enabled.label', default: 'Ativo')}" />
+					
 					
 					</tr>
 				</thead>
@@ -41,6 +43,7 @@
 							</g:if>	
 						</td>
 					
+						<td><g:formatBoolean boolean="${campeonatoInstance.enabled}" /></td>
 						
 					
 					</tr>

@@ -13,6 +13,12 @@
 		
 		<div class="palpites">
 			<g:link class="palpites" controller="Palpite" action="index" id="${usuarioBolaoInstance?.id}"><g:message code="palpite.label"/></g:link>
+			<g:if test="${usuarioBolaoInstance.usuario.imagem}">
+				<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="usuarios/${usuarioBolaoInstance.usuario.username}/${usuarioBolaoInstance.usuario.imagem}" title="${usuarioBolaoInstance.usuario.username}"/>
+			</g:if>
+			<g:else>
+				<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="usuarios/noimage.jpg" title="${usuarioBolaoInstance.usuario.username}"/>
+			</g:else>
 		</div>
 		<div class="bolao">
 				<span>${usuarioBolaoInstance?.bolao?.descricao}</span>
@@ -27,15 +33,12 @@
 					</g:if>
 				</div>
 				
-				
-				
 				<div class="informacao">
 						<span>${usuarioBolaoInstance?.bolao?.informacao}</span>
 				</div>
 				
 			</div>
-			
-			
+						
 			<div class="sobrebolao">
 				<asset:image src="skin/bolao_criacao.png" title="Data de Criação"/><span>Data de Criação: <g:formatDate format="dd/MM/yyyy HH:mm" date="${usuarioBolaoInstance?.bolao?.dateCreated}"/></span><div class="clearer"></div>
 				<asset:image src="skin/administrador.png" title="Administrador"/><span>Administrador: ${usuarioBolaoInstance?.bolao?.admin?.username}</span><div class="clearer"></div>

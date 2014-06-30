@@ -42,6 +42,15 @@
 					
 				</li>
 				</g:if>
+				
+				<g:if test="${campeonatoInstance?.enabled}">
+				<li class="fieldcontain">
+					<span id="enabled-label" class="property-label"><g:message code="campeonato.enabled.label" default="Ativo" /></span>
+					
+						<span class="property-value" aria-labelledby="enabled-label"><g:formatBoolean boolean="${campeonatoInstance?.enabled}" /></span>
+					
+				</li>
+				</g:if>
 			
 							
 				<g:if test="${campeonatoInstance?.jogos}">
