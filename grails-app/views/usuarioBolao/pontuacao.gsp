@@ -8,8 +8,7 @@
 		<title><g:message code="usuarioBolao.list.label"/></title>
 	</head>
 	<body>
-	
-		${pontosPalpites}
+
 		<a href="#show-usuarioBolao" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		
 		<div class="palpites">
@@ -52,7 +51,7 @@
 					<thead>
 						<tr>
 						
-							<th colspan="5" class="esquerda"><g:message code="palpite.pontuacaousuarios.label" default="Bolao" /></th>
+							<th colspan="6" class="esquerda"><g:message code="palpite.pontuacaousuarios.label" default="Bolao" /></th>
 						
 						</tr>
 						<tr>
@@ -62,6 +61,7 @@
 							<th>Participante</th>
 							<th>Time Participante</th>
 							<th>Pontos</th>
+							<th>Palpites</th>
 						
 						</tr>
 					</thead>
@@ -92,6 +92,18 @@
 										</g:if>
 									</td>
 									<td>${usuariobolao[1] ? usuariobolao[1] : 0}</td>
+									<td>
+										<g:if test="${usuariobolao[2].id==usuarioBolaoInstance?.id}">
+											<g:link controller="Palpite" action="index" id="${usuariobolao[2].id}">
+												<asset:image src="palpites.png" title="Ver Palpites"/>
+											</g:link>
+										</g:if>
+										<g:else>
+											<g:link controller="Palpite" action="palpiteusuario" id="${usuariobolao[2].id}">
+												<asset:image src="palpites.png" title="Ver Palpites"/>
+											</g:link>
+										</g:else>
+									</td>
 							</tr>
 							
 						</g:each>

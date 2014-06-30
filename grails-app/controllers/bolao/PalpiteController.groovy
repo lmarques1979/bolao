@@ -14,19 +14,59 @@ class PalpiteController extends BaseController {
 	def PalpiteService
 	
     def index() {
+		def configuracoes = configuracaoParams
+		def palpitenovos = []
+		def palpitesfinalizados = []
+		def palpites = []
+		def erros = []
+		
+		def filtropalpite=params.filtrodatapalpite
+		if(filtropalpite==null){
+			filtropalpite="2"
+		}
+		def usuarioBolaoInstance=UsuarioBolao.get(Long.valueOf(params.id).longValue())
+		if(usuarioBolaoInstance.usuario!=usuarioLogado){
+			erros[0] = 'Usuário não tem autorização para acessar essa página.'
+			flash.erros = erros
+			return
+		}
+		def usuarioBolaoList = UsuarioBolao.findAll("from UsuarioBolao as ub where ub.bolao.id=? and ub.usuario.id=?", [ usuarioBolaoInstance.bolao.id , usuarioBolaoInstance.usuario.id])
+		def jogos = usuarioBolaoInstance.bolao.campeonato.jogos
+		//def palpites = jogos.collect{usuarioBolaoInstance.buscarPalpiteJogo(it , configuracaoParams.minutosparapalpite)}
+		
+		jogos.each(){
+			def palpite = usuarioBolaoInstance.buscarPalpiteJogo(it , configuracaoParams.minutosparapalpite)
+			palpite.finalizado==true ? palpitesfinalizados << palpite : palpitenovos << palpite
+		}
+		if(filtropalpite=="1"){
+			palpites.addAll(palpitesfinalizados)
+			palpites.addAll(palpitenovos)
+		}
+		if(filtropalpite=="2"){
+			palpites.addAll(palpitenovos)
+		}
+		if(filtropalpite=="3"){
+			palpites.addAll(palpitesfinalizados)
+		}
+		
+		respond palpites, model:[usuarioBolaoInstance:usuarioBolaoInstance, palpitesList: palpites, palpiteInstanceCount: palpites.size()]
+	}
+	
+	def palpiteusuario() {
 		
 		def usuarioBolaoInstance=UsuarioBolao.get(Long.valueOf(params.id).longValue())
 		def configuracoes = configuracaoParams
 		def usuarioBolaoList = UsuarioBolao.findAll("from UsuarioBolao as ub where ub.bolao.id=? and ub.usuario.id=?", [ usuarioBolaoInstance.bolao.id , usuarioBolaoInstance.usuario.id])
 		def jogos = usuarioBolaoInstance.bolao.campeonato.jogos
-		def palpites = jogos.collect{usuarioBolaoInstance.buscarPalpiteJogo(it , configuracaoParams.minutosparapalpite)}
+		def palpitesfinalizados = []
 		
-		//Remover itens lista de Acordo com Filtro
-		palpites.each(){ palpite->
-			
+		jogos.each(){
+			def palpite = usuarioBolaoInstance.buscarPalpiteJogo(it , configuracaoParams.minutosparapalpite)
+			if (palpite.finalizado==true)
+			 	palpitesfinalizados << palpite 
 		}
 		
-		respond palpites, model:[usuarioBolaoInstance:usuarioBolaoInstance, palpitesList: palpites, palpiteInstanceCount: palpites.size()]
+		respond palpitesfinalizados, model:[usuarioBolaoInstance:usuarioBolaoInstance, palpitesList: palpitesfinalizados, palpiteInstanceCount: palpitesfinalizados.size()]
 	}
 
 	def show(Palpite palpiteInstance) {

@@ -29,6 +29,7 @@ class UsuarioBolaoController extends BaseController {
 				projections {
 					groupProperty("usuario")
 					sum "palpite.pontuacao", "pontos" 
+					max "palpite.usuariobolao"
 				}
 				order("pontos", "desc")
 		}

@@ -15,6 +15,19 @@ class Palpite {
 	
 	static belongsTo = [usuariobolao:UsuarioBolao]
 	
+	static void removeAll(listaPalpite , filtro) {
+		if(filtro==2){
+			listaPalpite.where {
+				finalizado == true
+			}.deleteAll()
+		}
+		if(filtro==3){
+			listaPalpite.where {
+				finalizado == false
+			}.deleteAll()
+		}
+	}
+	
     static constraints = {
 		
 		scoretime1(nullable: true, blank: true , size: 1..3)

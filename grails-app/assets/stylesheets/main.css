@@ -36,6 +36,31 @@ html {
     overflow: hidden;
 }
 
+thead tr.semover th {
+background-color: #efefef;
+background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffffff), color-stop(1, #eaeaea));
+filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#ffffff', EndColorStr = '#eaeaea');
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
+color: #1E5A2E;
+font-weight: bold;
+line-height: 1.7em;
+padding: 0.2em 0.6em;
+font-size: 13px;
+}
+
+#botaopalpitesalvar {
+background: none repeat scroll 0 0 #1E5A2E;
+border: 0 solid;
+color: #FFFFFF;
+float: right;
+font-size: 13px;
+font-weight: bold;
+height: 25px;
+margin:0;
+padding: 0 12px 2px;
+}
+
 div.principaldetalhes {
     width: 720px;
     height:800px;
