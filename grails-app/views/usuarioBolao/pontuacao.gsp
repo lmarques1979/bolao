@@ -60,7 +60,7 @@
 							<th>#</th>
 							<th>Avatar</th>
 							<th>Participante</th>
-							<th>Time Usuário</th>
+							<th>Time Participante</th>
 							<th>Pontos</th>
 						
 						</tr>

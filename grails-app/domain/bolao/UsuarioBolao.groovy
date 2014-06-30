@@ -20,10 +20,10 @@ class UsuarioBolao implements Serializable {
 		def finalizado = funcoesData.diferencaMinutos(jogo.datajogo , minutos)
 		
 		for(Palpite palpite:palpites) {
-			if(palpite.jogo == jogo) {
-				palpite.finalizado=finalizado
-				return palpite
-			}
+				if(palpite.jogo == jogo) {
+					palpite.finalizado=finalizado
+					return palpite
+				}
 		}
 		
 		return new Palpite (jogo:jogo , finalizado:finalizado)

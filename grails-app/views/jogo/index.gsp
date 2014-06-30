@@ -15,7 +15,6 @@
 			</ul>
 		</div>
 		<div id="list-jogo" class="content scaffold-list" role="main">
-			<h1><g:message code="jogo.list.label"/></h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -39,7 +38,7 @@
 							     <g:set var="filtrodata" value="2" />
 							</g:else>
 							
-							<g:select onchange="this.form.submit()" value="${filtrodata}" name="filtrodata" from="${['Todos', 'Pendentes', 'Finalizados']}" keys="${['1','2','3']}"/>
+							<g:select onchange="this.form.submit()" value="${filtrodata}" name="filtrodata" from="${['Todos', 'Pendentes', 'Encerrado']}" keys="${['1','2','3']}"/>
 							
 						</td>
 						
@@ -61,6 +60,7 @@
 				<g:submitButton class="invisivel" name="create" value="Filtrar" />
 			</g:form> 
 			</table>
+			<h1><g:message code="jogo.list.label"/></h1>
 			<table>
 			
 				<tbody>

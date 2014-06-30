@@ -14,11 +14,17 @@ class PalpiteController extends BaseController {
 	def PalpiteService
 	
     def index() {
+		
 		def usuarioBolaoInstance=UsuarioBolao.get(Long.valueOf(params.id).longValue())
 		def configuracoes = configuracaoParams
 		def usuarioBolaoList = UsuarioBolao.findAll("from UsuarioBolao as ub where ub.bolao.id=? and ub.usuario.id=?", [ usuarioBolaoInstance.bolao.id , usuarioBolaoInstance.usuario.id])
 		def jogos = usuarioBolaoInstance.bolao.campeonato.jogos
 		def palpites = jogos.collect{usuarioBolaoInstance.buscarPalpiteJogo(it , configuracaoParams.minutosparapalpite)}
+		
+		//Remover itens lista de Acordo com Filtro
+		palpites.each(){ palpite->
+			
+		}
 		
 		respond palpites, model:[usuarioBolaoInstance:usuarioBolaoInstance, palpitesList: palpites, palpiteInstanceCount: palpites.size()]
 	}
@@ -97,16 +103,17 @@ class PalpiteController extends BaseController {
 			if(finalizado != finalizadoAtual){
 				erros[i] = 'Palpite do jogo ' + jogo.time1.descricao + ' x ' + jogo.time2.descricao + ' já foi finalizado.'
 				i++
-			}
+			}else{
 			
-			//Incluo ou atualizo palpite
-			def palpiteInstance = PalpiteService.salvarPalpite(idPalpite ,jogo , score1 , score2 , finalizado , usuarioBolaoInstance)
-			
-			if(palpiteInstance!=null){
-				if (palpiteInstance.hasErrors()) {
-					respond palpiteInstance.errors, view:'index'
-					return
-				}
+					//Incluo ou atualizo palpite
+					def palpiteInstance = PalpiteService.salvarPalpite(idPalpite ,jogo , score1 , score2 , finalizado , usuarioBolaoInstance)
+					
+					if(palpiteInstance!=null){
+						if (palpiteInstance.hasErrors()) {
+							respond palpiteInstance.errors, view:'index'
+							return
+						}
+					}
 			}
 			
 		}

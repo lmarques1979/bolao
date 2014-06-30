@@ -22,6 +22,35 @@
 				</g:each>
 			</ul>
 			</g:if>
+			<table>
+			<g:form url="[resource:palpitesList, action:'index']" >
+			<thead>
+					<tr>
+						<th>Status</th>
+					</tr>
+					
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<g:if test="${session["filtrodatapalpite"]}"> 
+								<g:set var="filtrodatapalpite" value="${session["filtrodatapalpite"]}" />
+							</g:if>
+							<g:else>
+							     <g:set var="filtrodatapalpite" value="2" />
+							</g:else>
+							<!--onchange="this.form.submit()"-->
+							<g:select  value="${filtrodatapalpite}" name="filtrodatapalpite" from="${['Todos', 'Pendentes', 'Finalizados']}" keys="${['1','2','3']}"/>
+							
+						</td>
+						
+					</tr>
+					
+					
+				</tbody>
+				<g:submitButton class="invisivel" name="create" value="Filtrar" />
+			</g:form> 
+			</table>
 			<g:form url="[action:'save',controller:'palpite']" method="POST">
 			<g:hiddenField name="usuariobolao" value="${usuarioBolaoInstance.id}" />				
 			<table>
