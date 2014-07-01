@@ -92,9 +92,13 @@ div.palpites {
 }
 
 div.palpites img {
-    margin-left:120px;
-    margin-top:-40px;
+    margin-left:126px;
+    margin-top:-35px;
     padding:0;
+     overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
+   -moz-box-shadow: 0 0 0.6em #032A07;
+   -webkit-box-shadow: 0 0 0.6em #032A07;
+   box-shadow: 0 0 0.6em #032A07;
 }
 
 div.palpites a{
@@ -159,8 +163,8 @@ div.usuario {
     outline: 0px solid #000;
     position: relative;
     left: 50%;
-    margin-left: -400px;
-    margin-top:-40px;
+    margin-left: -385px;
+    margin-top:-22px;
 }
 
 div.nomeusuario {
@@ -172,12 +176,14 @@ div.nomeusuario {
    left: 50%;
    margin-left: -400px;
    margin-top:5px;
+   
 }
 
 div.nomeusuario span {
   font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
   font-size: 25px;
-  color:#fff;
+  color:#1E5A2E;
+  font-weight: bold;
 }
 
 div.dadosusuario {
@@ -209,23 +215,25 @@ div.avatar {
 div.avatar img{
    margin-top:0;
    border: 0px solid #d7d7d7;
-   
-   
+  
 }
 
 div.avatarimagem {
    float:left;
    margin: 5px;
    outline: 0px solid #d7d7d7;
-   overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
-	-moz-box-shadow: 0 0 0.3em #1E5A2E;
-	-webkit-box-shadow: 0 0 0.3em #1E5A2E;
-	box-shadow: 0 0 0.3em #d7d7d7;
+  
 }
 
+div.avatarimagem img {
+   overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
+   -moz-box-shadow: 0 0 0.6em #032A07;
+   -webkit-box-shadow: 0 0 0.6em #032A07;
+   box-shadow: 0 0 0.6em #032A07;
+}
 div.informacao {
    float:right;
-   margin: 5px;
+   margin:5px 0 5px 0;
    width: 340px;
    height:150px;
    outline: 1px solid #d7d7d7; 
@@ -338,7 +346,7 @@ body {
 }
 
 #grailsLogo {
-	background-color:#1E5A2E;
+	background-color:#f4ffcf;
 	height: 170px;
 	margin:0 auto;
 	text-align:center;
@@ -454,7 +462,7 @@ ul {
 	padding:0;
 }
 .footer {
-	background:#1E5A2E;
+	background:#f4ffcf;
 	color: #000;
 	clear: both;
 	font-size: 0.8em;
@@ -913,10 +921,7 @@ img {
 	text-align:center;
 	vertical-align:top;
 	border:0;
-	 overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
-	-moz-box-shadow: 0 0 0.3em #1E5A2E;
-	-webkit-box-shadow: 0 0 0.3em #1E5A2E;
-	box-shadow: 0 0 0.3em #d7d7d7;
+	
 }
 
 tbody tr.resultado td{
