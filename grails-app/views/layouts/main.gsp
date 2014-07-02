@@ -28,7 +28,7 @@
 						 <li><g:link class="times" controller="Time" action="index" ><g:message code="time.label"/></g:link></li>
 						 <li><g:link class="jogos" controller="Jogo" action="index" ><g:message code="jogo.label"/></g:link></li>
 						 <li><g:link class="usuarios" controller="Usuario" action="index"><g:message code="usuarios.label"/></g:link></li>
-						 <li><g:link class="atualizapontos" controller="Palpite" action="atualizapontos"><g:message code="atualizapontos.label"/></g:link></li>
+						 <li><g:link class="atualizapontos" controller="UsuarioBolao" action="atualizapontos"><g:message code="atualizapontos.label"/></g:link></li>
 						
 					</g:if>
 					<!-- Usuarios logados -->
@@ -66,7 +66,7 @@
 		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><asset:image src="logo/logo.png" alt="Bolao"/></a>
 		
 				<g:if test="${sec.loggedInUserInfo(field: 'imagem')}">
-					<asset:image class="avatarmain" height="120" width="120" src="usuarios/${sec.loggedInUserInfo(field: 'username')}/${sec.loggedInUserInfo(field: 'imagem')}" title="${sec.loggedInUserInfo(field: 'username')}"/>
+					<asset:image class="avatarmain" height="120" width="120" src="usuarios/${sec.loggedInUserInfo(field: 'username')}/${sec.loggedInUserInfo(field: 'imagem')}" title="${sec.loggedInUserInfo(field: 'primeironome') + ' ' + sec.loggedInUserInfo(field: 'sobrenome')}"/>
 				</g:if>
 				<g:else>
 					<sec:ifLoggedIn>
@@ -76,7 +76,16 @@
 		</div>
 		
 		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
+		<div class="footer" role="contentinfo">
+			<span> | </span>
+			<g:link controller="diversos" action="regulamento">
+					<g:message code="regulamentogeral.message"/>
+			</g:link><span> | </span>
+			<g:link controller="diversos" action="contato">
+					<g:message code="contato.message"/>
+			</g:link>
+			<span> | </span>
+		</div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 	</body>
 </html>

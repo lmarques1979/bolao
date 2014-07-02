@@ -35,6 +35,8 @@
 						
 						<th><g:message code="bolao.imagem.label"/></th>
 						
+						<th><g:message code="bolao.enabled.label"/></th>
+						
 										
 						
 					</tr>
@@ -60,16 +62,21 @@
 					
 						<td>${bolaoInstance?.campeonato?.descricao}</td>
 						
-						<td><g:formatBoolean boolean="${bolaoInstance?.autorizacao}" />
+						<td>
+							<g:formatBoolean boolean="${bolaoInstance?.autorizacao}" /><br>
 							<g:if test="${bolaoInstance?.autorizacao==true}">
-								AQUI
+								<g:link class="autorizacao" controller="UsuarioBolao" action="listaautorizacao" id="${bolaoInstance.id}"><g:message code="bolao.autorizar.label"/></g:link><Br>
 							</g:if>
+							
 						</td>
 					
 					    <td><g:if test="${bolaoInstance.imagem}">
 								<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="bolao/${bolaoInstance.descricao}/${bolaoInstance.imagem}" title="${bolaoInstance.descricao}"/>
 							</g:if>		
 						</td>	
+						<td>
+							<g:formatBoolean boolean="${bolaoInstance?.enabled}" /><br>
+						</td>
 					
 					</tr>
 				</g:each>

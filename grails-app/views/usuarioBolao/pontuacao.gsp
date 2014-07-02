@@ -1,5 +1,3 @@
-
-<%@ page import="bolao.UsuarioBolao" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,10 +9,13 @@
 
 		<a href="#show-usuarioBolao" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		
-		<div class="palpites">
-			<g:link class="palpites" controller="Palpite" action="index" id="${usuarioBolaoInstance?.id}"><g:message code="palpite.label"/></g:link>
-			
-		</div>
+		<g:if test="${usuarioBolaoInstance?.bolao?.enabled==true}">
+			<div class="palpites">
+				<g:if test="${usuarioBolaoInstance?.id}">
+					<g:link class="palpites" controller="Palpite" action="index" id="${usuarioBolaoInstance?.id}"><g:message code="palpite.label"/></g:link>
+				</g:if>
+			</div>
+		</g:if>
 		<div class="bolao">
 				<span>${usuarioBolaoInstance?.bolao?.descricao}</span>
 		</div>
@@ -91,15 +92,20 @@
 									</td>
 									<td>${usuariobolao[1] ? usuariobolao[1] : 0}</td>
 									<td>
-										<g:if test="${usuariobolao[2].id==usuarioBolaoInstance?.id}">
-											<g:link controller="Palpite" action="index" id="${usuariobolao[2].id}">
-												<asset:image src="palpites.png" title="Ver Palpites"/>
-											</g:link>
+										<g:if test="${usuariobolao[2]}">
+											<g:if test="${usuariobolao[2].id==usuarioBolaoInstance?.id}">
+												<g:link controller="Palpite" action="index" id="${usuariobolao[2].id}">
+													<asset:image src="palpites.png" title="Ver Palpites"/>
+												</g:link>
+											</g:if>
+											<g:else>
+												<g:link controller="Palpite" action="palpiteusuario" id="${usuariobolao[2].id}">
+													<asset:image src="palpites.png" title="Ver Palpites"/>
+												</g:link>
+											</g:else>
 										</g:if>
 										<g:else>
-											<g:link controller="Palpite" action="palpiteusuario" id="${usuariobolao[2].id}">
-												<asset:image src="palpites.png" title="Ver Palpites"/>
-											</g:link>
+											Não fez Palpite
 										</g:else>
 									</td>
 							</tr>

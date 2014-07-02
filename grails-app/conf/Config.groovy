@@ -123,6 +123,7 @@ grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.rejectIfNoRule = true
 grails.plugin.springsecurity.fii.rejectPublicInvocations = false
 grails.plugin.springsecurity.useBasicAuth = true
+grails.plugin.springsecurity.logout.afterLogoutUrl="/Login/auth"
 //grails.plugin.springsecurity.successHandler.defaultTargetUrl='/muamba/visualiza'
 
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [

@@ -13,6 +13,7 @@ class UsuarioController extends BaseController {
     static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
 	static final String pathusuario = "grails-app/assets/images/usuarios/";
 	
+	
 	@Secured('permitAll')
 	def esqueceusenha() {
 		 

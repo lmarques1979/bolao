@@ -15,7 +15,7 @@ class Usuario {
 	String sobrenome
 	String  imagem
 	Time    timecoracao=null
-	boolean enabled = true
+	boolean enabled=true
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired

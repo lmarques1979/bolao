@@ -1,7 +1,11 @@
 package bolao
 
+import java.util.Date;
+
 import seguranca.Usuario
+
 import org.apache.commons.lang.builder.HashCodeBuilder
+
 import funcoesdata.*
 
 class UsuarioBolao implements Serializable {
@@ -12,6 +16,9 @@ class UsuarioBolao implements Serializable {
 	Usuario usuario
 	Bolao bolao
 	boolean autorizado=true
+	Date ultimaatualizacao
+	Date dateCreated
+	Date lastUpdated
 	
 	static hasMany=[palpites: Palpite]
 	
@@ -82,9 +89,12 @@ class UsuarioBolao implements Serializable {
 	static constraints = {
 		usuario(unique: ['bolao'])
 		autorizado(nullable: false , blank: false)
+		ultimaatualizacao(nullable: true , blank: true)
 	}
 	
 	static mapping = {
+		palpites cascade: 'all-delete-orphan'
 		version false
+		autoTimestamp true
 	}
 }

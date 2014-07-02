@@ -63,6 +63,15 @@
 	<g:select id="timecoracao" name="timecoracao.id" noSelection="${['':'Selecionar Time de Coração...']}" from="${Time.list()}" optionValue="descricao" optionKey="id" value="${jogoInstance?.timecoracao}" class="many-to-one"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'enabled', 'error')} ">
+	<label for="enabled">
+		<g:message code="usuario.enabled.label" default="Enabled" />
+		
+	</label>
+	<g:checkBox name="enabled" value="${usuarioInstance?.enabled}" />
+
+</div>
+
 <!-- 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'accountExpired', 'error')} ">
 	<label for="accountExpired">

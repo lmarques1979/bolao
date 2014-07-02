@@ -84,6 +84,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${usuarioInstance?.enabled}">
+				<li class="fieldcontain">
+					<span id="enabled-label" class="property-label"><g:message code="usuario.enabled.label" default="Enabled" /></span>
+					
+						<span class="property-value" aria-labelledby="enabled-label"><g:formatBoolean boolean="${usuarioInstance?.enabled}" /></span>
+					
+				</li>
+				</g:if>
+				
 				<!-- 
 				<g:if test="${usuarioInstance?.accountExpired}">
 				<li class="fieldcontain">

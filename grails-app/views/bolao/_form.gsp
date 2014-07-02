@@ -43,3 +43,12 @@
 	<g:checkBox name="autorizacao" value="${bolaoInstance?.autorizacao}" />
 
 </div>
+
+<div class="fieldcontain ${hasErrors(bean: bolaoInstance, field: 'enabled', 'error')} required">
+	<label for="descricao">
+		<g:message code="bolao.enabled.label"/>
+		<span class="required-indicator">*</span>
+	</label>
+	<g:checkBox name="enabled" value="${bolaoInstance?.enabled}" />
+
+</div>

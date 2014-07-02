@@ -9,6 +9,7 @@ class Bolao {
 	String imagem
 	String informacao
 	Usuario	admin
+	boolean enabled=true
 	boolean autorizacao=true
 	Date dateCreated
 	Date lastUpdated
@@ -24,6 +25,7 @@ class Bolao {
 		imagem(nullable: true , blank: true , size: 0..50)
 		informacao(nullable: true , blank: true)
 		autorizacao(nullable: false , blank: false)
+		enabled(nullable: false , blank: false)
 	}
 	
 	static mapping = {

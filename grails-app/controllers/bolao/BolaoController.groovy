@@ -20,8 +20,6 @@ class BolaoController extends BaseController{
 			eq("admin" , usuarioLogado)
 			
 		}
-		
-		
         respond resultado, model:[bolaoInstanceCount: resultado.totalCount]
     }
 	
@@ -44,7 +42,6 @@ class BolaoController extends BaseController{
             notFound()
             return
         }
-		
 		
 		def imagem
 		def f = request.getFile('arquivo')

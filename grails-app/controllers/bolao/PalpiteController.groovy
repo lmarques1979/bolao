@@ -4,7 +4,6 @@ import static org.springframework.http.HttpStatus.*
 import funcoesdata.FuncoesData
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
-import pontuacao.*
 
 @Transactional(readOnly = true)
 @Secured("isFullyAuthenticated()")
@@ -26,7 +25,7 @@ class PalpiteController extends BaseController {
 		}
 		def usuarioBolaoInstance=UsuarioBolao.get(Long.valueOf(params.id).longValue())
 		if(usuarioBolaoInstance.usuario!=usuarioLogado){
-			erros[0] = 'Está Querendo Acessar os Palpites Alheios? Sabe de Nada Inocente.'
+			erros[0] = message(code: 'palpite.naoautorizado.message')
 			flash.erros = erros
 			return
 		}
@@ -78,46 +77,6 @@ class PalpiteController extends BaseController {
     }
 	
 	@Transactional
-	def atualizapontos(){
-		
-		def erros = []
-		def i = 0
-		
-		def palpites = Palpite.findAll() 
-		
-		//Faço os cálculos dos pontos por cada palpite de cada usuário
-		palpites.each(){ palpiteInstance->
-						def palpitetime1 = palpiteInstance.scoretime1
-						def palpitetime2 = palpiteInstance.scoretime2
-						def jogos = palpiteInstance.jogo
-						jogos.each(){ jogo->
-							
-							if(jogo.encerrado==true){
-									
-									def pontuacao = new Pontuacao()
-									def scoretime1 	= jogo.scoretime1
-									def scoretime2 	= jogo.scoretime2
-									def peso 		= jogo.peso
-									def pontos = pontuacao.contaPontos(scoretime1 , scoretime2 , palpitetime1 , palpitetime2, peso)
-									palpiteInstance.pontuacao = pontos
-									palpiteInstance.save flush:true
-									
-									if (palpiteInstance.hasErrors()) {
-										erros[i] = palpiteInstance.errors
-										i++
-									}
-								
-							}
-					}
-		}
-		if(i==0){
-			flash.message = message(code: 'pontuacao.updated.message')
-		}else{
-			flash.erros = erros
-		}
-	}
-	
-    @Transactional
     def save() {
 		
 		def usuarioBolaoInstance= UsuarioBolao.get(Long.valueOf(params.usuariobolao).longValue())
@@ -141,7 +100,7 @@ class PalpiteController extends BaseController {
 			def finalizadoAtual = funcoesData.diferencaMinutos(jogo.datajogo , configuracoes.minutosparapalpite)
 			
 			if(finalizado != finalizadoAtual){
-				erros[i] = 'Palpite do jogo ' + jogo.time1.descricao + ' x ' + jogo.time2.descricao + ' já foi finalizado.'
+				erros[i] = message(code: 'palpite.encerrado.message', args: [jogo.time1.descricao, jogo.time2.descricao])
 				i++
 			}else{
 			

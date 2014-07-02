@@ -28,7 +28,7 @@
 					    <g:sortableColumn property="sobrenome" title="${message(code: 'usuario.sobrenome.label', default: 'Sobrenome')}" />
 						<g:sortableColumn property="imagem" title="${message(code: 'usuario.imagem.label', default: 'Imagem')}" />
 						<g:sortableColumn property="timecoracao" title="${message(code: 'usuario.timecoracao.label', default: 'Time de Coração')}" />
-						
+						<g:sortableColumn property="enabled" title="${message(code: 'usuario.enabled.label', default: 'Ativo')}" />
 					</tr>
 				</thead>
 				<tbody>
@@ -54,6 +54,10 @@
 						<td><g:if test="${usuarioInstance.timecoracao}">
 								<asset:image src="bandeiras/24/${usuarioInstance.timecoracao.imagem}" title="${usuarioInstance.timecoracao.descricao}"/>
 							</g:if>		
+						</td>
+						
+						<td>
+							<g:formatBoolean boolean="${usuarioInstance?.enabled}" />
 						</td>
 											
 					</tr>

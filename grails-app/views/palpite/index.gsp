@@ -28,7 +28,7 @@
 					<g:hiddenField name="id" value="${usuarioBolaoInstance.id}" />
 					<thead>
 						<tr>
-							<th>Filtro Palpites</th>
+							<th><g:message code="palpite.filtro.label"/></th>
 						</tr>
 							
 						</thead>

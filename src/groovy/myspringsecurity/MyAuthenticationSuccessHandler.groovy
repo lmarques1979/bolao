@@ -21,9 +21,11 @@ class MyAuthenticationSuccessHandler extends AjaxAwareAuthenticationSuccessHandl
 		
 		if(bolao!=null && bolao!=""){
 			
+			bolao = Bolao.get(Long.valueOf(bolao).longValue())
+			
 			def resultado = UsuarioBolao.createCriteria().list() {
 				eq("usuario.id" , usuario.id)
-				eq("bolao.id" , Long.valueOf(bolao).longValue() )
+				eq("bolao.id" , bolao.id )
 				
 			}
 			
@@ -31,7 +33,16 @@ class MyAuthenticationSuccessHandler extends AjaxAwareAuthenticationSuccessHandl
 			if(resultado.size()==0){
 					def usuarioBolaoInstance = new UsuarioBolao()
 					usuarioBolaoInstance.usuario = usuario
-					usuarioBolaoInstance.bolao = Bolao.get(Long.valueOf(bolao).longValue())
+					usuarioBolaoInstance.bolao = bolao
+					
+					
+					//Se necessecita autorizacao, insiro usuário não autorizado
+					if(bolao.autorizacao==true){
+						usuarioBolaoInstance.autorizado=false
+					}else{
+					usuarioBolaoInstance.autorizado=true
+					}
+					
 					
 					usuarioBolaoInstance.save flush:true
 					
