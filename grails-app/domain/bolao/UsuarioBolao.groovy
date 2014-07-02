@@ -11,6 +11,7 @@ class UsuarioBolao implements Serializable {
 	Long id
 	Usuario usuario
 	Bolao bolao
+	boolean autorizado=true
 	
 	static hasMany=[palpites: Palpite]
 	
@@ -80,6 +81,7 @@ class UsuarioBolao implements Serializable {
 
 	static constraints = {
 		usuario(unique: ['bolao'])
+		autorizado(nullable: false , blank: false)
 	}
 	
 	static mapping = {

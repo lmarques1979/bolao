@@ -9,12 +9,17 @@
 		
 		<div id="list-bolao" class="content scaffold-list" role="main">
 		
-			<div id="cadastro">
-				<g:link class="cadastrado" params="[bolao: params.bolao]" controller="Login" action="auth">Caso JÁ TENHA cadastro clique aqui</g:link><br>
+			<div class="cadastrobolao">
 				
-				ou<br>
-						
-				<g:link class="cadastrese" params="[bolao: params.bolao]" controller="Usuario" action="create">Cadastre-se aqui</g:link>
+				<div class="cadastrologin">
+					<g:link class="cadastrado" params="[bolao: params.bolao]" controller="Login" action="auth">Caso JÁ TENHA cadastro clique aqui</g:link><br>
+					<span>ou</span><br>
+				</div>
+				
+				
+				<div class="cadastrologin">		
+					<g:link class="cadastrese" params="[bolao: params.bolao]" controller="Usuario" action="create">Cadastre-se aqui</g:link>
+				</div>
 			</div>
 		</div>
 	</body>

@@ -26,7 +26,7 @@ class PalpiteController extends BaseController {
 		}
 		def usuarioBolaoInstance=UsuarioBolao.get(Long.valueOf(params.id).longValue())
 		if(usuarioBolaoInstance.usuario!=usuarioLogado){
-			erros[0] = 'Usuário não tem autorização para acessar essa página.'
+			erros[0] = 'Está Querendo Acessar os Palpites Alheios? Sabe de Nada Inocente.'
 			flash.erros = erros
 			return
 		}

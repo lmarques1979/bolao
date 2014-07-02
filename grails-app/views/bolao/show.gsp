@@ -1,11 +1,10 @@
-
 <%@ page import="bolao.Bolao" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'bolao.label', default: 'Bolao')}" />
-		<title><g:message code="bolao.show.label"/></title>
+		<title><g:message code="bolao.list.label"/></title>
 	</head>
 	<body>
 		<a href="#show-bolao" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -58,6 +57,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${bolaoInstance?.autorizacao}">
+				<li class="fieldcontain">
+					<span id="autorizacao-label" class="property-label"><g:message code="bolao.autorizacao.label" default="Imagem" /></span>
+					
+						<span class="property-value" aria-labelledby="autorizacao-label"><g:formatBoolean boolean="${bolaoInstance?.autorizacao}" /></span>
+					
+				</li>
+				</g:if>
+				
 				<g:if test="${bolaoInstance?.imagem}">
 				<li class="fieldcontain">
 					<span id="imagem-label" class="property-label"><g:message code="bolao.imagem.label" default="Imagem" /></span>

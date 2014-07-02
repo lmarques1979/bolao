@@ -63,7 +63,17 @@
 				
 			</ul>
 		</div><div class="clearer"></div>
-		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><asset:image src="logo/logo.png" alt="Bolao"/></a></div>
+		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><asset:image src="logo/logo.png" alt="Bolao"/></a>
+		
+				<g:if test="${sec.loggedInUserInfo(field: 'imagem')}">
+					<asset:image class="avatarmain" height="120" width="120" src="usuarios/${sec.loggedInUserInfo(field: 'username')}/${sec.loggedInUserInfo(field: 'imagem')}" title="${sec.loggedInUserInfo(field: 'username')}"/>
+				</g:if>
+				<g:else>
+					<sec:ifLoggedIn>
+						<asset:image class="avatarmain" height="120" width="120" src="usuarios/noimage.jpg" title="${sec.loggedInUserInfo(field: 'username')}"/>
+					</sec:ifLoggedIn>
+				</g:else>
+		</div>
 		
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>

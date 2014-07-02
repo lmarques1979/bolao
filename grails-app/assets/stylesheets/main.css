@@ -13,6 +13,12 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 auto;
 }
 
+.cadastrologin span{
+	text-align:center;
+	margin: 0 auto;
+	color: #1E5A2E;
+}
+
 /* BASE LAYOUT */
 
 html {
@@ -61,6 +67,25 @@ margin:0;
 padding: 0 12px 2px;
 }
 
+/*DIVS TRABALHO MAIN*/
+div.cadastrobolao{ 
+	width: 500px;
+    height: 200px;
+    outline: 0px solid #000;
+    position: relative;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: 20px;
+}
+div.principal {
+    width: 800px;
+    height: 200px;
+    outline: 0px solid #000;
+    position: relative;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: 20px;
+}
 div.principaldetalhes {
     width: 720px;
     height:800px;
@@ -116,7 +141,6 @@ div.palpites a{
 	background-color: #1E5A2E;
 }
 
-
 div.bolao {
     width: 790px;
     height: 20px;
@@ -147,15 +171,6 @@ div.boloesativos {
     padding:0;
 }
 
-div.principal {
-    width: 800px;
-    height: 200px;
-    outline: 0px solid #000;
-    position: relative;
-    left: 50%;
-    margin-left: -400px;
-    margin-top: 20px;
-}
 
 div.usuario {
     width: 800px;
@@ -164,7 +179,7 @@ div.usuario {
     position: relative;
     left: 50%;
     margin-left: -385px;
-    margin-top:-22px;
+    margin-top:0;
 }
 
 div.nomeusuario {
@@ -175,11 +190,20 @@ div.nomeusuario {
    position: relative;
    left: 50%;
    margin-left: -400px;
-   margin-top:5px;
-   
 }
 
-div.nomeusuario span {
+#grailsLogo img.avatarmain    {
+   float:right;
+   position:absolute;
+   margin:-8px 0 0 -20px;
+   border: 0px solid #d7d7d7;
+   overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
+   -moz-box-shadow: 0 0 0.6em #032A07;
+   -webkit-box-shadow: 0 0 0.6em #032A07;
+   box-shadow: 0 0 0.6em #032A07;
+}
+
+ div.nomeusuario span {
   font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
   font-size: 25px;
   color:#1E5A2E;
@@ -335,7 +359,7 @@ html * {
 }
 
 body {
-	background: #ffffff;
+	background:#fcfbf9;
 	color: #333333;
 	margin: 5px auto;
 	max-width: 1320px;
@@ -350,6 +374,7 @@ body {
 	height: 170px;
 	margin:0 auto;
 	text-align:center;
+	
 }
 
 #grailsLogo img{

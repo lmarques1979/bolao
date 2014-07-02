@@ -1,18 +1,22 @@
+<%@ page import="bolao.Palpite" %>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><g:if env="development">Grails Runtime Exception</g:if><g:else>Error</g:else></title>
 		<meta name="layout" content="main">
-		<g:if env="development"><asset:stylesheet src="errors.css"/></g:if>
+		<g:set var="entityName" value="${message(code: 'palpite.label', default: 'Palpite')}" />
+		<title><g:message code="error.404.message"/></title>
 	</head>
 	<body>
-		<g:if env="development">
-			<g:renderException exception="${exception}" />
-		</g:if>
-		<g:else>
-			<ul class="errors">
-				<li>An error has occurred</li>
-			</ul>
-		</g:else>
+
+		<a href="#list-palpite" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		
+		<div id="list-palpite" class="content scaffold-list" role="main">
+			<g:if test="${flash.erros}">
+				<ul class="errors" role="alert">
+					<li>Internal Server Error</li>
+				</ul>
+			</g:if>
+		</div>
 	</body>
 </html>
+

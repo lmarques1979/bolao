@@ -23,16 +23,19 @@
 					<tr>
 						<g:sortableColumn property="descricao" title="${message(code: 'bolao.descricao.label', default: 'Descricao')}" />
 					
-						<th><g:message code="bolao.url.label" default="URL inscrição Bolão" /></th>
+						<th><g:message code="bolao.informacao.label"/></th>
 						
-						<th><g:message code="bolao.informacao.label" default="Informação" /></th>
+						<th><g:message code="bolao.url.label"/></th>
+												
+						<th><g:message code="bolao.admin.label"/></th>
+					
+						<th><g:message code="campeonato.label"/></th>
+					
+						<th><g:message code="bolao.autorizacao.label"/></th>
 						
-						<th><g:message code="bolao.admin.label" default="Admin" /></th>
-					
-						<th><g:message code="campeonato.label" default="Campeonato" /></th>
-					
-						<g:sortableColumn property="imagem" title="${message(code: 'bolao.imagem.label', default: 'Imagem')}" />
-					
+						<th><g:message code="bolao.imagem.label"/></th>
+						
+										
 						
 					</tr>
 				</thead>
@@ -56,6 +59,12 @@
 						</td>
 					
 						<td>${bolaoInstance?.campeonato?.descricao}</td>
+						
+						<td><g:formatBoolean boolean="${bolaoInstance?.autorizacao}" />
+							<g:if test="${bolaoInstance?.autorizacao==true}">
+								AQUI
+							</g:if>
+						</td>
 					
 					    <td><g:if test="${bolaoInstance.imagem}">
 								<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="bolao/${bolaoInstance.descricao}/${bolaoInstance.imagem}" title="${bolaoInstance.descricao}"/>

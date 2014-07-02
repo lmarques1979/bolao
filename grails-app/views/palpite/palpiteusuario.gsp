@@ -11,7 +11,7 @@
 		<a href="#list-palpite" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		
 		<div id="list-palpite" class="content scaffold-list" role="main">
-			<h1><g:message code="palpite.list.label"/></h1>
+			<h1><g:message code="palpite.list.label"/> ${usuarioBolaoInstance.usuario.buscaNome(usuarioBolaoInstance.usuario)}</h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
