@@ -37,20 +37,34 @@
 					<table>
 						<thead>
 							<tr>
-								<th class="esquerda"><g:message code="usuarioBolao.list.label" default="Bolao" /></th>
+								<th colspan="4" class="esquerda"><g:message code="usuarioBolao.list.label" default="Bolao" /></th>
 							</tr>
+							<tr>
+								<th></th>
+								<th>Nome</th>
+								<th>Campeonato</th>
+								
+							</tr>
+							
 						</thead>
 						<tbody>
 						<g:each in="${usuarioBolaoInstanceList}" status="i" var="usuarioBolaoInstance">
 							<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 							
 							
-								<td class="esquerda">
+								<td>
 									<g:if test="${usuarioBolaoInstance?.bolao?.imagem}">
 											<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="bolao/${usuarioBolaoInstance?.bolao?.descricao}/${usuarioBolaoInstance?.bolao?.imagem}" title="${usuarioBolaoInstance?.bolao?.descricao}"/>
 									</g:if>	
+									
+								</td> 
+								
+								<td>
 									<g:link controller="UsuarioBolao" action="pontuacao" id="${usuarioBolaoInstance.id}">${fieldValue(bean: usuarioBolaoInstance?.bolao, field: "descricao")}</g:link>
-										
+								</td> 
+								
+								<td>
+									${usuarioBolaoInstance.bolao.campeonato.descricao}
 								</td> 
 								
 							</tr>
