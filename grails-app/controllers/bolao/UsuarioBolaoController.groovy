@@ -33,7 +33,7 @@ class UsuarioBolaoController extends BaseController {
 		usuariobolao.each(){ usuariobolaoInstance->
 			
 				
-						usuariobolaoInstance.palpites.each(){ palpite-> 
+						usuariobolaoInstance.palpites.each(){ palpiteInstance-> 
 								def palpitetime1 = palpiteInstance.scoretime1
 								def palpitetime2 = palpiteInstance.scoretime2
 								def jogos = palpiteInstance.jogo
