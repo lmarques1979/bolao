@@ -60,7 +60,7 @@
 		<g:message code="usuario.timecoracao.label" default="Time de Coração" />
 		
 	</label>
-	<g:select id="timecoracao" name="timecoracao.id" noSelection="${['':'Selecionar Time de Coração...']}" from="${Time.list()}" optionValue="descricao" optionKey="id" value="${jogoInstance?.timecoracao}" class="many-to-one"/>
+	<g:select id="timecoracao" name="timecoracao.id" noSelection="${['':'Selecionar Time de Coração...']}" from="${Time.list()}" optionValue="descricao" optionKey="id" value="${usuarioInstance?.timecoracao?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'enabled', 'error')} ">
