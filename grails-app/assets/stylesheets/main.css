@@ -22,6 +22,10 @@ a.autorizacao{
 a{
 	color: #1E5A2E;
 }
+
+ img.internacionalizacao{
+	margin-top:-5px;
+}
 .cadastrologin{
 	text-align:center;
 	margin: 0 auto;

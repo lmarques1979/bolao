@@ -31,7 +31,7 @@
 				<label for='remember_me'><g:message code="springSecurity.login.remember.me.label"/></label>
 			</p>-->
 			
-			<g:link controller="Usuario" action="esqueceusenha">Esqueceu a Senha?</g:link>
+			<g:link controller="Usuario" action="esqueceusenha"><g:message code="esqueceusenha.label"/></g:link>
 			<p>
 				<input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
 			</p>

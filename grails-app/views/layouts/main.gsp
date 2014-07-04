@@ -60,9 +60,11 @@
 					<li><g:link class="login" controller="login" action="auth"><g:message code="login.label"/></g:link></li>
 				</sec:ifNotLoggedIn>
 
-				<li class="internacionalizacao"><g:link action="index" params="[lang:'pt_BR']"><asset:image src="bandeiras/24/Brazil.png" title="${message(code:'portuguesbrasil.label')}"/></g:link></li>
-				<li class="internacionalizacao"><g:link action="index" params="[lang:'en_GB']"><asset:image src="bandeiras/24/United Kingdom(Great Britain).png" title="${message(code:'english.label')}"/></g:link></li>
-				<li class="internacionalizacao"><g:link action="index" params="[lang:'es']"><asset:image src="bandeiras/24/Spain.png" title="${message(code:'spain.label')}"/></g:link></li>
+	
+				<li><g:link action="${params.action ? params.action: 'auth'}" controller="${params.controller ? params.controller : 'Login'}" params="[lang: 'pt_BR']"><asset:image class="internacionalizacao" src="bandeiras/24/Brazil.png" title="${message(code:'portuguesbrasil.label')}"/></g:link></li>
+				<li><g:link action="${params.action ? params.action: 'auth'}" controller="${params.controller ? params.controller : 'Login'}" params="[lang: 'en']"><asset:image class="internacionalizacao" src="bandeiras/24/United Kingdom(Great Britain).png" title="${message(code:'english.label')}"/></g:link></li>
+				<li><g:link action="${params.action ? params.action: 'auth'}" controller="${params.controller ? params.controller : 'Login'}" params="[lang: 'es']"><asset:image class="internacionalizacao" src="bandeiras/24/Spain.png" title="${message(code:'spain.label')}"/></g:link></li>
+			
 			</ul>
 		</div><div class="clearer"></div>
 		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><asset:image src="logo/logo.png" alt="Bolao"/></a>

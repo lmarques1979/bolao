@@ -8,7 +8,7 @@
 <div id='login'>
 	<div class='inner'>
 
-		<div class='fheader'>Esqueceu a senha?</div> 
+		<div class='fheader'><g:message code="esqueceusenha.label"/></div> 
 
 		<g:if test='${flash.message}'>
 			<g:each in="${flash.message}" status="i" var="mensagem">
@@ -18,12 +18,12 @@
 
 		<form action='enviarsenha' method='POST' id='loginForm' class='cssform' autocomplete='off'>
 			<p>
-				<label for='username'>Usuário:</label>
+				<label for='username'><g:message code="usuario.username.label"/></label>
 				<input type='text' value="${params.username}" size="15" class='text_' name='username' id='username'/>
 			</p>
 
 			<p>
-				<label for='email'>E-mail:</label>
+				<label for='email'><g:message code="usuario.email.label"/></label>
 				<input type='text' value="${params.email}" size="30" class='text_' name='email' id='email'/>
 			</p>
 
