@@ -38,7 +38,7 @@
 							     <g:set var="filtrodata" value="2" />
 							</g:else>
 							
-							<g:select onchange="this.form.submit()" value="${filtrodata}" name="filtrodata" from="${['Todos', 'Pendentes', 'Encerrado']}" keys="${['1','2','3']}"/>
+							<g:select onchange="this.form.submit()" value="${filtrodata}" name="filtrodata" from="${[message(code: "filtro.todos.label"), message(code: "filtro.pendente.label"), message(code: "filtro.encerrado.label")]}" keys="${['1','2','3']}"/>
 							
 						</td>
 						
@@ -50,7 +50,7 @@
 							     <g:set var="filtrocampeonato" value="-1" />
 							</g:else>
 							
-							<g:select onchange="this.form.submit()" id="campeonato" name="filtrocampeonato" noSelection="${['-1':'Selecionar Campeonato...']}" from="${bolao.Campeonato.list()}" optionValue="descricao" optionKey="id" required="" value="${filtrocampeonato}" class="many-to-one"/>
+							<g:select onchange="this.form.submit()" id="campeonato" name="filtrocampeonato" noSelection="${['-1':message(code: "filtro.campeonato.label")]}" from="${bolao.Campeonato.list()}" optionValue="descricao" optionKey="id" required="" value="${filtrocampeonato}" class="many-to-one"/>
 						</td>
 						
 					</tr>
@@ -83,9 +83,9 @@
 					<g:if test="${datajogoanterior!=datajogoatual}">
 								<tbody>
 									<tr class="datajogo">
-										<td>Data do Jogo: ${datajogoatual}</td>
+										<td>${message(code: "jogo.datajogo.label")}: ${datajogoatual}</td>
 										<td colspan="4"></td>
-										<td>Peso: ${jogoInstance?.peso}</td>
+										<td>${message(code: "jogo.peso.label")}: ${jogoInstance?.peso}</td>
 									</tr>
 								</tbody>	
 					</g:if>

@@ -22,8 +22,8 @@
 			<g:form url="[resource:jogoInstance, action:'filtro']" >
 			<thead>
 					<tr>
-						<th>Datas Jogos</th>
-						<th>Campeonato</th>
+						<th>${message(code: "jogo.datajogo.label")}</th>
+						<th>${message(code: "campeonato.label")}</th>
 						
 					</tr>
 					
@@ -82,9 +82,9 @@
 					<g:if test="${datajogoanterior!=datajogoatual}">
 								<tbody>
 									<tr class="datajogo">
-										<td>Data do Jogo: ${datajogoatual}</td>
+										<td>${message(code: "jogo.datajogo.label")}: ${datajogoatual}</td>
 										<td colspan="4"></td>
-										<td>Peso: ${jogoInstance?.peso}</td>
+										<td>${message(code: "jogo.peso.label")}: ${jogoInstance?.peso}</td>
 									</tr>
 								</tbody>	
 					</g:if>

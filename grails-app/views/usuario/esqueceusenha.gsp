@@ -29,7 +29,7 @@
 
 			
 			<p>
-				<input type='submit' id="submit" value='Enviar'/>
+				<input type='submit' id="submit" value='${message(code: "enviar.label")}'/>
 			</p>
 		</form>
 	</div>
