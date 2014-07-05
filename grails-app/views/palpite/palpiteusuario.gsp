@@ -51,9 +51,9 @@
 							<g:if test="${datajogoanterior!=datajogoatual}">
 								<tbody>
 									<tr class="datajogo">
-										<td>Data do Jogo: ${datajogoatual}</td>
+										<td>${message(code: "datajogo.label")}: ${datajogoatual}</td>
 										<td colspan="4"></td>
-										<td>Peso: ${palpite?.jogo?.peso}</td>
+										<td>${message(code: "peso.label")}: ${palpite?.jogo?.peso}</td>
 									</tr>
 								</tbody>	
 							</g:if>
@@ -103,10 +103,10 @@
 						</tr>
 						<tbody>
 							<tr class="resultado">
-								<td colspan="2">Resultado Final</td>
+								<td colspan="2">${message(code: "resultadofinal.label")}</td>
 								<td>${palpite?.jogo?.scoretime1}</td>
 								<td>${palpite?.jogo?.scoretime2}</td>
-								<td>Pontos</td>
+								<td>${message(code: "pontos.label")}</td>
 								<td>${palpite?.pontuacao}</td>
 							</tr>
 						</tbody>

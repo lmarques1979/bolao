@@ -36,15 +36,15 @@
 			</div>
 						
 			<div class="sobrebolao">
-				<asset:image src="skin/bolao_criacao.png" title="Data de Criação"/><span>Data de Criação: <g:formatDate format="dd/MM/yyyy HH:mm" date="${usuarioBolaoInstance?.bolao?.dateCreated}"/></span><div class="clearer"></div>
-				<asset:image src="skin/administrador.png" title="Administrador"/><span>Administrador: ${usuarioBolaoInstance?.bolao?.admin?.username}</span><div class="clearer"></div>
-				<asset:image src="skin/membros.png" title="Quantidade de Membros"/><span>Membros: ${usuarioBolaoInstanceCount}</span><div class="clearer"></div>
+				<asset:image src="skin/bolao_criacao.png" title="Data de Criação"/><span>${message(code: "datacriacao.label")}: <g:formatDate format="dd/MM/yyyy HH:mm" date="${usuarioBolaoInstance?.bolao?.dateCreated}"/></span><div class="clearer"></div>
+				<asset:image src="skin/administrador.png" title="Administrador"/><span>${message(code: "administrador.label")}: ${usuarioBolaoInstance?.bolao?.admin?.username}</span><div class="clearer"></div>
+				<asset:image src="skin/membros.png" title="Quantidade de Membros"/><span>${message(code: "membros.label")}: ${usuarioBolaoInstanceCount}</span><div class="clearer"></div>
 			</div>
 		
 		</div>
 		
 		<div class=principaldetalhes>
-			<span>Detalhes do bolão ${usuarioBolaoInstance?.bolao?.descricao}</span>
+			<span>${message(code: "detalhesdobolao.label.label")} ${usuarioBolaoInstance?.bolao?.descricao}</span>
 			<div class="detalhesbolao">
 				<table>
 					<thead>
@@ -56,11 +56,11 @@
 						<tr>
 						
 							<th>#</th>
-							<th>Avatar</th>
-							<th>Participante</th>
-							<th>Time Participante</th>
-							<th>Pontos</th>
-							<th>Palpites</th>
+							<th>${message(code: "avatar.label")}</th>
+							<th>${message(code: "participante.label")}</th>
+							<th>${message(code: "timeparticipante.label")}</th>
+							<th>${message(code: "pontos.label")}</th>
+							<th>${message(code: "palpites.label")}</th>
 						
 						</tr>
 					</thead>
@@ -100,12 +100,12 @@
 											</g:if>
 											<g:else>
 												<g:link controller="Palpite" action="palpiteusuario" id="${usuariobolao[2].id}">
-													<asset:image src="palpites.png" title="Ver Palpites"/>
+													<asset:image src="palpites.png" title="${message(code: "verpalpites.label")}"/>
 												</g:link>
 											</g:else>
 										</g:if>
 										<g:else>
-											Não fez Palpite
+											${message(code: "naofezpalpite.label")}
 										</g:else>
 									</td>
 							</tr>

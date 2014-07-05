@@ -42,7 +42,7 @@
 									     <g:set var="filtrodatapalpite" value="2" />
 									</g:else>
 									
-									<g:select id="filtropalpite" value="${filtrodatapalpite}" name="filtrodatapalpite" from="${['Todos', 'Em Aberto', 'Finalizados']}" keys="${['1','2','3']}"/>
+									<g:select id="filtropalpite" value="${filtrodatapalpite}" name="filtrodatapalpite" from="${[message(code: "filtro.todos.label"), message(code: "filtro.emaberto.label"), message(code: "filtro.finalizados.label")]}" keys="${['1','2','3']}"/>
 									
 								</td>
 								
@@ -91,9 +91,9 @@
 									<g:if test="${datajogoanterior!=datajogoatual}">
 										<tbody>
 											<tr class="datajogo">
-												<td>Data do Jogo: ${datajogoatual}</td>
+												<td>${message(code: "datajogo.label")}: ${datajogoatual}</td>
 												<td colspan="4"></td>
-												<td>Peso: ${palpite?.jogo?.peso}</td>
+												<td>${message(code: "peso.label")}: ${palpite?.jogo?.peso}</td>
 											</tr>
 										</tbody>	
 									</g:if>
@@ -110,19 +110,19 @@
 									
 									<td>
 										<g:if test="${palpite.finalizado}">
-											<g:textField readonly class="readonly" name="scoretime1" maxlength="1" size="1" value="${palpite?.scoretime1}"/>
+											<g:textField readonly class="readonly" name="scoretime1" maxlength="2" size="1" value="${palpite?.scoretime1}"/>
 										</g:if>
 										<g:else>
-											<g:textField class="centro" name="scoretime1" maxlength="1" size="1" value="${palpite?.scoretime1}"/>
+											<g:textField class="centro" name="scoretime1" maxlength="2" size="1" value="${palpite?.scoretime1}"/>
 										</g:else>
 									</td>
 									
 									<td>
 										<g:if test="${palpite.finalizado}">
-											<g:textField readonly class="readonly" name="scoretime2" maxlength="1" size="1" value="${palpite?.scoretime2}"/>
+											<g:textField readonly class="readonly" name="scoretime2" maxlength="2" size="1" value="${palpite?.scoretime2}"/>
 										</g:if>
 										<g:else>
-											<g:textField class="centro" name="scoretime2" maxlength="1" size="1" value="${palpite?.scoretime2}"/>
+											<g:textField class="centro" name="scoretime2" maxlength="2" size="1" value="${palpite?.scoretime2}"/>
 										</g:else>
 									</td>
 								
@@ -143,10 +143,10 @@
 								</tr>
 								<tbody>
 									<tr class="resultado">
-										<td colspan="2">Resultado Final</td>
+										<td colspan="2">${message(code: "resultadofinal.label")}</td>
 										<td>${palpite?.jogo?.scoretime1}</td>
 										<td>${palpite?.jogo?.scoretime2}</td>
-										<td>Pontos</td>
+										<td>${message(code: "pontos.label")}</td>
 										<td>${palpite?.pontuacao}</td>
 									</tr>
 								</tbody>
