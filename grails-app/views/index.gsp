@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Bolão Campeão</title>
+		<title><g:message code="titulopagina.label"/></title>
 		
 	</head>
 	<body>
