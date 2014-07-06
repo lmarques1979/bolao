@@ -9,7 +9,7 @@
 	<body>
 
 		<a href="#list-palpite" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		
+
 		<div id="list-palpite" class="content scaffold-list" role="main">
 			<h1><g:message code="palpite.list.label"/> ${usuarioBolaoInstance.usuario.buscaNome(usuarioBolaoInstance.usuario)}</h1>
 			<g:if test="${flash.message}">
@@ -22,7 +22,35 @@
 				</g:each>
 			</ul>
 			</g:if>
-
+			<table>
+				<g:form url="[action:'palpiteusuario']" >
+				<g:hiddenField name="id" value="${usuarioBolaoInstance.id}" />
+				<thead>
+						<tr>
+							<th><g:message code="filtro.palpitesusuario.label"/></th>
+						</tr>
+						
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<g:if test="${params.filtrojogos}"> 
+								<g:set var="filtrojogos" value="${params.filtrojogos}" />
+								</g:if>
+								<g:else>
+								     <g:set var="filtrojogos" value="4" />
+								</g:else>
+								<g:select onchange="this.form.submit()" value="${filtrojogos}" name="filtrojogos" from="${[message(code: "filtro.todos.label"), message(code: "filtro.ultimos30.label"), message(code: "filtro.ultimos20.label"), message(code: "filtro.ultimasemana.label")]}" keys="${['1','2','3' ,'4']}"/>
+							
+							</td>
+							
+						</tr>
+						
+						
+					</tbody>
+					<g:submitButton class="invisivel" name="create" value="Filtrar" />
+				</g:form> 
+			</table>
 			<g:hiddenField name="usuariobolao" value="${usuarioBolaoInstance.id}" />				
 			<table>
 				

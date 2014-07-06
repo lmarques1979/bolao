@@ -4,6 +4,7 @@ import static org.springframework.http.HttpStatus.*
 import funcoesdata.FuncoesData
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
+import java.text.SimpleDateFormat
 
 @Transactional(readOnly = true)
 @Secured("isFullyAuthenticated()")
@@ -53,16 +54,47 @@ class PalpiteController extends BaseController {
 	
 	def palpiteusuario() {
 		
+		def filtrojogos = params.filtrojogos
+		if(filtrojogos==null){
+			filtrojogos="4" 
+		}
 		def usuarioBolaoInstance=UsuarioBolao.get(Long.valueOf(params.id).longValue())
 		def configuracoes = configuracaoParams
-		def usuarioBolaoList = UsuarioBolao.findAll("from UsuarioBolao as ub where ub.bolao.id=? and ub.usuario.id=?", [ usuarioBolaoInstance.bolao.id , usuarioBolaoInstance.usuario.id])
+		GregorianCalendar cinicial 	= new GregorianCalendar();
+		GregorianCalendar cfinal 	= new GregorianCalendar();
+		cfinal.setTime(new Date())
+		cinicial.setTime(new Date())
+		
+		if(filtrojogos=="2"){
+			cinicial.add(cinicial.DAY_OF_YEAR, -30)
+		}
+		if(filtrojogos=="3"){
+			cinicial.add(cinicial.DAY_OF_YEAR,-20)
+		}
+		if(filtrojogos=="4"){
+			cinicial.add(cinicial.DAY_OF_YEAR,-7)
+		}
+		
+		def usuarioBolaoList = UsuarioBolao.createCriteria().list (configuracoes) {
+			eq("bolao.id" , usuarioBolaoInstance.bolao.id)
+			eq("usuario.id" , usuarioBolaoInstance.usuario.id)
+		}
 		def jogos = usuarioBolaoInstance.bolao.campeonato.jogos
 		def palpitesfinalizados = []
 		
 		jogos.each(){
+			def datajogo = it.datajogo
 			def palpite = usuarioBolaoInstance.buscarPalpiteJogo(it , configuracaoParams.minutosparapalpite)
-			if (palpite.finalizado==true)
-			 	palpitesfinalizados << palpite 
+			if (palpite.finalizado==true){
+				
+				if (filtrojogos!="1"){
+				    if(datajogo>=cinicial.getTime() && datajogo<=cfinal.getTime()){
+						palpitesfinalizados << palpite
+				    } 
+				}else{
+					palpitesfinalizados << palpite
+				}
+			}
 		}
 		
 		respond palpitesfinalizados, model:[usuarioBolaoInstance:usuarioBolaoInstance, palpitesList: palpitesfinalizados, palpiteInstanceCount: palpitesfinalizados.size()]
