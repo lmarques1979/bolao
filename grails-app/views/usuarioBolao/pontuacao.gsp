@@ -43,10 +43,24 @@
 		
 		</div>
 		
+		<div class="resenhas">
+			<span>${message(code: "resenhas.label")}</span>
+			<div class="enviarresenhas">
+				<g:form controller="Resenha" action="save" method="POST">
+					
+					<g:textField class="resenha" id="resenha" name="resenha" size="60" maxlenght="100" value="${message(code: "digiteresenha.label")}"/>
+					
+					<input type='submit' value='${message(code: "button.create.label")}'/>
+					
+				</g:form>
+			
+			</div>
+			<div class="lerresenhas"></div>
+		</div>
 		<div class=principaldetalhes>
 			<span>${message(code: "detalhesdobolao.label.label")} ${usuarioBolaoInstance?.bolao?.descricao}</span>
 			<div class="detalhesbolao">
-				<table>
+				<table class="semborda">
 					<thead>
 						<tr>
 						
@@ -120,3 +134,4 @@
 		
 	</body>
 </html>
+<asset:javascript src="limparesenha.js"/>

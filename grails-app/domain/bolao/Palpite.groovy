@@ -30,8 +30,8 @@ class Palpite {
 	
     static constraints = {
 		
-		scoretime1(nullable: true, blank: true , size: 1..2)
-		scoretime2(nullable: true , blank: true , size: 1..2)
+		scoretime1(nullable: true, blank: true , size: 1..2 , matches:"[0-9]{1}[0-9]{1}")
+		scoretime2(nullable: true , blank: true , size: 1..2, matches:"[0-9]{1}[0-9]{1}")
 		jogo(nullable: false , blank: false)
 		finalizado(nullable: true , blank: true)
 		pontuacao(nullable: true , blank: true)

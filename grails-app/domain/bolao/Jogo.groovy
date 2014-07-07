@@ -10,8 +10,8 @@ class Jogo {
 	int  fase
 	int  peso=1
 	String descricaofase
-	int	scoretime1=0
-	int scoretime2=0
+	Integer	scoretime1=null
+	Integer scoretime2=null
 	Estadio estadio
 	boolean encerrado=false
 	Date dateCreated
@@ -29,8 +29,8 @@ class Jogo {
 		fase(nullable: false , blank: false)
 		peso(nullable: false , blank: false)
 		descricaofase(nullable: false , blank: false)
-		scoretime1(nullable: true , blank: true , size: 1..3, matches:"[0-9]{1}[0-9]{1}[0-9]{1}")
-		scoretime2(nullable: true , blank: true , size: 1..3, matches:"[0-9]{1}[0-9]{1}[0-9]{1}")
+		scoretime1(nullable: true , blank: true , size: 1..2, matches:"[0-9]{1}[0-9]{1}")
+		scoretime2(nullable: true , blank: true , size: 1..2, matches:"[0-9]{1}[0-9]{1}")
 	}
 	
 	static mapping = {

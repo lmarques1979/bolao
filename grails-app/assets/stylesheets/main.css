@@ -87,6 +87,65 @@ padding: 0 12px 2px;
 
 /*DIVS TRABALHO MAIN*/
 
+div.loginprincipal{
+	float:right;
+	margin-top:-30px;
+	padding:0;
+	width:450px;
+	height:35px;
+	outline:0px solid #fff;
+}
+
+div.loginprincipal label{
+	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  	font-size: 11px;
+  	text-align:left;
+  	margin: 0 auto;
+  	color:#FFF;
+}
+
+div.loginprincipal input{
+text-align: left;
+height:12px;
+margin-top:1px;
+background-color: #fcfcfc;
+border: 1px solid #cccccc;
+font-size: 11px;
+padding: 0.2em 0.4em;
+}
+
+div.loginprincipal input[type="submit"] {
+    background: none repeat scroll 0 0 #05C000;
+    border: 0 solid;
+    color: #FFFFFF;
+    float: none;
+    font-size: 12px;
+    font-weight: bold;
+    height:19px;
+    margin:0;
+    padding: 0 12px 2px;
+}
+
+div.enviarresenhas input[type="submit"] {
+    background: none repeat scroll 0 0 #05C000;
+    border: 0 solid;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    height:25px;
+    padding: 0 12px 2px;
+}
+div.loginprincipal a.esqueceusenha {
+font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+font-size: 11px;
+text-align:left;
+margin-top:-3px;
+margin-left:-8px;
+background-color: transparent;
+color:#f4ffcf;
+}
+
+
 div.regulamento span{
 	font-size: 12px;
   	font-weight: bold;
@@ -115,6 +174,44 @@ div.principal {
     margin-left: -400px;
     margin-top: 20px;
 }
+
+div.resenhas {
+    width: 720px;
+    height:200px;
+    outline:0px solid #d7d7d7;
+    position: relative;
+    left: 50%;
+    margin-left: -390px;
+    padding:0;
+    margin-bottom:15px;
+}
+
+div.resenhas span{
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  	font-size: 18px;
+  	text-align:center;
+  	margin: 0 auto;
+  	font-weight: bold;
+  	color:#1E5A2E;
+}
+
+div.enviarresenhas {
+    width: 720px;
+    height:30px;
+    outline:0px solid #d7d7d7;
+    position: relative;
+    padding:0;
+}
+div.lerresenhas {
+    width: 720px;
+    height:160px;
+    outline:1px solid #d7d7d7;
+    position: relative;
+    padding:0;
+    overflow:auto;
+}
+
+
 div.principaldetalhes {
     width: 720px;
     height:800px;
@@ -361,7 +458,6 @@ table.home{
 }
 
 input.invisivel[type="submit"] {
-    
     float: none;
     display:none;
 }
@@ -776,6 +872,14 @@ label {
 	margin: 0 0.25em 0 0;
 }
 
+input.resenha {
+	text-align:left;
+	color:#BDBDBD;
+	border: 1px solid #cccccc;
+	
+}
+
+
 input, select, textarea {
 	text-align:left;
 	background-color: #fcfcfc;
@@ -800,10 +904,6 @@ input.readonly, select.readonly, textarea.readonly  {
 	font-size: 1em;
 	padding: 0.2em 0.4em;
 	margin-top:10px;
-}
-
-select {
-	padding: 0.2em 0.2em 0.2em 0;
 }
 
 select[multiple] {
@@ -967,7 +1067,16 @@ tr>td:last-child, tr>th:last-child {
 	padding-right: 1.25em;
 }
 
-td, th {
+td {
+	line-height: 1.5em;
+	padding: 2px;
+	text-align: center;
+	vertical-align: top;
+	border:0px solid #DFDFDF;
+	font-size:13px;
+}
+
+th {
 	line-height: 1.5em;
 	padding: 2px;
 	text-align: center;
@@ -1220,7 +1329,7 @@ a.skip {
 		text-align: center;
 }
 
-#login a {
+/*#login a {
 	color:#1E5A2E;
 	margin: 0 20px ;
 	padding: 0px;
@@ -1228,7 +1337,7 @@ a.skip {
 	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 	font-size: 15px;
 	font-weight: bold;
-}
+}*/
 
 #login .inner {
 	width: 400px;

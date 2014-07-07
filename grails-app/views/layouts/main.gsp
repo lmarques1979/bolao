@@ -56,15 +56,40 @@
 				</sec:ifLoggedIn>
 				
 				<sec:ifNotLoggedIn>
-					<li><g:link class="cadastrousuario" controller="Usuario" action="create"><g:message code="usuario.create.label"/></g:link></li>
-					<li><g:link class="login" controller="login" action="auth"><g:message code="login.label"/></g:link></li>
+					<li><g:link class="cadastrousuario" controller="Usuario" action="create" ><g:message code="criar.usuario.label"/></g:link></li>
 				</sec:ifNotLoggedIn>
-
+				
 				<li><g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'pt_BR']"><asset:image class="internacionalizacao" src="bandeiras/24/Brazil.png" title="${message(code:'portuguesbrasil.label')}"/></g:link></li>
 				<li><g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'en']"><asset:image class="internacionalizacao" src="bandeiras/24/United Kingdom(Great Britain).png" title="${message(code:'english.label')}"/></g:link></li>
 				<li><g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'es']"><asset:image class="internacionalizacao" src="bandeiras/24/Spain.png" title="${message(code:'spain.label')}"/></g:link></li>
-			
+				
+				
 			</ul>
+		<sec:ifNotLoggedIn>
+			
+			<div class="loginprincipal">
+				<g:form url='/bolao/j_spring_security_check' method='POST' id='formlogin' class='cssform' autocomplete='off'>
+				
+					<input type='hidden' name='bolao' value='${params.bolao}'/>
+					<label for='password'><g:message code="springSecurity.login.username.label"/>:</label>
+					<input type='text' name='j_username' id='username'/>
+					
+					<label for='password'><g:message code="springSecurity.login.password.label"/>:</label>
+					<input type='password' name='j_password' id='password'/>
+					
+					<input type='submit' value='${message(code: "springSecurity.login.button")}'/>
+					
+					<g:link controller="Usuario" action="esqueceusenha" class="esqueceusenha"><g:message code="esqueceusenha.label"/></g:link>
+				</g:form>
+				<script type='text/javascript'>
+					(function() {
+						document.forms['formlogin'].elements['j_username'].focus();
+					})();
+				</script>
+
+			</div>
+		</sec:ifNotLoggedIn>
+		
 		</div><div class="clearer"></div>
 		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><asset:image src="logo/logo.png" alt="Bolao"/></a>
 		

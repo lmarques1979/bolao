@@ -12,15 +12,15 @@ class UsuarioBolao implements Serializable {
 
 	private static final long serialVersionUID = 1
 
-	Long id
 	Usuario usuario
 	Bolao bolao
+	int	  posicaoatual
 	boolean autorizado=true
 	Date ultimaatualizacao
 	Date dateCreated
 	Date lastUpdated
 	
-	static hasMany=[palpites: Palpite]
+	static hasMany=[palpites: Palpite , resenhas: Resenha]
 	
 	Palpite buscarPalpiteJogo(Jogo jogo , minutos) {
 
@@ -90,10 +90,12 @@ class UsuarioBolao implements Serializable {
 		usuario(unique: ['bolao'])
 		autorizado(nullable: false , blank: false)
 		ultimaatualizacao(nullable: true , blank: true)
+		posicaoatual(nullable: true , blank: true)
 	}
 	
 	static mapping = {
 		palpites cascade: 'all-delete-orphan'
+		resenhas cascade: 'all-delete-orphan'
 		version false
 		autoTimestamp true
 	}

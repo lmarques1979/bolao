@@ -4,6 +4,7 @@ import grails.transaction.Transactional
 
 import org.hibernate.criterion.CriteriaSpecification
 import pontuacao.Pontuacao
+import posicao.Posicao
 
 @Transactional(readOnly = true)
 class UsuarioBolaoController extends BaseController {
@@ -32,7 +33,6 @@ class UsuarioBolaoController extends BaseController {
 		//Faço os cálculos dos pontos por cada palpite de cada usuário
 		usuariobolao.each(){ usuariobolaoInstance->
 			
-				
 						usuariobolaoInstance.palpites.each(){ palpiteInstance-> 
 								def palpitetime1 = palpiteInstance.scoretime1
 								def palpitetime2 = palpiteInstance.scoretime2
@@ -57,7 +57,20 @@ class UsuarioBolaoController extends BaseController {
 									}
 								}
 					}
+						
+					def posicao = new Posicao()
+					def posicaoatual = posicao.atualizaPosicoes(usuariobolaoInstance)
+					usuariobolaoInstance.posicaoatual = posicaoatual
+					
+					usuariobolaoInstance.save flush:true
+					
+					if (usuariobolaoInstance.hasErrors()) {
+						respond usuariobolaoInstance.errors, view:'create'
+						return
+					}
+						
 		}
+		
 		if(i==0){
 			flash.message = message(code: 'pontuacao.updated.message')
 		}else{

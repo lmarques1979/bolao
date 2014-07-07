@@ -7,12 +7,12 @@
 			<tbody>
 					<thead>
 						<tr>
-							<th>Data</th>
-							<th>Hora</th>
-							<th>Peso Bolão</th>
-							<th>Fase</th>
-							<th>Desc. Fase</th>
-							<th>Local do Jogo</th>
+							<th>${message(code: "jogo.datajogo.label")}</th>
+							<th>${message(code: "jogo.horajogo.label")}</th>
+							<th>${message(code: "jogo.peso.label")}</th>
+							<th>${message(code: "jogo.rodada.label")}</th>
+							<th>${message(code: "jogo.descfase.label")}</th>
+							<th>${message(code: "jogo.estadio.label")}</th>
 						</tr>
 					</thead>
 					<tr>
@@ -48,12 +48,12 @@
 					</tr>
 					<thead>
 						<tr>
-							<th>Time 1</th>
-							<th>Score Time 1</th>
-							<th>Score Time 2</th>
-							<th>Time 2</th>
-							<th>Campeonato</th>
-							<th>Encerrado</th>
+							<th>${message(code: "jogo.time1.label")}</th>
+							<th>${message(code: "jogo.scoretime1.label")}</th>
+							<th>${message(code: "jogo.scoretime2.label")}</th>
+							<th>${message(code: "jogo.time2.label")}</th>
+							<th>${message(code: "jogo.campeonato.label")}</th>
+							<th>${message(code: "jogo.encerrado.label")}</th>
 						</tr>
 					</thead>
 					<tr>

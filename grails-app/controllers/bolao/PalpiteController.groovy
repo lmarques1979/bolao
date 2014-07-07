@@ -75,10 +75,6 @@ class PalpiteController extends BaseController {
 			cinicial.add(cinicial.DAY_OF_YEAR,-7)
 		}
 		
-		def usuarioBolaoList = UsuarioBolao.createCriteria().list (configuracoes) {
-			eq("bolao.id" , usuarioBolaoInstance.bolao.id)
-			eq("usuario.id" , usuarioBolaoInstance.usuario.id)
-		}
 		def jogos = usuarioBolaoInstance.bolao.campeonato.jogos
 		def palpitesfinalizados = []
 		

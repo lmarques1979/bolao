@@ -22,9 +22,8 @@
 			<g:form url="[resource:jogoInstance, action:'filtro']" >
 			<thead>
 					<tr>
-						<th><g:message code="jogo.datajogo.label"/></th>
-						<th><g:message code="jogo.campeonato.label"/></th>
-						
+						<th>${message(code: "filtro.statusjogo.label")}</th>
+						<th>${message(code: "campeonato.label")}</th>
 					</tr>
 					
 				</thead>

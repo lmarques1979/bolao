@@ -22,7 +22,7 @@
 			<g:form url="[resource:jogoInstance, action:'filtro']" >
 			<thead>
 					<tr>
-						<th>${message(code: "jogo.datajogo.label")}</th>
+						<th>${message(code: "filtro.statusjogo.label")}</th>
 						<th>${message(code: "campeonato.label")}</th>
 						
 					</tr>
@@ -38,7 +38,7 @@
 							     <g:set var="filtrodata" value="2" />
 							</g:else>
 														
-							<g:select onchange="this.form.submit()" value="${filtrodata}" name="filtrodata" from="${['Todos', 'Pendentes', 'Finalizados']}" keys="${['1','2','3']}"/>
+							<g:select onchange="this.form.submit()" value="${filtrodata}" name="filtrodata" from="${[message(code: "filtro.todos.label"), message(code: "filtro.pendente.label"), message(code: "filtro.encerrado.label")]}" keys="${['1','2','3']}"/>
 							
 						</td>
 						
@@ -49,7 +49,7 @@
 							<g:else>
 							     <g:set var="filtrocampeonato" value="-1" />
 							</g:else>
-							<g:select onchange="this.form.submit()" id="campeonato" name="filtrocampeonato" noSelection="${['-1':'Selecionar Campeonato...']}" from="${bolao.Campeonato.list()}" optionValue="descricao" optionKey="id" required="" value="${filtrocampeonato}" class="many-to-one"/>
+							<g:select onchange="this.form.submit()" id="campeonato" name="filtrocampeonato" noSelection="${['-1':message(code: "filtro.campeonato.label")]}" from="${bolao.Campeonato.list()}" optionValue="descricao" optionKey="id" required="" value="${filtrocampeonato}" class="many-to-one"/>
 						</td>
 					</tr>
 										

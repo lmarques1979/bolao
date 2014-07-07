@@ -37,11 +37,12 @@
 					<table>
 						<thead>
 							<tr>
-								<th colspan="3" class="esquerda"><g:message code="usuarioBolao.list.label" default="Bolao" /></th>
+								<th colspan="4" class="esquerda"><g:message code="usuarioBolao.list.label" default="Bolao" /></th>
 							</tr>
 							<tr>
 								<th><g:message code="usuarioBolao.bolao.label"/></th>
 								<th><g:message code="usuarioBolao.campeonato.label"/></th>
+								<th><g:message code="usuarioBolao.posicaoatual.label"/></th>
 								<th><g:message code="usuarioBolao.status.label"/></th>
 								
 							</tr>
@@ -50,7 +51,6 @@
 						<tbody>
 						<g:each in="${usuarioBolaoInstanceList}" status="i" var="usuarioBolaoInstance">
 							<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-							
 							
 								<td>
 									<g:if test="${usuarioBolaoInstance?.bolao?.imagem}">
@@ -61,6 +61,10 @@
 								</td> 
 								<td>
 									${usuarioBolaoInstance.bolao.campeonato.descricao}
+								</td> 
+								
+								<td>
+									${usuarioBolaoInstance.posicaoatual}
 								</td> 
 								
 								<td>
