@@ -63,10 +63,13 @@
 									<td class="font11centro"><g:formatDate format="dd/MM/yyyy HH:mm" date="${resenha?.dateCreated}" /></td>
 									
 									<td class="font11esquerda">${resenha?.resenha}</td>
+									
 									<td class="font11esquerda">
-										<g:link controller="resenha" action="delete" id="${resenha.id}">
-											<asset:image src="skin/delete.png" title="${message(code: "delete.resenha.label")}"/>
-										</g:link>
+											<g:if test="${(resenha?.usuariobolao?.usuario?.id==sec.loggedInUserInfo(field: 'id').toLong() ) || (resenha?.usuariobolao?.bolao?.admin?.id==sec.loggedInUserInfo(field: 'id').toLong())}">
+												<g:link controller="resenha" action="delete" id="${resenha.id}">
+													<asset:image src="skin/delete.png" title="${message(code: "delete.resenha.label")}"/>
+												</g:link>
+											</g:if>
 									</td>
 							</tr>
 						</g:each>
