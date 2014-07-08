@@ -12,14 +12,15 @@ class UsuarioBolaoController extends BaseController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
 	def index(Integer max) {
-		def configuracoes = configuracaoParams
 		
+		def configuracoes = configuracaoParams
+		def ultimasAlteracoes = []
 		def resultado = UsuarioBolao.createCriteria().list (configuracoes) {
 			eq("usuario.id" , usuarioLogado.id)
 			eq("autorizado" , true)
 		}
 		
-        respond resultado, model:[usuarioBolaoInstanceCount: resultado.totalCount]
+		respond resultado, model:[usuarioBolaoInstanceCount: resultado.totalCount]
     }
 	
 	@Transactional
@@ -132,10 +133,11 @@ class UsuarioBolaoController extends BaseController {
 				createAlias("palpites", "palpite", CriteriaSpecification.LEFT_JOIN)
 				projections {
 					groupProperty("usuario")
-					sum "palpite.pontuacao", "pontos" 
+					sum "palpite.pontuacao"
 					max "palpite.usuariobolao"
+					max "posicaoatual"
 				}
-				order("pontos", "desc")
+				order("posicaoatual", "asc")
 		}
 		
 		respond usuarioBolaoInstance , model:[usuariosBolao:resultado, usuarioBolaoInstanceCount: resultado.size()]

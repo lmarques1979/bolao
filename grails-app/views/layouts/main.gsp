@@ -56,7 +56,7 @@
 				</sec:ifLoggedIn>
 				
 				<sec:ifNotLoggedIn>
-					<li><g:link class="cadastrousuario" controller="Usuario" action="create" ><g:message code="criar.usuario.label"/></g:link></li>
+					<li><g:link params="[bolao: params.bolao]" class="cadastrousuario" controller="Usuario" action="create" ><g:message code="criar.usuario.label"/></g:link></li>
 				</sec:ifNotLoggedIn>
 				
 				<li><g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'pt_BR']"><asset:image class="internacionalizacao" src="bandeiras/24/Brazil.png" title="${message(code:'portuguesbrasil.label')}"/></g:link></li>

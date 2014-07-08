@@ -130,7 +130,6 @@ class UsuarioController extends BaseController {
        
 		if(bolao!=null && bolao!=""){
 			
-			
 			def resultado = UsuarioBolao.createCriteria().list() {
 				eq("usuario.id" , usuarioInstance.id)
 				eq("bolao.id" , Long.valueOf(bolao).longValue() )
@@ -139,16 +138,28 @@ class UsuarioController extends BaseController {
 			
 			//Não existe ainda, insiro
 			if(resultado.size()==0){
-				def usuarioBolaoInstance = new UsuarioBolao()
-				usuarioBolaoInstance.usuario = usuarioInstance
-				def bolaoObj = Bolao.get(Long.valueOf(bolao).longValue())
-				usuarioBolaoInstance.bolao = bolaoObj
 				
-				usuarioBolaoInstance.save flush:true
+				def autorizacao = Bolao.createCriteria().list() {
+					eq("id" , Long.valueOf(bolao).longValue() )
+				}
 				
-				if (usuarioBolaoInstance.hasErrors()) {
-					respond usuarioBolaoInstance.errors, view:'create'
-					return
+				autorizacao.each(){
+					
+					def usuarioBolaoInstance = new UsuarioBolao()
+					
+					if (it.autorizacao){
+						usuarioBolaoInstance.autorizado=false
+					}
+					usuarioBolaoInstance.usuario = usuarioInstance
+					def bolaoObj = Bolao.get(Long.valueOf(bolao).longValue())
+					usuarioBolaoInstance.bolao = bolaoObj
+					
+					usuarioBolaoInstance.save flush:true
+					
+					if (usuarioBolaoInstance.hasErrors()) {
+						respond usuarioBolaoInstance.errors, view:'create'
+						return
+					}
 				}
 			}
 			

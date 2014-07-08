@@ -91,7 +91,7 @@ div.loginprincipal{
 	float:right;
 	margin-top:-30px;
 	padding:0;
-	width:450px;
+	width:500px;
 	height:35px;
 	outline:0px solid #fff;
 }
@@ -126,6 +126,7 @@ div.loginprincipal input[type="submit"] {
     padding: 0 12px 2px;
 }
 
+
 div.enviarresenhas input[type="submit"] {
     background: none repeat scroll 0 0 #05C000;
     border: 0 solid;
@@ -135,6 +136,13 @@ div.enviarresenhas input[type="submit"] {
     height:25px;
     padding: 0 12px 2px;
 }
+
+div.enviarresenhas input[type="image"] {
+	border: 0;
+	padding:0;
+	margin:0;
+}
+
 div.loginprincipal a.esqueceusenha {
 font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 font-size: 11px;
@@ -876,7 +884,8 @@ input.resenha {
 	text-align:left;
 	color:#BDBDBD;
 	border: 1px solid #cccccc;
-	
+	top:-5px;
+	position:relative;	
 }
 
 

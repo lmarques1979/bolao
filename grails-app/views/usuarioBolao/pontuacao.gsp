@@ -46,14 +46,11 @@
 		<div class="resenhas">
 			<span>${message(code: "resenhas.label")}</span>
 			<div class="enviarresenhas">
-				<g:form controller="Resenha" action="save" method="POST">
-					
+				<g:form method="POST">
+					<g:hiddenField name="idusuariobolao" value="${usuarioBolaoInstance.id}" />
 					<g:textField class="resenha" id="resenha" name="resenha" size="60" maxlenght="100" value="${message(code: "digiteresenha.label")}"/>
-					
-					<input type='submit' value='${message(code: "button.create.label")}'/>
-					
+					<g:actionSubmitImage value="${message(code: "button.create.label")}" action="save" src="${assetPath(src:'skin/send.png')}" />
 				</g:form>
-			
 			</div>
 			<div class="lerresenhas"></div>
 		</div>
@@ -80,8 +77,8 @@
 					</thead>
 					<tbody>
 						<g:each in="${usuariosBolao}" status="i" var="usuariobolao">
-							<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-									<td>${i+1}</td>
+							<tr class="${(i%2) == 0 ? 'even' : 'odd'}">
+									<td>${usuariobolao[3]}</td>
 									
 									<td>
 										<g:if test="${usuariobolao[0].imagem}">

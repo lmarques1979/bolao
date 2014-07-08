@@ -51,7 +51,7 @@
 						<td class="esquerda">${bolaoInstance?.informacao}</td>
 						
 						<td>
-							<g:link  target="_blank"  class="create" controller="Bolao" action="verifica" params="[bolao: bolaoInstance?.id]">URL Cadastro Bolão</g:link>
+							<g:link  target="_blank"  class="create" controller="index" params="[bolao: bolaoInstance?.id]">URL Cadastro Bolão</g:link>
 						</td>
 						
 						<td>${bolaoInstance?.admin?.primeironome}
