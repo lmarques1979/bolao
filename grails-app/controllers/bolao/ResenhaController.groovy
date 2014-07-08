@@ -1,14 +1,14 @@
 package bolao
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional(readOnly = true)
+@Secured("isFullyAuthenticated()")
 class ResenhaController {
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "PUT"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -24,27 +24,9 @@ class ResenhaController {
     }
 
     @Transactional
-    def save(Resenha resenhaInstance) {
-        if (resenhaInstance == null) {
-            notFound()
-            return
-        }
-
-        if (resenhaInstance.hasErrors()) {
-            respond resenhaInstance.errors, view:'create'
-            return
-        }
-
-        resenhaInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'resenha.label', default: 'Resenha'), resenhaInstance.id])
-                redirect resenhaInstance
-            }
-            '*' { respond resenhaInstance, [status: CREATED] }
-        }
-    }
+    def save() {
+		
+	}
 
     def edit(Resenha resenhaInstance) {
         respond resenhaInstance
@@ -75,22 +57,18 @@ class ResenhaController {
 
     @Transactional
     def delete(Resenha resenhaInstance) {
-
+		
+		def usuariobolaoid = resenhaInstance.usuariobolao.id
+		
         if (resenhaInstance == null) {
             notFound()
             return
         }
 
         resenhaInstance.delete flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Resenha.label', default: 'Resenha'), resenhaInstance.id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
-    }
+		
+		redirect controller:"usuarioBolao", action:"pontuacao" , params:[id:usuariobolaoid]
+	}
 
     protected void notFound() {
         request.withFormat {

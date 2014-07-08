@@ -5,8 +5,10 @@ import grails.transaction.Transactional
 import org.hibernate.criterion.CriteriaSpecification
 import pontuacao.Pontuacao
 import posicao.Posicao
+import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional(readOnly = true)
+@Secured("isFullyAuthenticated()")
 class UsuarioBolaoController extends BaseController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -22,6 +24,24 @@ class UsuarioBolaoController extends BaseController {
 		
 		respond resultado, model:[usuarioBolaoInstanceCount: resultado.totalCount]
     }
+	
+	@Transactional
+	def salvaresenha(){
+		
+		def resenhaInstance = new Resenha()
+		def usuariobolaoid = Long.valueOf(params.idusuariobolao).longValue()
+		
+		resenhaInstance.usuariobolao = UsuarioBolao.get(usuariobolaoid) 
+		resenhaInstance.resenha = params.resenha
+		resenhaInstance.save flush:true
+		
+		if (resenhaInstance.hasErrors()) {
+			redirect action:"pontuacao" , params:[id:usuariobolaoid]
+			return
+		}
+		
+		redirect action:"pontuacao" , params:[id:usuariobolaoid]
+	}
 	
 	@Transactional
 	def atualizapontos(){
@@ -140,7 +160,13 @@ class UsuarioBolaoController extends BaseController {
 				order("posicaoatual", "asc")
 		}
 		
-		respond usuarioBolaoInstance , model:[usuariosBolao:resultado, usuarioBolaoInstanceCount: resultado.size()]
+		def resenhas = Resenha.createCriteria().list() {
+			createAlias("usuariobolao", "ub")
+			createAlias("ub.bolao", "bolao")
+			eq('bolao.id', usuarioBolaoInstance.bolao.id)
+			order("dateCreated", "desc")
+		}
+		respond usuarioBolaoInstance , model:[resenhasList: resenhas , usuariosBolao:resultado, usuarioBolaoInstanceCount: resultado.size()]
 	}
 	
     def show(UsuarioBolao usuarioBolaoInstance) {

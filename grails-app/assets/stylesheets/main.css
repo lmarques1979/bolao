@@ -1099,6 +1099,42 @@ th {
 	vertical-align: top;
 }
 
+tr.linhaabaixo {
+	border-bottom: 1px solid #DFDFDF;
+}
+
+td.font10esquerda {
+	text-align:left;
+	font-size:10px;
+}
+
+td.font11esquerda {
+	text-align:left;
+	font-size:11px;
+}
+
+
+td.font12esquerda {
+	text-align:left;
+	font-size:12px;
+}
+
+td.font10centro {
+	text-align:center;
+	font-size:10px;
+}
+
+td.font11centro{
+	text-align:center;
+	font-size:11px;
+}
+
+
+td.font12centro{
+	text-align:center;
+	font-size:12px;
+}
+
 .esquerda a{
 	text-decoration:none;
 }

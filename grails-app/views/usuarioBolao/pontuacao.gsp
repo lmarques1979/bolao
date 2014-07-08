@@ -11,8 +11,8 @@
 		
 		<g:if test="${usuarioBolaoInstance?.bolao?.enabled==true}">
 			<div class="palpites">
-				<g:if test="${usuarioBolaoInstance?.id}">
-					<g:link class="palpites" controller="Palpite" action="index" id="${usuarioBolaoInstance?.id}"><g:message code="palpite.label"/></g:link>
+				<g:if test="${params.id}">
+					<g:link class="palpites" controller="Palpite" action="index" id="${params.id}"><g:message code="palpite.label"/></g:link>
 				</g:if>
 			</div>
 		</g:if>
@@ -46,13 +46,34 @@
 		<div class="resenhas">
 			<span>${message(code: "resenhas.label")}</span>
 			<div class="enviarresenhas">
-				<g:form method="POST">
-					<g:hiddenField name="idusuariobolao" value="${usuarioBolaoInstance.id}" />
+				<g:form action="salvaresenha" method="POST">
+					<g:hiddenField name="idusuariobolao" value="${params.id}" />
 					<g:textField class="resenha" id="resenha" name="resenha" size="60" maxlenght="100" value="${message(code: "digiteresenha.label")}"/>
-					<g:actionSubmitImage value="${message(code: "button.create.label")}" action="save" src="${assetPath(src:'skin/send.png')}" />
+					<g:actionSubmitImage action="salvaresenha" value="${message(code: "button.create.label")}" src="${assetPath(src:'skin/send.png')}" />
 				</g:form>
 			</div>
-			<div class="lerresenhas"></div>
+			<div class="lerresenhas">
+				<table class="resenha">
+						<g:each in="${resenhasList}" status="i" var="resenha">
+							<tr class="linhaabaixo">		
+									<td>
+										<asset:image height="35" width="35" src="usuarios/${resenha?.usuariobolao?.usuario?.username}/${resenha?.usuariobolao?.usuario?.imagem}" title="${resenha?.usuariobolao?.usuario?.buscaNome(resenha?.usuariobolao?.usuario)}"/>
+									</td>
+									
+									<td class="font11centro"><g:formatDate format="dd/MM/yyyy HH:mm" date="${resenha?.dateCreated}" /></td>
+									
+									<td class="font11esquerda">${resenha?.resenha}</td>
+									<td class="font11esquerda">
+										<g:link controller="resenha" action="delete" id="${resenha.id}">
+											<asset:image src="skin/delete.png" title="${message(code: "delete.resenha.label")}"/>
+										</g:link>
+									</td>
+							</tr>
+						</g:each>
+				</table>
+			
+			</div>
+			
 		</div>
 		<div class=principaldetalhes>
 			<span>${message(code: "detalhesdobolao.label.label")} ${usuarioBolaoInstance?.bolao?.descricao}</span>
@@ -104,8 +125,8 @@
 									<td>${usuariobolao[1] ? usuariobolao[1] : 0}</td>
 									<td>
 										<g:if test="${usuariobolao[2]}">
-											<g:if test="${usuariobolao[2].id==usuarioBolaoInstance?.id}">
-												<g:link controller="Palpite" action="index" id="${usuariobolao[2].id}">
+											<g:if test="${usuariobolao[2].id==Integer.parseInt(params.id)}">
+												<g:link controller="Palpite" action="index" id="${params.id}">
 													<asset:image src="palpites.png" title="Ver Palpites"/>
 												</g:link>
 											</g:if>

@@ -64,7 +64,7 @@
 								</td> 
 								
 								<td>
-									${usuarioBolaoInstance.posicaoatual}
+									${usuarioBolaoInstance.posicaoatual}º
 								</td> 
 								
 								<td>
