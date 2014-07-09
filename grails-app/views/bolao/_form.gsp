@@ -22,7 +22,7 @@
 	<label for="descricao">
 		<g:message code="bolao.informacao.label"/>
 	</label>
-	<g:textArea name="informacao" maxlength="1000" required="" value="${bolaoInstance?.informacao}"/>
+	<g:textArea name="informacao" maxlength="1000" rows="5" cols="70" required="" value="${bolaoInstance?.informacao}"/>
 
 </div>
 

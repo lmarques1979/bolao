@@ -106,7 +106,7 @@
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo">
 			<span> | </span>
-			<g:link controller="diversos" action="regulamento">
+			<g:link controller="diversos" action="pontuacao">
 					<g:message code="regulamentogeral.message"/>
 			</g:link><span> | </span>
 			<g:link controller="diversos" action="contato">

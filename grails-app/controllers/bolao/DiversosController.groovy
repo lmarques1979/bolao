@@ -5,8 +5,12 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured('permitAll')
 class DiversosController {
 
-    def regulamento() { }
+    def pontuacao() { 
+		
+	}
 	
-	def contato() { }
+	def contato(){ 
+		
+	}
 	
 }

@@ -11,6 +11,61 @@
 		
 		<div id="list-bolao" class="content scaffold-list" role="main">
 			
+			<div class="contato">
+				<h1><g:message code="contato.label"/></h1>
+				<g:form url="[resource:configuracaoInstance, action:'save']" >
+			
+					<div class="fieldcontain required">
+						<label for="codigo">
+							<g:message code="nomecontato.label"/>
+							<span class="required-indicator">*</span>
+						</label>
+						<g:textField name="nomecontato" size="30" maxlength="50" required=""/>
+					
+					</div>
+					
+					<div class="fieldcontain required">
+						<label for="email">
+							<g:message code="emailcontato.label"/>
+							<span class="required-indicator">*</span>
+						</label>
+						<g:textField name="emailcontato" size="40" maxlength="50" required=""/>
+					
+					</div>
+					
+					<div class="fieldcontain required">
+						<label for="telefone">
+							<g:message code="telefonecontato.label"/>
+						</label>
+						<g:textField name="telefonecontato" size="12" maxlength="10"/>
+					
+					</div>
+					
+					<div class="fieldcontain required">
+						<label for="assunto">
+							<g:message code="assuntocontato.label"/>
+						</label>
+						<g:textField name="assuntocontato" size="15" maxlength="15"/>
+					
+					</div>
+					
+					<div class="fieldcontain required">
+						<label for="mensagem">
+							<g:message code="mensagemcontato.label"/>
+							<span class="required-indicator">*</span>
+						</label>
+						<g:textArea name="mensagemcontato" rows="5" cols="45" required=""/>
+					
+					</div>
+					<fieldset>
+						<g:submitButton name="create" value="${message(code: 'button.send.label')}" />
+					</fieldset>
+				
+				</g:form>
+			</div>
+			
+			
+			
 		</div>
 	</body>
 </html>
