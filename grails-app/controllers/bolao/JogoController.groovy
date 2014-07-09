@@ -19,10 +19,12 @@ class JogoController extends BaseController{
 		if(filtrodata==null){
 			filtrodata = "2"
 		}
+		params.filtrodata=filtrodata
 		def filtrocampeonato=session["filtrocampeonato"]
 		if(filtrocampeonato==null || filtrocampeonato=="-1"){
 			return
 		}
+		params.filtrocampeonato=filtrocampeonato
 		
 		def configuracoes = configuracaoParams
 		
@@ -52,14 +54,15 @@ class JogoController extends BaseController{
 		if(filtrodata==null){
 			filtrodata = "2"
 		}
+		params.filtrodata=filtrodata
 		def filtrocampeonato = params.filtrocampeonato
 		session["filtrocampeonato"] = filtrocampeonato
 		if(filtrocampeonato==null || filtrocampeonato=="-1"){
 			return
 		}
+		params.filtrocampeonato=filtrocampeonato
 		
 		def configuracoes = configuracaoParams
-		
 		def resultadofiltro = Jogo.createCriteria().list (configuracoes) {
 			if(filtrodata=='2'){
 				eq("encerrado" , false)
@@ -86,9 +89,11 @@ class JogoController extends BaseController{
             return
         }
 		
-		def datahora        = params.datajogo + ' ' + params.horajogo
-		jogoInstance.datajogo = new Date().parse("dd/MM/yyyy HH:mm", datahora)	
-		jogoInstance.clearErrors()
+		def datahora = params.datajogo + ' ' + params.horajogo
+		if(datahora!=null && datahora.trim()!=""){
+			jogoInstance.datajogo = new Date().parse("dd/MM/yyyy HH:mm", datahora)	
+			jogoInstance.clearErrors()
+		}
         jogoInstance.save flush:true
 
 		if (jogoInstance.hasErrors()) {

@@ -16,16 +16,15 @@ class Posicao {
 			projections {
 				groupProperty("usuario")
 				sum "palpite.pontuacao", "pontos"
-				max "palpite.usuariobolao"
+				max "id"
 			}
 			order("pontos", "desc")
 		}
 		resultado.eachWithIndex(){ it , index ->
 			
-			def pontos = it[1]
-			def ub = it[2]
+			def ubid = it[2]
 			
-			if(usuariobolaoInstance.id==ub.id){
+			if(usuariobolaoInstance.id==ubid){
 				posicao = (index+1)
 			}
 		}

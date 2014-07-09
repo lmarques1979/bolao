@@ -52,7 +52,7 @@ class UsuarioBolaoController extends BaseController {
 		def usuariobolao = UsuarioBolao.findAll()
 		
 		//Faço os cálculos dos pontos por cada palpite de cada usuário
-		usuariobolao.each(){ usuariobolaoInstance->
+		usuariobolao.eachWithIndex(){ usuariobolaoInstance, index ->
 			
 						usuariobolaoInstance.palpites.each(){ palpiteInstance-> 
 								def palpitetime1 = palpiteInstance.scoretime1

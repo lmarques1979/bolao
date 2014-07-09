@@ -192,23 +192,6 @@ div.loginprincipal input[type="submit"] {
     padding: 0 12px 2px;
 }
 
-
-div.enviarresenhas input[type="submit"] {
-    background: none repeat scroll 0 0 #05C000;
-    border: 0 solid;
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: bold;
-    height:25px;
-    padding: 0 12px 2px;
-}
-
-div.enviarresenhas input[type="image"] {
-	border: 0;
-	padding:0;
-	margin:0;
-}
-
 div.loginprincipal a.esqueceusenha {
 font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 font-size: 11px;
@@ -257,7 +240,7 @@ div.resenhas {
     left: 50%;
     margin-left: -390px;
     padding:0;
-    margin-bottom:15px;
+    margin-bottom:25px;
 }
 
 div.resenhas span{
@@ -275,16 +258,45 @@ div.enviarresenhas {
     outline:0px solid #d7d7d7;
     position: relative;
     padding:0;
+    margin-bottom:10px;
 }
+
+div.lerresenhas table {
+border-top: 0px solid #DFDFDF;
+border-collapse: collapse;
+width: 100%;
+margin-bottom:10px;
+}
+
 div.lerresenhas {
     width: 720px;
     height:160px;
-    outline:1px solid #d7d7d7;
     position: relative;
     padding:0;
     overflow:auto;
+    border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid #CCCCCC;
+	background-color: #fff;
+	
 }
 
+div.enviarresenhas input[type="submit"] {
+    background: none repeat scroll 0 0 #05C000;
+    border: 0 solid;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    height:25px;
+    padding: 0 12px 2px;
+}
+
+div.enviarresenhas input[type="image"] {
+	border: 0;
+	padding:0;
+	margin:0;
+}
 
 div.principaldetalhes {
     width: 720px;
@@ -294,6 +306,7 @@ div.principaldetalhes {
     left: 50%;
     margin-left: -390px;
     padding:0;
+    margin-top: 20px;
 }
 
 div.principaldetalhes span{

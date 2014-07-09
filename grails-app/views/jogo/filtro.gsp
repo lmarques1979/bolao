@@ -134,7 +134,7 @@
 				</tbody>
 			</table>
 			<div class="pagination">
-				<g:paginate total="${jogoInstanceCount ?: 0}" />
+				<g:paginate total="${jogoInstanceCount ?: 0}" params="${params}"/>
 			</div>
 		</div>
 	</body>

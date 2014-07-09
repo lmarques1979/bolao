@@ -30,8 +30,8 @@
 				<tbody>
 					<tr>
 						<td>
-							<g:if test="${session["filtrodata"]}"> 
-								<g:set var="filtrodata" value="${session["filtrodata"]}" />
+							<g:if test="${params.filtrodata}"> 
+								<g:set var="filtrodata" value="${params.filtrodata}" />
 							</g:if>
 							<g:else>
 							     <g:set var="filtrodata" value="2" />
@@ -42,8 +42,8 @@
 						</td>
 						
 						<td>
-							<g:if test="${session["filtrocampeonato"]}"> 
-								<g:set var="filtrocampeonato" value="${session["filtrocampeonato"]}" />
+							<g:if test="${params.filtrocampeonato}"> 
+								<g:set var="filtrocampeonato" value="${params.filtrocampeonato}" />
 							</g:if>
 							<g:else>
 							     <g:set var="filtrocampeonato" value="-1" />
@@ -133,7 +133,7 @@
 				</tbody>
 			</table>
 			<div class="pagination">
-				<g:paginate total="${jogoInstanceCount ?: 0}" />
+				<g:paginate total="${jogoInstanceCount ?: 0}" params="${params}" />
 			</div>
 		</div>
 	</body>

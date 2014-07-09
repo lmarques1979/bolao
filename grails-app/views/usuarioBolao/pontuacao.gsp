@@ -55,7 +55,7 @@
 			<div class="lerresenhas">
 				<table class="resenha">
 						<g:each in="${resenhasList}" status="i" var="resenha">
-							<tr class="linhaabaixo">		
+							<tr>		
 									<td>
 										<asset:image height="35" width="35" src="usuarios/${resenha?.usuariobolao?.usuario?.username}/${resenha?.usuariobolao?.usuario?.imagem}" title="${resenha?.usuariobolao?.usuario?.buscaNome(resenha?.usuariobolao?.usuario)}"/>
 									</td>
@@ -77,7 +77,7 @@
 			
 			</div>
 			
-		</div>
+		</div><div class="clearer"></div>
 		<div class=principaldetalhes>
 			<span>${message(code: "detalhesdobolao.label.label")} ${usuarioBolaoInstance?.bolao?.descricao}</span>
 			<div class="detalhesbolao">
