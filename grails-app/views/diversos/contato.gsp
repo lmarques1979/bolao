@@ -10,12 +10,16 @@
 		<a href="#list-bolao" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		
 		<div id="list-bolao" class="content scaffold-list" role="main">
+		
+			<g:if test="${flash.message}">
+				<div class="message" role="status">${flash.message}</div>
+			</g:if>
 			
 			<div class="contato">
 				<h1><g:message code="contato.label"/></h1>
-				<g:form url="[resource:configuracaoInstance, action:'save']" >
+				<g:form controller="diversos" action="enviaremail"  >
 			
-					<div class="fieldcontain required">
+					<div class="fieldcontain required"> 
 						<label for="codigo">
 							<g:message code="nomecontato.label"/>
 							<span class="required-indicator">*</span>
@@ -37,7 +41,7 @@
 						<label for="telefone">
 							<g:message code="telefonecontato.label"/>
 						</label>
-						<g:textField name="telefonecontato" size="12" maxlength="10"/>
+						<g:textField name="telefonecontato" size="15" maxlength="14"/>
 					
 					</div>
 					
@@ -45,7 +49,7 @@
 						<label for="assunto">
 							<g:message code="assuntocontato.label"/>
 						</label>
-						<g:textField name="assuntocontato" size="15" maxlength="15"/>
+						<g:textField name="assuntocontato" size="30" maxlength="50"/>
 					
 					</div>
 					
