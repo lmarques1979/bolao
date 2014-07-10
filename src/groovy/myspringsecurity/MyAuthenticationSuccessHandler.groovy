@@ -40,7 +40,7 @@ class MyAuthenticationSuccessHandler extends AjaxAwareAuthenticationSuccessHandl
 					if(bolao.autorizacao==true){
 						usuarioBolaoInstance.autorizado=false
 					}else{
-					usuarioBolaoInstance.autorizado=true
+						usuarioBolaoInstance.autorizado=true
 					}
 					
 					

@@ -18,13 +18,27 @@ class Posicao {
 			projections {
 				groupProperty("id")
 				sum "palpite.pontuacao", "pontos"
+				max "b.id" , "bolao"
 			}
+			order("bolao", "desc")
 			order("pontos", "desc")
 		}
-		resultado.eachWithIndex(){ it , index ->
+		def cont=1
+		def bolaoant
+		def bolaoatual
+		if(resultado.size()>0){
+			bolaoant = resultado[0][2]
+		}
+		resultado.each(){ 
+			
+			bolaoatual = it[2]
+			
+			if(bolaoant!=bolaoatual){
+				cont=1
+			}
 			
 			def ub = UsuarioBolao.get(Long.valueOf(it[0]).longValue())
-			ub.posicaoatual = (index + 1)
+			ub.posicaoatual = cont
 			
 			ub.save flush:true
 			
@@ -32,6 +46,9 @@ class Posicao {
 				erros[i] = ub.errors
 				i++
 			}
+			
+			bolaoant = bolaoatual
+			cont++
 		}
 		return erros
 	}
