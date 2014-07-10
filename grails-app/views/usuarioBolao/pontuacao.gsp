@@ -66,7 +66,7 @@
 									
 									<td class="font11esquerda">
 											<g:if test="${(resenha?.usuariobolao?.usuario?.id==sec.loggedInUserInfo(field: 'id').toLong() ) || (resenha?.usuariobolao?.bolao?.admin?.id==sec.loggedInUserInfo(field: 'id').toLong())}">
-												<g:link controller="resenha" action="delete" id="${resenha.id}">
+												<g:link onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" controller="resenha" action="delete" id="${resenha.id}">
 													<asset:image src="skin/delete.png" title="${message(code: "delete.resenha.label")}"/>
 												</g:link>
 											</g:if>

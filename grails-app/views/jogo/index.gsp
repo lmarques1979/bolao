@@ -73,7 +73,7 @@
 					<g:if test="${rodadaanterior!=rodadaatual}">
 						<thead>
 							<tr class="fase">
-								<th colspan="6">${jogoInstance?.descricaofase}</th>
+								<th colspan="7">${jogoInstance?.descricaofase}</th>
 							</tr>
 							
 						</thead>	
@@ -83,7 +83,7 @@
 								<tbody>
 									<tr class="datajogo">
 										<td>${message(code: "jogo.datajogo.label")}: ${datajogoatual}</td>
-										<td colspan="4"></td>
+										<td colspan="5"></td>
 										<td>${message(code: "jogo.peso.label")}: ${jogoInstance?.peso}</td>
 									</tr>
 								</tbody>	
@@ -105,6 +105,10 @@
 						
 						<td>
 							${jogoInstance?.scoretime1}
+						</td>
+						
+						<td>
+							x
 						</td>
 						
 						<td>

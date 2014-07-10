@@ -52,7 +52,7 @@ class UsuarioBolaoController extends BaseController {
 		def usuariobolao = UsuarioBolao.findAll()
 		
 		//Faço os cálculos dos pontos por cada palpite de cada usuário
-		usuariobolao.eachWithIndex(){ usuariobolaoInstance, index ->
+		usuariobolao.each(){ usuariobolaoInstance ->
 			
 						usuariobolaoInstance.palpites.each(){ palpiteInstance-> 
 								def palpitetime1 = palpiteInstance.scoretime1
@@ -78,19 +78,11 @@ class UsuarioBolaoController extends BaseController {
 									}
 								}
 					}
-						
-					def posicao = new Posicao()
-					def posicaoatual = posicao.atualizaPosicoes(usuariobolaoInstance)
-					usuariobolaoInstance.posicaoatual = posicaoatual
-					
-					usuariobolaoInstance.save flush:true
-					
-					if (usuariobolaoInstance.hasErrors()) {
-						respond usuariobolaoInstance.errors, view:'create'
-						return
-					}
-						
 		}
+		
+		//Atualizo Posicoes
+		def posicao = new Posicao()
+		def errosposicao = posicao.atualizaPosicoes()
 		
 		if(i==0){
 			flash.message = message(code: 'pontuacao.updated.message')

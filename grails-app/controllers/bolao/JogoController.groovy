@@ -89,6 +89,7 @@ class JogoController extends BaseController{
             return
         }
 		
+		println params
 		def datahora = params.datajogo + ' ' + params.horajogo
 		if(datahora!=null && datahora.trim()!=""){
 			jogoInstance.datajogo = new Date().parse("dd/MM/yyyy HH:mm", datahora)	
