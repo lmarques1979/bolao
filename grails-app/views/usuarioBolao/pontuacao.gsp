@@ -102,7 +102,7 @@
 					<tbody>
 						<g:each in="${usuariosBolao}" status="i" var="usuariobolao">
 							<tr class="${(i%2) == 0 ? 'even' : 'odd'}">
-									<td>${usuariobolao[3]}</td>
+									<td>${usuariobolao[3]}º</td>
 									
 									<td>
 										<g:if test="${usuariobolao[0].imagem}">

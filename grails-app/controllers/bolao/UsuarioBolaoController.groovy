@@ -54,13 +54,16 @@ class UsuarioBolaoController extends BaseController {
 		//Faço os cálculos dos pontos por cada palpite de cada usuário
 		usuariobolao.each(){ usuariobolaoInstance ->
 			
+						def dtultimaatualizacao = usuariobolaoInstance.ultimaatualizacao
+						
 						usuariobolaoInstance.palpites.each(){ palpiteInstance-> 
 								def palpitetime1 = palpiteInstance.scoretime1
 								def palpitetime2 = palpiteInstance.scoretime2
 								def jogos = palpiteInstance.jogo
+								
 								jogos.each(){ jogo->
-									
-									if(jogo.encerrado==true){
+									//Só pego os jogos que ainda não foram computados, para melhorar a performance
+									if(jogo.encerrado==true && jogo.datajogo > dtultimaatualizacao){
 											
 											def pontuacao = new Pontuacao()
 											def scoretime1 	= jogo.scoretime1
@@ -76,8 +79,14 @@ class UsuarioBolaoController extends BaseController {
 											}
 										
 									}
-								}
-					}
+							}
+				}
+				usuariobolaoInstance.ultimaatualizacao = new Date()
+				usuariobolaoInstance.save flush:true
+				if (usuariobolaoInstance.hasErrors()) {
+					erros[i] = usuariobolaoInstance.errors
+					i++
+				}
 		}
 		
 		//Atualizo Posicoes

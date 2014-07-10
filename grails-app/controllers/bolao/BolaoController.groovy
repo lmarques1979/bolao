@@ -74,7 +74,8 @@ class BolaoController extends BaseController{
 			def usuarioBolaoInstance = new UsuarioBolao()
 			usuarioBolaoInstance.usuario = usuarioLogado
 			usuarioBolaoInstance.bolao = bolaoInstance
-			
+			//Administrador não precisa de autorização
+			usuarioBolaoInstance.autorizado=true
 			usuarioBolaoInstance.save flush:true
 			
 			if (usuarioBolaoInstance.hasErrors()) {

@@ -22,13 +22,18 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:jogoInstance, action:'save']" >
+			<g:form url="[resource:jogoInstance, action:'save']" id='formjogo'>
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
 					<g:submitButton name="create" class="save" value="${message(code: 'button.create.label', default: 'Create')}" />
 				</fieldset>
+				<script type='text/javascript'>
+					(function() {
+						document.forms['formjogo'].elements['datajogo'].focus();
+				})();
+				</script>
 			</g:form>
 		</div>
 	</body>
