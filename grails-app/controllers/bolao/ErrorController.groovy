@@ -4,6 +4,10 @@ class ErrorController {
 
 	def erros = []
 	
+	def internalerror(){
+		
+	}
+	
     def denied() {
 	  erros[0] = message(code: 'error.403.message')
 	  flash.erros = erros
