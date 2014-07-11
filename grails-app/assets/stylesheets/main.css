@@ -24,7 +24,7 @@ a{
 }
 
  img.internacionalizacao{
-	margin-top:-5px;
+	margin-top:-7px;
 }
 .cadastrologin{
 	text-align:center;
@@ -87,7 +87,7 @@ padding: 0 12px 2px;
 
 /*DIVS TRABALHO MAIN*/
 div.contato{
-	background-color:#f4ffcf;
+	background-color:#F5F5F5;
 	width: 500px;
     height:440px;
     position: relative;
@@ -101,9 +101,9 @@ div.contato{
 }
 
 div.contato input[type="submit"] {
-    background: none repeat scroll 0 0 #05C000;
+    background: none repeat scroll 0 0 #1E5A2E;
     border: 0 solid;
-    color: #FFFFFF;
+    color:#f4ffcf;
     float: right;
     font-size: 12px;
     font-weight: bold;
@@ -118,7 +118,7 @@ padding: 0 0.25em;
 }
 
 div.pontuacao{
-	background-color: #f4ffcf;
+	background-color:#F5F5F5;
 	width: 500px;
     height:300px;
     position: relative;
@@ -159,10 +159,11 @@ div.pontuacao ul{
 }
 
 div.loginprincipal{
+	text-align:left;
 	float:right;
 	margin-top:-30px;
 	padding:0;
-	width:500px;
+	width:470px;
 	height:35px;
 	outline:0px solid #fff;
 }
@@ -186,15 +187,26 @@ padding: 0.2em 0.4em;
 }
 
 div.loginprincipal input[type="submit"] {
-    background: none repeat scroll 0 0 #05C000;
-    border: 0 solid;
-    color: #FFFFFF;
+    background: none repeat scroll 0 0 #f4ffcf;
+    border: 1 solid #1E5A2E;
+    color:#1E5A2E;
     float: none;
     font-size: 12px;
     font-weight: bold;
     height:19px;
     margin:0;
     padding: 0 12px 2px;
+}
+
+div.loginprincipal input[type="image"] {
+	border:0;
+	position: relative;
+	top:5px;
+	width: 14px;
+	height: 14px;
+	-moz-box-shadow: 0 0 0.6em #fff;
+    -webkit-box-shadow: 0 0 0.6em #fff;
+    box-shadow: 0 0 0.6em #fff;
 }
 
 div.loginprincipal a.esqueceusenha {
@@ -765,7 +777,7 @@ ul {
 	display: block;
 	float: left;
 	list-style-type: none;
-	margin-right: 0.5em;
+	margin-right:0;
 	padding: 0;
 }
 
@@ -823,7 +835,7 @@ ul {
 	background-position:0;
 	background-repeat: no-repeat;
 	text-indent: 20px;
-	margin-top: -1px;
+	margin-top:-4px;
 }
 
 .nav span.logout a {

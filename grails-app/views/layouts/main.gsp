@@ -76,9 +76,7 @@
 					
 					<label for='password'><g:message code="springSecurity.login.password.label"/>:</label>
 					<input type='password' name='j_password' id='password'/>
-					
-					<input type='submit' value='${message(code: "springSecurity.login.button")}'/>
-					
+					<g:actionSubmitImage title="${message(code: 'entrar.label')}" value="${message(code: 'button.create.label')}" src="${assetPath(src:'skin/loginSpring.png')}" />
 					<g:link controller="Usuario" action="esqueceusenha" class="esqueceusenha"><g:message code="esqueceusenha.label"/></g:link>
 				</g:form>
 				<script type='text/javascript'>
@@ -89,10 +87,10 @@
 
 			</div>
 		</sec:ifNotLoggedIn>
-		
 		</div><div class="clearer"></div>
 		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><asset:image src="logo/logo.png" alt="Bolao"/></a>
-		
+
+			<g:if test="${ ( (params.controller=='usuarioBolao' && params.action!='index') || (params.controller!='usuarioBolao') ) }">
 				<g:if test="${sec.loggedInUserInfo(field: 'imagem')}">
 					<asset:image class="avatarmain" height="120" width="120" src="usuarios/${sec.loggedInUserInfo(field: 'username')}/${sec.loggedInUserInfo(field: 'imagem')}" title="${sec.loggedInUserInfo(field: 'primeironome') + ' ' + sec.loggedInUserInfo(field: 'sobrenome')}"/>
 				</g:if>
@@ -101,6 +99,7 @@
 						<asset:image class="avatarmain" height="120" width="120" src="usuarios/noimage.jpg" title="${sec.loggedInUserInfo(field: 'username')}"/>
 					</sec:ifLoggedIn>
 				</g:else>
+			</g:if>
 		</div>
 		
 		<g:layoutBody/>
@@ -114,6 +113,7 @@
 			</g:link>
 			<span> | </span>
 		</div>
+		<div class="clearer"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 	</body>
 </html>
