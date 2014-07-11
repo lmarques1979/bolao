@@ -11,7 +11,7 @@
 		<a href="#list-palpite" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		
 		<div id="list-palpite" class="content scaffold-list" role="main">
-			<h1><g:message code="palpite.list.label"/></h1>
+			<h1><g:message code="palpite.list.label"/> ${usuarioBolaoInstance.usuario.buscaNome(usuarioBolaoInstance.usuario)}</h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -60,7 +60,7 @@
 						<g:if test="${filtrodatapalpite!='3'}"> 
 							<thead>
 								<tr class="semover">
-									<th colspan="6">
+									<th colspan="7">
 											<g:actionSubmit id="botaopalpitesalvar" action="save" value="${message(code: 'button.create.label', default: 'Update')}" />
 									</th>
 								</tr>
@@ -82,7 +82,7 @@
 									<g:if test="${rodadaanterior!=rodadaatual}">
 										<thead>
 											<tr class="fase">
-												<th colspan="6">${palpite?.jogo?.descricaofase}</th>
+												<th colspan="7">${palpite?.jogo?.descricaofase}</th>
 											</tr>
 										</thead>	
 								
@@ -92,7 +92,7 @@
 										<tbody>
 											<tr class="datajogo">
 												<td>${message(code: "datajogo.label")}: ${datajogoatual}</td>
-												<td colspan="4"></td>
+												<td colspan="5"></td>
 												<td>${message(code: "peso.label")}: ${palpite?.jogo?.peso}</td>
 											</tr>
 										</tbody>	
@@ -116,6 +116,11 @@
 											<g:textField class="centro" name="scoretime1" maxlength="2" size="1" value="${palpite?.scoretime1}"/>
 										</g:else>
 									</td>
+									
+									<td>
+										x
+									</td>
+									
 									
 									<td>
 										<g:if test="${palpite.finalizado}">
@@ -145,6 +150,7 @@
 									<tr class="resultado">
 										<td colspan="2">${message(code: "resultadofinal.label")}</td>
 										<td>${palpite?.jogo?.scoretime1}</td>
+										<td></td>
 										<td>${palpite?.jogo?.scoretime2}</td>
 										<td>${message(code: "pontos.label")}</td>
 										<td>${palpite?.pontuacao}</td>
@@ -157,7 +163,7 @@
 						<g:if test="${filtrodatapalpite!='3'}"> 
 							<thead>
 								<tr class="semover">
-									<th colspan="6">
+									<th colspan="7">
 											<g:actionSubmit id="botaopalpitesalvar" action="save" value="${message(code: 'button.create.label', default: 'Update')}" />
 									</th>
 								</tr>

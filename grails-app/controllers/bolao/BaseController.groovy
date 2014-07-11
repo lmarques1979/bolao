@@ -21,7 +21,7 @@ class BaseController{
 				params.larguraimagensthumbs	= it.larguraimagensthumbs ? it.larguraimagensthumbs : "25"
 				params.tamanhoiconetimes 	= it.tamanhoiconetimes ? it.tamanhoiconetimes : "32"
 				params.minutosparapalpite 	= it.minutosparapalpite ? it.minutosparapalpite : "5"
-				params.max = Math.min(it.itensporpagina ? it.itensporpagina : 20, 100)
+				params.max = Math.min(it.itensporpagina ? it.itensporpagina : 20, 10000)
 			}
 			if (resultado.size() == 0){
 				params.alturaimagens 		= "120"
@@ -30,7 +30,7 @@ class BaseController{
 				params.larguraimagensthumbs	= "25"
 				params.tamanhoiconetimes 	= "32"
 				params.minutosparapalpite	= "5"
-				params.max = Math.min(20, 100)
+				params.max = Math.min(20, 10000)
 			}
 			params
 	}

@@ -1166,6 +1166,11 @@ td {
 	font-size:13px;
 }
 
+td span{
+	position: relative;
+	top: 10px;
+}
+
 th {
 	line-height: 1.5em;
 	padding: 2px;

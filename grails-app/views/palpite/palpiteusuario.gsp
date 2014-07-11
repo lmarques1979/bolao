@@ -70,7 +70,7 @@
 							<g:if test="${rodadaanterior!=rodadaatual}">
 								<thead>
 									<tr class="fase">
-										<th colspan="6">${palpite?.jogo?.descricaofase}</th>
+										<th colspan="7">${palpite?.jogo?.descricaofase}</th>
 									</tr>
 								</thead>	
 						
@@ -80,7 +80,7 @@
 								<tbody>
 									<tr class="datajogo">
 										<td>${message(code: "datajogo.label")}: ${datajogoatual}</td>
-										<td colspan="4"></td>
+										<td colspan="5"></td>
 										<td>${message(code: "peso.label")}: ${palpite?.jogo?.peso}</td>
 									</tr>
 								</tbody>	
@@ -105,6 +105,10 @@
 								</g:else>
 							</td>
 							
+							<td>
+								<span>x</span>
+							</td>
+									
 							<td>
 								<g:if test="${palpite.finalizado}">
 									<g:textField readonly class="readonly" name="scoretime2" maxlength="1" size="1" value="${palpite?.scoretime2}"/>
@@ -133,6 +137,7 @@
 							<tr class="resultado">
 								<td colspan="2">${message(code: "resultadofinal.label")}</td>
 								<td>${palpite?.jogo?.scoretime1}</td>
+								<td></td>
 								<td>${palpite?.jogo?.scoretime2}</td>
 								<td>${message(code: "pontos.label")}</td>
 								<td>${palpite?.pontuacao}</td>

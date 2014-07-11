@@ -30,7 +30,7 @@ class PalpiteController extends BaseController {
 			flash.erros = erros
 			return
 		}
-		def usuarioBolaoList = UsuarioBolao.findAll("from UsuarioBolao as ub where ub.bolao.id=? and ub.usuario.id=?", [ usuarioBolaoInstance.bolao.id , usuarioBolaoInstance.usuario.id])
+		def usuarioBolaoList = UsuarioBolao.findAll("from UsuarioBolao as ub where ub=?", [ usuarioBolaoInstance])
 		def jogos = usuarioBolaoInstance.bolao.campeonato.jogos
 		//def palpites = jogos.collect{usuarioBolaoInstance.buscarPalpiteJogo(it , configuracaoParams.minutosparapalpite)}
 		
