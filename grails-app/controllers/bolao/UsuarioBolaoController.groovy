@@ -63,7 +63,7 @@ class UsuarioBolaoController extends BaseController {
 								
 								jogos.each(){ jogo->
 									//Só pego os jogos que ainda não foram computados, para melhorar a performance
-									if(jogo.encerrado==true && jogo.datajogo > dtultimaatualizacao){
+									if(jogo.encerrado==true && (jogo.datajogo > dtultimaatualizacao || dtultimaatualizacao==null) ){
 											
 											def pontuacao = new Pontuacao()
 											def scoretime1 	= jogo.scoretime1
