@@ -15,6 +15,7 @@
 		<g:layoutHead/>
 	</head>
 	<body>
+	
 		<div class="nav" role="navigation">
 			<ul>
 			    <li><!--<a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>-->
@@ -60,7 +61,7 @@
 				</sec:ifNotLoggedIn>
 				
 				<li><g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'pt_BR']"><asset:image class="internacionalizacao" src="bandeiras/24/Brazil.png" title="${message(code:'portuguesbrasil.label')}"/></g:link></li>
-				<li><g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'en']"><asset:image class="internacionalizacao" src="bandeiras/24/United Kingdom(Great Britain).png" title="${message(code:'english.label')}"/></g:link></li>
+				<li><g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'en']"><asset:image class="internacionalizacao" src="bandeiras/24/britain.png" title="${message(code:'english.label')}"/></g:link></li>
 				<li><g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'es']"><asset:image class="internacionalizacao" src="bandeiras/24/Spain.png" title="${message(code:'spain.label')}"/></g:link></li>
 				
 				
@@ -68,7 +69,7 @@
 		<sec:ifNotLoggedIn>
 			
 			<div class="loginprincipal">
-				<g:form url='/bolao/j_spring_security_check' method='POST' id='formlogin' class='cssform' autocomplete='off'>
+				<g:form url='/${meta(name:'app.name')}/j_spring_security_check' method='POST' id='formlogin' class='cssform' autocomplete='off'>
 				
 					<input type='hidden' name='bolao' value='${params.bolao}'/>
 					<label for='password'><g:message code="springSecurity.login.username.label"/>:</label>

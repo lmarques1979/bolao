@@ -55,9 +55,9 @@ environments {
 	production {
 		dataSource {
 			dbCreate = "update"
-			url = "jdbc:mysql://us-cdbr-cb-east-01.cleardb.net:3306/rastreador"
-			username = "ba76701104b16b"
-			password = "a9e3c8d4"
+			url = "jdbc:mysql://us-cdbr-east-06.cleardb.net/heroku_8bce215d4ca8430?reconnect=true"
+			username = "bf324f3f0fdf7f"
+			password = "b4caf68d"
 			pooled = true
 			properties {
 				maxActive = 50
