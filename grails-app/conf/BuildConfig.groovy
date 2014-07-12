@@ -51,12 +51,13 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime 'mysql:mysql-connector-java:5.1.29'
         // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
-		runtime 'mysql:mysql-connector-java:5.1.30'
+		//runtime 'mysql:mysql-connector-java:5.1.30'
         compile "org.springframework:spring-orm:$springVersion"
     }
 
     plugins {
         // plugins for the build system only
+		compile ":mysql-connectorj:5.1.22.1"
         build ":tomcat:7.0.54"
 		
 		compile ":spring-security-ui:1.0-RC2"

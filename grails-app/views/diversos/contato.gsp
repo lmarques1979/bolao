@@ -16,7 +16,7 @@
 			</g:if>
 			
 			<div class="contato">
-				<h1><g:message code="contato.label"/></h1>
+				<h1><g:message code="contato.label"/></h1><div class="clearer"></div>
 				<g:form controller="diversos" action="enviaremail"  >
 			
 					<div class="fieldcontain required"> 
@@ -58,7 +58,7 @@
 							<g:message code="mensagemcontato.label"/>
 							<span class="required-indicator">*</span>
 						</label>
-						<g:textArea name="mensagemcontato" rows="5" cols="45" required=""/>
+						<g:textArea name="mensagemcontato" rows="5" cols="35" required=""/>
 					
 					</div>
 					<fieldset>

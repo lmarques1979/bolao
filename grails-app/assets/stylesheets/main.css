@@ -8,6 +8,11 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.1;
 }
 
+form {
+    bottom: 20px;
+    position: inherit;
+}
+
 a.autorizacao:visited , a.autorizacao{
 	display:block;
 	text-decoration:none;
@@ -88,8 +93,8 @@ padding: 0 12px 2px;
 /*DIVS TRABALHO MAIN*/
 div.contato{
 	background-color:#F5F5F5;
-	width: 500px;
-    height:440px;
+	width: 550px;
+    height:460px;
     position: relative;
     left: 50%;
     margin-left:-250px;
@@ -108,7 +113,6 @@ div.contato input[type="submit"] {
     font-size: 12px;
     font-weight: bold;
     height:19px;
-    margin-right:-28px;
     padding: 0 12px 2px;
 }
 div.contato h1 {
