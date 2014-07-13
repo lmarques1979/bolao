@@ -10,8 +10,8 @@ class Jogo {
 	int  fase
 	int  peso=1
 	String descricaofase
-	Integer	scoretime1=null
-	Integer scoretime2=null
+	int	scoretime1=0
+	int scoretime2=0
 	Estadio estadio
 	boolean encerrado=false
 	Date dateCreated

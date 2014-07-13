@@ -1,11 +1,12 @@
 package bolao
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
-
+import funcoesdata.FuncoesData
 import org.hibernate.criterion.CriteriaSpecification
 import pontuacao.Pontuacao
 import posicao.Posicao
 import grails.plugin.springsecurity.annotation.Secured
+import java.text.DateFormat
 
 @Transactional(readOnly = true)
 @Secured("isFullyAuthenticated()")
@@ -49,7 +50,7 @@ class UsuarioBolaoController extends BaseController {
 		def erros = []
 		def i = 0
 		
-		def usuariobolao = UsuarioBolao.findAll()
+		def usuariobolao = UsuarioBolao.findAllById(11)
 		
 		//Faço os cálculos dos pontos por cada palpite de cada usuário
 		usuariobolao.each(){ usuariobolaoInstance ->
@@ -60,15 +61,16 @@ class UsuarioBolaoController extends BaseController {
 								def palpitetime1 = palpiteInstance.scoretime1
 								def palpitetime2 = palpiteInstance.scoretime2
 								def jogos = palpiteInstance.jogo
-								
 								jogos.each(){ jogo->
+									
 									//Só pego os jogos que ainda não foram computados, para melhorar a performance
-									if(jogo.encerrado==true && (jogo.datajogo > dtultimaatualizacao || dtultimaatualizacao==null) ){
+									if(jogo.encerrado==true /*&& (jogo.datajogo > dtultimaatualizacao || dtultimaatualizacao==null)*/){
 											
 											def pontuacao = new Pontuacao()
 											def scoretime1 	= jogo.scoretime1
 											def scoretime2 	= jogo.scoretime2
 											def peso 		= jogo.peso
+											
 											def pontos = pontuacao.contaPontos(scoretime1 , scoretime2 , palpitetime1 , palpitetime2, peso)
 											palpiteInstance.pontuacao = pontos
 											palpiteInstance.save flush:true
@@ -77,11 +79,13 @@ class UsuarioBolaoController extends BaseController {
 												erros[i] = palpiteInstance.errors
 												i++
 											}
-										
 									}
 							}
 				}
-				usuariobolaoInstance.ultimaatualizacao = new Date()
+				
+				def funcoesData 	= new FuncoesData()
+				def data = funcoesData.horaBR()
+				usuariobolaoInstance.ultimaatualizacao = data
 				usuariobolaoInstance.save flush:true
 				if (usuariobolaoInstance.hasErrors()) {
 					erros[i] = usuariobolaoInstance.errors

@@ -1,15 +1,25 @@
 package funcoesdata
+import java.text.DateFormat
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+import java.util.Formatter.DateTime
 import java.util.concurrent.TimeUnit
+
 class FuncoesData {
 	
-	Locale locale = new Locale("pt","BR");
+	def horaBR(){
+		
+		TimeZone tz = TimeZone.getTimeZone("America/Sao_Paulo")
+		TimeZone.setDefault(tz) 
+		Calendar calendar = GregorianCalendar.getInstance(tz)
+		calendar.setTime(new Date())
+		
+		return calendar.getTime()
+	}
 	
 	def boolean diferencaMinutos(def datajogo , def diferencaMinutos){
 		
-		SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy HH:mm",locale);
 		GregorianCalendar calendariohoje = new GregorianCalendar();
 		GregorianCalendar calendariojogo = new GregorianCalendar();
 		Date hoje = new Date()
@@ -18,7 +28,6 @@ class FuncoesData {
 		def horaHoje = calendariohoje.getTime()
 		calendariojogo.setTime(datajogo)
 		def horarioJogo = calendariojogo.getTime()
-		
 				
 		if (horarioJogo > horaHoje) {
 			return false

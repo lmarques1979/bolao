@@ -3,6 +3,7 @@
 *Db.script
 .settings
 stacktrace.log
+*.war
 /*.zip
 /plugin.xml
 /*.log

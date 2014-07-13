@@ -61,6 +61,7 @@ grails.project.dependency.resolution = {
         build ":tomcat:7.0.54"
 		
 		compile ":spring-security-ui:1.0-RC2"
+		compile ":joda-time:1.5"
 		
         // plugins for the compile step
         compile ":scaffolding:2.1.2"
