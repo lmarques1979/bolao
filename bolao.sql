@@ -329,7 +329,7 @@ CREATE TABLE `resenha` (
   PRIMARY KEY (`id`),
   KEY `FK_82m48gypu3xipfse3ji57c8ko` (`usuariobolao_id`),
   CONSTRAINT `FK_82m48gypu3xipfse3ji57c8ko` FOREIGN KEY (`usuariobolao_id`) REFERENCES `usuario_bolao` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -338,7 +338,7 @@ CREATE TABLE `resenha` (
 
 LOCK TABLES `resenha` WRITE;
 /*!40000 ALTER TABLE `resenha` DISABLE KEYS */;
-INSERT INTO `resenha` VALUES (12,0,'','2014-07-08 18:41:56','2014-07-08 18:41:56','Cambada, quero saber quem falta pagar o bolão ? Tá cheio de caloteiro nessa porra, não vou ficar correndo atrás de marmanjo não, até porque não sou eu que vou ganhar... eheheh',3),(13,0,'','2014-07-08 18:42:49','2014-07-08 18:42:49','Eu já paguei Lius, e vou ganhar essa porra, te pago um guaraná...',4),(16,0,'','2014-07-09 10:32:47','2014-07-09 10:32:47','Tá chegando a hora, lider absoluto, pronto pra receber o dinheiro e pagar a rodada que prometi pra galera.......',10),(19,0,'','2014-07-10 11:13:46','2014-07-10 11:13:46','Cabelo assumiu a liderança mas estou coladinho na traseira dele..............',3),(20,0,'','2014-07-10 11:14:20','2014-07-10 11:14:20','Sai fora Liussss.............. Coladinho na minha traseira porra nenhuma.....',4),(21,0,'','2014-07-10 12:15:03','2014-07-10 12:15:03','Bora galera, vamos testar o site...',21),(22,0,'','2014-07-10 12:15:35','2014-07-10 12:15:35','Até agora não recebi nenhum erro do site, tudo funcionando na boa...',25),(23,0,'','2014-07-10 12:16:01','2014-07-10 12:16:01','Aqui não tive erro também não doido...',24),(24,0,'','2014-07-10 12:16:37','2014-07-10 12:16:37','Fala cambada, vou brincar no bolão, ninguém entende nada de futebol aqui........',22);
+INSERT INTO `resenha` VALUES (12,0,'','2014-07-08 18:41:56','2014-07-08 18:41:56','Cambada, quero saber quem falta pagar o bolão ? Tá cheio de caloteiro nessa porra, não vou ficar correndo atrás de marmanjo não, até porque não sou eu que vou ganhar... eheheh',3),(13,0,'','2014-07-08 18:42:49','2014-07-08 18:42:49','Eu já paguei Lius, e vou ganhar essa porra, te pago um guaraná...',4),(16,0,'','2014-07-09 10:32:47','2014-07-09 10:32:47','Tá chegando a hora, lider absoluto, pronto pra receber o dinheiro e pagar a rodada que prometi pra galera.......',10),(19,0,'','2014-07-10 11:13:46','2014-07-10 11:13:46','Cabelo assumiu a liderança mas estou coladinho na traseira dele..............',3),(20,0,'','2014-07-10 11:14:20','2014-07-10 11:14:20','Sai fora Liussss.............. Coladinho na minha traseira porra nenhuma.....',4),(21,0,'','2014-07-10 12:15:03','2014-07-10 12:15:03','Bora galera, vamos testar o site...',21),(22,0,'','2014-07-10 12:15:35','2014-07-10 12:15:35','Até agora não recebi nenhum erro do site, tudo funcionando na boa...',25),(23,0,'','2014-07-10 12:16:01','2014-07-10 12:16:01','Aqui não tive erro também não doido...',24),(24,0,'','2014-07-10 12:16:37','2014-07-10 12:16:37','Fala cambada, vou brincar no bolão, ninguém entende nada de futebol aqui........',22),(26,0,'','2014-07-13 19:28:44','2014-07-13 19:28:44','Ainda bem que Ivan que ganhou, pelo menos ele não disse que tem fralda pra comprar e blá blá blá.... Vai chegar e bancar uma gelada.. ehehhe',3);
 /*!40000 ALTER TABLE `resenha` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -483,4 +483,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-07-13 19:24:47
+-- Dump completed on 2014-07-13 20:05:46
