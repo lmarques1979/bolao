@@ -49,7 +49,7 @@
 				<g:form action="salvaresenha" method="POST">
 					<g:hiddenField name="idusuariobolao" value="${params.id}" />
 					<g:textField class="resenha" id="resenha" name="resenha" size="60" maxlenght="100" value="${message(code: "digiteresenha.label")}"/>
-					<g:actionSubmitImage value="${message(code: "button.create.label")}" src="${assetPath(src:'skin/send.png')}" />
+					<g:actionSubmitImage action="salvaresenha" value="${message(code: "button.create.label")}" src="${assetPath(src:'skin/send.png')}" />
 				</g:form>
 			</div>
 			<div class="lerresenhas">
