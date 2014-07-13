@@ -30,9 +30,9 @@ class UsuarioBolaoController extends BaseController {
 	def salvaresenha(){
 		
 		def resenhaInstance = new Resenha()
-		def usuariobolaoInstance = UsuarioBolao.get(Long.valueOf(params.idusuariobolao).longValue())
+		def usuariobolaoid = Long.valueOf(params.idusuariobolao).longValue()
 		
-		resenhaInstance.usuariobolao = usuariobolaoInstance 
+		resenhaInstance.usuariobolao = UsuarioBolao.get(usuariobolaoid)
 		resenhaInstance.resenha = params.resenha
 		resenhaInstance.save flush:true
 		
