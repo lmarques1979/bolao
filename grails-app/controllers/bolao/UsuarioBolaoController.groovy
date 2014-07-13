@@ -50,7 +50,7 @@ class UsuarioBolaoController extends BaseController {
 		def erros = []
 		def i = 0
 		
-		def usuariobolao = UsuarioBolao.findAllById(11)
+		def usuariobolao = UsuarioBolao.findAll()
 		
 		//Faço os cálculos dos pontos por cada palpite de cada usuário
 		usuariobolao.each(){ usuariobolaoInstance ->
