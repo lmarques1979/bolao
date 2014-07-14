@@ -82,5 +82,37 @@
 						<td>
 							<g:checkBox name="encerrado" value="${jogoInstance?.encerrado}" />
 						</td>
+						<td>
+							<g:link controller="extras" action="create" id="${jogoInstance.id}">
+								<asset:image src="skin/add.png" title="${ message(code: 'adicionarextra.label')}"/>
+							</g:link>
+						</td>
 					</tr>
+					
+					<thead>
+						<tr>
+							<th colspan="6">${message(code: "extras.label")}</th>
+						</tr>
+					</thead>
+					<g:each in="${jogoInstance.extras}" status="i" var="extra">
+							<tr>
+								<td>${extra.descricao}</td>
+								<td>${extra.jogo.time1.descricao}</td>
+								<td>${extra.scoretime1}</td>
+								<td>x</td>
+								<td>${extra.scoretime2}</td>
+								<td>${extra.jogo.time2.descricao}</td>
+								<td>
+									<g:link controller="extras" action="edit" id="${extra.id}">
+										<asset:image src="skin/edit.png"/>
+									</g:link>
+								</td>
+								<td>
+									<g:link controller="extras" action="delete" id="${extra.id}">
+										<asset:image src="skin/remove.png"/>
+									</g:link>
+								</td>
+							</tr>
+					</g:each>
+					
 </table>

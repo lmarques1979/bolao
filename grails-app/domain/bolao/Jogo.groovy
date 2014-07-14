@@ -11,12 +11,13 @@ class Jogo {
 	int  peso=1
 	String descricaofase
 	int	scoretime1=0
-	int scoretime2=0
+	int scoretime2=0 
 	Estadio estadio
 	boolean encerrado=false
 	Date dateCreated
 	Date lastUpdated
 	
+	static hasMany = [extras:Extras]
 	static belongsTo = [campeonato:Campeonato]
 	
 	static constraints = {
