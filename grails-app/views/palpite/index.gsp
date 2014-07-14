@@ -147,10 +147,28 @@
 									
 								</tr>
 								<tbody>
+									<g:each in="${palpite?.jogo?.extras}" status="k" var="extra">
+										<g:if test="${k==0}">
+												<tr class="datajogo">
+													<td colspan="7">
+														${message(code: "extras.label")}
+													</td>
+												</tr>
+										</g:if>
+										<tr>
+											<td>${extra.descricao}</td>
+											<td></td>
+											<td>${extra.scoretime1}</td>
+											<td> x </td>
+											<td>${extra.scoretime2}</td>
+										</tr>
+										
+									</g:each>
 									<tr class="resultado">
-										<td colspan="2">${message(code: "resultadofinal.label")}</td>
-										<td>${palpite?.jogo?.scoretime1}</td>
+										<td>${message(code: "resultadofinal.label")}</td>
 										<td></td>
+										<td>${palpite?.jogo?.scoretime1}</td>
+										<td> x </td>
 										<td>${palpite?.jogo?.scoretime2}</td>
 										<td>${message(code: "pontos.label")}</td>
 										<td>${palpite?.pontuacao}</td>

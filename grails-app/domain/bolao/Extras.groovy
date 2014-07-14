@@ -18,6 +18,7 @@ class Extras {
     }
 	
 	static mapping = {
+		sort dateCreated: "asc" // or "asc"
 		autoTimestamp true
 		
 	}

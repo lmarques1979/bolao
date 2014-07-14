@@ -8,7 +8,7 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(["authentication.name=='admin'"])
 class ExtrasController extends BaseController{
 
-    static allowedMethods = [save: "POST", update: "PUT"]
+    static allowedMethods = [save: "POST", update: "PUT" , delete:"DELETE"]
 
     def index(Integer max) {
         def configuracoes = configuracaoParams

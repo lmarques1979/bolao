@@ -115,6 +115,11 @@ div.contato input[type="submit"] {
     height:19px;
     padding: 0 12px 2px;
 }
+
+input[type="image"] {
+	border:0px solid #cccccc;
+	background: transparent;
+}
 div.contato h1 {
 border-bottom: 1px solid #CCCCCC;
 margin: 0.8em 1em 0.3em;

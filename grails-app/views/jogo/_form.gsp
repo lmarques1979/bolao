@@ -108,9 +108,10 @@
 									</g:link>
 								</td>
 								<td>
-									<g:link controller="extras" action="delete" id="${extra.id}">
-										<asset:image src="skin/remove.png"/>
-									</g:link>
+									<g:form controller="extras" action="delete" method="DELETE">
+										<g:hiddenField name="id" value="${extra.id}" />
+										<g:actionSubmitImage controller="extras" action="delete" value="${message(code: 'button.delete.label')}" title="${message(code: 'button.delete.label')}" src="${assetPath(src:'skin/remove.png')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+									</g:form>
 								</td>
 							</tr>
 					</g:each>

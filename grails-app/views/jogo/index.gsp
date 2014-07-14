@@ -130,7 +130,22 @@
 					
 					
 					</tr>
-					
+					<g:each in="${jogoInstance?.extras}" status="k" var="extra">
+						<g:if test="${k==0}">
+								<tr class="datajogo">
+									<td colspan="7">
+										${message(code: "extras.label")}
+									</td>
+								</tr>
+						</g:if>
+						<tr>
+							<td>${extra.descricao}</td>
+							<td></td>
+							<td>${extra.scoretime1}</td>
+							<td> x </td>
+							<td>${extra.scoretime2}</td>
+						</tr>
+					</g:each>
 					<g:set var="rodadaanterior" value="${rodadaatual}" />
 					<g:set var="datajogoanterior" value="${datajogoatual}" />
 				</g:each>

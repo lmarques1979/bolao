@@ -45,7 +45,7 @@
 				<li class="fieldcontain">
 					<span id="jogo-label" class="property-label"><g:message code="extras.jogo.label" default="Jogo" /></span>
 					
-						<span class="property-value" aria-labelledby="jogo-label"><g:link controller="jogo" action="show" id="${extrasInstance?.jogo?.id}">${extrasInstance?.jogo?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="jogo-label"><g:link controller="jogo" action="show" id="${extrasInstance?.jogo?.id}">${extrasInstance?.jogo?.time1?.descricao?.encodeAsHTML()} x ${extrasInstance?.jogo?.time2?.descricao?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -68,11 +68,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${extrasInstance?.scroretime2}">
+				<g:if test="${extrasInstance?.scoretime2}">
 				<li class="fieldcontain">
 					<span id="scroretime2-label" class="property-label"><g:message code="extras.scroretime2.label" default="Scroretime2" /></span>
 					
-						<span class="property-value" aria-labelledby="scroretime2-label"><g:fieldValue bean="${extrasInstance}" field="scroretime2"/></span>
+						<span class="property-value" aria-labelledby="scoretime2-label"><g:fieldValue bean="${extrasInstance}" field="scoretime2"/></span>
 					
 				</li>
 				</g:if>
