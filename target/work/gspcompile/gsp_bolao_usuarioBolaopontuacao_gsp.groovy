@@ -82,7 +82,7 @@ invokeTag('hiddenField','g',50,['name':("idusuariobolao"),'value':(params.id)],-
 printHtmlPart(6)
 invokeTag('textField','g',51,['class':("resenha"),'id':("resenha"),'name':("resenha"),'size':("60"),'maxlenght':("100"),'value':(message(code: "digiteresenha.label"))],-1)
 printHtmlPart(6)
-invokeTag('actionSubmitImage','g',52,['value':(message(code: "button.create.label")),'src':(assetPath(src:'skin/send.png'))],-1)
+invokeTag('actionSubmitImage','g',52,['action':("salvaresenha"),'value':(message(code: "button.create.label")),'src':(assetPath(src:'skin/send.png'))],-1)
 printHtmlPart(7)
 })
 invokeTag('form','g',53,['action':("salvaresenha"),'method':("POST")],2)
@@ -214,7 +214,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1405193534000L
+public static final long LAST_MODIFIED = 1405289233000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

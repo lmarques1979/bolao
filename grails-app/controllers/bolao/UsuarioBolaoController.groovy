@@ -34,11 +34,10 @@ class UsuarioBolaoController extends BaseController {
 		
 		resenhaInstance.usuariobolao = UsuarioBolao.get(usuariobolaoid)
 		resenhaInstance.resenha = params.resenha
-		resenhaInstance.save flush:true
+		resenhaInstance.save flush:true    
 		
 		if (resenhaInstance.hasErrors()) {
 			redirect action:"pontuacao" , params:[id:usuariobolaoid]
-			return
 		}
 		
 		redirect action:"pontuacao" , params:[id:usuariobolaoid]
