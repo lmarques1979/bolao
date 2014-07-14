@@ -51,20 +51,16 @@ class BolaoController extends BaseController{
 		
 		if (nomearquivo!=null && nomearquivo!=""){
 		   imagem = diretorio  + '/' + nomearquivo
+		   bolaoInstance.imagem = nomearquivo
+		   boolean deletou = new File(diretorio).deleteDir()
+		   def caminhoarquivo = new File(diretorio)
+		   caminhoarquivo.mkdirs()
+		   f.transferTo(new File(imagem))
 		}
 		
-		bolaoInstance.imagem = nomearquivo
+		
 		bolaoInstance.admin = usuarioLogado
-		
-		boolean deletou = new File(diretorio).deleteDir()
-		def caminhoarquivo = new File(diretorio)
-		caminhoarquivo.mkdirs()
-		
-		if(nomearquivo!=null && nomearquivo!=""){
-			f.transferTo(new File(imagem))
-		}
-		
-        bolaoInstance.save flush:true
+		bolaoInstance.save flush:true
 		
 		if (bolaoInstance.hasErrors()) {
 			respond bolaoInstance.errors, view:'create'
@@ -112,16 +108,11 @@ class BolaoController extends BaseController{
 		
 		if (nomearquivo!=null && nomearquivo!=""){
 		   imagem = diretorio  + '/' + nomearquivo
-		}
-		
-		bolaoInstance.imagem = nomearquivo
-		
-		boolean deletou = new File(diretorio).deleteDir()
-		def caminhoarquivo = new File(diretorio)
-		caminhoarquivo.mkdirs()
-		
-		if(nomearquivo!=null && nomearquivo!=""){
-			f.transferTo(new File(imagem))
+		   bolaoInstance.imagem = nomearquivo
+		   boolean deletou = new File(diretorio).deleteDir()
+		   def caminhoarquivo = new File(diretorio)
+		   caminhoarquivo.mkdirs()
+		   f.transferTo(new File(imagem))
 		}
 		
         bolaoInstance.save flush:true

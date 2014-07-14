@@ -109,16 +109,11 @@ class UsuarioController extends BaseController {
 		
 		if (nomearquivo!=null && nomearquivo!=""){
 		   imagem = diretorio  + '/' + nomearquivo
-		}
-		
-		usuarioInstance.imagem = nomearquivo
-		
-		boolean deletou = new File(diretorio).deleteDir()  
-		def caminhoarquivo = new File(diretorio)
-		caminhoarquivo.mkdirs()
-		
-		if(nomearquivo!=null && nomearquivo!=""){
-			f.transferTo(new File(imagem))
+		   usuarioInstance.imagem = nomearquivo
+		   boolean deletou = new File(diretorio).deleteDir()
+		   def caminhoarquivo = new File(diretorio)
+		   caminhoarquivo.mkdirs()
+		   f.transferTo(new File(imagem))
 		}
 		
 		usuarioInstance.save flush:true
@@ -195,19 +190,14 @@ class UsuarioController extends BaseController {
 		
 		if (nomearquivo!=null && nomearquivo!=""){
 		   imagem = diretorio  + '/' + nomearquivo
+		   usuarioInstance.imagem = nomearquivo
+		   boolean deletou = new File(diretorio).deleteDir()
+		   def caminhoarquivo = new File(diretorio)
+		   caminhoarquivo.mkdirs()
+		   f.transferTo(new File(imagem))
 		}
 		
-		usuarioInstance.imagem = nomearquivo
-		
-		boolean deletou = new File(diretorio).deleteDir()
-		def caminhoarquivo = new File(diretorio)
-		caminhoarquivo.mkdirs()
-		
-		if(nomearquivo!=null && nomearquivo!=""){
-			f.transferTo(new File(imagem))
-		}
-		
-        usuarioInstance.save flush:true
+		usuarioInstance.save flush:true
 		
 		if (usuarioInstance.hasErrors()) {
 			respond usuarioInstance.errors, view:'edit'
