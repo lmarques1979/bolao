@@ -26,7 +26,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:uploadForm url="[resource:bolaoInstance, action:'update']" method="PUT" >
+			<g:uploadForm url="[resource:bolaoInstance, action:'update']">
 				<g:hiddenField name="version" value="${bolaoInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>

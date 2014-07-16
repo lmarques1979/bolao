@@ -55,9 +55,12 @@ environments {
 	production {
 		dataSource {
 			dbCreate = "update"
-			url = "jdbc:mysql://us-cdbr-east-06.cleardb.net/heroku_448ea746fc25ef7?reconnect=true"
-			username = "b198255f77f2fa"
-			password = "296cc247"
+			//url = "jdbc:mysql://us-cdbr-east-06.cleardb.net/heroku_448ea746fc25ef7?reconnect=true"
+			//username = "b198255f77f2fa"
+			//password = "296cc247"
+			url = "jdbc:mysql://localhost/bolao?reconnect=true"
+			username = "bolao"
+			password = "bolao"
 			pooled = true
 			properties {
 				maxActive = 50
