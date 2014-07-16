@@ -993,7 +993,14 @@ input.resenha {
 	position:relative;	
 }
 
-
+select.timezone{
+	text-align:left;
+	background-color: #fcfcfc;
+	border: 1px solid #cccccc;
+	font-size: 1em;
+	padding: 0.2em 0.4em;
+	width:245px;
+}
 input, select, textarea {
 	text-align:left;
 	background-color: #fcfcfc;

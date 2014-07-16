@@ -93,7 +93,7 @@
 						<td>
 							<g:link action="show" id="${jogoInstance.id}">
 								<g:formatDate format="dd/MM/yyyy HH:mm" date="${jogoInstance?.datajogo}"/> | ${jogoInstance?.estadio?.descricao}
-							</g:link>
+							</g:link> (${jogoInstance.timezone})
 						</td>
 					
 						

@@ -121,6 +121,14 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${jogoInstance?.timezone}">
+				<li class="fieldcontain">
+					<span id="timezone-label" class="property-label"><g:message code="jogo.timezone.label" default="Scoretime2" /></span>
+					
+						<span class="property-value" aria-labelledby="timezone-label"><g:fieldValue bean="${jogoInstance}" field="timezone"/></span>
+					
+				</li>
+				</g:if>
 							
 			</ol>
 			<g:form url="[resource:jogoInstance, action:'delete']" method="DELETE">

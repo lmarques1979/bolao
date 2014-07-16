@@ -88,8 +88,7 @@ class JogoController extends BaseController{
             notFound()
             return
         }
-		
-		println params
+
 		def datahora = params.datajogo + ' ' + params.horajogo
 		if(datahora!=null && datahora.trim()!=""){
 			jogoInstance.datajogo = new Date().parse("dd/MM/yyyy HH:mm", datahora)	
@@ -126,9 +125,12 @@ class JogoController extends BaseController{
             notFound()
             return
         }
-
-		def datahora        	= params.datajogo + ' ' + params.horajogo
-		jogoInstance.datajogo 	= new Date().parse("dd/MM/yyyy HH:mm", datahora)
+		
+		def datahora = params.datajogo + ' ' + params.horajogo
+		def formatoData   = new SimpleDateFormat("dd/MM/yyyy HH:mm")
+		def datajogo	= formatoData.parse(datahora)
+		
+		jogoInstance.datajogo = datajogo
 		jogoInstance.clearErrors()
 		
         jogoInstance.save flush:true

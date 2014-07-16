@@ -125,7 +125,7 @@ class PalpiteController extends BaseController {
 			def	finalizado  		= finalizados[index].toBoolean()
 			
 			def funcoesData 	= new FuncoesData()
-			def finalizadoAtual = funcoesData.diferencaMinutos(jogo.datajogo , configuracoes.minutosparapalpite)
+			def finalizadoAtual = funcoesData.diferencaMinutos(jogo, configuracoes.minutosparapalpite)
 			
 			if(finalizado != finalizadoAtual){
 				erros[i] = message(code: 'palpite.encerrado.message', args: [jogo.time1.descricao, jogo.time2.descricao])

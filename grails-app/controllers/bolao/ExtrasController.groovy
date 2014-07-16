@@ -53,21 +53,15 @@ class ExtrasController extends BaseController{
             notFound()
             return
         }
+		
+		extrasInstance.save flush:true
+		
+		if (extrasInstance.hasErrors()) {
+			respond extrasInstance.errors, view:'edit'
+			return
+		}
 
-        if (extrasInstance.hasErrors()) {
-            respond extrasInstance.errors, view:'edit'
-            return
-        }
-
-        extrasInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Extras.label', default: 'Extras'), extrasInstance.id])
-                redirect extrasInstance
-            }
-            '*'{ respond extrasInstance, [status: OK] }
-        }
+        redirect(controller: "jogo", action: "edit", params:[id:params.jogo])
     }
 
     @Transactional

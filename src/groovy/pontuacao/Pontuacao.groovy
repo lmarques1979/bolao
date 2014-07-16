@@ -1,5 +1,7 @@
 package pontuacao
 
+import bolao.Jogo
+
 class Pontuacao {
 
 	//valores da pontuacao
@@ -11,8 +13,11 @@ class Pontuacao {
 	static empatenaoexato=15
 	static estimulado=4
 	
-	def int contaPontos(def score1jogo , def score2jogo , def score1palpite , def score2palpite , def peso){
+	def int contaPontos(Jogo jogoInstance, def score1palpite , def score2palpite){
 		
+		def score1jogo 	= jogoInstance.scoretime1
+		def score2jogo 	= jogoInstance.scoretime2
+		def peso 		= jogoInstance.peso
 		def pontuacao=0
 		if(score1jogo!=null && score2jogo!=null && score1palpite!=null && score2palpite!=null){
 			

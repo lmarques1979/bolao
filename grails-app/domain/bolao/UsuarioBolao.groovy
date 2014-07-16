@@ -16,7 +16,6 @@ class UsuarioBolao implements Serializable {
 	Bolao bolao
 	int	  posicaoatual
 	boolean autorizado=true
-	Date ultimaatualizacao
 	Date dateCreated
 	Date lastUpdated
 	
@@ -25,7 +24,7 @@ class UsuarioBolao implements Serializable {
 	Palpite buscarPalpiteJogo(Jogo jogo , minutos) {
 
 		def funcoesData = new FuncoesData()
-		def finalizado = funcoesData.diferencaMinutos(jogo.datajogo , minutos)
+		def finalizado = funcoesData.diferencaMinutos(jogo , minutos)
 		
 		for(Palpite palpite:palpites) {
 				if(palpite.jogo == jogo) {
@@ -89,7 +88,6 @@ class UsuarioBolao implements Serializable {
 	static constraints = {
 		usuario(unique: ['bolao'])
 		autorizado(nullable: false , blank: false)
-		ultimaatualizacao(nullable: true , blank: true)
 		posicaoatual(nullable: true , blank: true)
 	}
 	

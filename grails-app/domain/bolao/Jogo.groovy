@@ -7,6 +7,7 @@ class Jogo {
 	Time time1
 	Time time2
 	Date datajogo
+	String timezone
 	int  fase
 	int  peso=1
 	String descricaofase
@@ -32,6 +33,7 @@ class Jogo {
 		descricaofase(nullable: false , blank: false)
 		scoretime1(nullable: true , blank: true , size: 1..2, matches:"[0-9]{1}[0-9]{1}")
 		scoretime2(nullable: true , blank: true , size: 1..2, matches:"[0-9]{1}[0-9]{1}")
+		timezone(nullable: false , blank: false)
 	}
 	
 	static mapping = {

@@ -1,4 +1,7 @@
 package funcoesdata
+import bolao.Jogo
+import bolao.UsuarioBolao;
+
 import java.text.DateFormat
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
@@ -8,25 +11,36 @@ import java.util.concurrent.TimeUnit
 
 class FuncoesData {
 	
-	def horaBR(){
+	def hora(Jogo jogo){
+	
+		def calendariohoje = new GregorianCalendar()
+		SimpleDateFormat formatoString = new SimpleDateFormat("dd/MM/yyyy HH:mm")
+		SimpleDateFormat formatoData   = new SimpleDateFormat("dd/MM/yyyy HH:mm")
+		formatoString.setTimeZone(TimeZone.getTimeZone(jogo.timezone))
+		def hojestr = formatoString.format(calendariohoje.getTime())
+		def datahojedt  = formatoData.parse(hojestr)	
 		
-		TimeZone tz = TimeZone.getTimeZone("America/Sao_Paulo")
-		TimeZone.setDefault(tz) 
-		Calendar calendar = GregorianCalendar.getInstance(tz)
-		calendar.setTime(new Date())
-		
-		return calendar.getTime()
+		return datahojedt
 	}
 	
-	def boolean diferencaMinutos(def datajogo , def diferencaMinutos){
+	def boolean diferencaMinutos(Jogo jogo , def diferencaMinutos){
 		
-		GregorianCalendar calendariohoje = new GregorianCalendar();
-		GregorianCalendar calendariojogo = new GregorianCalendar();
-		Date hoje = new Date()
-		calendariohoje.setTime(hoje)
-		calendariohoje.add((calendariohoje.MINUTE), -diferencaMinutos)
-		def horaHoje = calendariohoje.getTime()
-		calendariojogo.setTime(datajogo)
+		def formatoString = new SimpleDateFormat("dd/MM/yyyy HH:mm")
+		def formatoData   = new SimpleDateFormat("dd/MM/yyyy HH:mm")
+		def calendariohoje = new GregorianCalendar()
+		def calendariojogo = new GregorianCalendar()
+		
+		//Seto o Timezone do Jogo para os cálculos serem feitos baseado no timezone do jogo, inclusive a hora
+		//do palpite deve estar no mesmo timezone do jogo, para não ter problemas de conversão
+		formatoString.setTimeZone(TimeZone.getTimeZone(jogo.timezone))
+		def hojestr = formatoString.format(calendariohoje.getTime())
+		def datahoje= formatoData.parse(hojestr)
+		calendariohoje.setTime(datahoje)
+		calendariohoje.add((calendariohoje.MINUTE),-diferencaMinutos)
+		
+		calendariojogo.setTime(jogo.datajogo)
+				
+		def horaHoje    = calendariohoje.getTime()
 		def horarioJogo = calendariojogo.getTime()
 				
 		if (horarioJogo > horaHoje) {

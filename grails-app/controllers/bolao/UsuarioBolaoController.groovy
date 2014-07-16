@@ -54,23 +54,26 @@ class UsuarioBolaoController extends BaseController {
 		//Faço os cálculos dos pontos por cada palpite de cada usuário
 		usuariobolao.each(){ usuariobolaoInstance ->
 			
-						def dtultimaatualizacao = usuariobolaoInstance.ultimaatualizacao
 						
 						usuariobolaoInstance.palpites.each(){ palpiteInstance-> 
+								def dtultimaatualizacao = palpiteInstance.ultimaatualizacao
 								def palpitetime1 = palpiteInstance.scoretime1
 								def palpitetime2 = palpiteInstance.scoretime2
 								def jogos = palpiteInstance.jogo
 								jogos.each(){ jogo->
 									
 									//Só pego os jogos que ainda não foram computados, para melhorar a performance
-									if(jogo.encerrado==true /*&& (jogo.datajogo > dtultimaatualizacao || dtultimaatualizacao==null)*/){
+									if(jogo.encerrado==true){
+											
+										//Só atualiza palpites onde a data do jogo for maior que a data da ultima atualizacao do palpite
+										if (jogo.datajogo > dtultimaatualizacao || dtultimaatualizacao==null){
+											
+											def funcoesData = new FuncoesData()
+											def data = funcoesData.hora(jogo)
+											palpiteInstance.ultimaatualizacao = data
 											
 											def pontuacao = new Pontuacao()
-											def scoretime1 	= jogo.scoretime1
-											def scoretime2 	= jogo.scoretime2
-											def peso 		= jogo.peso
-											
-											def pontos = pontuacao.contaPontos(scoretime1 , scoretime2 , palpitetime1 , palpitetime2, peso)
+											def pontos = pontuacao.contaPontos(jogo , palpitetime1 , palpitetime2)
 											palpiteInstance.pontuacao = pontos
 											palpiteInstance.save flush:true
 											
@@ -78,17 +81,9 @@ class UsuarioBolaoController extends BaseController {
 												erros[i] = palpiteInstance.errors
 												i++
 											}
+										}
 									}
 							}
-				}
-				
-				def funcoesData 	= new FuncoesData()
-				def data = funcoesData.horaBR()
-				usuariobolaoInstance.ultimaatualizacao = data
-				usuariobolaoInstance.save flush:true
-				if (usuariobolaoInstance.hasErrors()) {
-					erros[i] = usuariobolaoInstance.errors
-					i++
 				}
 		}
 		
@@ -188,7 +183,6 @@ class UsuarioBolaoController extends BaseController {
             return
         }
 
-      
         usuarioBolaoInstance.save flush:true
 
 		if (usuarioBolaoInstance.hasErrors()) {
