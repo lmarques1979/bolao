@@ -4,13 +4,14 @@ import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import org.codehaus.groovy.grails.web.mapping.LinkGenerator
+import upload.UploadFile
 
 @Transactional(readOnly = true)
 @Secured("isFullyAuthenticated()")
 class BolaoController extends BaseController{
 
     static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
-	static final String pathbolao = "grails-app/assets/images/bolao/";
+	static final String pathbolao = "grails-app" + File.separator + "assets" + File.separator + "images" + File.separator + "bolao" + File.separator;
 	LinkGenerator grailsLinkGenerator
 	
     def index(Integer max) {
@@ -43,21 +44,13 @@ class BolaoController extends BaseController{
             return
         }
 		
-		def imagem
 		def f = request.getFile('arquivo')
-		def bolao = params.descricao
-		def diretorio = pathbolao + bolao
-		def nomearquivo = f.getOriginalFilename()
-		
-		if (nomearquivo!=null && nomearquivo!=""){
-		   imagem = diretorio  + '/' + nomearquivo
-		   bolaoInstance.imagem = nomearquivo
-		   boolean deletou = new File(diretorio).deleteDir()
-		   def caminhoarquivo = new File(diretorio)
-		   caminhoarquivo.mkdirs()
-		   f.transferTo(new File(imagem))
-		}
-		
+		if (!f.empty) {
+			def diretorio = pathbolao + bolaoInstance.descricao
+			def Upload = new UploadFile()
+			def imagem = Upload.fileUpload(f , diretorio)
+			bolaoInstance.imagem = imagem
+		}		
 		
 		bolaoInstance.admin = usuarioLogado
 		bolaoInstance.save flush:true
@@ -100,19 +93,12 @@ class BolaoController extends BaseController{
             return
         }
 
-		def imagem
 		def f = request.getFile('arquivo')
-		def bolao = params.descricao
-		def diretorio = pathbolao + bolao
-		def nomearquivo = f.getOriginalFilename()
-		
-		if (nomearquivo!=null && nomearquivo!=""){
-		   imagem = diretorio  + '/' + nomearquivo
-		   bolaoInstance.imagem = nomearquivo
-		   boolean deletou = new File(diretorio).deleteDir()
-		   def caminhoarquivo = new File(diretorio)
-		   caminhoarquivo.mkdirs()
-		   f.transferTo(new File(imagem))
+		if (!f.empty) {
+			def diretorio = pathbolao + bolaoInstance.descricao
+			def Upload = new UploadFile()
+			def imagem = Upload.fileUpload(f , diretorio)
+			bolaoInstance.imagem = imagem
 		}
 		
         bolaoInstance.save flush:true

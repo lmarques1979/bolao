@@ -2,13 +2,14 @@ package bolao
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
+import upload.UploadFile
 
 @Transactional(readOnly = true)
 @Secured(["authentication.name=='admin'"])
 class CampeonatoController extends BaseController{
 
     static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
-	static final String pathcampeonato = "grails-app/assets/images/campeonatos/";
+	static final String pathcampeonato = "grails-app" + File.separator + "assets" + File.separator + "images" + File.separator + "campeonatos" + File.separator;
 	
     def index(Integer max) {
 		def configuracoes = configuracaoParams
@@ -30,28 +31,16 @@ class CampeonatoController extends BaseController{
             notFound()
             return
         }
-
-		def imagem
-		def f = request.getFile('arquivo')
 		def descricao = params.descricao
-		def diretorio = pathcampeonato + descricao
-		def nomearquivo = f.getOriginalFilename()
-		
-		if (nomearquivo!=null && nomearquivo!=""){
-		   imagem = diretorio  + '/' + nomearquivo
+		def f = request.getFile('arquivo')
+		if (!f.empty) {
+			def diretorio = pathcampeonato + descricao
+			def Upload = new UploadFile()
+			def imagem = Upload.fileUpload(f , diretorio)
+			campeonatoInstance.imagem = imagem
 		}
 		
-		campeonatoInstance.imagem = nomearquivo
-		
-		boolean deletou = new File(diretorio).deleteDir()
-		def caminhoarquivo = new File(diretorio)
-		caminhoarquivo.mkdirs()
-		
-		if(nomearquivo!=null && nomearquivo!=""){
-			f.transferTo(new File(imagem))
-		}
-		
-        campeonatoInstance.save flush:true
+		campeonatoInstance.save flush:true
 		
 		if (campeonatoInstance.hasErrors()) {
 			respond campeonatoInstance.errors, view:'create'
@@ -78,27 +67,16 @@ class CampeonatoController extends BaseController{
             return
         }
 
-		def imagem
-		def f = request.getFile('arquivo')
 		def descricao = params.descricao
-		def diretorio = pathcampeonato + descricao
-		def nomearquivo = f.getOriginalFilename()
-		
-		if (nomearquivo!=null && nomearquivo!=""){
-		   imagem = diretorio  + '/' + nomearquivo
+		def f = request.getFile('arquivo')
+		if (!f.empty) {
+			def diretorio = pathcampeonato + descricao
+			def Upload = new UploadFile()
+			def imagem = Upload.fileUpload(f , diretorio)
+			campeonatoInstance.imagem = imagem
 		}
-		
-		campeonatoInstance.imagem = nomearquivo
-		
-		boolean deletou = new File(diretorio).deleteDir()
-		def caminhoarquivo = new File(diretorio)
-		caminhoarquivo.mkdirs()
-		
-		if(nomearquivo!=null && nomearquivo!=""){
-			f.transferTo(new File(imagem))
-		}
-		
-        campeonatoInstance.save flush:true
+				
+		campeonatoInstance.save flush:true
 		
 		if (campeonatoInstance.hasErrors()) {
 			respond campeonatoInstance.errors, view:'edit'

@@ -79,7 +79,7 @@ printHtmlPart(20)
 invokeTag('actionSubmit','g',35,['class':("save"),'action':("update"),'value':(message(code: 'button.update.label', default: 'Update'))],-1)
 printHtmlPart(21)
 })
-invokeTag('uploadForm','g',37,['url':([resource:bolaoInstance, action:'update']),'method':("PUT")],2)
+invokeTag('uploadForm','g',37,['url':([resource:bolaoInstance, action:'update'])],2)
 printHtmlPart(22)
 })
 invokeTag('captureBody','sitemesh',39,[:],1)
@@ -90,7 +90,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1405193534000L
+public static final long LAST_MODIFIED = 1405540503000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

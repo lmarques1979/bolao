@@ -74,7 +74,7 @@ printHtmlPart(19)
 invokeTag('actionSubmit','g',34,['class':("save"),'action':("update"),'value':(message(code: 'button.update.label', default: 'Update'))],-1)
 printHtmlPart(20)
 })
-invokeTag('uploadForm','g',36,['url':([resource:campeonatoInstance, action:'update']),'method':("PUT")],2)
+invokeTag('uploadForm','g',36,['url':([resource:campeonatoInstance, action:'update'])],2)
 printHtmlPart(21)
 })
 invokeTag('captureBody','sitemesh',38,[:],1)
@@ -85,7 +85,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1405193534000L
+public static final long LAST_MODIFIED = 1405540521000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

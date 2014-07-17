@@ -6,13 +6,13 @@ import bolao.UsuarioBolao
 import bolao.Bolao
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
+import upload.UploadFile
 
 @Transactional(readOnly = true)
 class UsuarioController extends BaseController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
-	static final String pathusuario = "grails-app/assets/images/usuarios/";
-	
+	static final String pathusuario = "grails-app" + File.separator + "assets" + File.separator + "images" + File.separator + "usuarios" + File.separator;
 	
 	@Secured('permitAll')
 	def esqueceusenha() {
@@ -100,20 +100,15 @@ class UsuarioController extends BaseController {
             return
         }
 		
-		def bolao = params.bolao
-		def imagem
-		def f = request.getFile('arquivo')
+		def bolao 	= params.bolao
 		def usuario = params.username
-		def diretorio = pathusuario + usuario 
-		def nomearquivo = f.getOriginalFilename()
-		
-		if (nomearquivo!=null && nomearquivo!=""){
-		   imagem = diretorio  + '/' + nomearquivo
-		   usuarioInstance.imagem = nomearquivo
-		   boolean deletou = new File(diretorio).deleteDir()
-		   def caminhoarquivo = new File(diretorio)
-		   caminhoarquivo.mkdirs()
-		   f.transferTo(new File(imagem))
+				
+		def f = request.getFile('arquivo')
+		if (!f.empty) {
+			def diretorio = pathusuario + usuario
+			def Upload = new UploadFile()
+			def imagem = Upload.fileUpload(f , diretorio)
+			usuarioInstance.imagem = imagem
 		}
 		
 		usuarioInstance.save flush:true
@@ -176,25 +171,19 @@ class UsuarioController extends BaseController {
 
     @Transactional
 	@Secured('permitAll')
-    def update(Usuario usuarioInstance) {
+	def update(Usuario usuarioInstance) {
         if (usuarioInstance == null) {
             notFound()
             return
         }
 
-		def imagem
-		def f = request.getFile('arquivo')
 		def usuario = params.username
-		def diretorio = pathusuario + usuario
-		def nomearquivo = f.getOriginalFilename()
-		
-		if (nomearquivo!=null && nomearquivo!=""){
-		   imagem = diretorio  + '/' + nomearquivo
-		   usuarioInstance.imagem = nomearquivo
-		   boolean deletou = new File(diretorio).deleteDir()
-		   def caminhoarquivo = new File(diretorio)
-		   caminhoarquivo.mkdirs()
-		   f.transferTo(new File(imagem))
+		def f = request.getFile('arquivo')
+		if (!f.empty) {
+			def diretorio = pathusuario + usuario
+			def Upload = new UploadFile()
+			def imagem = Upload.fileUpload(f , diretorio)
+			usuarioInstance.imagem = imagem
 		}
 		
 		usuarioInstance.save flush:true
@@ -222,21 +211,27 @@ class UsuarioController extends BaseController {
             return
         }
 
+		def usuarioDeletado = usuarioInstance
+		def usuariologado = usuarioLogado
 		
 		def diretorio = pathusuario + usuarioInstance.username  
-		boolean deletou = new File(diretorio).deleteDir()
 		
-		if (deletou){
-				usuarioInstance.delete flush:true
+		usuarioInstance.delete flush:true
+		if (usuarioInstance.hasErrors()) {
+			respond usuarioInstance.errors, view:'index'
+			return
+		}else{
+			boolean deletou = new File(diretorio).deleteDir()
+		}
+				
+		if (usuarioDeletado==usuariologado){
+			flash.message = message(code: 'default.deleted.message', args: [message(code: 'Usuario.label', default: 'Usuario'), usuarioInstance.id])
+			redirect(controller: "logout", action: "index")
+		}else{
+			flash.message = message(code: 'default.deleted.message', args: [message(code: 'Usuario.label', default: 'Usuario'), usuarioInstance.id])
+			redirect(controller: "usuario", action: "index")
 		}
 		
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Usuario.label', default: 'Usuario'), usuarioInstance.id])
-				redirect(controller: "logout", action: "index")
-            }
-            '*'{ render status: NO_CONTENT }
-        }
     }
 
 	@Secured('permitAll')
