@@ -106,7 +106,7 @@ class UsuarioController extends BaseController {
 		if (!f.empty) {
 			def diretorio = usuario
 			def Upload = new UploadFile()
-			def imagem = Upload.fileUpload(f , diretorio)
+			def imagem = Upload.fileUpload(f)
 			usuarioInstance.imagem = imagem
 		}
 		
@@ -181,7 +181,7 @@ class UsuarioController extends BaseController {
 		if (!f.empty) {
 			def diretorio = usuario
 			def Upload = new UploadFile()
-			def imagem = Upload.fileUpload(f , diretorio)
+			def imagem = Upload.fileUpload(f)
 			usuarioInstance.imagem = imagem
 		}
 		

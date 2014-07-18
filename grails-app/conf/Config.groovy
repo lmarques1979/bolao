@@ -16,6 +16,12 @@ grails.cache.enabled = false
 
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 
+environments {
+	production {
+		grails.assets.url = "https://s3-sa-east-1.amazonaws.com/bolaovipcampeao"
+	}
+}
+
 //AWS Plugin config
 grails.plugin.awssdk.accessKey = "AKIAJI3C5K4BW2ZZNFTA"
 grails.plugin.awssdk.secretKey = "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"
