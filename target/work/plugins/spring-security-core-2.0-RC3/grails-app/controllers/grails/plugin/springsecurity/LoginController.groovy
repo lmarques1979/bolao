@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 package grails.plugin.springsecurity
+
 import grails.converters.JSON
 
 import javax.servlet.http.HttpServletResponse
@@ -56,7 +57,7 @@ class LoginController {
 	def auth() {
 
 		def config = SpringSecurityUtils.securityConfig
-		
+
 		if (springSecurityService.isLoggedIn()) {
 			redirect uri: config.successHandler.defaultTargetUrl
 			return

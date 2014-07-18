@@ -6,7 +6,7 @@ import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 @Secured("isAuthenticated()")
-class BaseController{ 
+class BaseController{
    
 	def configurationService
 	def springSecurityService
@@ -37,7 +37,7 @@ class BaseController{
   
 	
   def getUsuarioLogado(){
-	  	springSecurityService.currentUser
+		  springSecurityService.currentUser
   }
  
-} 
+}

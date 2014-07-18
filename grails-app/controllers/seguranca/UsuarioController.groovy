@@ -12,7 +12,6 @@ import upload.UploadFile
 class UsuarioController extends BaseController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
-	static final String pathusuario = "grails-app" + File.separator + "assets" + File.separator + "images" + File.separator + "usuarios" + File.separator;
 	
 	@Secured('permitAll')
 	def esqueceusenha() {
@@ -105,7 +104,7 @@ class UsuarioController extends BaseController {
 				
 		def f = request.getFile('arquivo')
 		if (!f.empty) {
-			def diretorio = pathusuario + usuario
+			def diretorio = usuario
 			def Upload = new UploadFile()
 			def imagem = Upload.fileUpload(f , diretorio)
 			usuarioInstance.imagem = imagem
@@ -180,7 +179,7 @@ class UsuarioController extends BaseController {
 		def usuario = params.username
 		def f = request.getFile('arquivo')
 		if (!f.empty) {
-			def diretorio = pathusuario + usuario
+			def diretorio = usuario
 			def Upload = new UploadFile()
 			def imagem = Upload.fileUpload(f , diretorio)
 			usuarioInstance.imagem = imagem
