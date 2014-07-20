@@ -59,7 +59,7 @@
 			
 				<g:if test="${bolaoInstance?.autorizacao}">
 				<li class="fieldcontain">
-					<span id="autorizacao-label" class="property-label"><g:message code="bolao.autorizacao.label" default="Imagem" /></span>
+					<span id="autorizacao-label" class="property-label"><g:message code="bolao.autorizacao.label"/></span>
 					
 						<span class="property-value" aria-labelledby="autorizacao-label"><g:formatBoolean boolean="${bolaoInstance?.autorizacao}" /></span>
 					

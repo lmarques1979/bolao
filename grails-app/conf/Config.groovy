@@ -16,19 +16,31 @@ grails.cache.enabled = false
 
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 
-environments {
-	production {
-		grails.assets.url = "https://s3-sa-east-1.amazonaws.com/bolaovipcampeao"
+// Single provider
+grails {
+	assets {
+		cdn {
+			provider = 's3' // Karman provider
+			directory = 'bolaovipcampeao'
+			accessKey = ''
+			secretKey = ''
+			storagePath = "assets/" // This is just a prefix example
+			expires = 365 // Expires in 1 year (value in days)
+			gzip = true
+		}
 	}
 }
 
+//Assets Amazon S3
+grails.assets.url = "https://bolaovipcampeao.s3.amazonaws.com/assets/"
+
 //AWS Plugin config
-grails.plugin.awssdk.accessKey = "AKIAJI3C5K4BW2ZZNFTA"
-grails.plugin.awssdk.secretKey = "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"
+grails.plugin.awssdk.accessKey = ''
+grails.plugin.awssdk.secretKey = ''
 
 //Dados Tomcat Deploy
 tomcat.deploy.username="admin"
-tomcat.deploy.password="99157521"
+tomcat.deploy.password=""
 tomcat.deploy.url="http://localhost:8080/manager/text"
 
 // The ACCEPT header will not be used for content negotiation for user agents containing the following strings (defaults to the 4 major rendering engines)

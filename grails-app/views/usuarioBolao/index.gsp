@@ -15,10 +15,10 @@
 			<div class="usuario">
 				<div class="avatarimagem">
 					<g:if test="${usuarioBolaoInstanceList[0].usuario.imagem}">
-							<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="usuarios/${usuarioBolaoInstanceList[0].usuario.username}/${usuarioBolaoInstanceList[0].usuario.imagem}" title="${usuarioBolaoInstanceList[0].usuario.username}"/>
+							<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="${usuarioBolaoInstanceList[0].usuario.imagem}" title="${usuarioBolaoInstanceList[0].usuario.username}"/>
 					</g:if>
 					<g:else>
-						<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="usuarios/noimage.jpg" title="${usuarioBolaoInstanceList[0].usuario.username}"/>
+						<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="noimage.jpg" title="${usuarioBolaoInstanceList[0].usuario.username}"/>
 					</g:else>
 				
 				</div>

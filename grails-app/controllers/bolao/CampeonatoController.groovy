@@ -2,7 +2,6 @@ package bolao
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
-import upload.UploadFile
 
 @Transactional(readOnly = true)
 @Secured(["authentication.name=='admin'"])
@@ -31,12 +30,9 @@ class CampeonatoController extends BaseController{
             notFound()
             return
         }
-		def descricao = params.descricao
 		def f = request.getFile('arquivo')
 		if (!f.empty) {
-			def diretorio = pathcampeonato + descricao
-			def Upload = new UploadFile()
-			def imagem = Upload.fileUpload(f , diretorio)
+			def imagem = fileUpload(f)
 			campeonatoInstance.imagem = imagem
 		}
 		
@@ -67,12 +63,9 @@ class CampeonatoController extends BaseController{
             return
         }
 
-		def descricao = params.descricao
 		def f = request.getFile('arquivo')
 		if (!f.empty) {
-			def diretorio = pathcampeonato + descricao
-			def Upload = new UploadFile()
-			def imagem = Upload.fileUpload(f , diretorio)
+			def imagem = fileUpload(f)
 			campeonatoInstance.imagem = imagem
 		}
 				
@@ -100,14 +93,14 @@ class CampeonatoController extends BaseController{
             return
         }
 		
-		def diretorio = pathcampeonato + campeonatoInstance.descricao
-		boolean deletou = new File(diretorio).deleteDir()
-		
-		if (deletou){
-				campeonatoInstance.delete flush:true
+		campeonatoInstance.delete flush:true
+		if (campeonatoInstance.hasErrors()) {
+			respond campeonatoInstance.errors, view:'index'
+			return
+		}else{
+			boolean deletou = fileDelete(campeonatoInstance.imagem)
 		}
 		
-
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Campeonato.label', default: 'Campeonato'), campeonatoInstance.id])

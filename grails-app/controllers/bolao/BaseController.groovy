@@ -1,5 +1,6 @@
 package bolao
-
+import utils.*
+import com.amazonaws.services.s3.model.*
 import grails.plugin.springsecurity.annotation.Secured
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
@@ -10,6 +11,24 @@ class BaseController{
    
 	def configurationService
 	def springSecurityService
+	def bucket  = 'bolaovipcampeao'
+	def amazonWebService
+	def pasta = 'assets/' 
+	
+	def fileUpload(def f){
+		def nomearquivo = (new Date()).getTime() + "_" + f.getOriginalFilename()
+		File file = StreamUtil.stream2file(nomearquivo, f.getInputStream())
+		amazonWebService.s3.putObject(new PutObjectRequest(bucket, pasta + nomearquivo , file).withCannedAcl(CannedAccessControlList.PublicRead))
+		
+		return nomearquivo
+	}
+	
+	def fileDelete(def nomearquivo){
+		
+		if (nomearquivo!=null){
+			amazonWebService.s3.deleteObject(bucket, pasta+nomearquivo)
+		}
+	}
 	
 	def getConfiguracaoParams(){
 		

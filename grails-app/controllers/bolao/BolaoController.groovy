@@ -4,7 +4,6 @@ import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import org.codehaus.groovy.grails.web.mapping.LinkGenerator
-import upload.UploadFile
 
 @Transactional(readOnly = true)
 @Secured("isFullyAuthenticated()")
@@ -46,9 +45,7 @@ class BolaoController extends BaseController{
 		
 		def f = request.getFile('arquivo')
 		if (!f.empty) {
-			def diretorio = pathbolao + bolaoInstance.descricao
-			def Upload = new UploadFile()
-			def imagem = Upload.fileUpload(f , diretorio)
+			def imagem = fileUpload(f)
 			bolaoInstance.imagem = imagem
 		}		
 		
@@ -95,9 +92,7 @@ class BolaoController extends BaseController{
 
 		def f = request.getFile('arquivo')
 		if (!f.empty) {
-			def diretorio = pathbolao + bolaoInstance.descricao
-			def Upload = new UploadFile()
-			def imagem = Upload.fileUpload(f , diretorio)
+			def imagem = fileUpload(f)
 			bolaoInstance.imagem = imagem
 		}
 		
@@ -125,13 +120,12 @@ class BolaoController extends BaseController{
             return
         }
 
-		def diretorio = pathbolao + bolaoInstance.descricao
-		boolean deletou = new File(diretorio).deleteDir()
-		
-		if (deletou){
-			
-				bolaoInstance.delete flush:true
-				
+		bolaoInstance.delete flush:true
+		if (bolaoInstance.hasErrors()) {
+			respond bolaoInstance.errors, view:'index'
+			return
+		}else{
+			boolean deletou = fileDelete(bolaoInstance.imagem)
 		}
 		
         request.withFormat {

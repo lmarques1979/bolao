@@ -71,7 +71,7 @@
 						</td>
 					
 					    <td><g:if test="${bolaoInstance.imagem}">
-								<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="bolao/${bolaoInstance.descricao}/${bolaoInstance.imagem}" title="${bolaoInstance.descricao}"/>
+								<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="${bolaoInstance.imagem}" title="${bolaoInstance.descricao}"/>
 							</g:if>		
 						</td>	
 						<td>

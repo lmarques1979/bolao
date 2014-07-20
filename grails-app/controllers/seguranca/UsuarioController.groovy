@@ -6,7 +6,6 @@ import bolao.UsuarioBolao
 import bolao.Bolao
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
-import upload.UploadFile
 
 @Transactional(readOnly = true)
 class UsuarioController extends BaseController {
@@ -100,13 +99,9 @@ class UsuarioController extends BaseController {
         }
 		
 		def bolao 	= params.bolao
-		def usuario = params.username
-				
 		def f = request.getFile('arquivo')
 		if (!f.empty) {
-			def diretorio = usuario
-			def Upload = new UploadFile()
-			def imagem = Upload.fileUpload(f)
+			def imagem = fileUpload(f)
 			usuarioInstance.imagem = imagem
 		}
 		
@@ -176,12 +171,9 @@ class UsuarioController extends BaseController {
             return
         }
 
-		def usuario = params.username
 		def f = request.getFile('arquivo')
 		if (!f.empty) {
-			def diretorio = usuario
-			def Upload = new UploadFile()
-			def imagem = Upload.fileUpload(f)
+			def imagem = fileUpload(f)
 			usuarioInstance.imagem = imagem
 		}
 		
@@ -213,14 +205,12 @@ class UsuarioController extends BaseController {
 		def usuarioDeletado = usuarioInstance
 		def usuariologado = usuarioLogado
 		
-		def diretorio = pathusuario + usuarioInstance.username  
-		
 		usuarioInstance.delete flush:true
 		if (usuarioInstance.hasErrors()) {
 			respond usuarioInstance.errors, view:'index'
 			return
 		}else{
-			boolean deletou = new File(diretorio).deleteDir()
+			boolean deletou = fileDelete(usuarioInstance.imagem)
 		}
 				
 		if (usuarioDeletado==usuariologado){

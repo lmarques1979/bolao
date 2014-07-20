@@ -9,7 +9,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title><g:layoutTitle default="Grails"/></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
+		<link rel="shortcut icon" href="${assetPath(src:'favicon.ico')}" type="image/x-icon">
 		<asset:stylesheet src="application.css"/>
 		<asset:javascript src="application.js"/>
 		<g:layoutHead/>
@@ -90,14 +90,13 @@
 		</sec:ifNotLoggedIn>
 		</div><div class="clearer"></div>
 		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><asset:image src="logo/logo.png" alt="Bolao"/></a>
-
 			<g:if test="${ ( (params.controller=='usuarioBolao' && params.action!='index') || (params.controller!='usuarioBolao') ) }">
 				<g:if test="${sec.loggedInUserInfo(field: 'imagem')}">
-					<asset:image class="avatarmain" height="120" width="120" src="usuarios/${sec.loggedInUserInfo(field: 'username')}/${sec.loggedInUserInfo(field: 'imagem')}" title="${sec.loggedInUserInfo(field: 'primeironome') + ' ' + sec.loggedInUserInfo(field: 'sobrenome')}"/>
+					<asset:image class="avatarmain" height="120" width="120" src="${sec.loggedInUserInfo(field: 'imagem')}" title="${sec.loggedInUserInfo(field: 'primeironome') + ' ' + sec.loggedInUserInfo(field: 'sobrenome')}"/>
 				</g:if>
 				<g:else>
 					<sec:ifLoggedIn>
-						<asset:image class="avatarmain" height="120" width="120" src="usuarios/noimage.jpg" title="${sec.loggedInUserInfo(field: 'username')}"/>
+						<asset:image class="avatarmain" height="120" width="120" src="noimage.jpg" title="${sec.loggedInUserInfo(field: 'username')}"/>
 					</sec:ifLoggedIn>
 				</g:else>
 			</g:if>

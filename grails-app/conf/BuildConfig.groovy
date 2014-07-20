@@ -24,10 +24,7 @@ grails.project.fork = [
 grails.project.dependency.resolver = "maven" // or ivy
 grails.project.dependency.resolution = {
 	// inherit Grails' default dependencies
-	inherits("global") {
-		// specify dependency exclusions here; for example, uncomment this to disable ehcache:
-		// excludes 'ehcache'
-	}
+	inherits("global") {}
 	log "error" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
 	checksums true // Whether to verify checksums on resolve
 	legacyResolve false // whether to do a secondary resolve on plugin installation, not advised and here for backwards compatibility
@@ -53,11 +50,23 @@ grails.project.dependency.resolution = {
 		// runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
 		runtime 'mysql:mysql-connector-java:5.1.30'
 		compile "org.springframework:spring-orm:$springVersion"
+		// Workaround to resolve dependency issue with aws-java-sdk and http-builder (dependent on httpcore:4.0)
+		build 'org.apache.httpcomponents:httpcore:4.2'
+		build 'org.apache.httpcomponents:httpclient:4.2'
+		runtime 'org.apache.httpcomponents:httpcore:4.2'
+		runtime 'org.apache.httpcomponents:httpclient:4.2'
+		
 	}
 
 	plugins {
 		// plugins for the build system only
 		build ":tomcat:7.0.54"
+		
+		//Amazon S3
+		runtime ':aws-sdk:1.8.4'
+		
+		//Push to Amazon S3
+		compile ":cdn-asset-pipeline:0.2.2"
 		
 		compile ":spring-security-ui:1.0-RC2"
 		//Amazon Plugin

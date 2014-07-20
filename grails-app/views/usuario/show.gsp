@@ -23,10 +23,10 @@
 					
 						<span class="property-value" aria-labelledby="imagem-label">
 								<g:if test="${usuarioInstance.imagem}">
-									<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="usuarios/${usuarioInstance.username}/${usuarioInstance.imagem}" title="${usuarioInstance.username}"/>
+									<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="${usuarioInstance.imagem}" title="${usuarioInstance.username}"/>
 								</g:if>
 								<g:else>
-									<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="usuarios/noimage.jpg" title="${usuarioInstance.username}"/>
+									<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="noimage.jpg" title="${usuarioInstance.username}"/>
 								</g:else>
 						</span>
 					
