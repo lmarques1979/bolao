@@ -54,7 +54,7 @@
 							
 								<td>
 									<g:if test="${usuarioBolaoInstance?.bolao?.imagem}">
-											<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="bolao/${usuarioBolaoInstance?.bolao?.descricao}/${usuarioBolaoInstance?.bolao?.imagem}" title="${usuarioBolaoInstance?.bolao?.descricao}"/><br>
+											<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="${usuarioBolaoInstance?.bolao?.imagem}" title="${usuarioBolaoInstance?.bolao?.descricao}"/><br>
 									</g:if>
 									<g:link controller="UsuarioBolao" action="pontuacao" id="${usuarioBolaoInstance.id}">${fieldValue(bean: usuarioBolaoInstance?.bolao, field: "descricao")}</g:link>	
 									

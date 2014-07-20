@@ -25,7 +25,7 @@
 			
 				<div class="avatarimagem">
 					<g:if test="${usuarioBolaoInstance?.bolao?.imagem}">
-						<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="bolao/${usuarioBolaoInstance?.bolao?.descricao}/${usuarioBolaoInstance?.bolao?.imagem}" title="${usuarioBolaoInstance?.bolao?.descricao}"/>
+						<asset:image height="${params.alturaimagens}" width="${params.larguraimagens}" src="${usuarioBolaoInstance?.bolao?.imagem}" title="${usuarioBolaoInstance?.bolao?.descricao}"/>
 					</g:if>
 				</div>
 				
@@ -57,7 +57,7 @@
 						<g:each in="${resenhasList}" status="i" var="resenha">
 							<tr>		
 									<td>
-										<asset:image height="35" width="35" src="usuarios/${resenha?.usuariobolao?.usuario?.username}/${resenha?.usuariobolao?.usuario?.imagem}" title="${resenha?.usuariobolao?.usuario?.buscaNome(resenha?.usuariobolao?.usuario)}"/>
+										<asset:image height="35" width="35" src="${resenha?.usuariobolao?.usuario?.imagem}" title="${resenha?.usuariobolao?.usuario?.buscaNome(resenha?.usuariobolao?.usuario)}"/>
 									</td>
 									
 									<td class="font11centro"><g:formatDate format="dd/MM/yyyy HH:mm" date="${resenha?.dateCreated}" /></td>
@@ -106,10 +106,10 @@
 									
 									<td>
 										<g:if test="${usuariobolao[0].imagem}">
-											<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="usuarios/${usuariobolao[0].username}/${usuariobolao[0].imagem}" title="${usuariobolao[0].username}"/>
+											<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="${usuariobolao[0].imagem}" title="${usuariobolao[0].username}"/>
 										</g:if>
 										<g:else>
-											<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="usuarios/noimage.jpg" title="${usuariobolao[0].username}"/>
+											<asset:image height="${params.alturaimagensthumbs}" width="${params.larguraimagensthumbs}" src="noimage.jpg" title="${usuariobolao[0].username}"/>
 										</g:else>
 									</td>
 									<td class="esquerda">
