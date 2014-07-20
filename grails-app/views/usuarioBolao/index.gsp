@@ -8,6 +8,7 @@
 		<title><g:message code="usuarioBolao.list.label"/></title>
 	</head>
 	<body>
+	<g:if test="${usuarioBolaoInstanceCount > 0 }">
 		<a href="#list-usuarioBolao" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		
 		<div id="list-usuarioBolao" class="content scaffold-list" role="main">
@@ -78,5 +79,6 @@
 					
 			</div>
 		</div>
+	 </g:if>
 	</body>
 </html>

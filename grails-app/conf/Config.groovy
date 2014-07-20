@@ -22,8 +22,8 @@ grails {
 		cdn {
 			provider = 's3' // Karman provider
 			directory = 'bolaovipcampeao'
-			accessKey = ''
-			secretKey = ''
+			accessKey = 'AKIAJI3C5K4BW2ZZNFTA'
+			secretKey = 'Gdnxd+SN/oOt1haafBbowdDwRItctXxh+mC1UDjz'
 			storagePath = "assets/" // This is just a prefix example
 			expires = 365 // Expires in 1 year (value in days)
 			gzip = true
@@ -35,12 +35,12 @@ grails {
 grails.assets.url = "https://bolaovipcampeao.s3.amazonaws.com/assets/"
 
 //AWS Plugin config
-grails.plugin.awssdk.accessKey = ''
-grails.plugin.awssdk.secretKey = ''
+grails.plugin.awssdk.accessKey = 'AKIAJI3C5K4BW2ZZNFTA'
+grails.plugin.awssdk.secretKey = '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'
 
 //Dados Tomcat Deploy
 tomcat.deploy.username="admin"
-tomcat.deploy.password=""
+tomcat.deploy.password="99157521"
 tomcat.deploy.url="http://localhost:8080/manager/text"
 
 // The ACCEPT header will not be used for content negotiation for user agents containing the following strings (defaults to the 4 major rendering engines)
