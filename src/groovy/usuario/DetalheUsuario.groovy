@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.User
 class DetalheUsuario extends GrailsUser {
 
 	final String primeironome, sobrenome , email, imagem
-	Time  timecoracao
+	final Time  timecoracao
 
 	DetalheUsuario(	String username, 
 					String password, 

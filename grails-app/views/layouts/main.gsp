@@ -1,3 +1,7 @@
+<%@ page import="seguranca.Usuario" %>
+<sec:ifLoggedIn>
+	<g:set var="usuarioInstance" value="${Usuario.get(sec.loggedInUserInfo(field: 'id'))}" />
+</sec:ifLoggedIn>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
@@ -15,7 +19,7 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-	
+		
 		<div class="nav" role="navigation">
 			<ul>
 			    <li><!--<a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>-->
@@ -89,16 +93,17 @@
 			</div>
 		</sec:ifNotLoggedIn>
 		</div><div class="clearer"></div>
-		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><asset:image src="logo/logo.png" alt="Bolao"/></a>
+		<div id="grailsLogo" role="banner">
+			<a href="${createLink(uri: '/')}"><asset:image src="logo/logo.png" alt="Bolao"/></a>
 			<g:if test="${ ( (params.controller=='usuarioBolao' && params.action!='index') || (params.controller!='usuarioBolao') ) }">
-				<g:if test="${sec.loggedInUserInfo(field: 'imagem')}">
-					<asset:image class="avatarmain" height="120" width="120" src="${sec.loggedInUserInfo(field: 'imagem')}" title="${sec.loggedInUserInfo(field: 'primeironome') + ' ' + sec.loggedInUserInfo(field: 'sobrenome')}"/>
-				</g:if>
-				<g:else>
 					<sec:ifLoggedIn>
-						<asset:image class="avatarmain" height="120" width="120" src="noimage.jpg" title="${sec.loggedInUserInfo(field: 'username')}"/>
+						<g:if test="${usuarioInstance.imagem}">
+							<asset:image class="avatarmain" height="120" width="120" src="${usuarioInstance.imagem}" title="${usuarioInstance.buscaNome(usuarioInstance)}"/>
+						</g:if>
+						<g:else>
+							<asset:image class="avatarmain" height="120" width="120" src="noimage.jpg" title="${usuarioInstance.buscaNome(usuarioInstance)}"/>
+						</g:else>
 					</sec:ifLoggedIn>
-				</g:else>
 			</g:if>
 		</div>
 		

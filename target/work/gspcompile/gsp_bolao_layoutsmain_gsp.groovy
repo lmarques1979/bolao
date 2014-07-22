@@ -200,56 +200,36 @@ invokeTag('ifNotLoggedIn','sec',90,[:],2)
 printHtmlPart(36)
 expressionOut.print(createLink(uri: '/'))
 printHtmlPart(6)
-invokeTag('image','asset',92,['src':("logo/logo.png"),'alt':("Bolao")],-1)
+invokeTag('image','asset',93,['src':("logo/logo.png"),'alt':("Bolao")],-1)
 printHtmlPart(37)
-if(true && (( (params.controller=='usuarioBolao' && params.action!='index') || (params.controller!='usuarioBolao') ))) {
-printHtmlPart(34)
-if(true && (sec.loggedInUserInfo(field: 'imagem'))) {
-printHtmlPart(8)
-invokeTag('image','asset',95,['class':("avatarmain"),'height':("120"),'width':("120"),'src':(sec.loggedInUserInfo(field: 'imagem')),'title':(sec.loggedInUserInfo(field: 'primeironome') + ' ' + sec.loggedInUserInfo(field: 'sobrenome'))],-1)
-printHtmlPart(34)
-}
-else {
-printHtmlPart(8)
-createTagBody(4, {->
-printHtmlPart(17)
-invokeTag('image','asset',99,['class':("avatarmain"),'height':("120"),'width':("120"),'src':("noimage.jpg"),'title':(sec.loggedInUserInfo(field: 'username'))],-1)
-printHtmlPart(8)
-})
-invokeTag('ifLoggedIn','sec',100,[:],4)
-printHtmlPart(34)
-}
+invokeTag('layoutBody','g',96,[:],-1)
 printHtmlPart(38)
-}
+createTagBody(2, {->
+printHtmlPart(8)
+invokeTag('message','g',100,['code':("regulamentogeral.message")],-1)
 printHtmlPart(39)
-invokeTag('layoutBody','g',105,[:],-1)
+})
+invokeTag('link','g',101,['controller':("diversos"),'action':("pontuacao")],2)
 printHtmlPart(40)
 createTagBody(2, {->
 printHtmlPart(8)
-invokeTag('message','g',109,['code':("regulamentogeral.message")],-1)
-printHtmlPart(38)
+invokeTag('message','g',103,['code':("contato.message")],-1)
+printHtmlPart(39)
 })
-invokeTag('link','g',110,['controller':("diversos"),'action':("pontuacao")],2)
+invokeTag('link','g',104,['controller':("diversos"),'action':("contato")],2)
 printHtmlPart(41)
-createTagBody(2, {->
-printHtmlPart(8)
-invokeTag('message','g',112,['code':("contato.message")],-1)
-printHtmlPart(38)
-})
-invokeTag('link','g',113,['controller':("diversos"),'action':("contato")],2)
+invokeTag('message','g',108,['code':("spinner.alt"),'default':("Loading&hellip;")],-1)
 printHtmlPart(42)
-invokeTag('message','g',117,['code':("spinner.alt"),'default':("Loading&hellip;")],-1)
-printHtmlPart(43)
 })
-invokeTag('captureBody','sitemesh',118,[:],1)
-printHtmlPart(44)
+invokeTag('captureBody','sitemesh',109,[:],1)
+printHtmlPart(43)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1405896183000L
+public static final long LAST_MODIFIED = 1405975739000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

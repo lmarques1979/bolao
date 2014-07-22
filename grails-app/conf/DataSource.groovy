@@ -54,33 +54,11 @@ environments {
 	}
 	production {
 		dataSource {
-			dbCreate = "update"
-			//url = "jdbc:mysql://us-cdbr-east-06.cleardb.net/heroku_448ea746fc25ef7?reconnect=true"
-			//username = "b198255f77f2fa"
-			//password = "296cc247"
-			url = "jdbc:mysql://localhost/bolao?reconnect=true"
 			username = "bolao"
 			password = "bolao"
-			pooled = true
-			properties {
-				maxActive = 50
-				maxIdle = 25
-				minIdle = 1
-				initialSize = 1
-		   
-				numTestsPerEvictionRun = 3
-				maxWait = 10000
-		   
-				testOnBorrow = true
-				testWhileIdle = true
-				testOnReturn = true
-		   
-				validationQuery = "select now()"
-		   
-				minEvictableIdleTimeMillis = 1000 * 60 * 5
-				timeBetweenEvictionRunsMillis = 1000 * 60 * 5
-	
-			}
+			driverClassName = "com.mysql.jdbc.Driver"
+			dbCreate = "update"
+			url = "jdbc:mysql://localhost/bolao?autoReconnect=true"
 		}
 	}
 }
