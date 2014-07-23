@@ -15,7 +15,7 @@
 					<h1>${message(code: 'cadastreseouloguese.label')}</h1><div class="clearer"></div>
 					
 					<g:if test="${bolaoInstance.imagem}">
-						<asset:image height="100" width="100" src="bolao/${bolaoInstance.descricao}/${bolaoInstance.imagem}" title="${bolaoInstance.descricao}"/>
+						<asset:image height="100" width="100" src="${bolaoInstance.imagem}" title="${bolaoInstance.descricao}"/>
 					</g:if>
 							
 					<ul>

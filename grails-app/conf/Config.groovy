@@ -22,8 +22,8 @@ grails {
 		cdn {
 			provider = 's3' // Karman provider
 			directory = 'bolaovipcampeao'
-			accessKey = 'AKIAJQADUEG7OZN2J5WQ'
-			secretKey = 'ItZSffTrurpqjrB6yVg4X5WKy71J5ewb1JOPhDdh'
+			accessKey = ''
+			secretKey = ''
 			storagePath = "assets/" // This is just a prefix example
 			expires = 365 // Expires in 1 year (value in days)
 			gzip = true
@@ -35,12 +35,12 @@ grails {
 grails.assets.url = "https://bolaovipcampeao.s3.amazonaws.com/assets/"
 
 //AWS Plugin config
-grails.plugin.awssdk.accessKey = 'AKIAJQADUEG7OZN2J5WQ'
-grails.plugin.awssdk.secretKey = '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'
+grails.plugin.awssdk.accessKey = ''
+grails.plugin.awssdk.secretKey = ''
 
 //Dados Tomcat Deploy
 tomcat.deploy.username="admin"
-tomcat.deploy.password="99157521"
+tomcat.deploy.password=""
 tomcat.deploy.url="http://localhost:8080/manager/text"
 grails.tomcat.jvmArgs = ["-server", "-XX:MaxPermSize=512m", "-XX:MaxNewSize=256m", "-XX:NewSize=256m",
  "-Xms768m", "-Xmx1024m", "-XX:SurvivorRatio=128", "-XX:MaxTenuringThsreshold=0",

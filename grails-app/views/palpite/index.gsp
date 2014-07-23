@@ -57,7 +57,7 @@
 					<g:hiddenField name="usuariobolao" value="${usuarioBolaoInstance.id}" />				
 					<table>
 						
-						<g:if test="${filtrodatapalpite!='3'}"> 
+						<g:if test="${filtrodatapalpite!='3' && palpiteInstanceCount>0}"> 
 							<thead>
 								<tr class="semover">
 									<th colspan="7">
@@ -178,7 +178,7 @@
 								<g:set var="datajogoanterior" value="${datajogoatual}" />
 						</g:each>
 								
-						<g:if test="${filtrodatapalpite!='3'}"> 
+						<g:if test="${filtrodatapalpite!='3' && palpiteInstanceCount>0}"> 
 							<thead>
 								<tr class="semover">
 									<th colspan="7">
