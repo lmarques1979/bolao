@@ -123,141 +123,146 @@ invokeTag('message','g',46,['code':("logout.label")],-1)
 })
 invokeTag('link','g',46,['class':("logout"),'controller':("logout"),'action':("index")],3)
 printHtmlPart(16)
-if(true && (sec.loggedInUserInfo(field: 'primeironome'))) {
+})
+invokeTag('ifLoggedIn','sec',48,[:],2)
 printHtmlPart(17)
-invokeTag('set','g',49,['var':("usuario"),'value':(sec.loggedInUserInfo(field: 'primeironome'))],-1)
+createTagBody(2, {->
 printHtmlPart(18)
-}
-printHtmlPart(18)
-if(true && (sec.loggedInUserInfo(field: 'sobrenome'))) {
-printHtmlPart(17)
-invokeTag('set','g',52,['var':("usuario"),'value':(usuario + ' ' + sec.loggedInUserInfo(field: 'sobrenome'))],-1)
-printHtmlPart(18)
-}
-printHtmlPart(18)
-if(true && (session["usuariobolao"])) {
+createTagBody(3, {->
+invokeTag('message','g',51,['code':("criar.usuario.label")],-1)
+})
+invokeTag('link','g',51,['params':([bolao: params.bolao]),'class':("cadastrousuario"),'controller':("Usuario"),'action':("create")],3)
 printHtmlPart(19)
-expressionOut.print(message(code: "usuario.username.label"))
+})
+invokeTag('ifNotLoggedIn','sec',52,[:],2)
 printHtmlPart(20)
-expressionOut.print(usuario)
+createTagBody(2, {->
 printHtmlPart(21)
+createTagBody(3, {->
+printHtmlPart(22)
+expressionOut.print(params.bolao)
+printHtmlPart(23)
+invokeTag('message','g',64,['code':("springSecurity.login.username.label")],-1)
+printHtmlPart(24)
+invokeTag('message','g',67,['code':("springSecurity.login.password.label")],-1)
+printHtmlPart(25)
+invokeTag('actionSubmitImage','g',69,['title':(message(code: 'entrar.label')),'value':(message(code: 'button.create.label')),'src':(assetPath(src:'skin/loginSpring.png'))],-1)
+printHtmlPart(9)
+createTagBody(4, {->
+invokeTag('message','g',70,['code':("esqueceusenha.label")],-1)
+})
+invokeTag('link','g',70,['controller':("Usuario"),'action':("esqueceusenha"),'class':("esqueceusenha")],4)
+printHtmlPart(26)
+})
+invokeTag('form','g',71,['url':("/${meta(name:'app.name')}/j_spring_security_check"),'method':("POST"),'id':("formlogin"),'class':("cssform"),'autocomplete':("off")],3)
+printHtmlPart(27)
+})
+invokeTag('ifNotLoggedIn','sec',79,[:],2)
+printHtmlPart(28)
+createTagBody(2, {->
+invokeTag('image','asset',83,['class':("internacionalizacao"),'src':("bandeiras/24/Brazil.png"),'title':(message(code:'portuguesbrasil.label'))],-1)
+})
+invokeTag('link','g',83,['id':(params.id),'action':(params.action ? params.action : 'index'),'controller':(params.controller ? params.controller : 'index'),'params':([lang: 'pt_BR'])],2)
+printHtmlPart(29)
+createTagBody(2, {->
+invokeTag('image','asset',84,['class':("internacionalizacao"),'src':("bandeiras/24/britain.png"),'title':(message(code:'english.label'))],-1)
+})
+invokeTag('link','g',84,['id':(params.id),'action':(params.action ? params.action : 'index'),'controller':(params.controller ? params.controller : 'index'),'params':([lang: 'en'])],2)
+printHtmlPart(29)
+createTagBody(2, {->
+invokeTag('image','asset',85,['class':("internacionalizacao"),'src':("bandeiras/24/Spain.png"),'title':(message(code:'spain.label'))],-1)
+})
+invokeTag('link','g',85,['id':(params.id),'action':(params.action ? params.action : 'index'),'controller':(params.controller ? params.controller : 'index'),'params':([lang: 'es'])],2)
+printHtmlPart(19)
+createTagBody(2, {->
+printHtmlPart(30)
+if(true && (sec.loggedInUserInfo(field: 'primeironome'))) {
+printHtmlPart(31)
+invokeTag('set','g',89,['var':("usuario"),'value':(sec.loggedInUserInfo(field: 'primeironome'))],-1)
+printHtmlPart(32)
+}
+printHtmlPart(32)
+if(true && (sec.loggedInUserInfo(field: 'sobrenome'))) {
+printHtmlPart(31)
+invokeTag('set','g',92,['var':("usuario"),'value':(usuario + ' ' + sec.loggedInUserInfo(field: 'sobrenome'))],-1)
+printHtmlPart(32)
+}
+printHtmlPart(32)
+if(true && (session["usuariobolao"])) {
+printHtmlPart(33)
+expressionOut.print(message(code: "usuario.username.label"))
+printHtmlPart(34)
+expressionOut.print(usuario)
+printHtmlPart(35)
 createTagBody(4, {->
 expressionOut.print(session["usuariobolao"].bolao.descricao)
 })
-invokeTag('link','g',55,['controller':("UsuarioBolao"),'action':("pontuacao"),'id':(session["usuariobolao"].id)],4)
-printHtmlPart(22)
+invokeTag('link','g',95,['controller':("UsuarioBolao"),'action':("pontuacao"),'id':(session["usuariobolao"].id)],4)
+printHtmlPart(36)
 }
 else {
-printHtmlPart(19)
-expressionOut.print(message(code: "usuario.username.label"))
-printHtmlPart(20)
-expressionOut.print(usuario)
-printHtmlPart(22)
-}
-printHtmlPart(23)
-})
-invokeTag('ifLoggedIn','sec',61,[:],2)
-printHtmlPart(24)
-createTagBody(2, {->
-printHtmlPart(25)
-createTagBody(3, {->
-invokeTag('message','g',64,['code':("criar.usuario.label")],-1)
-})
-invokeTag('link','g',64,['params':([bolao: params.bolao]),'class':("cadastrousuario"),'controller':("Usuario"),'action':("create")],3)
-printHtmlPart(26)
-})
-invokeTag('ifNotLoggedIn','sec',65,[:],2)
-printHtmlPart(27)
-createTagBody(2, {->
-invokeTag('image','asset',67,['class':("internacionalizacao"),'src':("bandeiras/24/Brazil.png"),'title':(message(code:'portuguesbrasil.label'))],-1)
-})
-invokeTag('link','g',67,['id':(params.id),'action':(params.action ? params.action : 'index'),'controller':(params.controller ? params.controller : 'index'),'params':([lang: 'pt_BR'])],2)
-printHtmlPart(28)
-createTagBody(2, {->
-invokeTag('image','asset',68,['class':("internacionalizacao"),'src':("bandeiras/24/britain.png"),'title':(message(code:'english.label'))],-1)
-})
-invokeTag('link','g',68,['id':(params.id),'action':(params.action ? params.action : 'index'),'controller':(params.controller ? params.controller : 'index'),'params':([lang: 'en'])],2)
-printHtmlPart(28)
-createTagBody(2, {->
-invokeTag('image','asset',69,['class':("internacionalizacao"),'src':("bandeiras/24/Spain.png"),'title':(message(code:'spain.label'))],-1)
-})
-invokeTag('link','g',69,['id':(params.id),'action':(params.action ? params.action : 'index'),'controller':(params.controller ? params.controller : 'index'),'params':([lang: 'es'])],2)
-printHtmlPart(29)
-createTagBody(2, {->
-printHtmlPart(30)
-createTagBody(3, {->
-printHtmlPart(31)
-expressionOut.print(params.bolao)
-printHtmlPart(32)
-invokeTag('message','g',79,['code':("springSecurity.login.username.label")],-1)
 printHtmlPart(33)
-invokeTag('message','g',82,['code':("springSecurity.login.password.label")],-1)
+expressionOut.print(message(code: "usuario.username.label"))
 printHtmlPart(34)
-invokeTag('actionSubmitImage','g',84,['title':(message(code: 'entrar.label')),'value':(message(code: 'button.create.label')),'src':(assetPath(src:'skin/loginSpring.png'))],-1)
-printHtmlPart(9)
-createTagBody(4, {->
-invokeTag('message','g',85,['code':("esqueceusenha.label")],-1)
-})
-invokeTag('link','g',85,['controller':("Usuario"),'action':("esqueceusenha"),'class':("esqueceusenha")],4)
-printHtmlPart(35)
-})
-invokeTag('form','g',86,['url':("/${meta(name:'app.name')}/j_spring_security_check"),'method':("POST"),'id':("formlogin"),'class':("cssform"),'autocomplete':("off")],3)
-printHtmlPart(36)
-})
-invokeTag('ifNotLoggedIn','sec',94,[:],2)
+expressionOut.print(usuario)
 printHtmlPart(37)
+}
+printHtmlPart(38)
+})
+invokeTag('ifLoggedIn','sec',101,[:],2)
+printHtmlPart(39)
 expressionOut.print(createLink(uri: '/'))
 printHtmlPart(7)
-invokeTag('image','asset',97,['src':("logo/logo.png"),'alt':("Bolao")],-1)
-printHtmlPart(38)
+invokeTag('image','asset',108,['src':("logo/logo.png"),'alt':("Bolao")],-1)
+printHtmlPart(40)
 if(true && (( (params.controller=='usuarioBolao' && params.action!='index') || (params.controller!='usuarioBolao') ))) {
 printHtmlPart(9)
 createTagBody(3, {->
-printHtmlPart(18)
+printHtmlPart(41)
 if(true && (usuarioInstance.imagem)) {
-printHtmlPart(39)
-invokeTag('image','asset',101,['class':("avatarmain"),'height':("120"),'width':("120"),'src':(usuarioInstance.imagem),'title':(usuarioInstance.buscaNome(usuarioInstance))],-1)
-printHtmlPart(18)
+printHtmlPart(32)
+invokeTag('image','asset',112,['class':("avatarmain"),'height':("60"),'width':("60"),'src':(usuarioInstance.imagem),'title':(usuarioInstance.buscaNome(usuarioInstance))],-1)
+printHtmlPart(41)
 }
 else {
-printHtmlPart(39)
-invokeTag('image','asset',104,['class':("avatarmain"),'height':("120"),'width':("120"),'src':("noimage.jpg"),'title':(usuarioInstance.buscaNome(usuarioInstance))],-1)
-printHtmlPart(18)
-}
-printHtmlPart(9)
-})
-invokeTag('ifLoggedIn','sec',106,[:],3)
-printHtmlPart(40)
-}
+printHtmlPart(32)
+invokeTag('image','asset',115,['class':("avatarmain"),'height':("60"),'width':("60"),'src':("noimage.jpg"),'title':(usuarioInstance.buscaNome(usuarioInstance))],-1)
 printHtmlPart(41)
-invokeTag('layoutBody','g',110,[:],-1)
+}
+printHtmlPart(9)
+})
+invokeTag('ifLoggedIn','sec',117,[:],3)
 printHtmlPart(42)
-createTagBody(2, {->
-printHtmlPart(9)
-invokeTag('message','g',114,['code':("regulamentogeral.message")],-1)
-printHtmlPart(40)
-})
-invokeTag('link','g',115,['controller':("diversos"),'action':("pontuacao")],2)
+}
 printHtmlPart(43)
+invokeTag('layoutBody','g',121,[:],-1)
+printHtmlPart(44)
 createTagBody(2, {->
 printHtmlPart(9)
-invokeTag('message','g',117,['code':("contato.message")],-1)
-printHtmlPart(40)
+invokeTag('message','g',125,['code':("regulamentogeral.message")],-1)
+printHtmlPart(42)
 })
-invokeTag('link','g',118,['controller':("diversos"),'action':("contato")],2)
-printHtmlPart(44)
-invokeTag('message','g',122,['code':("spinner.alt"),'default':("Loading&hellip;")],-1)
+invokeTag('link','g',126,['controller':("diversos"),'action':("pontuacao")],2)
 printHtmlPart(45)
+createTagBody(2, {->
+printHtmlPart(9)
+invokeTag('message','g',128,['code':("contato.message")],-1)
+printHtmlPart(42)
 })
-invokeTag('captureBody','sitemesh',123,[:],1)
+invokeTag('link','g',129,['controller':("diversos"),'action':("contato")],2)
 printHtmlPart(46)
+invokeTag('message','g',133,['code':("spinner.alt"),'default':("Loading&hellip;")],-1)
+printHtmlPart(47)
+})
+invokeTag('captureBody','sitemesh',134,[:],1)
+printHtmlPart(48)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1406041634000L
+public static final long LAST_MODIFIED = 1406219273000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

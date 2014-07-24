@@ -187,7 +187,8 @@ div.loginprincipal label{
 
 div.loginprincipal input{
 text-align: left;
-height:12px;
+height:15px;
+width:100px;
 margin-top:1px;
 background-color: #fcfcfc;
 border: 1px solid #cccccc;
