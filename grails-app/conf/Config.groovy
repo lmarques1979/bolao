@@ -32,7 +32,12 @@ grails {
 }
 
 //Assets Amazon S3
-grails.assets.url = "https://bolaovipcampeao.s3.amazonaws.com/assets/"
+environments {
+	production {
+		grails.assets.url = "https://bolaovipcampeao.s3.amazonaws.com/assets/"
+	}
+}
+
 
 //AWS Plugin config
 grails.plugin.awssdk.accessKey = ''

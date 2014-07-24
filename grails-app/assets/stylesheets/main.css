@@ -29,7 +29,7 @@ a{
 }
 
  img.internacionalizacao{
-	margin-top:-7px;
+	margin-top:5px;
 }
 .cadastrologin{
 	text-align:center;
@@ -172,7 +172,7 @@ div.loginprincipal{
 	float:right;
 	margin-top:-30px;
 	padding:0;
-	width:470px;
+	width:430px; 
 	height:35px;
 	outline:0px solid #fff;
 }
@@ -222,7 +222,7 @@ div.loginprincipal a.esqueceusenha {
 font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 font-size: 11px;
 text-align:left;
-margin-top:-3px;
+margin-top:2px;
 margin-left:-8px;
 background-color: transparent;
 color:#f4ffcf;
@@ -433,16 +433,18 @@ div.nomeusuario {
 
 #grailsLogo img.avatarmain    {
    float:right;
-   position:absolute;
-   margin:-8px 0 0 -20px;
-   border: 0px solid #d7d7d7;
+   position:relative;
+   margin-right: 40px;
+   margin-top: -260px;
+   border: 0px solid #fff;
    overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
-   -moz-box-shadow: 0 0 0.6em #032A07;
-   -webkit-box-shadow: 0 0 0.6em #032A07;
-   box-shadow: 0 0 0.6em #032A07;
-   border-radius: 5px;
+   -moz-box-shadow: 0 0 0.6em #fff;
+   -webkit-box-shadow: 0 0 0.6em #fff;
+   box-shadow: 0 0 0.6em #fff;
+   border-radius:5px;
    -webkit-border-radius: 5px;
    -moz-border-radius: 5px;
+   
 }
 
  div.nomeusuario span {
@@ -603,11 +605,11 @@ body {
 	background:#fcfbf9;
 	color: #333333;
 	margin: 5px auto;
-	max-width: 1320px;
+	width:1024px;
 	overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
 	-moz-box-shadow: 0 0 0.3em #1E5A2E;
 	-webkit-box-shadow: 0 0 0.3em #1E5A2E;
-	box-shadow: 0 0 0.3em #1E5A2E;
+	box-shadow: 0 0 0.3em #1E5A2E; 
 }
 
 #grailsLogo {
@@ -841,10 +843,11 @@ ul {
 }
 
 .nav span.logout {
-	background-position:0;
+	background-position: 0;
 	background-repeat: no-repeat;
 	text-indent: 20px;
-	margin-top:-4px;
+	margin-top: 6px;
+	margin-left: 10px;
 }
 
 .nav span.logout a {
@@ -1001,12 +1004,21 @@ select.timezone{
 	padding: 0.2em 0.4em;
 	width:245px;
 }
-input, select, textarea {
+input, textarea {
 	text-align:left;
 	background-color: #fcfcfc;
 	border: 1px solid #cccccc;
 	font-size: 1em;
 	padding: 0.2em 0.4em;
+}
+
+select{
+	width:185px;
+    text-align: left;
+    background-color: #FCFCFC;
+    border: 1px solid #CCC;
+    font-size: 1em;
+    padding: 0.2em 0.4em;
 }
 
  input.centro, select.centro, textarea.centro  {

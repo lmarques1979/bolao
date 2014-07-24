@@ -44,33 +44,18 @@
 					</g:if> 
 					
 					<li><g:link class="logout" controller="logout" action="index"><g:message code="logout.label"/></g:link></li>
-					<li>
-						<g:if test="${sec.loggedInUserInfo(field: 'primeironome')}">
-							    <g:set var="usuario" value="${sec.loggedInUserInfo(field: 'primeironome')}" />
-						</g:if>
-						<g:if test="${sec.loggedInUserInfo(field: 'sobrenome')}">
-							    <g:set var="usuario" value="${usuario + ' ' + sec.loggedInUserInfo(field: 'sobrenome')}" />
-						</g:if>
-						<g:if test="${session["usuariobolao"]}">
-							<span class="logout">${message(code: "usuario.username.label")}: ${usuario} - Bolão:<g:link controller="UsuarioBolao" action="pontuacao" id="${session["usuariobolao"].id}">${session["usuariobolao"].bolao.descricao}</g:link></span>
-						</g:if>
-						<g:else>
-							<span class="logout">${message(code: "usuario.username.label")}: ${usuario}</span>
-						</g:else>
-					</li>
+					
 				</sec:ifLoggedIn>
 				
 				<sec:ifNotLoggedIn>
 					<li><g:link params="[bolao: params.bolao]" class="cadastrousuario" controller="Usuario" action="create" ><g:message code="criar.usuario.label"/></g:link></li>
 				</sec:ifNotLoggedIn>
 				
-				<li><g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'pt_BR']"><asset:image class="internacionalizacao" src="bandeiras/24/Brazil.png" title="${message(code:'portuguesbrasil.label')}"/></g:link></li>
-				<li><g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'en']"><asset:image class="internacionalizacao" src="bandeiras/24/britain.png" title="${message(code:'english.label')}"/></g:link></li>
-				<li><g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'es']"><asset:image class="internacionalizacao" src="bandeiras/24/Spain.png" title="${message(code:'spain.label')}"/></g:link></li>
+				
 				
 				
 			</ul>
-		<sec:ifNotLoggedIn>
+			<sec:ifNotLoggedIn>
 			
 			<div class="loginprincipal">
 				<g:form url='/${meta(name:'app.name')}/j_spring_security_check' method='POST' id='formlogin' class='cssform' autocomplete='off'>
@@ -92,16 +77,42 @@
 
 			</div>
 		</sec:ifNotLoggedIn>
+			<div class="clearer"></div>
+			
+			<ul>
+				<li><g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'pt_BR']"><asset:image class="internacionalizacao" src="bandeiras/24/Brazil.png" title="${message(code:'portuguesbrasil.label')}"/></g:link></li>
+				<li><g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'en']"><asset:image class="internacionalizacao" src="bandeiras/24/britain.png" title="${message(code:'english.label')}"/></g:link></li>
+				<li><g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'es']"><asset:image class="internacionalizacao" src="bandeiras/24/Spain.png" title="${message(code:'spain.label')}"/></g:link></li>
+				<sec:ifLoggedIn>
+					<li>
+							<g:if test="${sec.loggedInUserInfo(field: 'primeironome')}">
+								    <g:set var="usuario" value="${sec.loggedInUserInfo(field: 'primeironome')}" />
+							</g:if>
+							<g:if test="${sec.loggedInUserInfo(field: 'sobrenome')}">
+								    <g:set var="usuario" value="${usuario + ' ' + sec.loggedInUserInfo(field: 'sobrenome')}" />
+							</g:if>
+							<g:if test="${session["usuariobolao"]}">
+								<span class="logout">${message(code: "usuario.username.label")}: ${usuario} - Bolão:<g:link controller="UsuarioBolao" action="pontuacao" id="${session["usuariobolao"].id}">${session["usuariobolao"].bolao.descricao}</g:link></span> 
+							</g:if>
+							<g:else>
+								<span class="logout">${message(code: "usuario.username.label")}: ${usuario}</span>
+							</g:else>
+					</li>
+				</sec:ifLoggedIn>
+			</ul>
+			
+			
+			
 		</div><div class="clearer"></div>
 		<div id="grailsLogo" role="banner">
 			<a href="${createLink(uri: '/')}"><asset:image src="logo/logo.png" alt="Bolao"/></a>
 			<g:if test="${ ( (params.controller=='usuarioBolao' && params.action!='index') || (params.controller!='usuarioBolao') ) }">
 					<sec:ifLoggedIn>
 						<g:if test="${usuarioInstance.imagem}">
-							<asset:image class="avatarmain" height="120" width="120" src="${usuarioInstance.imagem}" title="${usuarioInstance.buscaNome(usuarioInstance)}"/>
+							<asset:image class="avatarmain" height="60" width="60" src="${usuarioInstance.imagem}" title="${usuarioInstance.buscaNome(usuarioInstance)}"/>
 						</g:if>
 						<g:else>
-							<asset:image class="avatarmain" height="120" width="120" src="noimage.jpg" title="${usuarioInstance.buscaNome(usuarioInstance)}"/>
+							<asset:image class="avatarmain" height="60" width="60" src="noimage.jpg" title="${usuarioInstance.buscaNome(usuarioInstance)}"/>
 						</g:else>
 					</sec:ifLoggedIn>
 			</g:if>
