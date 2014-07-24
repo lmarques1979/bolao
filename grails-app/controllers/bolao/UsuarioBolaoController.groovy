@@ -148,7 +148,7 @@ class UsuarioBolaoController extends BaseController {
 		def resultado = UsuarioBolao.createCriteria().list(configuracoes) {
 				createAlias("bolao", "b")
 				eq('b.id', usuarioBolaoInstance.bolao.id)
-				eq('b.enabled', true)
+				//eq('b.enabled', true)
 				createAlias("palpites", "palpite", CriteriaSpecification.LEFT_JOIN)
 				projections {
 					groupProperty("usuario")

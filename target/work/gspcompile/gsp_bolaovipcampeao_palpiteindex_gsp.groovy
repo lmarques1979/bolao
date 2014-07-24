@@ -85,7 +85,7 @@ createTagBody(3, {->
 printHtmlPart(15)
 invokeTag('hiddenField','g',57,['name':("usuariobolao"),'value':(usuarioBolaoInstance.id)],-1)
 printHtmlPart(24)
-if(true && (filtrodatapalpite!='3')) {
+if(true && (filtrodatapalpite!='3' && palpiteInstanceCount>0)) {
 printHtmlPart(25)
 invokeTag('actionSubmit','g',64,['id':("botaopalpitesalvar"),'action':("save"),'value':(message(code: 'button.create.label', default: 'Update'))],-1)
 printHtmlPart(26)
@@ -217,7 +217,7 @@ i++
 }
 }
 printHtmlPart(63)
-if(true && (filtrodatapalpite!='3')) {
+if(true && (filtrodatapalpite!='3' && palpiteInstanceCount>0)) {
 printHtmlPart(25)
 invokeTag('actionSubmit','g',185,['id':("botaopalpitesalvar"),'action':("save"),'value':(message(code: 'button.create.label', default: 'Update'))],-1)
 printHtmlPart(26)
@@ -241,7 +241,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1405376216000L
+public static final long LAST_MODIFIED = 1406135782000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

@@ -33,10 +33,15 @@ class PalpiteController extends BaseController {
 		def usuarioBolaoList = UsuarioBolao.findAll("from UsuarioBolao as ub where ub=?", [ usuarioBolaoInstance])
 		def jogos = usuarioBolaoInstance.bolao.campeonato.jogos
 		//def palpites = jogos.collect{usuarioBolaoInstance.buscarPalpiteJogo(it , configuracaoParams.minutosparapalpite)}
-		
+		def qtdaberto=0
 		jogos.each(){
 			def palpite = usuarioBolaoInstance.buscarPalpiteJogo(it , configuracaoParams.minutosparapalpite)
-			palpite.finalizado==true ? palpitesfinalizados << palpite : palpitenovos << palpite
+			if(palpite.finalizado==true){
+				palpitesfinalizados << palpite 
+			} else {
+				palpitenovos << palpite
+				qtdaberto++
+			}
 		}
 		if(filtropalpite=="1"){
 			palpites.addAll(palpitesfinalizados)
@@ -49,7 +54,7 @@ class PalpiteController extends BaseController {
 			palpites.addAll(palpitesfinalizados)
 		}
 		
-		respond palpites, model:[usuarioBolaoInstance:usuarioBolaoInstance, palpitesList: palpites, palpiteInstanceCount: palpites.size()]
+		respond palpites, model:[usuarioBolaoInstance:usuarioBolaoInstance, palpitesemAberto:qtdaberto , palpitesList: palpites, palpiteInstanceCount: palpites.size()]
 	}
 	
 	def palpiteusuario() {
