@@ -30,7 +30,6 @@ class Palpite {
 	}
 	
     static constraints = {
-		
 		scoretime1(nullable: true, blank: true , size: 1..2 , matches:"[0-9]{1}[0-9]{1}")
 		scoretime2(nullable: true , blank: true , size: 1..2, matches:"[0-9]{1}[0-9]{1}")
 		jogo(nullable: false , blank: false)
@@ -40,6 +39,7 @@ class Palpite {
     }
 	
 	static mapping = {
+		sort jogo:"asc"
 		autoTimestamp true
 	}
 }

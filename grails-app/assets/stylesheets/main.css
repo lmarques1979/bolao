@@ -439,9 +439,9 @@ div.nomeusuario {
    margin-top: -260px;
    border: 0px solid #fff;
    overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
-   -moz-box-shadow: 0 0 0.6em #fff;
-   -webkit-box-shadow: 0 0 0.6em #fff;
-   box-shadow: 0 0 0.6em #fff;
+   -moz-box-shadow: 0 0 0.6em #F4FFCF;
+   -webkit-box-shadow: 0 0 0.6em #F4FFCF;
+   box-shadow: 0 0 0.6em #F4FFCF;
    border-radius:5px;
    -webkit-border-radius: 5px;
    -moz-border-radius: 5px;

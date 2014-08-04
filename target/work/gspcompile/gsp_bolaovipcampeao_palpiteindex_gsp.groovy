@@ -76,7 +76,7 @@ invokeTag('set','g',42,['var':("filtrodatapalpite"),'value':("2")],-1)
 printHtmlPart(19)
 }
 printHtmlPart(21)
-invokeTag('select','g',45,['id':("filtropalpite"),'value':(filtrodatapalpite),'name':("filtrodatapalpite"),'from':([message(code: "filtro.todos.label"), message(code: "filtro.emaberto.label"), message(code: "filtro.finalizados.label")]),'keys':(['1','2','3'])],-1)
+invokeTag('select','g',45,['onchange':("this.form.submit()"),'id':("filtropalpite"),'value':(filtrodatapalpite),'name':("filtrodatapalpite"),'from':([message(code: "filtro.todos.label"), message(code: "filtro.emaberto.label"), message(code: "filtro.finalizados.label")]),'keys':(['1','2','3'])],-1)
 printHtmlPart(22)
 })
 invokeTag('form','g',53,['id':("formfiltropalpite"),'url':([action:'index',controller:'palpite']),'method':("POST")],3)
@@ -228,8 +228,6 @@ invokeTag('form','g',191,['url':([action:'save',controller:'palpite']),'method':
 printHtmlPart(65)
 invokeTag('paginate','g',193,['total':(palpitesList ?: 0)],-1)
 printHtmlPart(66)
-invokeTag('javascript','asset',196,['src':("filtrochange.js")],-1)
-printHtmlPart(9)
 }
 printHtmlPart(67)
 })
@@ -241,7 +239,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1406208330000L
+public static final long LAST_MODIFIED = 1406395678000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

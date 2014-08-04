@@ -42,7 +42,7 @@
 									     <g:set var="filtrodatapalpite" value="2" />
 									</g:else>
 									
-									<g:select id="filtropalpite" value="${filtrodatapalpite}" name="filtrodatapalpite" from="${[message(code: "filtro.todos.label"), message(code: "filtro.emaberto.label"), message(code: "filtro.finalizados.label")]}" keys="${['1','2','3']}"/>
+									<g:select onchange="this.form.submit()" id="filtropalpite" value="${filtrodatapalpite}" name="filtrodatapalpite" from="${[message(code: "filtro.todos.label"), message(code: "filtro.emaberto.label"), message(code: "filtro.finalizados.label")]}" keys="${['1','2','3']}"/>
 									
 								</td>
 								
@@ -193,7 +193,7 @@
 						<g:paginate total="${palpitesList ?: 0}" />
 					</div>
 					
-					<asset:javascript src="filtrochange.js"/>
+					
 			</g:else>
 			
 		</div>

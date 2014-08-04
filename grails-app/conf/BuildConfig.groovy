@@ -67,10 +67,8 @@ grails.project.dependency.resolution = {
 		
 		//Push to Amazon S3
 		compile ":cdn-asset-pipeline:0.2.2"
-		
 		compile ":spring-security-ui:1.0-RC2"
-		//Amazon Plugin
-		compile ":aws-sdk:1.8.4"
+		
 		// plugins for the compile step
 		compile ":scaffolding:2.1.2"
 		compile ':cache:1.1.7'
