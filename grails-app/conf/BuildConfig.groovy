@@ -42,6 +42,7 @@ grails.project.dependency.resolution = {
 		mavenRepo "http://download.java.net/maven/2/"
 		//mavenRepo "http://repository.jboss.com/maven2/"
 		mavenRepo "http://repo.spring.io/milestone/"
+		mavenRepo 'http://dl.bintray.com/karman/karman'
 	}
 
 	dependencies {
@@ -63,10 +64,10 @@ grails.project.dependency.resolution = {
 		build ":tomcat:7.0.54"
 		
 		//Amazon S3
-		runtime ':aws-sdk:1.8.4'
+		compile ":aws:1.7.5.0"
 		
 		//Push to Amazon S3
-		compile ":cdn-asset-pipeline:0.2.2"
+		compile ':cdn-asset-pipeline:0.3.4'
 		compile ":spring-security-ui:1.0-RC2"
 		
 		// plugins for the compile step

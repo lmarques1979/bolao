@@ -22,7 +22,7 @@ grails {
 		cdn {
 			provider = 's3' // Karman provider
 			directory = 'bolaovipcampeao'
-			accessKey = ''
+			accessKey = 'AKIAIE4A4NA3JK4ENWPA'
 			secretKey = ''
 			storagePath = "assets/" // This is just a prefix example
 			expires = 365 // Expires in 1 year (value in days)
@@ -40,7 +40,7 @@ environments {
 
 
 //AWS Plugin config
-grails.plugin.awssdk.accessKey = ''
+grails.plugin.awssdk.accessKey = 'AKIAIE4A4NA3JK4ENWPA'
 grails.plugin.awssdk.secretKey = ''
 
 //Dados Tomcat Deploy
