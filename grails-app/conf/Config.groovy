@@ -16,36 +16,40 @@ grails.cache.enabled = false
 
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 
+//Gerador de PDF
+grails.plugin.wkhtmltox.binary = "/usr/bin/wkhtmltopdf"
+
 // Single provider
 grails {
 	assets {
 		cdn {
-			provider = 's3' // Karman provider
+			provider = 'S3' // Karman provider
 			directory = 'bolaovipcampeao'
-			accessKey = 'AKIAIE4A4NA3JK4ENWPA'
-			secretKey = ''
+			accessKey = 'AKIAJG2T4AXSSTLZ76BA'
+			secretKey = 'osAXGb98tlqaHBn/02E5mvq849DNwYQTYu//hPRM'
 			storagePath = "assets/" // This is just a prefix example
 			expires = 365 // Expires in 1 year (value in days)
 			gzip = true
 		}
 	}
 }
-
 //Assets Amazon S3
 environments {
 	production {
 		grails.assets.url = "https://bolaovipcampeao.s3.amazonaws.com/assets/"
+		
 	}
+	
 }
 
 
 //AWS Plugin config
-grails.plugin.awssdk.accessKey = 'AKIAIE4A4NA3JK4ENWPA'
-grails.plugin.awssdk.secretKey = ''
+grails.plugin.awssdk.accessKey = 'AKIAJG2T4AXSSTLZ76BA'
+grails.plugin.awssdk.secretKey = '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'
 
 //Dados Tomcat Deploy
 tomcat.deploy.username="admin"
-tomcat.deploy.password=""
+tomcat.deploy.password="99157521"
 tomcat.deploy.url="http://localhost:8080/manager/text"
 grails.tomcat.jvmArgs = ["-server", "-XX:MaxPermSize=512m", "-XX:MaxNewSize=256m", "-XX:NewSize=256m",
  "-Xms768m", "-Xmx1024m", "-XX:SurvivorRatio=128", "-XX:MaxTenuringThsreshold=0",
@@ -140,7 +144,7 @@ grails {
 	  host = "smtp.gmail.com"
 	  port = 465
 	  username = "bolaovipcampeao@gmail.com"
-	  password = ""
+	  password = "99157521"
 	  props = ["mail.smtp.auth":"true",
 			   "mail.smtp.socketFactory.port":"465",
 			   "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",

@@ -42,7 +42,9 @@ grails.project.dependency.resolution = {
 		mavenRepo "http://download.java.net/maven/2/"
 		//mavenRepo "http://repository.jboss.com/maven2/"
 		mavenRepo "http://repo.spring.io/milestone/"
+		//your repositories
 		mavenRepo 'http://dl.bintray.com/karman/karman'
+	
 	}
 
 	dependencies {
@@ -56,27 +58,25 @@ grails.project.dependency.resolution = {
 		build 'org.apache.httpcomponents:httpclient:4.2'
 		runtime 'org.apache.httpcomponents:httpcore:4.2'
 		runtime 'org.apache.httpcomponents:httpclient:4.2'
-		
-	}
+		runtime 'org.springframework:spring-test:3.1.0.RELEASE'
+}
 
 	plugins {
 		// plugins for the build system only
 		build ":tomcat:7.0.54"
-		
+		//Render PDF
+		compile ":rendering:1.0.0"
 		//Amazon S3
-		compile ":aws:1.7.5.0"
-		
-		//Push to Amazon S3
-		compile ':cdn-asset-pipeline:0.3.4'
+		//here go your plugin dependencies
+		compile ":aws-sdk:1.8.11"
 		compile ":spring-security-ui:1.0-RC2"
-		
 		// plugins for the compile step
 		compile ":scaffolding:2.1.2"
 		compile ':cache:1.1.7'
-		compile ":asset-pipeline:1.9.3"
-
+		compile ':asset-pipeline:1.9.9'
+		compile ':cdn-asset-pipeline:0.3.5'
 		// plugins needed at runtime but not for compilation
-		runtime ":hibernate4:4.3.5.4" // or ":hibernate:3.6.10.15"
+		runtime ":hibernate4:4.3.5.5" // or ":hibernate:3.6.10.15"
 		runtime ":database-migration:1.4.0"
 		runtime ":jquery:1.11.1"
 
