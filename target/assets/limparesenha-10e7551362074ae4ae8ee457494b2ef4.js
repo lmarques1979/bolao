@@ -1,1 +1,0 @@
-$(document).ready(function(){$("#resenha").focusin(function(e){$("#resenha").val("")})})

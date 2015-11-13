@@ -27,7 +27,7 @@ grails {
 			directory = 'bolaovipcampeao'
 			accessKey = 'AKIAJG2T4AXSSTLZ76BA'
 			secretKey = 'osAXGb98tlqaHBn/02E5mvq849DNwYQTYu//hPRM'
-			storagePath = "assets/" // This is just a prefix example
+			storagePath = "/assets" // This is just a prefix example
 			expires = 365 // Expires in 1 year (value in days)
 			gzip = true
 		}
@@ -41,8 +41,6 @@ environments {
 	}
 	
 }
-
-
 //AWS Plugin config
 grails.plugin.awssdk.accessKey = 'AKIAJG2T4AXSSTLZ76BA'
 grails.plugin.awssdk.secretKey = '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'
@@ -140,11 +138,11 @@ environments {
 
 grails {
 	mail {
-	  from = "bolaovipcampeao@gmail.com"
+	  from = "liunit@gmail.com"
 	  host = "smtp.gmail.com"
 	  port = 465
-	  username = "bolaovipcampeao@gmail.com"
-	  password = "99157521"
+	  username = "liunit@gmail.com"
+	  password = "Lmarques1979"
 	  props = ["mail.smtp.auth":"true",
 			   "mail.smtp.socketFactory.port":"465",
 			   "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
@@ -171,7 +169,11 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':               			['permitAll'],
 	'/index':          			['permitAll'],
 	'/index.gsp':      			['permitAll'],
-	'/assets/**':				['permitAll']
+	'/assets/**':				['permitAll'],
+	'/**/javascripts/**':       ['permitAll'],
+	'/**/stylesheets/**':      	['permitAll'],
+	'/**/images/**':   			['permitAll'],
+	'/**/favicon.ico': 			['permitAll']
  ]
  
 

@@ -1,15 +1,19 @@
 package myspringsecurity
 
-import bolao.UsuarioBolao
-import bolao.Bolao
-import grails.plugin.springsecurity.SpringSecurityService
+import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.web.authentication.AjaxAwareAuthenticationSuccessHandler
+import grails.transaction.Transactional
+
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
-import org.springframework.security.core.Authentication
-import seguranca.Usuario
-import static org.springframework.http.HttpStatus.*
 
+import org.springframework.security.core.Authentication
+
+import seguranca.Usuario
+import bolao.Bolao
+import bolao.UsuarioBolao
+
+@Transactional
 class MyAuthenticationSuccessHandler extends AjaxAwareAuthenticationSuccessHandler{
 
 		
